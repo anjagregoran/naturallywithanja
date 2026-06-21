@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cycle Check-In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--cream:#F8F2E4; --paper:#FFFDF8; --paper2:#FBF4DC;
+--ink:#3A3145; --ink-soft:#736A82; --ink-faint:#A89CB8;
+--clay:#D9B54A; --clay-deep:#9A7A1E; --clay-soft:#F3E2A0;
+--sage:#A89CCB; --sage-deep:#7E70A8; --sage-soft:#E2DAF0;
+--rose:#C3A8D6; --plum:#6E5A8C;
+--line:rgba(120,100,40,0.16); --line-soft:rgba(120,100,40,0.08);
+--warn-bg:#F3E2A0; --warn-ink:#9A7A1E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:var(--cream);
+color:var(--ink);
+font-family:'Mulish',sans-serif;
+font-weight:400; line-height:1.65;
+-webkit-font-smoothing:antialiased;
+padding:0 18px 80px;
+}
+.wrap{max-width:680px;margin:0 auto}
+
+/* ---- header ---- */
+header{padding:64px 0 30px;text-align:center;animation:rise .8s ease both}
+.kicker{font-family:'Mulish';font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--clay);margin-bottom:18px}
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+h1 em{font-style:italic;color:var(--clay)}
+.lede{font-size:17px;color:var(--ink-soft);max-width:500px;margin:22px auto 0;line-height:1.7}
+.enemy{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--plum);margin:26px auto 0;max-width:520px;line-height:1.5}
+
+/* ---- section ---- */
+.section{margin-top:42px;animation:rise .7s ease both}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-num{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--clay);min-width:24px}
+.sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:25px;color:var(--ink);letter-spacing:-.01em}
+.sec-sub{font-size:14.5px;color:var(--ink-soft);margin:2px 0 22px 38px}
+
+/* ---- question card ---- */
+.q{background:var(--paper);border:1px solid var(--line-soft);border-radius:16px;padding:22px 22px 24px;margin-bottom:14px;transition:border-color .25s,transform .25s}
+.q:hover{border-color:var(--line)}
+.q-label{font-size:16px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:4px}
+.q-hint{font-size:13.5px;color:var(--ink-faint);margin-bottom:16px;line-height:1.5}
+
+/* slider */
+.slider-row{display:flex;align-items:center;gap:16px}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--sage-soft),var(--clay-soft));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--paper);border:3px solid var(--clay);cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 6px rgba(142,72,48,.18)}
+input[type=range]::-webkit-slider-thumb:active{transform:scale(1.18)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--paper);border:3px solid var(--clay);cursor:pointer}
+.slider-val{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--clay);min-width:34px;text-align:center}
+.scale-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-faint);margin-top:9px;font-weight:500}
+
+/* choice buttons */
+.choices{display:flex;flex-wrap:wrap;gap:9px}
+.choice{font-family:'Mulish';font-size:14.5px;font-weight:500;color:var(--ink-soft);background:var(--paper2);border:1px solid var(--line);border-radius:11px;padding:10px 16px;cursor:pointer;transition:all .18s;user-select:none}
+.choice:hover{border-color:var(--sage);color:var(--ink)}
+.choice.on{background:var(--sage);border-color:var(--sage);color:#fff;font-weight:600}
+.choice.multi.on{background:var(--clay);border-color:var(--clay)}
+
+/* inputs */
+input[type=number],textarea{font-family:'Mulish';font-size:15px;color:var(--ink);background:var(--paper2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;width:100%;outline:none;transition:border-color .2s}
+input[type=number]{width:120px}
+input[type=number]:focus,textarea:focus{border-color:var(--clay)}
+textarea{resize:vertical;min-height:74px;line-height:1.6}
+
+/* gentle wellbeing note */
+.care-note{display:none;margin-top:14px;background:var(--warn-bg);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--warn-ink);line-height:1.55}
+.care-note.show{display:block;animation:rise .4s ease both}
+.care-note strong{font-weight:700}
+
+/* submit */
+.submit-zone{text-align:center;margin-top:46px}
+.btn{font-family:'Mulish';font-weight:700;font-size:16px;letter-spacing:.01em;color:#fff;background:var(--clay);border:none;border-radius:13px;padding:17px 40px;cursor:pointer;transition:transform .15s,background .2s;box-shadow:0 6px 18px rgba(142,72,48,.22)}
+.btn:hover{background:var(--clay-deep)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--clay);box-shadow:none;border:1.5px solid var(--clay);font-weight:600;padding:13px 26px;font-size:14.5px}
+.btn.ghost:hover{background:var(--clay-soft)}
+
+/* ---- results ---- */
+#results{display:none;margin-top:50px;animation:rise .7s ease both}
+#results.show{display:block}
+.res-head{text-align:center;margin-bottom:32px}
+.res-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:34px;letter-spacing:-.01em}
+.res-head p{color:var(--ink-soft);margin-top:10px;font-size:15.5px}
+.meter{background:var(--paper);border:1px solid var(--line-soft);border-radius:16px;padding:20px 22px;margin-bottom:13px}
+.meter-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:11px}
+.meter-name{font-family:'Fraunces',serif;font-size:19px;font-weight:500}
+.meter-tag{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 11px;border-radius:8px}
+.tag-calm{background:var(--sage-soft);color:var(--sage-deep)}
+.tag-mid{background:#F2E4C9;color:#8A6A1F}
+.tag-focus{background:var(--clay-soft);color:var(--clay-deep)}
+.bar{height:9px;border-radius:9px;background:var(--paper2);overflow:hidden}
+.bar > span{display:block;height:100%;border-radius:9px;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
+.meter-read{font-size:14px;color:var(--ink-soft);margin-top:12px;line-height:1.6}
+.focus-box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 24px;margin-top:24px}
+.focus-box h3{font-family:'Fraunces',serif;font-weight:500;font-size:21px;margin-bottom:6px}
+.focus-box .start{font-size:15px;color:var(--ink);line-height:1.7;margin-top:14px}
+.flag-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.flag-list li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+.flag-list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--clay);margin-top:7px;flex-shrink:0}
+.doctor-box{display:none;background:var(--warn-bg);border-left:4px solid var(--clay);border-radius:0 12px 12px 0;padding:18px 20px;margin-top:24px}
+.doctor-box.show{display:block}
+.doctor-box h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--clay-deep);margin-bottom:8px}
+.doctor-box p{font-size:14px;color:var(--warn-ink);line-height:1.6}
+.res-actions{text-align:center;margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+#copied{font-size:13.5px;color:var(--sage-deep);font-weight:600;margin-top:14px;opacity:0;transition:opacity .3s}
+#copied.show{opacity:1}
+
+footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint);line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto;border-top:1px solid var(--line-soft);padding-top:26px}
+
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.q{padding:18px 16px 20px}.sec-sub{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<div class="kicker">The Cycle Check-In</div>
+<h1>Let's see where your <em>cycle</em> is really at</h1>
+<p class="enemy">You've been told a miserable period is just part of being a woman. It isn't.</p>
+</header>
+
+<div id="form"></div>
+
+<div class="submit-zone">
+<button class="btn" id="seeBtn">See my cycle snapshot</button>
+</div>
+
+<div id="results">
+<div class="res-head">
+<h2>Your cycle snapshot</h2>
+<p>Here's where things look calm, and where your body is asking for some attention.</p>
+</div>
+<div id="meters"></div>
+<div class="doctor-box" id="doctorBox">
+<h3>One thing worth a doctor's eyes</h3>
+<p id="doctorText"></p>
+</div>
+<div class="focus-box">
+<h3>Where I'd start with you</h3>
+<div class="start" id="startText"></div>
+<ul class="flag-list" id="flagList"></ul>
+<div id="bcNote" style="display:none;margin-top:16px;padding:14px 16px;background:var(--sage-soft);border-radius:12px;font-size:14px;color:var(--sage-deep);line-height:1.6"><strong>A note on hormonal birth control.</strong> Since you are currently using hormonal contraception, it is worth knowing that it works by suppressing your natural hormones and replacing them with synthetic ones. You do not get a real period on it, just a withdrawal bleed. If it is not medically necessary for you, it may be worth slowly and gently exploring what coming off it could look like, with proper support. Your natural cycle holds a lot of information about your health, and reconnecting with it can be genuinely life-changing.</div>
+<p style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:14.5px;color:var(--ink-soft);line-height:1.7;font-style:italic">You just got a few honest tips on where to start. If you'd love more detailed feedback or personalized coaching, send me your results by clicking the button below, and I'll get back to you myself. &#9825;</p>
+</div>
+<div class="res-actions">
+<button class="btn" id="copyBtn">Send my results to Anja</button>
+<button class="btn ghost" id="restartBtn">Start over</button>
+</div>
+<p id="copied">Copied, and your email app should be opening. Just hit send!</p>
+</div>
+
+<footer>
+This check-in is for education and self-understanding, not medical diagnosis or treatment. It doesn't replace care from a doctor. If anything here feels serious or scary, please talk to a medical professional.
+</footer>
+
+</div>
+
+<script>
+/* ============================================================
+EDIT HERE: questions live in this array.
+types: slider | choice | multi | number | text
+"feeds" routes the answer into a snapshot score:
+pain | luteal | vitality(reverse) | foundations
+============================================================ */
+const QUESTIONS = [
+{section:"The basics", sub:"A quick picture of your cycle as it runs right now."},
+{id:"age", type:"number", label:"How old are you?", hint:"Helps frame everything else.", min:10, max:60},
+{id:"bc", type:"choice", label:"Are you using hormonal birth control right now?",
+hint:"The pill, hormonal IUD, implant, etc. mask your natural cycle, so this changes how we read everything.",
+options:["No, none","The pill","Hormonal IUD","Implant or injection","Patch or ring","Not sure"]},
+{id:"regular", type:"choice", label:"How regular is your cycle?",
+options:["Very regular","Mostly regular","Unpredictable","I don't track it","I'm not getting a period right now"],
+flagIf:["I'm not getting a period right now"], flagMsg:"Missing periods (when not on birth control or pregnant) is your body's signal that something's off, often under-fueling, stress, or over-training. Worth a doctor's check."},
+{id:"cyclelen", type:"shorttext", label:"Roughly how many days from the start of one period to the next?", hint:"A typical range is around 24 to 35 days. If unsure, write \"/\".", placeholder:"e.g. 28 days, or /", optional:true},
+{id:"bleedlen", type:"shorttext", label:"How many days does your bleed usually last?", hint:"If unsure, write \"/\".", placeholder:"e.g. 5 days, or /", optional:true},
+
+{section:"Your period", sub:"The bleed itself, pain and flow."},
+{id:"pain", type:"slider", label:"How intense is your period pain?", feeds:"pain", lo:"None at all", hi:"Unbearable"},
+{id:"painstop", type:"choice", label:"Does period pain ever stop you doing normal things?",
+hint:"School, work, training, plans with people.", feeds:"pain", weight:[0,3,6,10],
+options:["Never","Rarely","Sometimes","Yes, often"],
+flagIf:["Yes, often"], flagMsg:"Pain that regularly stops your life isn't something to push through quietly. It can point to things like endometriosis that deserve a real medical work-up."},
+{id:"painkillers", type:"choice", label:"Do you rely on painkillers to get through your period?",
+feeds:"pain", weight:[0,4,7,10],
+options:["Never","Occasionally","Most periods","Every single period"]},
+{id:"flow", type:"choice", label:"How would you describe your flow?",
+feeds:"pain", weight:[1,3,6,10],
+options:["Light","Moderate","Heavy","Very heavy, with big clots"],
+flagIf:["Very heavy, with big clots"], flagMsg:"Very heavy bleeding (soaking a pad or tampon every hour, or passing clots bigger than a coin) can lead to low iron and has causes worth checking. Please mention it to a doctor."},
+{id:"spotting", type:"choice", label:"Do you bleed or spot between periods?",
+options:["No","Sometimes","Yes, often"],
+flagIf:["Yes, often"], flagMsg:"Regular bleeding between periods is worth getting looked at by a doctor to rule a few things out."},
+
+{section:"The luteal phase", sub:"The week or two before your period, where so much of the hard stuff lives."},
+{id:"mood", type:"slider", label:"Mood changes before your period", hint:"Irritability, low mood, feeling not like yourself.", feeds:"luteal", lo:"I feel steady", hi:"A different person"},
+{id:"anxiety", type:"slider", label:"Anxiety or feeling overwhelmed before your period", feeds:"luteal", lo:"Calm", hi:"Overwhelmed"},
+{id:"cravings", type:"slider", label:"Cravings before your period", hint:"For sweeter and higher-carb foods — completely normal, and there is a reason for it.", feeds:"luteal", lo:"None", hi:"Intense"},
+{id:"sweetindulge", type:"choice", label:"During your luteal phase or period, do you consume processed sweets, chocolate, candy, or junk food?",
+hint:"This is very important to know.",
+feeds:"luteal", weight:[0,3,6],
+options:["Rarely or never","Sometimes","Often, it's hard to resist"]},
+{id:"bloat", type:"slider", label:"Bloating before or during your period", hint:"A little is normal. A lot isn't fun.", feeds:"luteal", lo:"None", hi:"Very bloated"},
+{id:"breast", type:"slider", label:"Breast tenderness before your period", feeds:"luteal", lo:"None", hi:"Very tender"},
+{id:"lutfatigue", type:"slider", label:"Fatigue or energy crashes in the luteal phase", feeds:"luteal", lo:"Energy holds", hi:"Wiped out"},
+{id:"darkmood", type:"choice", label:"Before your period, do you ever feel very dark, hopeless, or like you can't cope?",
+hint:"An honest answer here matters. There's real, kind help for this.",
+options:["No","Sometimes","Yes"],
+careIf:["Sometimes","Yes"],
+careMsg:"Thank you for being honest — that takes courage. How you feel before your period does not have to be this way. You are already on the right path, and you absolutely can start feeling lighter, happier, and more like yourself again. ♡"},
+
+{section:"Across the whole month", sub:"Not just your period. How you feel living in your body day to day."},
+{id:"energy", type:"slider", label:"Your overall energy through the month", feeds:"vitality", lo:"Drained", hi:"Energized"},
+{id:"sleep", type:"slider", label:"How well do you sleep?", feeds:"vitality", lo:"Badly", hi:"Deeply"},
+{id:"confidence", type:"slider", label:"How good do you feel in your body?", feeds:"vitality", lo:"Not great", hi:"Really good"},
+{id:"skin", type:"choice", label:"Do breakouts track your cycle?",
+options:["No","Sometimes","Yes, clearly"]},
+
+{section:"Your daily foundations", sub:"The quiet inputs that decide whether your cycle runs smooth or rough. Be honest, this is where the real answers usually hide."},
+{id:"eatenough", type:"choice", label:"Do you eat enough to feel genuinely energized all day?",
+hint:"This is about fueling your body with nutrient-dense food, not about eating less or more.", feeds:"foundations",
+options:["Yes, mostly","Sometimes","I often run on empty"],
+flagIf:["I often run on empty"], flagFoundation:"underfueled"},
+{id:"meals", type:"choice", label:"When you feel genuinely hungry, what do you usually do?", hint:"This is different from dopamine hunger or eating out of boredom, we mean real hunger cues from your body.",
+feeds:"foundations",
+options:["I eat and nourish my body","I sometimes push through and delay eating","I often ignore my hunger and skip meals"],
+flagIf:["I often ignore my hunger and skip meals"], flagFoundation:"skipping"},
+{id:"protein", type:"choice", label:"Do most of your meals include a solid protein source?",
+feeds:"foundations",
+options:["Yes","Sometimes","Rarely"],
+flagIf:["Rarely"], flagFoundation:"protein"},
+{id:"training", type:"choice", label:"How many hard or intense workouts do you do per week?",
+feeds:"foundations",
+options:["None","1 to 2","3 to 4","5 or more"],
+flagIf:["5 or more"], flagFoundation:"overtraining"},
+{id:"underfuel", type:"choice", label:"Do you ever train hard while under-fueled?",
+hint:"Fasted, or after skipping meals.", feeds:"foundations",
+options:["Never","Sometimes","Often"],
+flagIf:["Often"], flagFoundation:"underfueled-training"},
+{id:"stress", type:"slider", label:"Your day-to-day stress level", feeds:"foundations", lo:"Calm", hi:"Maxed out", flagAbove:7, flagFoundation:"stress"},
+{id:"sleephrs", type:"choice", label:"How many hours do you sleep on an average night?",
+feeds:"foundations",
+options:["8 or more","7 to 8","6 to 7","Under 6"],
+flagIf:["Under 6","6 to 7"], flagFoundation:"sleep"},
+{id:"sun", type:"choice", label:"Do you get sunlight and time outdoors most days?",
+options:["Yes","Sometimes","Rarely"],
+flagIf:["Rarely"], flagFoundation:"sun"},
+
+{section:"What you actually want", sub:"So we're aiming at your goals, not generic ones."},
+{id:"dream", type:"text", label:"In your own words, what would a good cycle feel like to you?", hint:"There's no wrong answer."},
+{id:"goals", type:"multi", label:"Pick the things you most want to change.",
+hint:"Choose as many as feel true.",
+options:["Pain-free periods","A steady, calm mood","More energy","Less bloating","A regular cycle","Coming off the pill","Better sleep","Feeling confident in my body","Fewer cravings","Actually understanding my cycle"]}
+];
+
+const FOUNDATION_LABELS = {
+"underfueled":"You may not be eating enough. A cycle is the first thing your body switches off when it doesn't feel safe and well-fed. Fueling up is often step one.",
+"skipping":"Skipping and delaying meals keeps blood sugar (and your hormones) on a rollercoaster. Regular meals are an easy early win.",
+"protein":"Low protein leaves your body short on the raw materials it needs to build hormones. Worth adding to most meals.",
+"overtraining":"A high load of intense training, especially under-fueled, can push your cycle into hiding. We'd look at recovery and fuel before anything else.",
+"underfueled-training":"Training hard on empty tells your body it's in survival mode, and survival mode quiets your cycle. Fueling around workouts matters a lot.",
+"stress":"High everyday stress keeps cortisol up, and cortisol competes directly with your reproductive hormones. Calming the nervous system is real cycle work.",
+"sleep":"Short sleep alone can throw a cycle off. Protecting your sleep is one of the highest-leverage things you can do.",
+"sun":"Daily light and outdoor time help set the body clock that your hormones run on. An easy, free lever to pull."
+};
+
+const answers = {};
+const flags = []; /* medical red flags */
+const foundationFlags = []; /* lifestyle root-cause flags */
+
+const formEl = document.getElementById('form');
+let html = "";
+let secNum = 0;
+QUESTIONS.forEach((q)=>{
+if(q.section){
+secNum++;
+html += `<div class="section"><div class="sec-head"><span class="sec-num">${String(secNum).padStart(2,'0')}</span><span class="sec-title">${q.section}</span></div><p class="sec-sub">${q.sub}</p></div>`;
+return;
+}
+html += `<div class="q" data-q="${q.id}"><div class="q-label">${q.label}</div>`;
+if(q.hint) html += `<div class="q-hint">${q.hint}</div>`;
+if(q.type==="slider"){
+answers[q.id]=0;
+html += `<div class="slider-row"><input type="range" min="0" max="10" value="0" data-id="${q.id}"><span class="slider-val" id="val-${q.id}">0</span></div>`;
+html += `<div class="scale-ends"><span>${q.lo||'0'}</span><span>${q.hi||'10'}</span></div>`;
+} else if(q.type==="choice"||q.type==="multi"){
+if(q.type==="multi") answers[q.id]=[];
+html += `<div class="choices" data-id="${q.id}" data-multi="${q.type==='multi'}">`;
+q.options.forEach(opt=>{ html += `<span class="choice ${q.type==='multi'?'multi':''}" data-val="${opt}">${opt}</span>`; });
+html += `</div>`;
+if(q.careIf) html += `<div class="care-note" id="care-${q.id}"><strong>A note, just between us.</strong> ${q.careMsg}</div>`;
+} else if(q.type==="number"){
+html += `<input type="number" data-id="${q.id}" min="${q.min||0}" max="${q.max||120}" placeholder="${q.optional?'optional':''}">`;
+} else if(q.type==="shorttext"){
+html += `<input type="text" data-id="${q.id}" style="width:160px" placeholder="${q.placeholder||''}">`;
+} else if(q.type==="text"){
+answers[q.id]="";
+html += `<textarea data-id="${q.id}" placeholder="Type as much or as little as you like..."></textarea>`;
+}
+html += `</div>`;
+});
+formEl.innerHTML = html;
+
+/* ---- interactions ---- */
+formEl.addEventListener('input', e=>{
+const t=e.target;
+if(t.type==='range'){ answers[t.dataset.id]=+t.value; document.getElementById('val-'+t.dataset.id).textContent=t.value; }
+else if(t.type==='number'){ answers[t.dataset.id]= t.value===''? null : +t.value; }
+else if(t.type==='text'){ answers[t.dataset.id]=t.value; }
+else if(t.tagName==='TEXTAREA'){ answers[t.dataset.id]=t.value; }
+});
+formEl.addEventListener('click', e=>{
+const c=e.target.closest('.choice'); if(!c) return;
+const box=c.closest('.choices'); const id=box.dataset.id; const multi=box.dataset.multi==='true';
+if(multi){
+c.classList.toggle('on');
+answers[id]=[...box.querySelectorAll('.choice.on')].map(x=>x.dataset.val);
+} else {
+box.querySelectorAll('.choice').forEach(x=>x.classList.remove('on'));
+c.classList.add('on'); answers[id]=c.dataset.val;
+const q=QUESTIONS.find(x=>x.id===id);
+if(q && q.careIf){
+const note=document.getElementById('care-'+id);
+if(note) note.classList.toggle('show', q.careIf.includes(c.dataset.val));
+}
+}
+});
+
+/* ---- scoring ---- */
+function pct(v,max){ return Math.round(v/max*100); }
+function tagFor(score){ if(score<33) return ['tag-calm','Calm']; if(score<60) return ['tag-mid','Some work']; return ['tag-focus','Let\'s focus here']; }
+
+function compute(){
+flags.length=0; foundationFlags.length=0;
+let pain=0, painMax=0, lut=0, lutMax=0, vit=0, vitMax=0;
+
+QUESTIONS.forEach(q=>{
+if(!q.id) return;
+const a=answers[q.id];
+/* collect red flags + foundation flags */
+if(q.flagIf && q.flagIf.includes(a)){ if(q.flagMsg) flags.push(q.flagMsg); if(q.flagFoundation) foundationFlags.push(q.flagFoundation); }
+if(q.flagAbove!=null && typeof a==='number' && a>=q.flagAbove && q.flagFoundation) foundationFlags.push(q.flagFoundation);
+
+if(q.feeds==='pain'){
+if(q.type==='slider'){ pain+=a; painMax+=10; }
+else if(q.weight){ const i=q.options.indexOf(a); pain+= i>=0?q.weight[i]:0; painMax+=10; }
+} else if(q.feeds==='luteal'){
+lut+=a; lutMax+=10;
+} else if(q.feeds==='vitality'){
+vit+=a; vitMax+=10; /* high = good, so we invert at the end */
+}
+});
+
+const painScore = pct(pain,painMax);
+const lutScore = pct(lut,lutMax);
+const vitScore = 100 - pct(vit,vitMax); /* invert: low vitality => high "focus" */
+return {painScore, lutScore, vitScore};
+}
+
+function renderMeters(s){
+const meters=[
+{name:"Period pain & flow", v:s.painScore,
+read:{calm:"Your period itself looks manageable. That's a great base to protect.", mid:"There's room to take the edge off your period. Often very doable.", focus:"Your period is taking too much from you. This is exactly the kind of thing that can change."},
+tip:{calm:"One beginner step: keep magnesium-rich foods like avocado, coconut water, leafy greens, and quality animal proteins in your daily meals. These help maintain the calm you have already built.", mid:"One beginner step: try increasing anti-inflammatory foods like olive oil, oily fish, avocado, and leafy greens in the week before your period. They directly influence how much pain and heaviness you feel.", focus:"One beginner step: start with magnesium from foods like avocado, coconut water, and leafy greens, and reduce inflammatory foods like processed oils and sugar. These are the most direct levers for period pain and heavy flow."}},
+{name:"The luteal phase", v:s.lutScore,
+read:{calm:"Your pre-period window is fairly steady. Lovely.", mid:"The days before your period are a bit rocky. We can smooth those out.", focus:"The luteal phase is hitting you hard. This is one of the most changeable parts of the whole cycle."},
+tip:{calm:"One beginner step: when cravings show up in the luteal phase, let them guide you toward more nourishment. Sweet potato, roasted root vegetables, and a little raw honey or fruit are your body asking for real fuel, not junk.", mid:"One beginner step: your body genuinely needs more nourishment in the luteal phase. When cravings hit, reach for root vegetables like sweet potato and squash for carbs, and natural sweeteners like raw honey or ripe fruit instead of processed sugar.", focus:"One beginner step: reducing refined sugar in the luteal phase makes a real difference to PMS. When the cravings come, reach for root vegetables and natural sweetness from fruit, raw honey, or dates. Your body needs nourishment, not processed food."}},
+{name:"Whole-month vitality", v:s.vitScore,
+read:{calm:"Your energy, sleep and confidence are in a good place. Strong foundation.", mid:"Your day-to-day energy and confidence have room to grow.", focus:"You're running low across the month. Lifting this tends to lift everything else with it."},
+tip:{calm:"One beginner step: protect your sleep and keep eating enough throughout the day. These two are the non-negotiable anchors of everything else.", mid:"One beginner step: ask honestly whether you are eating enough during the day. Low energy is often under-fueling in disguise, especially for active women.", focus:"One beginner step: start with the three basics, nourishing food, 8 hours of sleep, and daily sunlight. These have the highest return on how you feel in your body, and everything builds from here."}}
+];
+let m="";
+meters.forEach((mt,i)=>{
+const [cls,word]=tagFor(mt.v);
+const key = mt.v<33?'calm':mt.v<60?'mid':'focus';
+const color = mt.v<33?'var(--sage)':mt.v<60?'#D2A53E':'var(--clay)';
+m+=`<div class="meter"><div class="meter-top"><span class="meter-name">${mt.name}</span><span class="meter-tag ${cls}">${word}</span></div>
+<div class="bar"><span id="bar-${i}" style="background:${color}"></span></div>
+<div class="meter-read">${mt.read[key]}</div>
+<div class="meter-read" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--line-soft);font-style:italic;color:var(--ink-faint)">${mt.tip[key]}</div></div>`;
+});
+document.getElementById('meters').innerHTML=m;
+requestAnimationFrame(()=>meters.forEach((mt,i)=>{document.getElementById('bar-'+i).style.width=mt.v+'%';}));
+}
+
+function renderFocus(s){
+/* doctor box */
+const dBox=document.getElementById('doctorBox');
+if(flags.length){
+document.getElementById('doctorText').textContent = flags.join(' ');
+dBox.classList.add('show');
+} else dBox.classList.remove('show');
+
+/* start-here narrative: foundations first if present, else worst score */
+let start="";
+const uniq=[...new Set(foundationFlags)];
+if(uniq.length){
+start="Before anything fancy, your body's basics need shoring up. Most cycle problems quietly start here, and the good news is these are the most fixable part:";
+} else {
+const top=[['period',s.painScore],['luteal',s.lutScore],['vitality',s.vitScore]].sort((a,b)=>b[1]-a[1])[0];
+if(top[1]<33) start="Honestly? Your foundations look solid and your cycle is in a good place. Our work is fine-tuning and protecting what's already working.";
+else if(top[0]==='period') start="Your daily foundations look fairly solid, so we'd point our attention straight at calming your period itself.";
+else if(top[0]==='luteal') start="Your daily foundations look fairly solid, so we'd focus on steadying the luteal phase, the days before your period.";
+else start="Your daily foundations look fairly solid, so we'd work on lifting your whole-month energy and confidence.";
+}
+document.getElementById('startText').textContent=start;
+
+const list=document.getElementById('flagList'); list.innerHTML="";
+uniq.forEach(f=>{ const li=document.createElement('li'); li.textContent=FOUNDATION_LABELS[f]; list.appendChild(li); });
+
+/* birth control note */
+const bcVal = answers.bc;
+const onBC = bcVal && bcVal !== 'No, none' && bcVal !== 'Not sure';
+const bcNote = document.getElementById('bcNote');
+if(onBC){
+bcNote.style.display='block';
+} else {
+bcNote.style.display='none';
+}
+}
+
+function buildSummary(s){
+const L=[];
+L.push("MY CYCLE CHECK-IN RESULTS");
+L.push("=========================");
+const a=answers;
+L.push(`Age: ${a.age??'-'} Birth control: ${a.bc||'-'}`);
+L.push(`Cycle: ${a.regular||'-'}` + (a.cyclelen?`, ~${a.cyclelen} days`:'') + (a.bleedlen?`, ${a.bleedlen} day bleed`:''));
+L.push("");
+L.push(`Period pain & flow: ${s.painScore}/100 ${tagFor(s.painScore)[1]}`);
+L.push(`Luteal phase: ${s.lutScore}/100 ${tagFor(s.lutScore)[1]}`);
+L.push(`Whole-month vitality: ${s.vitScore}/100 ${tagFor(s.vitScore)[1]}`);
+L.push("");
+L.push("Period: pain "+a.pain+"/10, painkillers "+(a.painkillers||'-')+", flow "+(a.flow||'-')+", stops daily life: "+(a.painstop||'-'));
+L.push("Luteal: mood "+a.mood+", anxiety "+a.anxiety+", cravings "+a.cravings+", bloat "+a.bloat+", breast "+a.breast+", fatigue "+a.lutfatigue+" (all /10)");
+L.push("Month: energy "+a.energy+", sleep "+a.sleep+", body confidence "+a.confidence+" (/10), cycle acne: "+(a.skin||'-'));
+L.push("Foundations: eat enough? "+(a.eatenough||'-')+" | meals "+(a.meals||'-')+" | protein "+(a.protein||'-')+" | intense workouts "+(a.training||'-')+" | trains under-fueled "+(a.underfuel||'-')+" | stress "+a.stress+"/10 | sleep "+(a.sleephrs||'-')+" | sun "+(a.sun||'-'));
+if(a.darkmood && a.darkmood!=='No') L.push("Pre-period dark/hopeless feelings: "+a.darkmood+" (flagged for professional support)");
+L.push("");
+const uniq=[...new Set(foundationFlags)];
+if(uniq.length){ L.push("ROOT-CAUSE FLAGS: "+uniq.join(", ")); }
+if(flags.length){ L.push(""); L.push("WORTH A DOCTOR: yes (see notes in the check-in)"); }
+L.push("");
+L.push("Goals: "+((a.goals&&a.goals.length)?a.goals.join(", "):'-'));
+if(a.dream) L.push("In her words: \""+a.dream+"\"");
+return L.join("\n");
+}
+
+let lastSummary="";
+document.getElementById('seeBtn').addEventListener('click', ()=>{
+const s=compute();
+renderMeters(s); renderFocus(s);
+lastSummary=buildSummary(s);
+document.getElementById('results').classList.add('show');
+document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+});
+document.getElementById('copyBtn').addEventListener('click', ()=>{
+navigator.clipboard.writeText(lastSummary).then(()=>{
+document.getElementById('copied').classList.add('show');
+setTimeout(()=>document.getElementById('copied').classList.remove('show'),3500);
+});
+const subject = encodeURIComponent("My Cycle Check-In Results");
+const body = encodeURIComponent(lastSummary);
+window.open("https://mail.google.com/mail/?view=cm&fs=1&to=agj.holisticliving@gmail.com&su="+subject+"&body="+body, "_blank");
+});
+document.getElementById('restartBtn').addEventListener('click', ()=>{ location.reload(); });
+</script>
+</body>
+</html>
