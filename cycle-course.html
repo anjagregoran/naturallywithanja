@@ -817,6 +817,11 @@ document.body.classList.remove('locked');
 document.getElementById('gateOverlay').style.display = 'none';
 }
 if(localStorage.getItem('cycleGuideUnlocked') === 'true'){ unlockCourse(); }
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('access') === 'paid-flourish'){
+localStorage.setItem('cycleGuideUnlocked', 'true');
+unlockCourse();
+}
 function checkGateCode(){
 const val = document.getElementById('gateInput').value.trim().toUpperCase();
 if(val === CYCLE_ACCESS_CODE){
