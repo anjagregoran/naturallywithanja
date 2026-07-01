@@ -17,7 +17,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .hero-inner,.hero-grid{position:relative;z-index:1}
 .hero-inner{max-width:1180px;width:100%;margin:0 auto;text-align:center;padding:0 40px}
 .hero-badge-row{text-align:center;margin-bottom:14px}
-.hero-grid{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;padding:0 40px 80px}
+.hero-grid{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;flex-wrap:wrap;gap:44px;padding:0 40px 80px}
 .hero-text{flex:1;min-width:300px;text-align:center;align-self:center}
 .hero-badge{display:inline-block;background:rgba(255,255,255,.5);border:1px solid rgba(155,137,180,.3);color:#7A6D8C;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:8px 22px;border-radius:50px}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,56px);font-weight:300;color:#4A3D5C;line-height:1.08;margin:0 0 36px;text-align:center}
@@ -31,10 +31,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .pillar::before{content:""}
 .hero-kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#B89040;text-align:center;display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
 .hero-kicker::before,.hero-kicker::after{content:'';display:block;width:52px;height:1px;background:#C9A860;flex-shrink:0}
-.hero-illus{max-width:540px;margin:10px auto 0;padding:0}
-.hero-illus img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect;animation:heroFade 1.6s ease .3s both}
-@keyframes heroFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:768px){.hero-illus{max-width:90%}}
+.hero-illus{flex:1;min-width:280px;max-width:460px;margin:0}
+.hero-illus img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect;animation:slideFromLeft 1.4s cubic-bezier(.22,.8,.32,1) both}
+@media(max-width:768px){.hero-illus{max-width:80%;margin:0 auto 4px}}
 .pillar-scroll{overflow:hidden;white-space:nowrap;margin-bottom:0}
 .pillar-track{display:inline-flex;gap:64px;animation:pillarScroll 28s linear infinite}
 .pillar-track span{font-size:12.5px;color:rgba(74,61,92,.85);letter-spacing:1.5px}
@@ -335,6 +334,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 </div>
 </div>
 <div class="hero-grid">
+<div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Mediterranean living illustration, Greek salad, coastal village, olives, and a shaded terrace"></div>
 <div class="hero-text">
 <h1>Naturally with <em style="font-style:italic;font-weight:400">Anja</em> <span class="olive-trigger" id="oliveBtn" title="click me ✨" style="display:inline-block;vertical-align:middle;margin-left:4px;cursor:pointer"><svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 2 Q20 4 22 7 Q24 5 24 2Z" fill="#5A4070"/><path d="M24 2 Q28 4 26 7 Q24 5 24 2Z" fill="#6B5080"/><path d="M24 7 Q30 8 34 12" stroke="#7A6090" stroke-width="1.4" stroke-linecap="round" fill="none"/><ellipse cx="36" cy="12" rx="6" ry="2.5" fill="#7A6890" transform="rotate(-20 36 12)"/><ellipse cx="30" cy="16" rx="5" ry="2" fill="#8A7A9E" transform="rotate(-15 30 16)"/><circle cx="18" cy="18" r="7" fill="#7A5E9A"/><circle cx="30" cy="22" r="6.5" fill="#6B5090"/><circle cx="12" cy="27" r="6.5" fill="#8A6EAA"/><circle cx="24" cy="30" r="6.5" fill="#7A5E9A"/><circle cx="36" cy="28" r="6" fill="#6B5090"/><circle cx="18" cy="38" r="6" fill="#8A6EAA"/><circle cx="30" cy="38" r="6" fill="#7A5E9A"/><circle cx="16" cy="19" r="2.2" fill="#C4AEDD" opacity="0.35"/></svg></span></h1>
 <div class="hero-taglines">
@@ -344,7 +344,6 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 </div>
 </div>
 </div>
-<div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Mediterranean living illustration, Greek salad, coastal village, olives, and a shaded terrace"></div>
 </div>
 
 <div class="section">
