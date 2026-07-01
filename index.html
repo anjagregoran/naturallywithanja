@@ -31,6 +31,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .pillar::before{content:""}
 .hero-kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#B89040;text-align:center;display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
 .hero-kicker::before,.hero-kicker::after{content:'';display:block;width:52px;height:1px;background:#C9A860;flex-shrink:0}
+.hero-illus{max-width:540px;margin:10px auto 0;padding:0}
+.hero-illus img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 9%,#000 91%,transparent),linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect;animation:heroFade 1.6s ease .3s both}
+@keyframes heroFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:768px){.hero-illus{max-width:90%}}
 .pillar-scroll{overflow:hidden;white-space:nowrap;margin-bottom:0}
 .pillar-track{display:inline-flex;gap:64px;animation:pillarScroll 28s linear infinite}
 .pillar-track span{font-size:12.5px;color:rgba(74,61,92,.85);letter-spacing:1.5px}
@@ -340,6 +344,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 </div>
 </div>
 </div>
+<div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Mediterranean living illustration, Greek salad, coastal village, olives, and a shaded terrace"></div>
 </div>
 
 <div class="section">
