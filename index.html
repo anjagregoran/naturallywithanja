@@ -49,7 +49,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .quote-track span{font-size:12.5px;color:rgba(245,237,216,.85);letter-spacing:1.5px}
 .quote-track span::before{content:'';margin-right:0}
 
-.section{max-width:1100px;margin:0 auto;padding:70px 24px;background:#FAF6EE}
+.section{max-width:1100px;margin:0 auto;padding:88px 24px;background:#FAF6EE}
+.cycle-seasons{max-width:1100px;margin:0 auto;padding:92px 24px 40px;text-align:center;background:#FAF6EE}
+.cycle-seasons .cs-kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--tc);margin-bottom:14px}
+.cycle-seasons h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(28px,4vw,44px);color:#3A2E28;margin-bottom:16px}
+.cycle-seasons .cs-sub{max-width:620px;margin:0 auto;font-size:15px;font-weight:300;color:var(--mid);line-height:1.8}
+.phase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px}
+.phase-card{background:#FDFAF4;border:1px solid rgba(201,162,39,.18);border-radius:16px;padding:32px 20px;transition:transform .3s,box-shadow .3s}
+.phase-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(120,100,160,.12)}
+.phase-moon{width:54px;height:54px;margin:0 auto 18px;display:block}
+.phase-name{font-family:'Cormorant Garamond',serif;font-size:23px;color:#3A2E28;line-height:1.1;margin-bottom:5px}
+.phase-days{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tc);margin-bottom:12px}
+.phase-season{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#B8901F;margin-bottom:10px}
+.phase-desc{font-size:12.5px;color:var(--mid);line-height:1.7;font-weight:300}
+@media(max-width:820px){.phase-grid{grid-template-columns:repeat(2,1fr);gap:16px}.cycle-seasons{padding:64px 16px 30px}}
+@media(max-width:440px){.phase-grid{grid-template-columns:1fr}}
 .sec-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--light);text-align:center;margin-bottom:10px}
 .path-kicker-line{text-align:center;font-size:11px;letter-spacing:7px;text-transform:uppercase;color:#C9A860;font-weight:400;margin-bottom:18px}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:300;font-style:italic;color:#3A2E28;text-align:center;margin-bottom:14px}
@@ -284,7 +298,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
       <a href="https://mail.google.com/mail/?view=cm&to=agj.holisticliving@gmail.com" target="_blank">✉ Contact Me</a>
     </div>
   </div>
-  <a href="#full-collective" onclick="closeMobileNav()">Complete Vitality Collective</a>
+  <a href="#living-library" onclick="closeMobileNav()">The Living Library</a>
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank">Join My Newsletter</a>
   <button onclick="closeMobileNav();document.getElementById('communityModal').style.display='flex'">Join My Community</button>
   <a href="https://linktr.ee/anjagregoranj" target="_blank">My Recommendations</a>
@@ -308,7 +322,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 <a href="https://mail.google.com/mail/?view=cm&to=agj.holisticliving@gmail.com" target="_blank" class="contact-link">&#9993; Contact Me</a>
 </div>
 </div>
-<a href="#full-collective" class="topnav-btn">Complete Vitality Collective</a>
+<a href="#living-library" class="topnav-btn">The Living Library</a>
 <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="topnav-btn">Join My Newsletter</a>
 <button class="topnav-btn" onclick="document.getElementById('communityModal').style.display='flex'">Join My Community</button>
 <a href="https://linktr.ee/anjagregoranj" target="_blank" class="topnav-btn">My Recommendations</a>
@@ -343,6 +357,42 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 <span>❀ Let's Get Energized, Vibrant &amp; Empowered Together</span>
 </div>
 </div>
+</div>
+</div>
+
+<div class="cycle-seasons">
+<div class="cs-kicker">The Rhythm Within You</div>
+<h2>Your Cycle Has Four Seasons</h2>
+<p class="cs-sub">Just like nature, your body flows through four phases every month. When you learn to live with them instead of against them, everything, your energy, mood, skin, and body, begins to feel easier.</p>
+<div class="phase-grid">
+  <div class="phase-card">
+    <svg class="phase-moon" viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="#6B5090"/><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(201,162,39,.35)" stroke-width="1"/></svg>
+    <div class="phase-name">Menstrual</div>
+    <div class="phase-days">Days 1-5</div>
+    <div class="phase-season">Your Winter</div>
+    <p class="phase-desc">Rest, reflect, and let go. Energy is low and inward, honor the need to slow down and be gentle with yourself.</p>
+  </div>
+  <div class="phase-card">
+    <svg class="phase-moon" viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="#E8D9A8"/><circle cx="19" cy="27" r="22" fill="#FDFAF4"/><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(201,162,39,.35)" stroke-width="1"/></svg>
+    <div class="phase-name">Follicular</div>
+    <div class="phase-days">Days 6-13</div>
+    <div class="phase-season">Your Spring</div>
+    <p class="phase-desc">Fresh energy rises. Creativity, planning, and new beginnings feel natural, a beautiful time to start things.</p>
+  </div>
+  <div class="phase-card">
+    <svg class="phase-moon" viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="#E8D9A8"/><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(201,162,39,.4)" stroke-width="1"/></svg>
+    <div class="phase-name">Ovulatory</div>
+    <div class="phase-days">Days 14-17</div>
+    <div class="phase-season">Your Summer</div>
+    <p class="phase-desc">You shine and connect. Confidence, magnetism, and social energy peak, this is your radiant, outward time.</p>
+  </div>
+  <div class="phase-card">
+    <svg class="phase-moon" viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="#E8D9A8"/><circle cx="35" cy="27" r="22" fill="#FDFAF4"/><circle cx="27" cy="27" r="22" fill="none" stroke="rgba(201,162,39,.35)" stroke-width="1"/></svg>
+    <div class="phase-name">Luteal</div>
+    <div class="phase-days">Days 18-28</div>
+    <div class="phase-season">Your Autumn</div>
+    <p class="phase-desc">Wind down and nourish. Energy turns inward, a time to tidy, prepare, and care for yourself deeply.</p>
+  </div>
 </div>
 </div>
 
@@ -394,7 +444,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 <div class="path-section" id="full-collective">
 <div class="path-kicker-line">Choose your path. Rebuild your life.</div>
 <div class="sec-title" style="margin-bottom:8px">Complete <span style="color:var(--gold)">Vitality</span> Collective</div>
-<p class="sec-sub" style="margin-bottom:14px">I help women to stop struggling with ongoing health challenges, start addressing the root cause of imbalance, and <span style="color:var(--gold)">reclaim their health naturally.</span></p>
+<p class="sec-sub" style="margin-bottom:14px">I help women to stop struggling with ongoing health challenges, start addressing the root cause of imbalance, and <span style="color:#B8901F">reclaim their health naturally.</span></p>
 <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:400;color:var(--mid);text-align:center;margin-bottom:50px">Wherever you are on your journey, you are always a student.</p>
 
 <div class="path-steps">
