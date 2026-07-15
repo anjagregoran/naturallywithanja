@@ -17,6 +17,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .hero-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap}
 .hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:#D4B84A;display:block}
 .hero-stat-label{font-size:12px;color:rgba(74,61,92,.6);letter-spacing:1.5px;text-transform:uppercase}
+.course-hero-split{display:flex;gap:56px;align-items:center;flex-wrap:wrap;max-width:1180px;margin:0 auto;text-align:left}
+.chs-video{flex:1 1 400px;min-width:280px}
+.chs-video video{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to right,transparent,#000 11%,#000 89%,transparent),linear-gradient(to bottom,transparent,#000 11%,#000 89%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 11%,#000 89%,transparent),linear-gradient(to bottom,transparent,#000 11%,#000 89%,transparent);mask-composite:intersect}
+.chs-text{flex:1 1 430px;min-width:290px}
+.chs-text h1{text-align:left;font-size:clamp(30px,3.8vw,50px);margin-bottom:18px}
+.chs-text .hero-sub{text-align:left;margin:0 0 24px;max-width:none;line-height:1.75}
+.chs-text .hero-stats{justify-content:flex-start;gap:0}
+.chs-text .hero-stats > div{padding:0 22px;border-left:1px solid rgba(74,61,92,.14)}
+.chs-text .hero-stats > div:first-child{padding-left:0;border-left:none}
+@media(max-width:860px){.course-hero-split{gap:28px}.chs-text h1,.chs-text .hero-sub{text-align:center}.chs-text .hero-stats{justify-content:center;gap:0}.chs-text .hero-stats > div{padding:0 14px}}
+@media(max-width:480px){.chs-text .hero-stats > div{padding:0 9px}.chs-text .hero-stats .hero-stat-num{font-size:26px}.chs-text .hero-stats .hero-stat-label{font-size:9px;letter-spacing:.8px}}
 .app{display:flex;max-width:1300px;margin:0 auto;padding:40px 20px;gap:32px}
 .sidebar{width:280px;flex-shrink:0;position:sticky;top:24px;align-self:flex-start;max-height:calc(100vh - 48px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--tcl) transparent}
 .sidebar::-webkit-scrollbar{width:3px}
@@ -151,21 +162,25 @@ body.locked > *:not(.gate-overlay){display:none}
 </div>
 </div>
 <div class="pb" id="pb"></div>
-<div style="max-width:1100px;margin:0 auto;padding:34px 20px 0">
-  <video autoplay muted loop playsinline poster="intro-poster.jpg" style="width:100%;height:auto;display:block;border-radius:20px;box-shadow:0 20px 50px rgba(120,100,160,.18)">
-    <source src="intro-video.mp4" type="video/mp4">
-  </video>
-</div>
 <div class="hero">
- <h1>Everything I Wish I Knew<br>About My <em style="color:#D4B84A;font-style:italic">Cycle &amp; Hormones</em></h1>
- <p class="hero-sub">A simple, ancestral guide to understanding your body, reclaiming your cycle, and finally feeling like yourself again.</p>
-  <p style="font-family:'DM Sans',sans-serif;font-size:11px;font-style:normal;font-weight:500;color:#4A3D5C;letter-spacing:3px;text-transform:uppercase;margin-bottom:40px">Unlearn and Finally Heal</p>
- <div class="hero-stats">
- <div><span class="hero-stat-num">20</span><span class="hero-stat-label">Modules</span></div>
- <div><span class="hero-stat-num">4</span><span class="hero-stat-label">Cycle Phases</span></div>
- <div><span class="hero-stat-num">30</span><span class="hero-stat-label">Day Plan</span></div>
- <div><span class="hero-stat-num">&#8734;</span><span class="hero-stat-label">Transformation</span></div>
+<div class="course-hero-split">
+ <div class="chs-video">
+  <video autoplay muted loop playsinline poster="intro-poster.jpg">
+   <source src="intro-video.mp4" type="video/mp4">
+  </video>
  </div>
+ <div class="chs-text">
+  <h1>Everything I Wish I Knew<br>About My <em style="color:#D4B84A;font-style:italic">Cycle &amp; Hormones</em></h1>
+  <p class="hero-sub">A simple, ancestral guide to understanding your body, reclaiming your cycle, and finally feeling like yourself again.</p>
+  <p style="font-family:'DM Sans',sans-serif;font-size:11px;font-style:normal;font-weight:500;color:#4A3D5C;letter-spacing:3px;text-transform:uppercase;margin-bottom:34px">Unlearn and Finally Heal</p>
+  <div class="hero-stats">
+   <div><span class="hero-stat-num">20</span><span class="hero-stat-label">Modules</span></div>
+   <div><span class="hero-stat-num">4</span><span class="hero-stat-label">Cycle Phases</span></div>
+   <div><span class="hero-stat-num">30</span><span class="hero-stat-label">Day Plan</span></div>
+   <div><span class="hero-stat-num">&#8734;</span><span class="hero-stat-label">Transformation</span></div>
+  </div>
+ </div>
+</div>
 </div>
 <div style="max-width:1300px;margin:0 auto;padding:40px 20px 0">
   <div style="background:linear-gradient(135deg,#F0EBF8 0%,#EEF3EB 100%);border-radius:20px;padding:48px 52px;border:1px solid rgba(155,137,180,.15);text-align:center">
