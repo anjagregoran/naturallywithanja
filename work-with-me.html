@@ -20,6 +20,14 @@ p{font-size:15.5px;color:rgba(74,61,92,.85);font-weight:300;margin:0 0 16px}
 .lead{max-width:640px;margin:0 auto 40px;text-align:center}
 .lead p{margin-bottom:18px}
 .closing{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#3A2E28;text-align:center;max-width:600px;margin:0 auto 44px}
+.wm-split{display:flex;gap:50px;align-items:flex-start;flex-wrap:wrap;max-width:1080px;margin:0 auto}
+.wm-left{flex:1 1 380px;min-width:290px}
+.wm-right{flex:1 1 430px;min-width:300px}
+.wm-left .kicker,.wm-left h1{text-align:left}
+.wm-left .lead{text-align:left;max-width:none;margin:0}
+.wm-left .lead p{margin-bottom:16px}
+.wm-right .closing{text-align:left;max-width:none;margin:0 0 22px}
+@media(max-width:860px){.wm-split{gap:34px}}
 .call-card{background:#FFFFFF;border:1px solid #E8D9A8;border-radius:16px;padding:34px 32px;margin-bottom:24px}
 .call-card h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:#3A2E28;margin:0 0 14px}
 .call-card .strong{font-weight:500;color:var(--deep);margin-bottom:12px}
@@ -33,6 +41,8 @@ footer a{color:inherit}
 <body>
 <div class="wrap">
 <a href="index.html" class="back">&larr; Back to Naturally with Anja</a>
+<div class="wm-split">
+<div class="wm-left">
 <div class="kicker">For those who don't want to figure it out alone and want results, speed, and clarity</div>
 <h1>You don't just learn, you <u>transform</u></h1>
 <div class="lead">
@@ -42,6 +52,8 @@ footer a{color:inherit}
 <p>Instead of guessing, we identify the root cause of what's really going on, whether it's your digestion, hormones, energy, or overall balance. From there, you receive clear, intentional steps tailored to your body and lifestyle, so you know exactly what to do and why.</p>
 <p>You're no longer trying random solutions, you're moving with clarity, confidence, and purpose.</p>
 </div>
+</div>
+<div class="wm-right">
 <p class="closing">The deepest level of access, personalized entirely to you. Not sure which one is right for you? Here is what each one actually includes.</p>
 
 <div class="call-card">
@@ -56,6 +68,8 @@ footer a{color:inherit}
 <p>This first 1:1 session is a dedicated space to get to know you. We will deeply look at your current lifestyle, daily habits, internal and external environment, and the symptoms that you are suffering from and want to resolve. We will also map out your detailed health and body goals. The focus is on understanding you as a whole person, not just a collection of isolated issues. I want to listen to you, collect the valuable information we need for your health transformation, and build a strong foundation for future work.</p>
 <p class="note">This is a paid call (Call 1 of the process). We go over: 1. Your internal and external environment (body, habits, home) and 2. What you want to achieve. Once we've connected here, we'll discuss the right coaching package for you, 3 months or 6 months, along with the pricing for each.</p>
 <a href="https://cal.com/mediterranean.anja/personalcoaching" target="_blank" class="btn">Book the Deep Dive Session</a>
+</div>
+</div>
 </div>
 
 </div>
