@@ -19,22 +19,23 @@ body{font-family:'DM Sans',sans-serif;background:#FAF6EE;color:var(--deep);line-
 .cycle-split-left{flex:1 1 300px;min-width:248px}
 .cycle-split-left .sec-title{text-align:left;margin-bottom:22px}
 .cycle-split-right{flex:1 1 340px;min-width:268px}
-.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;border:1px solid rgba(201,162,39,.25);border-radius:4px;overflow:hidden}
-.course-card{background:#FDFAF4;border:none;border-radius:0;box-shadow:none;transition:background .3s;display:flex;flex-direction:column}
-.course-card:hover{background:#FDF6E3}
-.cc-top{padding:44px 36px 0;flex:1}
-.cc-badge{display:block;font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:rgba(58,46,40,.15);line-height:1;margin-bottom:8px;letter-spacing:-1px}
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));border:1px solid rgba(184,144,31,.18);border-radius:20px;overflow:hidden;background:#FDFAF4;box-shadow:0 50px 100px -48px rgba(74,61,92,.5),0 10px 26px -14px rgba(74,61,92,.16)}
+.course-card{background:#FDFAF4;border:none;border-radius:0;box-shadow:none;display:flex;flex-direction:column}
+.cc-top{padding:50px 42px 0;flex:1}
+.cc-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;line-height:1;margin-bottom:20px;padding:7px 13px;border:1px solid rgba(184,144,31,.35);border-radius:50px}
 .cc-icon{font-size:22px;margin-bottom:18px;opacity:1}
 .cc-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:#3A2E28;margin-bottom:14px;line-height:1.2}
 .cc-desc{font-size:14px;color:var(--mid);margin-bottom:24px;line-height:1.75;font-weight:300}
 .cc-meta{display:flex;flex-direction:column;gap:7px;font-size:11.5px;color:#A89870;margin-bottom:22px;letter-spacing:.5px}
 .cc-meta span{display:flex;align-items:center;gap:8px}
 .cc-meta span::before{content:'\2014';color:#3A2E28;font-size:10px}
-.cc-bottom{padding:24px 36px 36px;border-top:1px solid rgba(58,46,40,.1)}
-.cc-btn{display:block;text-align:center;padding:14px;border-radius:2px;text-decoration:none;font-size:12px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;transition:all .25s;font-family:'Cormorant Garamond',serif}
-.cc-btn.primary{background:transparent;color:#3A2E28;border:1px solid rgba(58,46,40,.35)}
-.cc-btn.primary:hover{background:#3A2E28;color:#F5EDD8;border-color:#3A2E28}
-.cc-price{font-family:'Cormorant Garamond',serif;font-size:32px;color:#3A2E28;font-weight:300;margin-bottom:8px;letter-spacing:-0.5px}
+.cc-bottom{padding:28px 42px 42px;border-top:1px solid rgba(58,46,40,.08)}
+.cc-btn{display:block;text-align:center;padding:18px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;transition:all .3s;font-family:'DM Sans',sans-serif}
+.cc-btn.primary{background:#3A2E28;color:#F5EDD8;border:1px solid #3A2E28;box-shadow:0 16px 34px -14px rgba(58,46,40,.6)}
+.cc-btn.primary:hover{background:#2b221d;transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(58,46,40,.65)}
+.cc-price{font-family:'Cormorant Garamond',serif;font-size:40px;color:#3A2E28;font-weight:300;margin-bottom:6px;letter-spacing:-1px}
+.cc-invest{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#A89870;margin-bottom:4px}
+.cc-trust{text-align:center;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#B4A88E;margin-top:14px}
 footer{text-align:center;font-size:12px;color:var(--mid);padding:32px 20px;border-top:1px solid var(--bdr)}
 footer a{color:inherit}
 @media(max-width:820px){.cycle-split{gap:30px}}
@@ -78,9 +79,11 @@ footer a{color:inherit}
 <div class="cc-meta"><span>Unlearn the myths about the female body</span><span>Ditch ibuprofen</span><span>Become your own cycle expert</span><span>Finally feel confident, healthy, and alive again</span></div>
 </div>
 <div class="cc-bottom">
+<div class="cc-invest">One-time payment</div>
 <div class="cc-price">$39</div>
-<a href="https://buy.stripe.com/9B6dRbeGpgyd22IcBT6wE01" target="_blank" class="cc-btn primary">Get the course</a>
-<a href="cycle-course.html" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#A89870;text-decoration:none;letter-spacing:1px">Already purchased? Enter your code here</a>
+<a href="https://buy.stripe.com/9B6dRbeGpgyd22IcBT6wE01" target="_blank" class="cc-btn primary">Get the Course</a>
+<div class="cc-trust">Instant access · Yours forever · Secure checkout</div>
+<a href="cycle-course.html" style="display:block;text-align:center;margin-top:16px;font-size:12px;color:#A89870;text-decoration:none;letter-spacing:1px">Already purchased? Enter your code here</a>
 </div>
 </div>
 </div>
