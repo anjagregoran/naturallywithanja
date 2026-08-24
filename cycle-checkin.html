@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cycle Check-In</title>
+<title>Provjera ciklusa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -125,43 +125,43 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 <div class="wrap">
 
 <header>
-<div class="kicker">The Cycle Check-In</div>
-<h1>Let's see where your <em>cycle</em> is really at</h1>
-<p class="enemy">You've been told a miserable period is just part of being a woman. It isn't.</p>
+<div class="kicker">Provjera ciklusa</div>
+<h1>Pogledajmo gdje je zapravo tvoj <em>ciklus</em></h1>
+<p class="enemy">Govorili su ti da su bolne menstruacije jednostavno dio toga da si žena. Nisu.</p>
 </header>
 
 <div id="form"></div>
 
 <div class="submit-zone">
-<button class="btn" id="seeBtn">See my cycle snapshot</button>
+<button class="btn" id="seeBtn">Prikaži moj pregled ciklusa</button>
 </div>
 
 <div id="results">
 <div class="res-head">
-<h2>Your cycle snapshot</h2>
-<p>Here's where things look calm, and where your body is asking for some attention.</p>
+<h2>Tvoj pregled ciklusa</h2>
+<p>Evo gdje sve izgleda mirno, a gdje tvoje tijelo traži malo pažnje.</p>
 </div>
 <div id="meters"></div>
 <div class="doctor-box" id="doctorBox">
-<h3>One thing worth a doctor's eyes</h3>
+<h3>Jedna stvar vrijedna liječničkog pregleda</h3>
 <p id="doctorText"></p>
 </div>
 <div class="focus-box">
-<h3>Where I'd start with you</h3>
+<h3>Gdje bih ja krenula s tobom</h3>
 <div class="start" id="startText"></div>
 <ul class="flag-list" id="flagList"></ul>
-<div id="bcNote" style="display:none;margin-top:16px;padding:14px 16px;background:var(--sage-soft);border-radius:12px;font-size:14px;color:var(--sage-deep);line-height:1.6"><strong>A note on hormonal birth control.</strong> Since you are currently using hormonal contraception, it is worth knowing that it works by suppressing your natural hormones and replacing them with synthetic ones. You do not get a real period on it, just a withdrawal bleed. If it is not medically necessary for you, it may be worth slowly and gently exploring what coming off it could look like, with proper support. Your natural cycle holds a lot of information about your health, and reconnecting with it can be genuinely life-changing.</div>
-<p style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:14.5px;color:var(--ink-soft);line-height:1.7;font-style:italic">You just got a few honest tips on where to start. If you'd love more detailed feedback or personalized coaching, send me your results by clicking the button below, and I'll get back to you myself. &#9825;</p>
+<div id="bcNote" style="display:none;margin-top:16px;padding:14px 16px;background:var(--sage-soft);border-radius:12px;font-size:14px;color:var(--sage-deep);line-height:1.6"><strong>Napomena o hormonskoj kontracepciji.</strong> Budući da trenutno koristiš hormonsku kontracepciju, vrijedno je znati da ona djeluje tako da potiskuje tvoje prirodne hormone i zamjenjuje ih sintetskima. Na njoj nemaš pravu menstruaciju, već samo krvarenje zbog prestanka hormona. Ako ti nije medicinski nužna, možda bi bilo vrijedno polako i nježno istražiti kako bi izgledao izlazak s nje, uz odgovarajuću podršku. Tvoj prirodni ciklus nosi mnogo informacija o tvom zdravlju, i ponovno povezivanje s njim može biti uistinu životno promjenjivo.</div>
+<p style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:14.5px;color:var(--ink-soft);line-height:1.7;font-style:italic">Upravo si dobila nekoliko iskrenih savjeta o tome gdje krenuti. Ako želiš detaljniju povratnu informaciju ili personalizirani coaching, pošalji mi svoje rezultate klikom na gumb ispod, i osobno ću ti se javiti. &#9825;</p>
 </div>
 <div class="res-actions">
-<button class="btn" id="copyBtn">Send my results to Anja</button>
-<button class="btn ghost" id="restartBtn">Start over</button>
+<button class="btn" id="copyBtn">Pošalji moje rezultate Anji</button>
+<button class="btn ghost" id="restartBtn">Počni ispočetka</button>
 </div>
-<p id="copied">Copied, and your email app should be opening. Just hit send!</p>
+<p id="copied">Kopirano, i tvoja bi se e-mail aplikacija trebala otvarati. Samo pritisni pošalji!</p>
 </div>
 
 <footer>
-This check-in is for education and self-understanding, not medical diagnosis or treatment. It doesn't replace care from a doctor. If anything here feels serious or scary, please talk to a medical professional.
+Ova provjera služi edukaciji i boljem razumijevanju sebe, a ne medicinskoj dijagnozi ili liječenju. Ne zamjenjuje skrb liječnika. Ako ti se išta ovdje čini ozbiljno ili zabrinjavajuće, molim te razgovaraj s medicinskim stručnjakom.
 </footer>
 
 </div>
@@ -174,104 +174,104 @@ types: slider | choice | multi | number | text
 pain | luteal | vitality(reverse) | foundations
 ============================================================ */
 const QUESTIONS = [
-{section:"The basics", sub:"A quick picture of your cycle as it runs right now."},
-{id:"age", type:"number", label:"How old are you?", hint:"Helps frame everything else.", min:10, max:60},
-{id:"bc", type:"choice", label:"Are you using hormonal birth control right now?",
-hint:"The pill, hormonal IUD, implant, etc. mask your natural cycle, so this changes how we read everything.",
-options:["No, none","The pill","Hormonal IUD","Implant or injection","Patch or ring","Not sure"]},
-{id:"regular", type:"choice", label:"How regular is your cycle?",
-options:["Very regular","Mostly regular","Unpredictable","I don't track it","I'm not getting a period right now"],
-flagIf:["I'm not getting a period right now"], flagMsg:"Missing periods (when not on birth control or pregnant) is your body's signal that something's off, often under-fueling, stress, or over-training. Worth a doctor's check."},
-{id:"cyclelen", type:"shorttext", label:"Roughly how many days from the start of one period to the next?", hint:"A typical range is around 24 to 35 days. If unsure, write \"/\".", placeholder:"e.g. 28 days, or /", optional:true},
-{id:"bleedlen", type:"shorttext", label:"How many days does your bleed usually last?", hint:"If unsure, write \"/\".", placeholder:"e.g. 5 days, or /", optional:true},
+{section:"Osnove", sub:"Brza slika tvog ciklusa kakav je sada."},
+{id:"age", type:"number", label:"Koliko imaš godina?", hint:"Pomaže staviti sve ostalo u kontekst.", min:10, max:60},
+{id:"bc", type:"choice", label:"Koristiš li trenutno hormonsku kontracepciju?",
+hint:"Pilula, hormonski IUD (spirala), implantat i slično prikrivaju tvoj prirodni ciklus, pa to mijenja kako sve tumačimo.",
+options:["Ne, nikakvu","Pilulu","Hormonski IUD (spiralu)","Implantat ili injekciju","Naljepak ili prsten","Nisam sigurna"]},
+{id:"regular", type:"choice", label:"Koliko je tvoj ciklus redovit?",
+options:["Vrlo redovit","Uglavnom redovit","Nepredvidiv","Ne pratim ga","Trenutno nemam menstruaciju"],
+flagIf:["Trenutno nemam menstruaciju"], flagMsg:"Izostanak menstruacije (kada nisi na kontracepciji niti trudna) signal je tvog tijela da nešto nije u redu, često nedovoljno hranjenje, stres ili pretreniranost. Vrijedi provjeriti kod liječnika."},
+{id:"cyclelen", type:"shorttext", label:"Otprilike koliko dana prođe od početka jedne menstruacije do sljedeće?", hint:"Uobičajen raspon je oko 24 do 35 dana. Ako nisi sigurna, napiši \"/\".", placeholder:"npr. 28 dana, ili /", optional:true},
+{id:"bleedlen", type:"shorttext", label:"Koliko dana obično traje tvoje krvarenje?", hint:"Ako nisi sigurna, napiši \"/\".", placeholder:"npr. 5 dana, ili /", optional:true},
 
-{section:"Your period", sub:"The bleed itself, pain and flow."},
-{id:"pain", type:"slider", label:"How intense is your period pain?", feeds:"pain", lo:"None at all", hi:"Unbearable"},
-{id:"painstop", type:"choice", label:"Does period pain ever stop you doing normal things?",
-hint:"School, work, training, plans with people.", feeds:"pain", weight:[0,3,6,10],
-options:["Never","Rarely","Sometimes","Yes, often"],
-flagIf:["Yes, often"], flagMsg:"Pain that regularly stops your life isn't something to push through quietly. It can point to things like endometriosis that deserve a real medical work-up."},
-{id:"painkillers", type:"choice", label:"Do you rely on painkillers to get through your period?",
+{section:"Tvoja menstruacija", sub:"Samo krvarenje, bol i obilnost."},
+{id:"pain", type:"slider", label:"Koliko je jaka tvoja menstrualna bol?", feeds:"pain", lo:"Nimalo", hi:"Nepodnošljiva"},
+{id:"painstop", type:"choice", label:"Zaustavlja li te menstrualna bol ikad u obavljanju normalnih stvari?",
+hint:"Škola, posao, trening, planovi s ljudima.", feeds:"pain", weight:[0,3,6,10],
+options:["Nikad","Rijetko","Ponekad","Da, često"],
+flagIf:["Da, često"], flagMsg:"Bol koja ti redovito zaustavlja život nije nešto što treba tiho izdržavati. Može upućivati na stvari poput endometrioze koje zaslužuju pravu medicinsku obradu."},
+{id:"painkillers", type:"choice", label:"Oslanjaš li se na lijekove protiv bolova da preživiš menstruaciju?",
 feeds:"pain", weight:[0,4,7,10],
-options:["Never","Occasionally","Most periods","Every single period"]},
-{id:"flow", type:"choice", label:"How would you describe your flow?",
+options:["Nikad","Povremeno","Većinu menstruacija","Baš svaku menstruaciju"]},
+{id:"flow", type:"choice", label:"Kako bi opisala svoju obilnost krvarenja?",
 feeds:"pain", weight:[1,3,6,10],
-options:["Light","Moderate","Heavy","Very heavy, with big clots"],
-flagIf:["Very heavy, with big clots"], flagMsg:"Very heavy bleeding (soaking a pad or tampon every hour, or passing clots bigger than a coin) can lead to low iron and has causes worth checking. Please mention it to a doctor."},
-{id:"spotting", type:"choice", label:"Do you bleed or spot between periods?",
-options:["No","Sometimes","Yes, often"],
-flagIf:["Yes, often"], flagMsg:"Regular bleeding between periods is worth getting looked at by a doctor to rule a few things out."},
+options:["Slabo","Umjereno","Obilno","Vrlo obilno, s velikim ugrušcima"],
+flagIf:["Vrlo obilno, s velikim ugrušcima"], flagMsg:"Vrlo obilno krvarenje (natapanje uloška ili tampona svaki sat, ili ugrušci veći od kovanice) može dovesti do niskog željeza i ima uzroke koje vrijedi provjeriti. Molim te spomeni to liječniku."},
+{id:"spotting", type:"choice", label:"Krvariš li ili imaš li iscjedak između menstruacija?",
+options:["Ne","Ponekad","Da, često"],
+flagIf:["Da, često"], flagMsg:"Redovito krvarenje između menstruacija vrijedi provjeriti kod liječnika kako biste isključili nekoliko stvari."},
 
-{section:"The luteal phase", sub:"The week or two before your period, where so much of the hard stuff lives."},
-{id:"mood", type:"slider", label:"Mood changes before your period", hint:"Irritability, low mood, feeling not like yourself.", feeds:"luteal", lo:"I feel steady", hi:"A different person"},
-{id:"anxiety", type:"slider", label:"Anxiety or feeling overwhelmed before your period", feeds:"luteal", lo:"Calm", hi:"Overwhelmed"},
-{id:"cravings", type:"slider", label:"Cravings before your period", hint:"For sweeter and higher-carb foods — completely normal, and there is a reason for it.", feeds:"luteal", lo:"None", hi:"Intense"},
-{id:"sweetindulge", type:"choice", label:"During your luteal phase or period, do you consume processed sweets, chocolate, candy, or junk food?",
-hint:"This is very important to know.",
+{section:"Lutealna faza", sub:"Tjedan ili dva prije menstruacije, gdje živi mnogo onoga teškog."},
+{id:"mood", type:"slider", label:"Promjene raspoloženja prije menstruacije", hint:"Razdražljivost, potišteno raspoloženje, osjećaj da nisi svoja.", feeds:"luteal", lo:"Osjećam se stabilno", hi:"Kao druga osoba"},
+{id:"anxiety", type:"slider", label:"Tjeskoba ili osjećaj preplavljenosti prije menstruacije", feeds:"luteal", lo:"Smireno", hi:"Preplavljeno"},
+{id:"cravings", type:"slider", label:"Žudnje za hranom prije menstruacije", hint:"Za slađom hranom i onom bogatijom ugljikohidratima, potpuno normalno, i za to postoji razlog.", feeds:"luteal", lo:"Nikakve", hi:"Vrlo jake"},
+{id:"sweetindulge", type:"choice", label:"Tijekom lutealne faze ili menstruacije, konzumiraš li procesirane slatkiše, čokoladu, bombone ili junk hranu?",
+hint:"Ovo je vrlo važno znati.",
 feeds:"luteal", weight:[0,3,6],
-options:["Rarely or never","Sometimes","Often, it's hard to resist"]},
-{id:"bloat", type:"slider", label:"Bloating before or during your period", hint:"A little is normal. A lot isn't fun.", feeds:"luteal", lo:"None", hi:"Very bloated"},
-{id:"breast", type:"slider", label:"Breast tenderness before your period", feeds:"luteal", lo:"None", hi:"Very tender"},
-{id:"lutfatigue", type:"slider", label:"Fatigue or energy crashes in the luteal phase", feeds:"luteal", lo:"Energy holds", hi:"Wiped out"},
-{id:"darkmood", type:"choice", label:"Before your period, do you ever feel very dark, hopeless, or like you can't cope?",
-hint:"An honest answer here matters. There's real, kind help for this.",
-options:["No","Sometimes","Yes"],
-careIf:["Sometimes","Yes"],
-careMsg:"Thank you for being honest — that takes courage. How you feel before your period does not have to be this way. You are already on the right path, and you absolutely can start feeling lighter, happier, and more like yourself again. ♡"},
+options:["Rijetko ili nikad","Ponekad","Često, teško je odoljeti"]},
+{id:"bloat", type:"slider", label:"Napuhnutost prije ili tijekom menstruacije", hint:"Malo je normalno. Puno nije zabavno.", feeds:"luteal", lo:"Nimalo", hi:"Vrlo napuhnuto"},
+{id:"breast", type:"slider", label:"Osjetljivost grudi prije menstruacije", feeds:"luteal", lo:"Nimalo", hi:"Vrlo osjetljive"},
+{id:"lutfatigue", type:"slider", label:"Umor ili padovi energije u lutealnoj fazi", feeds:"luteal", lo:"Energija se drži", hi:"Potpuno iscrpljena"},
+{id:"darkmood", type:"choice", label:"Osjećaš li se prije menstruacije ikad vrlo mračno, beznadno ili kao da se ne možeš nositi?",
+hint:"Iskren odgovor ovdje je važan. Za ovo postoji prava, nježna pomoć.",
+options:["Ne","Ponekad","Da"],
+careIf:["Ponekad","Da"],
+careMsg:"Hvala ti na iskrenosti, to zahtijeva hrabrost. To kako se osjećaš prije menstruacije ne mora biti ovakvo. Već si na pravom putu, i itekako se možeš početi osjećati lakše, sretnije i više kao svoja. ♡"},
 
-{section:"Across the whole month", sub:"Not just your period. How you feel living in your body day to day."},
-{id:"energy", type:"slider", label:"Your overall energy through the month", feeds:"vitality", lo:"Drained", hi:"Energized"},
-{id:"sleep", type:"slider", label:"How well do you sleep?", feeds:"vitality", lo:"Badly", hi:"Deeply"},
-{id:"confidence", type:"slider", label:"How good do you feel in your body?", feeds:"vitality", lo:"Not great", hi:"Really good"},
-{id:"skin", type:"choice", label:"Do breakouts track your cycle?",
-options:["No","Sometimes","Yes, clearly"]},
+{section:"Kroz cijeli mjesec", sub:"Ne samo tvoja menstruacija. Kako se osjećaš živeći u svom tijelu iz dana u dan."},
+{id:"energy", type:"slider", label:"Tvoja ukupna energija kroz mjesec", feeds:"vitality", lo:"Iscrpljeno", hi:"Puno energije"},
+{id:"sleep", type:"slider", label:"Koliko dobro spavaš?", feeds:"vitality", lo:"Loše", hi:"Duboko"},
+{id:"confidence", type:"slider", label:"Koliko se dobro osjećaš u svom tijelu?", feeds:"vitality", lo:"Ne baš dobro", hi:"Stvarno dobro"},
+{id:"skin", type:"choice", label:"Prate li akne tvoj ciklus?",
+options:["Ne","Ponekad","Da, jasno"]},
 
-{section:"Your daily foundations", sub:"The quiet inputs that decide whether your cycle runs smooth or rough. Be honest, this is where the real answers usually hide."},
-{id:"eatenough", type:"choice", label:"Do you eat enough to feel genuinely energized all day?",
-hint:"This is about fueling your body with nutrient-dense food, not about eating less or more.", feeds:"foundations",
-options:["Yes, mostly","Sometimes","I often run on empty"],
-flagIf:["I often run on empty"], flagFoundation:"underfueled"},
-{id:"meals", type:"choice", label:"When you feel genuinely hungry, what do you usually do?", hint:"This is different from dopamine hunger or eating out of boredom, we mean real hunger cues from your body.",
+{section:"Tvoji svakodnevni temelji", sub:"Tihi unosi koji odlučuju hoće li tvoj ciklus teći glatko ili teško. Budi iskrena, ovdje se obično kriju pravi odgovori."},
+{id:"eatenough", type:"choice", label:"Jedeš li dovoljno da se osjećaš uistinu energično cijeli dan?",
+hint:"Ovo je o hranjenju tvog tijela hranom bogatom nutrijentima, a ne o tome da jedeš manje ili više.", feeds:"foundations",
+options:["Da, uglavnom","Ponekad","Često sam na praznom"],
+flagIf:["Često sam na praznom"], flagFoundation:"underfueled"},
+{id:"meals", type:"choice", label:"Kada osjetiš pravu glad, što obično napraviš?", hint:"Ovo se razlikuje od dopaminske gladi ili jedenja iz dosade, mislimo na prave signale gladi iz tvog tijela.",
 feeds:"foundations",
-options:["I eat and nourish my body","I sometimes push through and delay eating","I often ignore my hunger and skip meals"],
-flagIf:["I often ignore my hunger and skip meals"], flagFoundation:"skipping"},
-{id:"protein", type:"choice", label:"Do most of your meals include a solid protein source?",
+options:["Jedem i nahranim svoje tijelo","Ponekad izdržim i odgodim jelo","Često ignoriram glad i preskačem obroke"],
+flagIf:["Često ignoriram glad i preskačem obroke"], flagFoundation:"skipping"},
+{id:"protein", type:"choice", label:"Sadrži li većina tvojih obroka čvrst izvor proteina?",
 feeds:"foundations",
-options:["Yes","Sometimes","Rarely"],
-flagIf:["Rarely"], flagFoundation:"protein"},
-{id:"training", type:"choice", label:"How many hard or intense workouts do you do per week?",
+options:["Da","Ponekad","Rijetko"],
+flagIf:["Rijetko"], flagFoundation:"protein"},
+{id:"training", type:"choice", label:"Koliko teških ili intenzivnih treninga radiš tjedno?",
 feeds:"foundations",
-options:["None","1 to 2","3 to 4","5 or more"],
-flagIf:["5 or more"], flagFoundation:"overtraining"},
-{id:"underfuel", type:"choice", label:"Do you ever train hard while under-fueled?",
-hint:"Fasted, or after skipping meals.", feeds:"foundations",
-options:["Never","Sometimes","Often"],
-flagIf:["Often"], flagFoundation:"underfueled-training"},
-{id:"stress", type:"slider", label:"Your day-to-day stress level", feeds:"foundations", lo:"Calm", hi:"Maxed out", flagAbove:7, flagFoundation:"stress"},
-{id:"sleephrs", type:"choice", label:"How many hours do you sleep on an average night?",
+options:["Nijedan","1 do 2","3 do 4","5 ili više"],
+flagIf:["5 ili više"], flagFoundation:"overtraining"},
+{id:"underfuel", type:"choice", label:"Treniraš li ikad teško dok si nedovoljno nahranjena?",
+hint:"Natašte, ili nakon preskočenih obroka.", feeds:"foundations",
+options:["Nikad","Ponekad","Često"],
+flagIf:["Često"], flagFoundation:"underfueled-training"},
+{id:"stress", type:"slider", label:"Tvoja svakodnevna razina stresa", feeds:"foundations", lo:"Smireno", hi:"Na maksimumu", flagAbove:7, flagFoundation:"stress"},
+{id:"sleephrs", type:"choice", label:"Koliko sati spavaš u prosjeku po noći?",
 feeds:"foundations",
-options:["8 or more","7 to 8","6 to 7","Under 6"],
-flagIf:["Under 6","6 to 7"], flagFoundation:"sleep"},
-{id:"sun", type:"choice", label:"Do you get sunlight and time outdoors most days?",
-options:["Yes","Sometimes","Rarely"],
-flagIf:["Rarely"], flagFoundation:"sun"},
+options:["8 ili više","7 do 8","6 do 7","Manje od 6"],
+flagIf:["Manje od 6","6 do 7"], flagFoundation:"sleep"},
+{id:"sun", type:"choice", label:"Provodiš li većinu dana na suncu i vani?",
+options:["Da","Ponekad","Rijetko"],
+flagIf:["Rijetko"], flagFoundation:"sun"},
 
-{section:"What you actually want", sub:"So we're aiming at your goals, not generic ones."},
-{id:"dream", type:"text", label:"In your own words, what would a good cycle feel like to you?", hint:"There's no wrong answer."},
-{id:"goals", type:"multi", label:"Pick the things you most want to change.",
-hint:"Choose as many as feel true.",
-options:["Pain-free periods","A steady, calm mood","More energy","Less bloating","A regular cycle","Coming off the pill","Better sleep","Feeling confident in my body","Fewer cravings","Actually understanding my cycle"]}
+{section:"Što zapravo želiš", sub:"Da ciljamo na tvoje ciljeve, a ne generičke."},
+{id:"dream", type:"text", label:"Svojim riječima, kako bi se za tebe osjećao dobar ciklus?", hint:"Nema pogrešnog odgovora."},
+{id:"goals", type:"multi", label:"Odaberi stvari koje najviše želiš promijeniti.",
+hint:"Odaberi koliko god ih osjećaš istinitima.",
+options:["Menstruacije bez boli","Stabilno, smireno raspoloženje","Više energije","Manje napuhnutosti","Redovit ciklus","Izlazak s pilule","Bolji san","Osjećaj samopouzdanja u svom tijelu","Manje žudnji za hranom","Da napokon razumijem svoj ciklus"]}
 ];
 
 const FOUNDATION_LABELS = {
-"underfueled":"You may not be eating enough. A cycle is the first thing your body switches off when it doesn't feel safe and well-fed. Fueling up is often step one.",
-"skipping":"Skipping and delaying meals keeps blood sugar (and your hormones) on a rollercoaster. Regular meals are an easy early win.",
-"protein":"Low protein leaves your body short on the raw materials it needs to build hormones. Worth adding to most meals.",
-"overtraining":"A high load of intense training, especially under-fueled, can push your cycle into hiding. We'd look at recovery and fuel before anything else.",
-"underfueled-training":"Training hard on empty tells your body it's in survival mode, and survival mode quiets your cycle. Fueling around workouts matters a lot.",
-"stress":"High everyday stress keeps cortisol up, and cortisol competes directly with your reproductive hormones. Calming the nervous system is real cycle work.",
-"sleep":"Short sleep alone can throw a cycle off. Protecting your sleep is one of the highest-leverage things you can do.",
-"sun":"Daily light and outdoor time help set the body clock that your hormones run on. An easy, free lever to pull."
+"underfueled":"Možda ne jedeš dovoljno. Ciklus je prva stvar koju tvoje tijelo isključi kad se ne osjeća sigurno i dobro nahranjeno. Nahraniti se često je prvi korak.",
+"skipping":"Preskakanje i odgađanje obroka drži šećer u krvi (i tvoje hormone) na tobogan. Redoviti obroci laka su rana pobjeda.",
+"protein":"Malo proteina ostavlja tvoje tijelo bez sirovina koje su mu potrebne za izgradnju hormona. Vrijedi ih dodati u većinu obroka.",
+"overtraining":"Veliko opterećenje intenzivnim treningom, osobito uz nedovoljno hranjenje, može natjerati tvoj ciklus da se sakrije. Prvo bismo pogledale oporavak i hranu.",
+"underfueled-training":"Teški trening na prazno govori tvom tijelu da je u načinu preživljavanja, a način preživljavanja stišava tvoj ciklus. Hranjenje oko treninga jako je važno.",
+"stress":"Visok svakodnevni stres drži kortizol povišenim, a kortizol izravno konkurira tvojim reproduktivnim hormonima. Smirivanje živčanog sustava pravi je rad na ciklusu.",
+"sleep":"Kratak san sam po sebi može poremetiti ciklus. Zaštititi svoj san jedna je od najisplativijih stvari koje možeš učiniti.",
+"sun":"Dnevno svjetlo i vrijeme vani pomažu podesiti tjelesni sat po kojem rade tvoji hormoni. Laka, besplatna poluga koju možeš povući."
 };
 
 const answers = {};
@@ -298,14 +298,14 @@ if(q.type==="multi") answers[q.id]=[];
 html += `<div class="choices" data-id="${q.id}" data-multi="${q.type==='multi'}">`;
 q.options.forEach(opt=>{ html += `<span class="choice ${q.type==='multi'?'multi':''}" data-val="${opt}">${opt}</span>`; });
 html += `</div>`;
-if(q.careIf) html += `<div class="care-note" id="care-${q.id}"><strong>A note, just between us.</strong> ${q.careMsg}</div>`;
+if(q.careIf) html += `<div class="care-note" id="care-${q.id}"><strong>Napomena, samo između nas.</strong> ${q.careMsg}</div>`;
 } else if(q.type==="number"){
-html += `<input type="number" data-id="${q.id}" min="${q.min||0}" max="${q.max||120}" placeholder="${q.optional?'optional':''}">`;
+html += `<input type="number" data-id="${q.id}" min="${q.min||0}" max="${q.max||120}" placeholder="${q.optional?'neobavezno':''}">`;
 } else if(q.type==="shorttext"){
 html += `<input type="text" data-id="${q.id}" style="width:160px" placeholder="${q.placeholder||''}">`;
 } else if(q.type==="text"){
 answers[q.id]="";
-html += `<textarea data-id="${q.id}" placeholder="Type as much or as little as you like..."></textarea>`;
+html += `<textarea data-id="${q.id}" placeholder="Napiši koliko god želiš, malo ili puno..."></textarea>`;
 }
 html += `</div>`;
 });
@@ -338,7 +338,7 @@ if(note) note.classList.toggle('show', q.careIf.includes(c.dataset.val));
 
 /* ---- scoring ---- */
 function pct(v,max){ return Math.round(v/max*100); }
-function tagFor(score){ if(score<33) return ['tag-calm','Calm']; if(score<60) return ['tag-mid','Some work']; return ['tag-focus','Let\'s focus here']; }
+function tagFor(score){ if(score<33) return ['tag-calm','Mirno']; if(score<60) return ['tag-mid','Ima posla']; return ['tag-focus','Fokusirajmo se ovdje']; }
 
 function compute(){
 flags.length=0; foundationFlags.length=0;
@@ -369,15 +369,15 @@ return {painScore, lutScore, vitScore};
 
 function renderMeters(s){
 const meters=[
-{name:"Period pain & flow", v:s.painScore,
-read:{calm:"Your period itself looks manageable. That's a great base to protect.", mid:"There's room to take the edge off your period. Often very doable.", focus:"Your period is taking too much from you. This is exactly the kind of thing that can change."},
-tip:{calm:"One beginner step: keep magnesium-rich foods like avocado, coconut water, leafy greens, and quality animal proteins in your daily meals. These help maintain the calm you have already built.", mid:"One beginner step: try adding ginger and tart cherries in the week before your period, alongside fatty fish and extra virgin olive oil for their omega-3s. They directly influence how much pain and heaviness you feel.", focus:"One beginner step: start with magnesium from foods like avocado, coconut water, and leafy greens, and add in ginger and tart cherries, which directly calm the inflammation behind cramping and heavy flow. Reduce processed oils and sugar alongside this."}},
-{name:"The luteal phase", v:s.lutScore,
-read:{calm:"Your pre-period window is fairly steady. Lovely.", mid:"The days before your period are a bit rocky. We can smooth those out.", focus:"The luteal phase is hitting you hard. This is one of the most changeable parts of the whole cycle."},
-tip:{calm:"One beginner step: when cravings show up in the luteal phase, let them guide you toward more nourishment. Sweet potato, roasted root vegetables, and a little raw honey or fruit are your body asking for real fuel, not junk.", mid:"One beginner step: your body genuinely needs more nourishment in the luteal phase. When cravings hit, reach for root vegetables like sweet potato and squash for carbs, and natural sweetness from wild blueberries, raw honey, or ripe fruit instead of processed sugar.", focus:"One beginner step: reducing refined sugar in the luteal phase makes a real difference to PMS. When the cravings come, reach for wild blueberries, dates, or fruit instead. Rosemary is worth adding too, it calms the inflammation behind mood swings, and if bloating is part of your PMS, purslane is a gentle, gut-calming addition. Your body needs nourishment, not processed food."}},
-{name:"Whole-month vitality", v:s.vitScore,
-read:{calm:"Your energy, sleep and confidence are in a good place. Strong foundation.", mid:"Your day-to-day energy and confidence have room to grow.", focus:"You're running low across the month. Lifting this tends to lift everything else with it."},
-tip:{calm:"One beginner step: protect your sleep and keep eating enough throughout the day. These two are the non-negotiable anchors of everything else.", mid:"One beginner step: ask honestly whether you are eating enough during the day. Low energy is often under-fueling in disguise, especially for active women. Fatty fish and dark leafy greens are an easy place to add more real fuel.", focus:"One beginner step: start with the three basics, nourishing food, 8 hours of sleep, and daily sunlight. Fatty fish, dark leafy greens, and pomegranate are particularly worth prioritizing here, they support iron levels and calm the inflammation that quietly drains your energy. These have the highest return on how you feel in your body, and everything builds from here."}}
+{name:"Menstrualna bol i obilnost", v:s.painScore,
+read:{calm:"Tvoja menstruacija izgleda podnošljivo. To je odlična baza koju vrijedi čuvati.", mid:"Ima prostora da se tvojoj menstruaciji ublaži oštrina. Često je to sasvim izvedivo.", focus:"Tvoja menstruacija uzima previše od tebe. Upravo je ovo vrsta stvari koja se može promijeniti."},
+tip:{calm:"Jedan početni korak: zadrži namirnice bogate magnezijem poput avokada, kokosove vode, lisnatog zelja i kvalitetnih životinjskih proteina u svojim dnevnim obrocima. Oni pomažu održati mir koji si već izgradila.", mid:"Jedan početni korak: pokušaj dodati đumbir i višnje u tjednu prije menstruacije, uz masnu ribu i ekstra djevičansko maslinovo ulje zbog njihovih omega-3 masnih kiselina. Oni izravno utječu na to koliko boli i težine osjećaš.", focus:"Jedan početni korak: kreni s magnezijem iz namirnica poput avokada, kokosove vode i lisnatog zelja, i dodaj đumbir i višnje, koji izravno smiruju upalu iza grčeva i obilnog krvarenja. Uz to smanji procesirana ulja i šećer."}},
+{name:"Lutealna faza", v:s.lutScore,
+read:{calm:"Tvoje razdoblje prije menstruacije prilično je stabilno. Predivno.", mid:"Dani prije menstruacije malo su neujednačeni. Možemo ih izgladiti.", focus:"Lutealna faza te snažno pogađa. Ovo je jedan od najpromjenjivijih dijelova cijelog ciklusa."},
+tip:{calm:"Jedan početni korak: kad se u lutealnoj fazi jave žudnje, pusti da te vode prema više hranjivosti. Batat, pečeno korjenasto povrće i malo sirovog meda ili voća tvoje su tijelo koje traži pravo gorivo, a ne junk hranu.", mid:"Jedan početni korak: tvoje tijelo uistinu treba više hranjivosti u lutealnoj fazi. Kad udare žudnje, posegni za korjenastim povrćem poput batata i bundeve za ugljikohidrate, i prirodnom slatkoćom iz divljih borovnica, sirovog meda ili zrelog voća umjesto procesiranog šećera.", focus:"Jedan početni korak: smanjenje rafiniranog šećera u lutealnoj fazi stvarno mijenja PMS. Kad dođu žudnje, posegni za divljim borovnicama, datuljama ili voćem. Vrijedi dodati i ružmarin, koji smiruje upalu iza promjena raspoloženja, a ako je napuhnutost dio tvog PMS-a, tušt je nježan dodatak koji smiruje crijeva. Tvoje tijelo treba hranjivost, a ne procesiranu hranu."}},
+{name:"Vitalnost kroz mjesec", v:s.vitScore,
+read:{calm:"Tvoja energija, san i samopouzdanje na dobrom su mjestu. Snažan temelj.", mid:"Tvoja svakodnevna energija i samopouzdanje imaju prostora za rast.", focus:"Kroz mjesec si na niskim granama. Podizanje ovoga obično podigne i sve ostalo s njim."},
+tip:{calm:"Jedan početni korak: čuvaj svoj san i nastavi jesti dovoljno tijekom dana. To dvoje su neizostavna sidra svega ostalog.", mid:"Jedan početni korak: iskreno se zapitaj jedeš li dovoljno tijekom dana. Niska energija često je nedovoljno hranjenje u prerušenom obliku, osobito za aktivne žene. Masna riba i tamno lisnato zelje lako su mjesto za dodati više pravog goriva.", focus:"Jedan početni korak: kreni s tri osnove, hranjiva hrana, 8 sati sna i dnevno sunce. Masna riba, tamno lisnato zelje i nar ovdje su osobito vrijedni prioriteta, jer podupiru razinu željeza i smiruju upalu koja ti tiho crpi energiju. Ovo ima najveći povrat na to kako se osjećaš u svom tijelu, i sve se gradi odavde."}}
 ];
 let m="";
 meters.forEach((mt,i)=>{
@@ -405,13 +405,13 @@ dBox.classList.add('show');
 let start="";
 const uniq=[...new Set(foundationFlags)];
 if(uniq.length){
-start="Before anything fancy, your body's basics need shoring up. Most cycle problems quietly start here, and the good news is these are the most fixable part:";
+start="Prije bilo čega naprednog, osnove tvog tijela treba osnažiti. Većina problema s ciklusom tiho počinje ovdje, a dobra je vijest da je ovo dio koji se najlakše popravlja:";
 } else {
 const top=[['period',s.painScore],['luteal',s.lutScore],['vitality',s.vitScore]].sort((a,b)=>b[1]-a[1])[0];
-if(top[1]<33) start="Honestly? Your foundations look solid and your cycle is in a good place. Our work is fine-tuning and protecting what's already working.";
-else if(top[0]==='period') start="Your daily foundations look fairly solid, so we'd point our attention straight at calming your period itself.";
-else if(top[0]==='luteal') start="Your daily foundations look fairly solid, so we'd focus on steadying the luteal phase, the days before your period.";
-else start="Your daily foundations look fairly solid, so we'd work on lifting your whole-month energy and confidence.";
+if(top[1]<33) start="Iskreno? Tvoji temelji izgledaju čvrsto, a ciklus ti je na dobrom mjestu. Naš rad je fino podešavanje i čuvanje onoga što već funkcionira.";
+else if(top[0]==='period') start="Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo pažnju usmjerile ravno na smirivanje same tvoje menstruacije.";
+else if(top[0]==='luteal') start="Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo se usredotočile na stabiliziranje lutealne faze, dana prije menstruacije.";
+else start="Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo radile na podizanju tvoje energije i samopouzdanja kroz cijeli mjesec.";
 }
 document.getElementById('startText').textContent=start;
 
@@ -420,7 +420,7 @@ uniq.forEach(f=>{ const li=document.createElement('li'); li.textContent=FOUNDATI
 
 /* birth control note */
 const bcVal = answers.bc;
-const onBC = bcVal && bcVal !== 'No, none' && bcVal !== 'Not sure';
+const onBC = bcVal && bcVal !== 'Ne, nikakvu' && bcVal !== 'Nisam sigurna';
 const bcNote = document.getElementById('bcNote');
 if(onBC){
 bcNote.style.display='block';
@@ -431,28 +431,28 @@ bcNote.style.display='none';
 
 function buildSummary(s){
 const L=[];
-L.push("MY CYCLE CHECK-IN RESULTS");
+L.push("REZULTATI MOJE PROVJERE CIKLUSA");
 L.push("=========================");
 const a=answers;
-L.push(`Age: ${a.age??'-'} Birth control: ${a.bc||'-'}`);
-L.push(`Cycle: ${a.regular||'-'}` + (a.cyclelen?`, ~${a.cyclelen} days`:'') + (a.bleedlen?`, ${a.bleedlen} day bleed`:''));
+L.push(`Dob: ${a.age??'-'} Kontracepcija: ${a.bc||'-'}`);
+L.push(`Ciklus: ${a.regular||'-'}` + (a.cyclelen?`, ~${a.cyclelen} dana`:'') + (a.bleedlen?`, krvarenje ${a.bleedlen} dana`:''));
 L.push("");
-L.push(`Period pain & flow: ${s.painScore}/100 ${tagFor(s.painScore)[1]}`);
-L.push(`Luteal phase: ${s.lutScore}/100 ${tagFor(s.lutScore)[1]}`);
-L.push(`Whole-month vitality: ${s.vitScore}/100 ${tagFor(s.vitScore)[1]}`);
+L.push(`Menstrualna bol i obilnost: ${s.painScore}/100 ${tagFor(s.painScore)[1]}`);
+L.push(`Lutealna faza: ${s.lutScore}/100 ${tagFor(s.lutScore)[1]}`);
+L.push(`Vitalnost kroz mjesec: ${s.vitScore}/100 ${tagFor(s.vitScore)[1]}`);
 L.push("");
-L.push("Period: pain "+a.pain+"/10, painkillers "+(a.painkillers||'-')+", flow "+(a.flow||'-')+", stops daily life: "+(a.painstop||'-'));
-L.push("Luteal: mood "+a.mood+", anxiety "+a.anxiety+", cravings "+a.cravings+", bloat "+a.bloat+", breast "+a.breast+", fatigue "+a.lutfatigue+" (all /10)");
-L.push("Month: energy "+a.energy+", sleep "+a.sleep+", body confidence "+a.confidence+" (/10), cycle acne: "+(a.skin||'-'));
-L.push("Foundations: eat enough? "+(a.eatenough||'-')+" | meals "+(a.meals||'-')+" | protein "+(a.protein||'-')+" | intense workouts "+(a.training||'-')+" | trains under-fueled "+(a.underfuel||'-')+" | stress "+a.stress+"/10 | sleep "+(a.sleephrs||'-')+" | sun "+(a.sun||'-'));
-if(a.darkmood && a.darkmood!=='No') L.push("Pre-period dark/hopeless feelings: "+a.darkmood+" (flagged for professional support)");
+L.push("Menstruacija: bol "+a.pain+"/10, lijekovi protiv bolova "+(a.painkillers||'-')+", obilnost "+(a.flow||'-')+", zaustavlja svakodnevni život: "+(a.painstop||'-'));
+L.push("Luteal: raspoloženje "+a.mood+", tjeskoba "+a.anxiety+", žudnje "+a.cravings+", napuhnutost "+a.bloat+", grudi "+a.breast+", umor "+a.lutfatigue+" (sve /10)");
+L.push("Mjesec: energija "+a.energy+", san "+a.sleep+", samopouzdanje u tijelu "+a.confidence+" (/10), akne uz ciklus: "+(a.skin||'-'));
+L.push("Temelji: dovoljno jede? "+(a.eatenough||'-')+" | obroci "+(a.meals||'-')+" | proteini "+(a.protein||'-')+" | intenzivni treninzi "+(a.training||'-')+" | trenira na praznom "+(a.underfuel||'-')+" | stres "+a.stress+"/10 | san "+(a.sleephrs||'-')+" | sunce "+(a.sun||'-'));
+if(a.darkmood && a.darkmood!=='Ne') L.push("Predmenstrualni osjećaji mraka/beznađa: "+a.darkmood+" (označeno za stručnu podršku)");
 L.push("");
 const uniq=[...new Set(foundationFlags)];
-if(uniq.length){ L.push("ROOT-CAUSE FLAGS: "+uniq.join(", ")); }
-if(flags.length){ L.push(""); L.push("WORTH A DOCTOR: yes (see notes in the check-in)"); }
+if(uniq.length){ L.push("KORIJENSKI UZROCI: "+uniq.join(", ")); }
+if(flags.length){ L.push(""); L.push("VRIJEDI KOD LIJEČNIKA: da (vidi napomene u provjeri)"); }
 L.push("");
-L.push("Goals: "+((a.goals&&a.goals.length)?a.goals.join(", "):'-'));
-if(a.dream) L.push("In her words: \""+a.dream+"\"");
+L.push("Ciljevi: "+((a.goals&&a.goals.length)?a.goals.join(", "):'-'));
+if(a.dream) L.push("Njezinim riječima: \""+a.dream+"\"");
 return L.join("\n");
 }
 
@@ -469,7 +469,7 @@ navigator.clipboard.writeText(lastSummary).then(()=>{
 document.getElementById('copied').classList.add('show');
 setTimeout(()=>document.getElementById('copied').classList.remove('show'),3500);
 });
-const subject = encodeURIComponent("My Cycle Check-In Results");
+const subject = encodeURIComponent("Rezultati moje provjere ciklusa");
 const body = encodeURIComponent(lastSummary);
 window.open("https://mail.google.com/mail/?view=cm&fs=1&to=agj.holisticliving@gmail.com&su="+subject+"&body="+body, "_blank");
 });
