@@ -13,7 +13,24 @@
 body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;
   background:linear-gradient(180deg,#FBFAF2 0%,#F2F6E6 40%,#E4EFCF 78%,#D6E7BE 100%)}
 .meadow{position:fixed;left:0;right:0;bottom:0;height:340px;z-index:0;pointer-events:none}
-.petal{position:fixed;z-index:0;pointer-events:none;opacity:.5}
+.petal{position:fixed;z-index:0;pointer-events:none;opacity:.55;will-change:transform}
+.petal svg,.petal>*{display:block}
+@keyframes drift{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(14px,-22px) rotate(20deg)}50%{transform:translate(-6px,-40px) rotate(-12deg)}75%{transform:translate(-18px,-20px) rotate(14deg)}100%{transform:translate(0,0) rotate(0deg)}}
+.petal{animation:drift 14s ease-in-out infinite}
+.petal:nth-of-type(1){animation-duration:15s}
+.petal:nth-of-type(2){animation-duration:12s;animation-delay:-4s}
+.petal:nth-of-type(3){animation-duration:17s;animation-delay:-7s}
+.petal:nth-of-type(4){animation-duration:13s;animation-delay:-2s}
+.petal:nth-of-type(5){animation-duration:19s;animation-delay:-9s}
+.blades path{transform-box:fill-box;transform-origin:bottom center;animation:sway 5s ease-in-out infinite}
+.blades path:nth-child(odd){animation-duration:6.5s}
+.blades path:nth-child(3n){animation-duration:7.5s;animation-delay:-1.5s}
+.blades path:nth-child(4n){animation-delay:-3s}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+.blooms circle{transform-box:fill-box;transform-origin:center;animation:bloom 4.5s ease-in-out infinite}
+.blooms circle:nth-child(even){animation-duration:6s;animation-delay:-1s}
+@keyframes bloom{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.16);opacity:1}}
+@media(prefers-reduced-motion:reduce){.petal,.blades path,.blooms circle{animation:none}}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 24px 200px}
 .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .back:hover{color:var(--accent)}
@@ -44,9 +61,11 @@ footer a{color:inherit}
 <body>
 
 <!-- soft floating petals -->
-<svg class="petal" style="top:120px;left:6%;width:26px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDb9E0"/></svg>
+<svg class="petal" style="top:120px;left:6%;width:26px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
 <svg class="petal" style="top:210px;right:9%;width:20px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
 <svg class="petal" style="top:70px;right:20%;width:16px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#BFD3A0"/></svg>
+<svg class="petal" style="top:300px;left:14%;width:18px" viewBox="0 0 24 24"><g fill="#E9C6DA"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="#C9A227"/></svg>
+<svg class="petal" style="top:160px;left:44%;width:14px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#BFD3A0"/></svg>
 
 <div class="wrap">
 <a href="index.html" class="back">&larr; Natrag na Naturally with Anja</a>
@@ -89,14 +108,14 @@ footer a{color:inherit}
 
 </div>
 
-<div class="sig"><span class="script-note" style="font-size:26px">s ljubavlju, Anja</span></div>
+<div class="sig"><span class="script-note" style="font-size:26px">Sa zdravljem i ljubavlju, Anja</span></div>
 </div>
 
 <!-- meadow of grass + flowers -->
 <svg class="meadow" viewBox="0 0 1440 340" preserveAspectRatio="none" fill="none">
   <path d="M0 340 L0 210 Q360 150 720 200 T1440 190 L1440 340 Z" fill="#C7DEA0" opacity=".55"/>
   <path d="M0 340 L0 250 Q400 210 760 250 T1440 240 L1440 340 Z" fill="#A9CE7C" opacity=".7"/>
-  <g stroke="#7CA24E" stroke-width="3" stroke-linecap="round">
+  <g class="blades" stroke="#7CA24E" stroke-width="3" stroke-linecap="round">
     <path d="M60 340c0-40-8-64-18-84"/><path d="M60 340c4-34 16-56 30-72"/>
     <path d="M180 340c0-46-6-74-16-96"/><path d="M180 340c6-30 18-52 34-66"/>
     <path d="M320 340c-2-40-12-66-24-88"/><path d="M330 340c6-32 20-54 36-70"/>
@@ -106,7 +125,7 @@ footer a{color:inherit}
     <path d="M1120 340c-2-46-12-72-24-94"/><path d="M1126 340c8-30 22-52 40-66"/>
     <path d="M1300 340c0-40-8-64-18-86"/><path d="M1300 340c6-32 20-52 36-66"/>
   </g>
-  <g>
+  <g class="blooms">
     <circle cx="240" cy="238" r="6" fill="#E7D7A6"/><circle cx="240" cy="238" r="2.4" fill="#C9A227"/>
     <circle cx="600" cy="250" r="6" fill="#E9C6DA"/><circle cx="600" cy="250" r="2.4" fill="#B87AA0"/>
     <circle cx="980" cy="244" r="6" fill="#CBB9E4"/><circle cx="980" cy="244" r="2.4" fill="#8A6EAA"/>
