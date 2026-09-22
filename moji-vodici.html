@@ -10,34 +10,20 @@
 <style>
 :root{--deep:#4A3D5C;--mid:#7A6D8C;--accent:#9B89B4;--gold:#B8901F;--tc:#B6A8D9}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;
-  background:linear-gradient(180deg,#FBFAF2 0%,#F2F6E6 40%,#E4EFCF 78%,#D6E7BE 100%)}
-.meadow{position:fixed;left:0;right:0;bottom:0;height:340px;z-index:0;pointer-events:none}
-.petal{position:fixed;z-index:0;pointer-events:none;opacity:.55;will-change:transform}
-.petal svg,.petal>*{display:block}
-@keyframes drift{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(14px,-22px) rotate(20deg)}50%{transform:translate(-6px,-40px) rotate(-12deg)}75%{transform:translate(-18px,-20px) rotate(14deg)}100%{transform:translate(0,0) rotate(0deg)}}
-.petal{animation:drift 14s ease-in-out infinite}
-.petal:nth-of-type(1){animation-duration:15s}
-.petal:nth-of-type(2){animation-duration:12s;animation-delay:-4s}
-.petal:nth-of-type(3){animation-duration:17s;animation-delay:-7s}
-.petal:nth-of-type(4){animation-duration:13s;animation-delay:-2s}
-.petal:nth-of-type(5){animation-duration:19s;animation-delay:-9s}
-.blades path{transform-box:fill-box;transform-origin:bottom center;animation:sway 5s ease-in-out infinite}
-.blades path:nth-child(odd){animation-duration:6.5s}
-.blades path:nth-child(3n){animation-duration:7.5s;animation-delay:-1.5s}
-.blades path:nth-child(4n){animation-delay:-3s}
-@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
-.blooms circle{transform-box:fill-box;transform-origin:center;animation:bloom 4.5s ease-in-out infinite}
-.blooms circle:nth-child(even){animation-duration:6s;animation-delay:-1s}
-@keyframes bloom{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.16);opacity:1}}
-.rise{position:fixed;bottom:-36px;z-index:0;pointer-events:none;opacity:0;will-change:transform,opacity}
-@keyframes rise{0%{transform:translateY(0) rotate(0deg);opacity:0}8%{opacity:.6}88%{opacity:.5}100%{transform:translateY(-110vh) rotate(240deg);opacity:0}}
-body::before,body::after{content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(34px);will-change:transform}
-body::before{top:-25%;left:-15%;width:70vw;height:70vw;background:radial-gradient(circle,rgba(201,192,131,.32),rgba(201,192,131,0) 62%);animation:aurora1 26s ease-in-out infinite}
-body::after{bottom:-30%;right:-18%;width:74vw;height:74vw;background:radial-gradient(circle,rgba(182,168,217,.28),rgba(182,168,217,0) 62%);animation:aurora2 32s ease-in-out infinite}
-@keyframes aurora1{0%,100%{transform:translate(0,0)}50%{transform:translate(34vw,26vh)}}
-@keyframes aurora2{0%,100%{transform:translate(0,0)}50%{transform:translate(-28vw,-22vh)}}
-@media(prefers-reduced-motion:reduce){.petal,.rise,.blades path,.blooms circle{animation:none}body::before,body::after{animation:none}}
+body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;background:#F5F3FA}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+.blob.b1{width:62vw;height:62vw;left:-16vw;top:-18vw;background:radial-gradient(circle,rgba(190,166,224,.8),rgba(190,166,224,0) 66%);animation:float1 20s ease-in-out infinite}
+.blob.b2{width:54vw;height:54vw;right:-16vw;top:0;background:radial-gradient(circle,rgba(168,201,158,.7),rgba(168,201,158,0) 66%);animation:float2 26s ease-in-out infinite}
+.blob.b3{width:60vw;height:60vw;left:6vw;bottom:-26vw;background:radial-gradient(circle,rgba(233,208,150,.62),rgba(233,208,150,0) 66%);animation:float3 30s ease-in-out infinite}
+.blob.b4{width:46vw;height:46vw;right:2vw;bottom:-12vw;background:radial-gradient(circle,rgba(182,168,217,.62),rgba(182,168,217,0) 68%);animation:float4 23s ease-in-out infinite}
+.blob.b5{width:42vw;height:42vw;left:28vw;top:24vh;background:radial-gradient(circle,rgba(201,168,192,.52),rgba(201,168,192,0) 68%);animation:float5 28s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18vw,14vh) scale(1.2)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-16vw,18vh) scale(1.14)}}
+@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(14vw,-16vh) scale(1.24)}}
+@keyframes float4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18vw,-14vh) scale(1.16)}}
+@keyframes float5{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12vw,12vh) scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.blob{animation:none}}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 24px 200px}
 .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .back:hover{color:var(--accent)}
@@ -67,20 +53,14 @@ footer a{color:inherit}
 </head>
 <body>
 
-<!-- soft floating petals -->
-<svg class="petal" style="top:120px;left:6%;width:26px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
-<svg class="petal" style="top:210px;right:9%;width:20px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
-<svg class="petal" style="top:70px;right:20%;width:16px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#BFD3A0"/></svg>
-<svg class="petal" style="top:300px;left:14%;width:18px" viewBox="0 0 24 24"><g fill="#E9C6DA"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="#C9A227"/></svg>
-<svg class="petal" style="top:160px;left:44%;width:14px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#BFD3A0"/></svg>
-
-<!-- continuously rising petals for living motion -->
-<svg class="rise" style="left:7%;width:15px;animation:rise 17s linear infinite;animation-delay:-1s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
-<svg class="rise" style="left:23%;width:12px;animation:rise 21s linear infinite;animation-delay:-8s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
-<svg class="rise" style="left:41%;width:17px;animation:rise 15s linear infinite;animation-delay:-4s" viewBox="0 0 24 24"><g fill="#E9C6DA"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="#C9A227"/></svg>
-<svg class="rise" style="left:58%;width:13px;animation:rise 19s linear infinite;animation-delay:-12s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#BFD3A0"/></svg>
-<svg class="rise" style="left:73%;width:16px;animation:rise 23s linear infinite;animation-delay:-6s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
-<svg class="rise" style="left:88%;width:12px;animation:rise 18s linear infinite;animation-delay:-15s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
+<!-- modern animated gradient background -->
+<div class="bg">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="blob b5"></div>
+</div>
 
 <div class="wrap">
 <a href="index.html" class="back">&larr; Natrag na Naturally with Anja</a>
@@ -125,29 +105,6 @@ footer a{color:inherit}
 
 <div class="sig"><span class="script-note" style="font-size:26px">Zdravo i prirodno, Anja</span></div>
 </div>
-
-<!-- meadow of grass + flowers -->
-<svg class="meadow" viewBox="0 0 1440 340" preserveAspectRatio="none" fill="none">
-  <path d="M0 340 L0 210 Q360 150 720 200 T1440 190 L1440 340 Z" fill="#C7DEA0" opacity=".55"/>
-  <path d="M0 340 L0 250 Q400 210 760 250 T1440 240 L1440 340 Z" fill="#A9CE7C" opacity=".7"/>
-  <g class="blades" stroke="#7CA24E" stroke-width="3" stroke-linecap="round">
-    <path d="M60 340c0-40-8-64-18-84"/><path d="M60 340c4-34 16-56 30-72"/>
-    <path d="M180 340c0-46-6-74-16-96"/><path d="M180 340c6-30 18-52 34-66"/>
-    <path d="M320 340c-2-40-12-66-24-88"/><path d="M330 340c6-32 20-54 36-70"/>
-    <path d="M520 340c0-42-8-68-18-90"/><path d="M520 340c6-30 20-50 36-64"/>
-    <path d="M720 340c-2-48-12-76-24-98"/><path d="M726 340c8-32 22-54 40-68"/>
-    <path d="M930 340c0-42-8-66-18-88"/><path d="M930 340c6-30 20-52 36-66"/>
-    <path d="M1120 340c-2-46-12-72-24-94"/><path d="M1126 340c8-30 22-52 40-66"/>
-    <path d="M1300 340c0-40-8-64-18-86"/><path d="M1300 340c6-32 20-52 36-66"/>
-  </g>
-  <g class="blooms">
-    <circle cx="240" cy="238" r="6" fill="#E7D7A6"/><circle cx="240" cy="238" r="2.4" fill="#C9A227"/>
-    <circle cx="600" cy="250" r="6" fill="#E9C6DA"/><circle cx="600" cy="250" r="2.4" fill="#B87AA0"/>
-    <circle cx="980" cy="244" r="6" fill="#CBB9E4"/><circle cx="980" cy="244" r="2.4" fill="#8A6EAA"/>
-    <circle cx="1240" cy="252" r="6" fill="#E7D7A6"/><circle cx="1240" cy="252" r="2.4" fill="#C9A227"/>
-    <circle cx="430" cy="256" r="5" fill="#E9C6DA"/><circle cx="430" cy="256" r="2" fill="#B87AA0"/>
-  </g>
-</svg>
 
 <footer>
 &copy; Naturally with Anja &middot; Olea Vita Sana &middot; <a href="index.html">Početna</a>
