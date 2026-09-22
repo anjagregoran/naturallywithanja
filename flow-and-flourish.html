@@ -47,6 +47,7 @@ footer a{color:inherit}
 .vplay.hidden{opacity:0;pointer-events:none}
 .vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s ease;pointer-events:none}
 .vposter.hidden{opacity:0}
+.vsub{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);width:88%;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.9vw,29px);font-weight:500;letter-spacing:.6px;color:#fff;line-height:1.35;text-shadow:0 2px 12px rgba(0,0,0,.8),0 0 3px rgba(0,0,0,.7);opacity:0;transition:opacity .22s ease;pointer-events:none}
 </style>
 </head>
 <body>
@@ -57,8 +58,9 @@ footer a{color:inherit}
     <div class="vwrap" onclick="startVid(this)">
       <video preload="metadata" playsinline crossorigin="anonymous" onplaying="this.parentNode.querySelector('.vposter').classList.add('hidden')">
         <source src="course-intro.mp4?v=1" type="video/mp4">
-        <track kind="subtitles" src="course-intro-hr.vtt?v=1" srclang="hr" label="Hrvatski" default>
+        <track kind="subtitles" src="course-intro-hr.vtt?v=2" srclang="hr" label="Hrvatski" default>
       </video>
+      <div class="vsub" aria-hidden="true"></div>
       <img class="vposter" src="course-intro-poster.jpg?v=1" alt="">
       <button type="button" class="vplay" aria-label="Pokreni video"><svg viewBox="0 0 24 24" width="26" height="26" fill="#3A2E28"><path d="M8 5v14l11-7z"/></svg></button>
     </div>
@@ -109,6 +111,26 @@ footer a{color:inherit}
 </footer>
 <script>
 function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.onclick=null;}
+// Custom styled Croatian subtitles (prettier font, positioned a touch higher)
+(function(){
+  document.querySelectorAll('.vwrap').forEach(function(w){
+    var v=w.querySelector('video'), box=w.querySelector('.vsub');
+    if(!v||!box) return;
+    function bind(){
+      var t=v.textTracks&&v.textTracks[0];
+      if(!t) return;
+      t.mode='hidden';
+      t.oncuechange=function(){
+        var c=t.activeCues&&t.activeCues[0];
+        box.textContent=c?c.text:'';
+        box.style.opacity=c?'1':'0';
+      };
+    }
+    if(v.textTracks&&v.textTracks.length) bind();
+    v.addEventListener('loadeddata',bind);
+    v.textTracks.addEventListener&&v.textTracks.addEventListener('addtrack',bind);
+  });
+})();
 </script>
 </body>
 </html>
