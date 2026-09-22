@@ -12,17 +12,17 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;background:#F5F3FA}
 .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
-.blob.b1{width:62vw;height:62vw;left:-16vw;top:-18vw;background:radial-gradient(circle,rgba(190,166,224,.8),rgba(190,166,224,0) 66%);animation:float1 20s ease-in-out infinite}
-.blob.b2{width:54vw;height:54vw;right:-16vw;top:0;background:radial-gradient(circle,rgba(168,201,158,.7),rgba(168,201,158,0) 66%);animation:float2 26s ease-in-out infinite}
-.blob.b3{width:60vw;height:60vw;left:6vw;bottom:-26vw;background:radial-gradient(circle,rgba(233,208,150,.62),rgba(233,208,150,0) 66%);animation:float3 30s ease-in-out infinite}
-.blob.b4{width:46vw;height:46vw;right:2vw;bottom:-12vw;background:radial-gradient(circle,rgba(182,168,217,.62),rgba(182,168,217,0) 68%);animation:float4 23s ease-in-out infinite}
-.blob.b5{width:42vw;height:42vw;left:28vw;top:24vh;background:radial-gradient(circle,rgba(201,168,192,.52),rgba(201,168,192,0) 68%);animation:float5 28s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18vw,14vh) scale(1.2)}}
-@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-16vw,18vh) scale(1.14)}}
-@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(14vw,-16vh) scale(1.24)}}
-@keyframes float4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18vw,-14vh) scale(1.16)}}
-@keyframes float5{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12vw,12vh) scale(1.12)}}
+.blob{position:absolute;border-radius:50%;filter:blur(72px);will-change:transform}
+.blob.b1{width:64vw;height:64vw;left:-16vw;top:-18vw;background:radial-gradient(circle,rgba(165,125,224,.95),rgba(165,125,224,0) 64%);animation:float1 14s ease-in-out infinite}
+.blob.b2{width:56vw;height:56vw;right:-16vw;top:-2vw;background:radial-gradient(circle,rgba(120,196,132,.9),rgba(120,196,132,0) 64%);animation:float2 17s ease-in-out infinite}
+.blob.b3{width:62vw;height:62vw;left:4vw;bottom:-26vw;background:radial-gradient(circle,rgba(232,190,82,.85),rgba(232,190,82,0) 64%);animation:float3 19s ease-in-out infinite}
+.blob.b4{width:50vw;height:50vw;right:0;bottom:-12vw;background:radial-gradient(circle,rgba(150,120,216,.9),rgba(150,120,216,0) 65%);animation:float4 15s ease-in-out infinite}
+.blob.b5{width:46vw;height:46vw;left:26vw;top:22vh;background:radial-gradient(circle,rgba(220,136,190,.82),rgba(220,136,190,0) 65%);animation:float5 18s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(26vw,20vh) scale(1.32)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-24vw,24vh) scale(1.24)}}
+@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(22vw,-22vh) scale(1.36)}}
+@keyframes float4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-26vw,-20vh) scale(1.26)}}
+@keyframes float5{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20vw,18vh) scale(1.2)}}
 @media(prefers-reduced-motion:reduce){.blob{animation:none}}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 24px 200px}
 .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none}
