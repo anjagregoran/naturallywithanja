@@ -30,7 +30,14 @@ body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-heig
 .blooms circle{transform-box:fill-box;transform-origin:center;animation:bloom 4.5s ease-in-out infinite}
 .blooms circle:nth-child(even){animation-duration:6s;animation-delay:-1s}
 @keyframes bloom{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.16);opacity:1}}
-@media(prefers-reduced-motion:reduce){.petal,.blades path,.blooms circle{animation:none}}
+.rise{position:fixed;bottom:-36px;z-index:0;pointer-events:none;opacity:0;will-change:transform,opacity}
+@keyframes rise{0%{transform:translateY(0) rotate(0deg);opacity:0}8%{opacity:.6}88%{opacity:.5}100%{transform:translateY(-110vh) rotate(240deg);opacity:0}}
+body::before,body::after{content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(34px);will-change:transform}
+body::before{top:-25%;left:-15%;width:70vw;height:70vw;background:radial-gradient(circle,rgba(201,192,131,.32),rgba(201,192,131,0) 62%);animation:aurora1 26s ease-in-out infinite}
+body::after{bottom:-30%;right:-18%;width:74vw;height:74vw;background:radial-gradient(circle,rgba(182,168,217,.28),rgba(182,168,217,0) 62%);animation:aurora2 32s ease-in-out infinite}
+@keyframes aurora1{0%,100%{transform:translate(0,0)}50%{transform:translate(34vw,26vh)}}
+@keyframes aurora2{0%,100%{transform:translate(0,0)}50%{transform:translate(-28vw,-22vh)}}
+@media(prefers-reduced-motion:reduce){.petal,.rise,.blades path,.blooms circle{animation:none}body::before,body::after{animation:none}}
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 24px 200px}
 .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .back:hover{color:var(--accent)}
@@ -67,6 +74,14 @@ footer a{color:inherit}
 <svg class="petal" style="top:300px;left:14%;width:18px" viewBox="0 0 24 24"><g fill="#E9C6DA"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="#C9A227"/></svg>
 <svg class="petal" style="top:160px;left:44%;width:14px" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#BFD3A0"/></svg>
 
+<!-- continuously rising petals for living motion -->
+<svg class="rise" style="left:7%;width:15px;animation:rise 17s linear infinite;animation-delay:-1s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
+<svg class="rise" style="left:23%;width:12px;animation:rise 21s linear infinite;animation-delay:-8s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
+<svg class="rise" style="left:41%;width:17px;animation:rise 15s linear infinite;animation-delay:-4s" viewBox="0 0 24 24"><g fill="#E9C6DA"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="#C9A227"/></svg>
+<svg class="rise" style="left:58%;width:13px;animation:rise 19s linear infinite;animation-delay:-12s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#BFD3A0"/></svg>
+<svg class="rise" style="left:73%;width:16px;animation:rise 23s linear infinite;animation-delay:-6s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#CDB9E0"/></svg>
+<svg class="rise" style="left:88%;width:12px;animation:rise 18s linear infinite;animation-delay:-15s" viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#E7D7A6"/></svg>
+
 <div class="wrap">
 <a href="index.html" class="back">&larr; Natrag na Naturally with Anja</a>
 
@@ -90,7 +105,7 @@ footer a{color:inherit}
 
   <!-- EVERLASTING HEALTH FOUNDATIONS -->
   <a class="guide" href="everlasting-health.html">
-    <span class="g-badge" style="color:#7A9A3E;background:#EEF3E4">Uskoro</span>
+    <span class="g-badge" style="color:#8A6EAA;background:#F1ECFA">Uskoro</span>
     <div class="g-icon"><svg width="44" height="44" viewBox="0 0 32 32" fill="none"><path d="M27 4.5C13.5 4.5 6 12 6 23.5c0 1.6.15 3.2.5 4.8C8 19 14 12 24.5 8.8 16.5 12.7 11 19 9.3 28.3c11.4 1 20.7-6 20.7-18.3 0-2 0-4-3-5.5z" fill="#6E8B5A"/><path d="M8.5 27.5C10.5 18.5 15.5 12.5 24.5 9" stroke="#3F5A32" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></div>
     <div class="g-title">Step into Everlasting<br>Health Foundations</div>
     <div class="g-desc">Temelji zdravlja koji te čine ljepšom iznutra prema van: blistava koža, vitko tijelo, prava energija i samopouzdanje koje traje.</div>
@@ -99,7 +114,7 @@ footer a{color:inherit}
 
   <!-- CLEAN HOME -->
   <a class="guide" href="clean-home.html">
-    <span class="g-badge" style="color:#12A594;background:#E1F5F0">Uskoro</span>
+    <span class="g-badge" style="color:#8A6EAA;background:#F1ECFA">Uskoro</span>
     <div class="g-icon"><svg width="44" height="44" viewBox="0 0 40 40" fill="none"><defs><linearGradient id="spk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#43C9B8"/><stop offset="1" stop-color="#0E8A7C"/></linearGradient></defs><path d="M20 5c1.7 8 5 11.3 13 13-8 1.7-11.3 5-13 13-1.7-8-5-11.3-13-13 8-1.7 11.3-5 13-13z" fill="url(#spk)"/><path d="M31.5 6c.7 3 2 4.3 5 5-3 .7-4.3 2-5 5-.7-3-2-4.3-5-5 3-.7 4.3-2 5-5z" fill="url(#spk)" opacity=".5"/></svg></div>
     <div class="g-title">Unlock Cleaner and Healthier<br>Home: Room by Room</div>
     <div class="g-desc">Ono čime se okružuješ vidi se na tvojoj koži, kosi i energiji. Očisti svoj prostor i zablistaj iznutra prema van.</div>
@@ -108,7 +123,7 @@ footer a{color:inherit}
 
 </div>
 
-<div class="sig"><span class="script-note" style="font-size:26px">Ostani zdrava i ozarena, Anja</span></div>
+<div class="sig"><span class="script-note" style="font-size:26px">Zdravo i prirodno, Anja</span></div>
 </div>
 
 <!-- meadow of grass + flowers -->
