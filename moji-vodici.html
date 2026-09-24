@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Whole-Body Wellness Program | Prirodno s Anjom</title>
+<title>Moj whole-body wellness program | Prirodno s Anjom</title>
 <link rel="icon" type="image/png" href="favicon-grape.png?v=4">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Petit+Formal+Script&display=swap" rel="stylesheet">
@@ -71,6 +71,10 @@ h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font
 .buy{max-width:560px;margin:64px auto 0;text-align:center;background:#FFFFFF;border:1px solid rgba(201,162,39,.25);border-radius:22px;padding:44px 34px;box-shadow:0 36px 80px -44px rgba(120,110,90,.5)}
 .buy .in{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#A89870;margin-bottom:6px}
 .buy .price{font-family:'Cormorant Garamond',serif;font-size:52px;color:#3A2E28;font-weight:300;letter-spacing:-1px;margin-bottom:4px}
+.buy .incl{list-style:none;padding:0;margin:0 0 24px;text-align:left}
+.buy .incl li{position:relative;padding:7px 0 7px 22px;font-size:13.5px;line-height:1.55;color:rgba(74,61,92,.88);border-bottom:1px solid rgba(201,162,39,.12)}
+.buy .incl li:last-child{border-bottom:0}
+.buy .incl li::before{content:"✦";position:absolute;left:2px;top:7px;color:#C9A227;font-size:11px}
 .buy .pnote{font-size:14px;line-height:1.6;color:var(--mid);margin-bottom:22px}
 .btn{display:block;text-align:center;padding:18px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;background:#3A2E28;color:#F5EDD8;border:1px solid #3A2E28;transition:all .3s}
 .btn:hover{background:#2b221d;transform:translateY(-2px)}
@@ -97,9 +101,9 @@ footer a{color:inherit}
 
 <div class="hero">
   <div class="kicker">Cjeloviti program za žene</div>
-  <h1>My Whole-Body Wellness Program</h1>
+  <h1>Moj whole-body wellness program</h1>
   <p class="sub">Program zdravlja iznutra i izvana. Tvoje unutarnje okruženje, tvoje vanjsko okruženje i život u skladu s tvojim ciklusom, na jednom mjestu.</p>
-  <div class="quote">Ne treba ti više discipline. Treba ti povratak svom prirodnom ritmu.</div>
+  <div class="quote">Ne treba ti više discipline. Treba ti povratak prirodnom ritmu.</div>
 </div>
 
 <div class="sec-head">
@@ -112,7 +116,17 @@ footer a{color:inherit}
 <div class="buy">
   <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
   <div class="price">&euro;97</div>
-  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Ovo nije još jedan popis recepata i vježbi, nego osnove zdravlja koje ti nitko nije objasnio: jasan plan, recepti i zašto sve to radiš.</div>
+  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Dobivaš trajan pristup cijelom programu:</div>
+  <ul class="incl">
+    <li>32 modula u tri dijela, korak po korak</li>
+    <li>Zdravlje iznutra: prehrana, crijeva, jetra, šećer u krvi, voda, kretanje, stres i san</li>
+    <li>Zdraviji dom: kuhinja, kupaonica, kozmetika, sredstva za čišćenje, spavaća soba i plan zamjena</li>
+    <li>Život u skladu s ciklusom: hormoni, četiri faze, praćenje ciklusa i plodnost</li>
+    <li>Što jesti, kako se kretati i kako živjeti u svakoj fazi</li>
+    <li>30-dnevni akcijski plan i brzi podsjetnici</li>
+    <li>Recepti, moji omiljeni brendovi i knjige koje preporučujem</li>
+    <li>Uvijek i objašnjenje zašto, da napokon razumiješ svoje tijelo</li>
+  </ul>
   <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
@@ -144,7 +158,7 @@ footer a{color:inherit}
     <div class="part-num">3</div>
     <div class="part-body">
       <div class="part-label">Treći dio · Uskladi</div>
-      <div class="part-title">Zdravlje ciklusa <span>(Flow &amp; Flourish)</span></div>
+      <div class="part-title">Cycle syncing <span>(Flow &amp; Flourish)</span></div>
       <div class="part-desc">Povrati svoj ciklus. Toliko se žena osjeća "loše", ne zato što nešto s njima nije u redu, već zato što jedu, kreću se i očekuju istu energiju cijeli mjesec, i jer su naučene živjeti kao muškarci. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti. Kad shvatiš što tvoji hormoni rade u svakoj fazi, prestaješ kriviti sebe i daješ tijelu točno ono što mu treba. Od četiri faze preko prehrane, kretanja, sna i toksina, do potpunog 30-dnevnog akcijskog plana.</div>
       <div class="part-meta"><span>Odbaci mitove o ženskom tijelu</span><span>Ostavi ibuprofen</span><span>Nauči razumjeti svoj ciklus</span><span>30-dnevni akcijski plan</span></div>
     </div>
