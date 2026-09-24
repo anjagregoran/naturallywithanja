@@ -31,20 +31,20 @@ p{font-size:16px;color:rgba(74,61,92,.9);font-weight:300;margin:0 0 18px}
 .draft{background:#FBF4DC;border:1px solid rgba(184,144,31,.3);border-radius:10px;padding:14px 18px;font-size:13px;color:#7a5f1a;margin-bottom:36px;text-align:center}
 footer{text-align:center;font-size:12px;color:var(--mid);padding:32px 20px;border-top:1px solid var(--bdr)}
 footer a{color:inherit}
-.journey{position:relative;left:50%;transform:translateX(-50%);width:min(1060px,92vw);display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:22px 0 10px}
-.journey::before{content:"";position:absolute;top:56px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,#DAC7A6 0 7px,transparent 7px 15px);z-index:0}
-.jstep{position:relative;z-index:1;text-align:center;background:#FDFAF4;border:1px solid rgba(201,162,39,.18);border-radius:18px;padding:26px 20px 24px;box-shadow:0 24px 50px -34px rgba(120,110,90,.4)}
-.jbadge{width:60px;height:60px;border-radius:50%;background:linear-gradient(160deg,#F7F0E0,#EFE7D2);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 12px;box-shadow:0 8px 18px -8px rgba(120,110,90,.4)}
+.journey{position:relative;left:50%;transform:translateX(-50%);width:min(1120px,94vw);display:flex;gap:30px;align-items:stretch;overflow-x:auto;padding:10px 6px 22px;margin:18px 0 4px;scroll-snap-type:x proximity}
+.jstep{scroll-snap-align:center;flex:0 0 226px;position:relative;text-align:center;background:#FDFAF4;border:1px solid rgba(201,162,39,.18);border-radius:18px;padding:22px 18px;box-shadow:0 18px 40px -30px rgba(120,110,90,.4);transition:transform .3s ease,box-shadow .3s ease}
+.jstep:hover{transform:translateY(-6px);box-shadow:0 28px 54px -30px rgba(120,110,90,.5)}
+.jstep:not(:last-child)::after{content:"→";position:absolute;right:-23px;top:40px;font-size:19px;color:#C9A860;font-weight:400}
+.jbadge{position:relative;width:56px;height:56px;border-radius:50%;background:linear-gradient(160deg,#F7F0E0,#EFE7D2);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 8px 18px -8px rgba(120,110,90,.4)}
 .jlabel{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B8901F;font-weight:600;margin-bottom:8px}
-.jtitle{font-family:'Cormorant Garamond',serif;font-size:20px;color:#3A2E28;margin-bottom:10px;line-height:1.2}
-.jtext{font-size:13px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.7}
-@media(max-width:860px){.journey{grid-template-columns:1fr 1fr}.journey::before{display:none}}
-@media(max-width:560px){.journey{grid-template-columns:1fr}}
+.jtitle{font-family:'Cormorant Garamond',serif;font-size:19px;color:#3A2E28;margin-bottom:8px;line-height:1.2}
+.jtext{font-size:12.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.65}
+@media(max-width:600px){.jstep{flex-basis:76vw}.jstep:not(:last-child)::after,.jstep:not(:last-child) .jbadge::after{display:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a href="index.html" class="back">&larr; Natrag na Prirodno s Anjom</a>
+<a href="index.html" class="back">&larr; Natrag na početnu</a>
 
 <div class="kicker">Moja priča</div>
 <h1>Bok, ja sam Anja</h1>
@@ -116,7 +116,7 @@ footer a{color:inherit}
     <div class="jbadge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 6.5C10 5.1 7 4.9 4 5.6v11.6c3-.7 6-.5 8 1 2-1.5 5-1.7 8-1V5.6c-3-.7-6-.5-8 .9z" stroke="#B8901F" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 6.5v11.7" stroke="#B8901F" stroke-width="1.2"/></svg></div>
     <div class="jlabel">Korak 03</div>
     <div class="jtitle">Institut i učenje</div>
-    <div class="jtext">Preko dečka kojeg sam ondje upoznala otkrila sam Global Healing Institute. Danas se ondje educiram za certificiranu coachicu prirodnog zdravlja i planiram ići još dublje. Čitam puno knjiga, prolazim tečajeve i stalno učim, posebno od ljudi koji uistinu žive zdravo. Prošla sam i nekoliko čišćenja, čak i cjelovito čišćenje tijela, što mi je jako pomoglo, osobito s kožom. Zdravlje je za mene uvijek putovanje učenja.</div>
+    <div class="jtext">Preko svog dečka, kojeg sam ondje upoznala, otkrila sam Global Healing Institute. Danas se ondje educiram za certificiranu coachicu prirodnog zdravlja i planiram ići još dublje. Čitam puno knjiga, prolazim tečajeve i stalno učim, posebno od ljudi koji uistinu žive zdravo. Prošla sam i nekoliko čišćenja, čak i cjelovito čišćenje tijela, što mi je jako pomoglo, osobito s kožom. Zdravlje je za mene uvijek putovanje učenja.</div>
   </div>
   <div class="jstep">
     <div class="jbadge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21V10" stroke="#7A9A3E" stroke-width="1.6" stroke-linecap="round"/><path d="M12 12.5C10.6 9 7.2 7.7 3.8 8.7c0 3.4 3.4 5.6 8.2 3.8z" fill="#9AD08A"/><path d="M12 11C13.2 8 16.4 6.9 19.4 7.8c0 3-2.9 4.9-7.4 3.2z" fill="#B8CF8E"/></svg></div>
@@ -128,8 +128,8 @@ footer a{color:inherit}
 
 <div class="pull">"Ne vjerujem da zdravlje mora biti teško. Oduvijek je trebalo biti prirodno i jednostavno."</div>
 
-<h2 style="text-align:center">Unutarnje i vanjsko zdravlje</h2>
-<p style="text-align:center;max-width:660px;margin:0 auto 18px">Zdravlje se gradi na dvije razine. Iznutra: koliko je zdravo naše tijelo, krećemo li se i jedemo li čistu, pravu hranu. I izvana: naš dom, materijali u kojima spavamo, parfemi i sredstva za čišćenje koja koristimo. Mnogi zaboravljaju da i to duboko oblikuje naše zdravlje. U svijetu u kojem je danas gotovo sve zagađeno, nebo, hrana, voda i tlo, briga o zdravlju i ulaganje u sebe više nisu luksuz, nego nužnost. Upravo to, unutarnje i vanjsko zdravlje, želim vratiti kroz male životne navike i podijeliti s tobom.</p>
+<h2 style="text-align:center">Unutarnje i vanjsko zdravlje <span style="font-style:normal;font-size:.55em;letter-spacing:.5px;color:var(--mid)">(internal &amp; external environment)</span></h2>
+<p style="text-align:center;max-width:660px;margin:0 auto 18px">Tvoje je zdravlje onoliko dobro koliko su zdrava ta dva okruženja, ono u tebi i ono oko tebe. Zdravlje se gradi na dvije razine. Iznutra: koliko je zdravo naše tijelo, krećemo li se i jedemo li čistu, pravu hranu. I izvana: naš dom, materijali u kojima spavamo, parfemi i sredstva za čišćenje koja koristimo. Mnogi zaboravljaju da i to duboko oblikuje naše zdravlje. U svijetu u kojem je danas gotovo sve zagađeno, nebo, hrana, voda i tlo, briga o zdravlju i ulaganje u sebe više nisu luksuz, nego nužnost. Upravo to, unutarnje i vanjsko zdravlje, želim vratiti kroz male životne navike i podijeliti s tobom.</p>
 
 <p style="text-align:center;max-width:640px;margin:0 auto">Ako si tražila nježniji, prirodniji način da se ponovno osjećaš kao svoja, na pravom si mjestu. Tako mi je drago što si ovdje.</p>
 
