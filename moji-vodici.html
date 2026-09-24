@@ -47,35 +47,31 @@ h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font
 .sec-head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(26px,4vw,40px);color:#3A2E28}
 .sec-head p{font-size:15px;color:var(--mid);font-weight:300;max-width:560px;margin:10px auto 0}
 
-.parts{display:flex;flex-direction:column;gap:22px;max-width:880px;margin:36px auto 0}
-.part{background:#FFFFFF;border:1px solid rgba(120,110,90,.12);border-radius:22px;padding:34px 34px;box-shadow:0 26px 56px -40px rgba(120,110,90,.4);display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
-.part-num{flex:0 0 auto;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:#6B531A}
+.parts{display:flex;flex-direction:column;gap:0;margin:0}
+.part{position:relative;display:flex;gap:28px;align-items:flex-start;padding:6px 0 46px;background:none;border:0;box-shadow:none}
+.part:last-child{padding-bottom:0}
+.part:not(:last-child)::before{content:"";position:absolute;left:27px;top:66px;bottom:8px;border-left:1.5px dashed rgba(184,144,31,.45)}
+.part-num{flex:0 0 auto;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:#6B531A;position:relative;z-index:1;box-shadow:0 10px 24px -12px rgba(160,125,30,.55);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .p1 .part-num{background:linear-gradient(160deg,#F5EBB6,#EBD98D)}
 .p2 .part-num{background:linear-gradient(160deg,#EBD07A,#DCBB54)}
 .p3 .part-num{background:linear-gradient(160deg,#D6B347,#C39C22)}
-.part-body{flex:1 1 300px;min-width:260px}
-.part-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px}
-.part-title{font-family:'Cormorant Garamond',serif;font-size:25px;color:#3A2E28;margin-bottom:10px;line-height:1.2}
+.part-body{flex:1 1 auto;min-width:0;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.part:hover .part-num{transform:scale(1.1)}
+.part:hover .part-body{transform:translateX(6px)}
+.part-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin:4px 0 6px}
+.part-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#3A2E28;margin-bottom:10px;line-height:1.2}
 .part-title span{font-style:italic;font-size:17px;color:var(--mid)}
-.part-desc{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.8}
+.part-desc{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.85}
 .part-meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:14px}
-.part-meta span{font-size:11px;color:#8A6D1F;background:#FBF4DC;border:1px solid rgba(201,162,39,.35);border-radius:50px;padding:4px 11px}
-
-.part,.buy{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;cursor:pointer}
-.part:hover,.buy:hover{transform:translateY(-6px);box-shadow:0 34px 64px -36px rgba(120,110,90,.55)}
-.part:active,.buy:active{transform:translateY(-2px) scale(.985)}
-.part-num{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.part:hover .part-num{transform:rotate(-8deg) scale(1.08)}
-@media(prefers-reduced-motion:reduce){.part,.buy,.part-num{transition:none}}
-.prog-grid{display:grid;grid-template-columns:1fr minmax(280px,360px);gap:40px;align-items:start;margin-top:36px}
-.prog-grid .buy{order:2;position:sticky;top:28px;margin:0;max-width:none;padding:38px 28px}
-.prog-grid .parts{margin:0;max-width:none}
-.part.open{transform:scale(1.035) translateY(-6px);box-shadow:0 44px 80px -36px rgba(120,110,90,.6);z-index:2;position:relative}
-@media(max-width:900px){.prog-grid{grid-template-columns:1fr}.prog-grid .buy{position:static;order:2}.part.open{transform:scale(1.015)}}
+.part-meta span{font-size:11px;color:#8A6D1F;background:rgba(251,244,220,.6);border:1px solid rgba(201,162,39,.3);border-radius:50px;padding:4px 11px}
+.prog-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:64px;align-items:center;margin-top:44px}
+.prog-grid .buy{order:2;margin:0;max-width:none;padding:46px 36px}
+@media(max-width:900px){.prog-grid{grid-template-columns:1fr;gap:48px}.part{gap:18px}.part-num{width:46px;height:46px;font-size:20px}.part:not(:last-child)::before{left:22px;top:56px}}
+@media(prefers-reduced-motion:reduce){.part-num,.part-body{transition:none}}
 .buy{max-width:560px;margin:64px auto 0;text-align:center;background:#FFFFFF;border:1px solid rgba(201,162,39,.25);border-radius:22px;padding:44px 34px;box-shadow:0 36px 80px -44px rgba(120,110,90,.5)}
 .buy .in{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#A89870;margin-bottom:6px}
 .buy .price{font-family:'Cormorant Garamond',serif;font-size:52px;color:#3A2E28;font-weight:300;letter-spacing:-1px;margin-bottom:4px}
-.buy .pnote{font-size:12px;color:var(--mid);margin-bottom:22px}
+.buy .pnote{font-size:14px;line-height:1.6;color:var(--mid);margin-bottom:22px}
 .btn{display:block;text-align:center;padding:18px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;background:#3A2E28;color:#F5EDD8;border:1px solid #3A2E28;transition:all .3s}
 .btn:hover{background:#2b221d;transform:translateY(-2px)}
 .buy .trust{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#B4A88E;margin-top:14px}
@@ -127,9 +123,9 @@ footer a{color:inherit}
 <div class="buy">
   <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
   <div class="price">&euro;97</div>
-  <div class="pnote">Sva tri dijela · Trenutni pristup · Zauvijek tvoje</div>
+  <div class="pnote">Plaćaš jednom i ostaje tvoje. Ovo nije još jedan popis recepata i vježbi, nego osnove zdravlja koje ti nitko nije objasnio: jasan plan, recepti i zašto sve to radiš.</div>
   <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
-  <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Osiguraj svoje mjesto</a>
+  <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
 </div>
 
@@ -176,7 +172,6 @@ footer a{color:inherit}
 </footer>
 
 <script>
-document.querySelectorAll('.part').forEach(function(p){p.addEventListener('click',function(){var o=p.classList.contains('open');document.querySelectorAll('.part.open').forEach(function(x){x.classList.remove('open')});if(!o)p.classList.add('open');});});
 function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.onclick=null;}
 (function(){
   var w=document.querySelector('.vwrap'); if(!w) return;
