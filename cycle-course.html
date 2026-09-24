@@ -160,6 +160,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);
 .gate-error.show{display:block}
 .gate-buy{margin-top:18px;font-size:13px;color:#9B89B4;text-decoration:none;display:inline-block}
 body.locked > *:not(.gate-overlay){display:none}
+.vwrap{position:relative;cursor:pointer;line-height:0;border-radius:14px;overflow:hidden;max-width:720px;margin:26px auto 0;background:#FCF9F1;padding:10px;box-shadow:0 40px 90px -40px rgba(74,61,92,.45)}
+.vinner{position:relative;border-radius:8px;overflow:hidden}
+.vwrap video{width:100%;height:auto;display:block;background:#000;border-radius:8px}
+.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;border:none;background:rgba(252,249,241,.94);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 30px rgba(58,46,40,.35);padding-left:5px;transition:transform .2s}
+.vwrap:hover .vplay{transform:translate(-50%,-50%) scale(1.07)}
+.vplay.hidden{opacity:0;pointer-events:none}
+.vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.vposter.hidden{opacity:0}
+.vsub{position:absolute;left:50%;bottom:11%;transform:translateX(-50%);width:88%;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(12px,1.8vw,18px);font-weight:500;letter-spacing:.5px;color:#fff;line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,.8),0 0 3px rgba(0,0,0,.7);opacity:0;transition:opacity .18s;pointer-events:none}
+.sb-part{margin-top:22px}
 </style>
 </head>
 <body class="locked">
@@ -221,8 +231,25 @@ body.locked > *:not(.gate-overlay){display:none}
 </div>
 <div class="app">
  <div class="sidebar">
- <div class="sb-header">Moduli tečaja</div>
- <button class="mb active" onclick="go(0)"><div class="mn">1</div><div class="mt">Dobrodošlica i uvod</div></button>
+ <div class="sb-header">Prvi dio · Obnovi</div>
+ <button class="mb active" onclick="go('a0')"><div class="mn">1</div><div class="mt">Dobrodošla u program</div></button>
+ <button class="mb" onclick="go('a1')"><div class="mn">2</div><div class="mt">Zašto se zapravo razbolijevamo</div></button>
+ <button class="mb" onclick="go('a2')"><div class="mn">3</div><div class="mt">Hrana je lijek</div></button>
+ <button class="mb" onclick="go('a3')"><div class="mn">4</div><div class="mt">Jetra i prirodno čišćenje</div></button>
+ <button class="mb" onclick="go('a4')"><div class="mn">5</div><div class="mt">Crijeva i probava</div></button>
+ <button class="mb" onclick="go('a5')"><div class="mn">6</div><div class="mt">Živa hidratacija</div></button>
+ <button class="mb" onclick="go('a6')"><div class="mn">7</div><div class="mt">Kretanje u skladu sa ženskim tijelom</div></button>
+ <button class="mb" onclick="go('a7')"><div class="mn">8</div><div class="mt">Sunce, ritam i jednostavan život</div></button>
+ <div class="sb-header sb-part">Drugi dio · Resetiraj</div>
+ <button class="mb" onclick="go('b0')"><div class="mn">1</div><div class="mt">Zašto tvoj dom oblikuje tvoje zdravlje</div></button>
+ <button class="mb" onclick="go('b1')"><div class="mn">2</div><div class="mt">Kuhinja</div></button>
+ <button class="mb" onclick="go('b2')"><div class="mn">3</div><div class="mt">Kupaonica i njega tijela</div></button>
+ <button class="mb" onclick="go('b3')"><div class="mn">4</div><div class="mt">Sredstva za čišćenje</div></button>
+ <button class="mb" onclick="go('b4')"><div class="mn">5</div><div class="mt">Spavaća soba, zrak i san</div></button>
+ <button class="mb" onclick="go('b5')"><div class="mn">6</div><div class="mt">Pranje rublja i tekstil</div></button>
+ <button class="mb" onclick="go('b6')"><div class="mn">7</div><div class="mt">Tvoj plan zamjena</div></button>
+ <div class="sb-header sb-part">Treći dio · Uskladi</div>
+ <button class="mb" onclick="go(0)"><div class="mn">1</div><div class="mt">Dobrodošlica i uvod</div></button>
  <button class="mb" onclick="go(1)"><div class="mn">2</div><div class="mt">Zašto tvoj ciklus mijenja sve</div></button>
  <button class="mb" onclick="go(2)"><div class="mn">3</div><div class="mt">Četiri faze</div></button>
  <button class="mb" onclick="go(3)"><div class="mn">4</div><div class="mt">Hormoni objašnjeni jednostavno</div></button>
@@ -244,14 +271,116 @@ body.locked > *:not(.gate-overlay){display:none}
  <button class="mb" onclick="go(19)"><div class="mn">20</div><div class="mt">Završne riječi i brendovi</div></button>
  </div>
  <div class="content" id="mc">
+ <div class="ms active" id="a0">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 01</div><h2>Dobrodošla u program</h2><p>Zašto sam stvorila ovaj vodič i za koga je</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Ovo je prostor za svaku ženu koja osjeća da nešto nije kako bi trebalo biti, umor, ćudljivost, problemi s kožom, težinom ili ciklusom, i koja duboko u sebi zna da postoji prirodniji način života. Ovdje ćemo se zajedno vratiti temeljima: kako je tvoje tijelo zapravo stvoreno da funkcionira i kako mu vratiti ono što mu treba.</p><p>Ne trebaš više discipline ni savršenstva. Trebaš razumijevanje i povratak svom prirodnom ritmu. Kroz ovih osam modula vodim te korak po korak, jednostavno i nježno.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Za koga je ovaj vodič</li><li>Kako je posložen i kako ga koristiti</li><li>Moja priča i zašto vjerujem u ovo</li></ul></div>
+ <div class="nb"><button disabled>&larr; Prethodni</button><button class="prim" onclick="go('a1')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a1">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 02</div><h2>Zašto se zapravo razbolijevamo</h2><p>Korijenski uzrok i cijela filozofija</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Ovo je srce cijelog vodiča. Ne gledamo simptome kao neprijatelje, već kao poruke. Tijelo se ne kvari nasumično, ono reagira na ono čime ga hranimo, čemu ga izlažemo i kako živimo. Kad shvatiš korijenski uzrok, prestaješ gasiti požare i počinješ istinski liječiti.</p><p>Ovdje dijelim cijelu svoju filozofiju: toksičnost, način života protiv prirode, i istinu da tvoje tijelo uvijek želi ozdraviti kad mu daš priliku.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Što zapravo znači "korijenski uzrok"</li><li>Kako smo se udaljili od prirode</li><li>Zašto tijelo uvijek teži ozdravljenju</li></ul></div>
+ <div class="nb"><button onclick="go('a0')">&larr; Prethodni</button><button class="prim" onclick="go('a2')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a2">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 03</div><h2>Hrana je lijek</h2><p>Prava, živa hrana i kako jesti za zdravlje</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Sve što tvoje tijelo gradi, obnavlja i liječi dolazi s kraja tvoje vilice. U ovom modulu vraćamo se pravoj, živoj hrani, onako kako se jelo na Mediteranu generacijama: svježe, jednostavno i puno života.</p><p>Ne radi se o pravilima ni brojanju, već o tome da nahraniš svoje tijelo onim što ono prepoznaje kao hranu.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Prava hrana naspram "prazne" hrane</li><li>Mediteranski pristup jelu</li><li>Jednostavni temelji koje odmah možeš primijeniti</li></ul></div>
+ <div class="nb"><button onclick="go('a1')">&larr; Prethodni</button><button class="prim" onclick="go('a3')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a3">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 04</div><h2>Jetra i prirodno čišćenje</h2><p>Zašto sve počinje od drenaže i jetre</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Jetra je tihi radnik tvog tijela. Ona filtrira, razgrađuje hormone i uklanja ono što ti ne treba. Kad je preopterećena, osjetiš to kroz umor, kožu, probavu i ciklus. Prije nego što bilo što dodaješ, važno je otvoriti putove kojima tijelo izbacuje.</p><p>Ovdje govorim o nježnom, prirodnom čišćenju, ispravnim redoslijedom, bez agresivnih detoksa.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Što jetra radi za tebe svaki dan</li><li>Zašto drenaža dolazi prije čišćenja</li><li>Nježni načini za podršku jetri</li></ul></div>
+ <div class="nb"><button onclick="go('a2')">&larr; Prethodni</button><button class="prim" onclick="go('a4')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a4">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 05</div><h2>Crijeva i probava</h2><p>Temelj hormona, energije i imuniteta</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Toliko toga počinje u crijevima: raspoloženje, imunitet, koža, čak i ravnoteža hormona. Kad probava radi dobro, tijelo upija nutrijente i mirno funkcionira. Kad ne radi, sve ostalo trpi.</p><p>U ovom modulu vraćamo probavi njezinu snagu, jednostavno i prirodno.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Veza crijeva, hormona i raspoloženja</li><li>Znakovi da probava treba podršku</li><li>Navike koje njeguju zdrava crijeva</li></ul></div>
+ <div class="nb"><button onclick="go('a3')">&larr; Prethodni</button><button class="prim" onclick="go('a5')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a5">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 06</div><h2>Živa hidratacija</h2><p>Zaboravljeni izvor zdravlja</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Većina ljudi vjeruje da zdravlje počinje prehranom, snom ili vježbanjem. U stvarnosti, počinje čistom, pročišćenom vodom. Voda nije samo još jedna zdravstvena navika, već sam medij u kojem se odvija svaki biološki proces.</p><p>Cijela lekcija o vodi, od vrsta vode do toga kako i kada piti, čeka te u tečaju Live Hydration.</p><p style="margin-top:14px"><a href="water-course.html" target="_blank" style="color:var(--deep);font-weight:500">Otvori tečaj Live Hydration &rarr;</a></p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Zašto je voda temelj zdravlja</li><li>Najbolje vrste vode za tijelo</li><li>Kako se zaista hidratizirati</li></ul></div>
+ <div class="nb"><button onclick="go('a4')">&larr; Prethodni</button><button class="prim" onclick="go('a6')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a6">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 07</div><h2>Kretanje u skladu sa ženskim tijelom</h2><p>Ne kazna, nego život</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Žensko tijelo nije stvoreno da radi na ravnoj crti niti da se iscrpljuje. Kretanje bi trebalo davati energiju, a ne oduzimati je. U ovom modulu govorim o nježnijem, prirodnijem pristupu kretanju koji poštuje tvoju energiju i tvoje faze.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Zašto manje ponekad znači više</li><li>Kretanje koje puni, a ne prazni</li><li>Svakodnevno kretanje kao način života</li></ul></div>
+ <div class="nb"><button onclick="go('a5')">&larr; Prethodni</button><button class="prim" onclick="go('a7')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="a7">
+ <div class="mh"><div class="tag">Prvi dio · Obnovi &middot; Modul 08</div><h2>Sunce, ritam i jednostavan život</h2><p>Mediteranska tajna dugovječnosti</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Zdravlje ne dolazi samo iz tanjura. Dolazi iz sunca, sna, mira i ritma života usklađenog s prirodom. Upravo je ta sporost razlog zašto ljudi na Mediteranu cvjetaju. U ovom modulu dijelim jednostavne navike koje smiruju živčani sustav i vraćaju tijelo u ravnotežu.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Sunce i prirodni ritam dana</li><li>San i smirivanje živčanog sustava</li><li>Ljepota jednostavnog, sporijeg života</li></ul></div>
+ <div class="nb"><button onclick="go('a6')">&larr; Prethodni</button><button class="prim" onclick="go('b0')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b0">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 01</div><h2>Zašto tvoj dom oblikuje tvoje zdravlje</h2><p>Nevidljivo toksično opterećenje</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Provodimo većinu života u svom domu, a ipak je upravo to mjesto često najveći skriveni izvor toksina. Kemikalije iz sredstava za čišćenje, plastike, kozmetike i zraka tiho se nakupljaju u tijelu i opterećuju tvoje hormone, kožu, energiju i cijelo zdravlje.</p><p>Dobra vijest: dom je jedno od mjesta gdje imaš najviše kontrole. Kad ukloniš toksično opterećenje ondje gdje živiš, tvoje tijelo dobiva prostor da odahne i ozdravi.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Kako te dom može tiho iscrpljivati</li><li>Zašto je "ukupno opterećenje" ono što je važno</li><li>Kako pristupiti bez preplavljenosti</li></ul></div>
+ <div class="nb"><button onclick="go('a7')">&larr; Prethodni</button><button class="prim" onclick="go('b1')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b1">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 02</div><h2>Kuhinja</h2><p>Posuđe, plastika, hrana i voda</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Kuhinja je srce doma i jedno od najvažnijih mjesta za početak. Ono u čemu kuhaš, čuvaš hranu i piješ vodu izravno utječe na to što ulazi u tvoje tijelo svaki dan.</p><p>Ovdje prolazimo kroz jednostavne, pametne zamjene koje čine veliku razliku, bez potrebe da sve baciš odjednom.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Posuđe: čega se kloniti, što odabrati</li><li>Plastika i čuvanje hrane</li><li>Čista voda za piće i kuhanje</li></ul></div>
+ <div class="nb"><button onclick="go('b0')">&larr; Prethodni</button><button class="prim" onclick="go('b2')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b2">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 03</div><h2>Kupaonica i njega tijela</h2><p>Koža upija sve što na nju staviš</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Tvoja koža je najveći organ i upija veliki dio onoga što na nju naneseš. Kozmetika, proizvodi za njegu i parfemi često kriju hormonske ometače koji opterećuju tijelo svaki dan.</p><p>U ovom modulu učiš kako čitati etikete i birati čistije proizvode koji podupiru, a ne opterećuju tvoje zdravlje.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Sastojci kojih se kloniti</li><li>Čišća njega kože, kose i tijela</li><li>Jednostavne, prirodne alternative</li></ul></div>
+ <div class="nb"><button onclick="go('b1')">&larr; Prethodni</button><button class="prim" onclick="go('b3')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b3">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 04</div><h2>Sredstva za čišćenje</h2><p>Što izbaciti i čime zamijeniti</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Većina konvencionalnih sredstava za čišćenje ostavlja kemijske ostatke na površinama i u zraku koji udišeš. Ono što bi trebalo čistiti tvoj dom često ga zapravo dodatno zagađuje.</p><p>Pokazujem ti kako održati dom besprijekorno čistim uz jednostavna, prirodna sredstva koja stvarno rade.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Najgori uobičajeni krivci</li><li>Prirodna sredstva koja stvarno čiste</li><li>Jednostavni domaći recepti</li></ul></div>
+ <div class="nb"><button onclick="go('b2')">&larr; Prethodni</button><button class="prim" onclick="go('b4')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b4">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 05</div><h2>Spavaća soba, zrak i san</h2><p>Gdje se tijelo obnavlja</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>U spavaćoj sobi provodiš trećinu života i upravo se tu tvoje tijelo obnavlja i uravnotežuje hormone. Kvaliteta zraka, tekstila i svjetla ovdje tiho oblikuje koliko duboko odmaraš.</p><p>Ovaj modul pomaže ti stvoriti čist, miran prostor koji podupire dubok san i regeneraciju.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Kvaliteta zraka i biljke koje pročišćavaju</li><li>Čišći tekstil i posteljina</li><li>Svjetlo, ekrani i dublji san</li></ul></div>
+ <div class="nb"><button onclick="go('b3')">&larr; Prethodni</button><button class="prim" onclick="go('b5')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b5">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 06</div><h2>Pranje rublja i tekstil</h2><p>Ono što nosiš uz kožu cijeli dan</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Deterdženti, omekšivači i mirisne kockice ostavljaju kemikalije na odjeći koja cijeli dan dodiruje tvoju kožu. Mnoge od tih tvari su hormonski ometači i česti uzrok iritacija.</p><p>Ovdje ti pokazujem čišće načine pranja koji čuvaju i tvoju kožu i tvoj dom.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Što se krije u deterdžentima i omekšivačima</li><li>Čišće alternative za pranje</li><li>Prirodni mirisi umjesto sintetičkih</li></ul></div>
+ <div class="nb"><button onclick="go('b4')">&larr; Prethodni</button><button class="prim" onclick="go('b6')">Sljedeći modul &rarr;</button></div>
+ </div>
+ <div class="ms" id="b6">
+ <div class="mh"><div class="tag">Drugi dio · Resetiraj &middot; Modul 07</div><h2>Tvoj plan zamjena</h2><p>Korak po korak, bez preplavljenosti</p></div>
+ <div class="card"><div class="badge bt">Video uskoro</div><p>Ne moraš sve promijeniti odjednom. Najbolji pristup je zamjenjivati stvari postupno, kako se troše, biranjem čišće opcije svaki put.</p><p>U ovom modulu dobivaš jednostavan plan i redoslijed, da točno znaš odakle početi i kako nastaviti bez stresa i troška odjednom.</p><p>Napredak, ne savršenstvo. Svaka mala zamjena skida dio opterećenja s tvog tijela. Male, dosljedne promjene s vremenom potpuno preobraze tvoj dom i tvoje zdravlje.</p></div>
+ <div class="card"><div class="ct">✿ U ovom modulu</div><ul class="sl"><li>Redoslijed zamjena po važnosti</li><li>Popis za ispis, prostoriju po prostoriju</li><li>Kako to zadržati dugoročno</li></ul></div>
+ <div class="nb"><button onclick="go('b5')">&larr; Prethodni</button><button class="prim" onclick="go(0)">Sljedeći modul &rarr;</button></div>
+ </div>
  <!-- M1 WELCOME -->
- <div class="ms active" id="m0">
+ <div class="ms" id="m0">
  <div class="mh"><div class="tag">Modul 01 &middot; Uvod</div><h2>Dobrodošla, prekrasna ženo &#127800;</h2><p>Ovaj je vodič sve što bih voljela da mi je netko dao prije mnogo godina, prije boli, zbunjenosti i godina samo trpljenja.</p></div>
+  <div class="vwrap" onclick="startVid(this)">
+    <div class="vinner">
+      <video preload="metadata" playsinline crossorigin="anonymous" onplaying="this.closest('.vwrap').querySelector('.vposter').classList.add('hidden')">
+        <source src="course-intro.mp4?v=1" type="video/mp4">
+        <track kind="subtitles" src="course-intro-hr.vtt?v=3" srclang="hr" label="Hrvatski" default>
+      </video>
+      <div class="vsub" aria-hidden="true"></div>
+      <img class="vposter" src="course-intro-poster.jpg?v=1" alt="">
+      <button type="button" class="vplay" aria-label="Pokreni video"><svg viewBox="0 0 24 24" width="26" height="26" fill="#3A2E28"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+  </div>
+
  <div class="card"><div class="badge bt">Pismo tebi</div><div class="qb">"Nisi pokvarena. Samo ti nikad nisu rekli istinu o tvom vlastitom tijelu i uvjerili su te da nemaš moć nad njim."</div><p>Ako si godinama patila zbog bolnih menstruacija, promjena raspoloženja, iscrpljenosti prije ciklusa, napuhnutosti ili jednostavno osjećaja da uopće nisi svoja, ovaj je vodič za tebe. Dali su ti kontracepciju ili ibuprofen i rekli da je to jednostavno dio toga da si žena. Nikad te nisu naučili kako tvoji hormoni zapravo rade. Zato hajdemo učiti zajedno.</p></div>
  <div class="card"><div class="ct">✿ Što ovaj vodič obuhvaća</div><ul class="sl"><li>Četiri faze tvog ciklusa i što svaka znači za energiju, raspoloženje i tijelo</li><li>Kako estrogen, progesteron, testosteron i kortizol rade, jednostavnim, stvarnim jezikom</li><li>Kako zapravo izgleda zdrava menstruacija (većini žena to nikad nisu rekli)</li><li>Korijenski uzroci iza najčešćih simptoma ciklusa</li><li>Kako jesti, kretati se, spavati i živjeti u skladu sa svojim ciklusom</li><li>Kako zaštititi svoje hormone od toksina iz okoline</li><li>Potpuni 30-dnevni plan za početnice da danas započneš svoje putovanje ozdravljenja</li></ul></div>
  <div class="card"><div class="ct">&#127774; Moja filozofija</div><div style="display:flex;flex-direction:column;gap:10px"><div class="hb hg"><div class="hlt">Holistički i korijenski pristup</div><p>Nikad ne jurimo za simptomima. Tražimo ono što tijelo zapravo traži.</p><p style="font-size:13px;color:var(--mid);margin-top:8px">Želimo prijeći sa:<br><em>Simptom → uzmi dodatak</em><br>na<br><em>Simptom → što bi to moglo pokretati?</em></p></div><div class="hb hg"><div class="hlt">Iskonski i tradicionalni</div><p>Žene su stoljećima razumjele svoje cikluse. Mi vraćamo to znanje.</p></div><div class="hb hg"><div class="hlt">Hranjenje, ne ograničavanje</div><p>Hranimo svoje hormone. Ne gladujemo ih. Hrana je lijek.</p></div><div class="hb hg"><div class="hlt">Praktičan i pun suosjećanja</div><p>Svaki mali korak koji poduzmeš sjeme je posađeno za tvoje buduće zdravlje. Neki dani bit će bolji od drugih, i to je potpuno u redu. Ovo je putovanje, zato nastavi se pojavljivati za sebe s nježnošću, čak i kad je iznimno teško.</p></div><div class="hb hg"><div class="hlt">Prirodan i usklađen</div><p>Kada svom tijelu daš pravu hranu, način života i okruženje, ono za koje je zapravo stvoreno, ono će cvjetati. Zdravlje prestaje biti nešto za što se trudiš i postaje nešto što jednostavno imaš.</p></div></div></div>
  <div class="card"><div class="ct"><span style="font-weight:200;color:var(--light);font-size:20px">✓</span> Popis za početnice</div><ul class="cl"><li><div class="cb"></div>Pročitaj cijeli vodič barem jednom prije nego što išta mijenjaš</li><li><div class="cb"></div>Preuzmi aplikaciju za praćenje ciklusa ili započni papirnati dnevnik</li><li><div class="cb"></div>Zabilježi prvi dan svoje zadnje menstruacije</li><li><div class="cb"></div>Počni promatrati svoju energiju, raspoloženje, fizičke simptome i kvalitetu sna kroz mjesec</li><li><div class="cb"></div>Pristupi ovome sa znatiželjom, a ne s pritiskom</li></ul></div>
- <div class="nb"><button disabled>&larr; Prethodni</button><button class="prim" onclick="go(1)">Sljedeći modul &rarr;</button></div>
+ <div class="nb"><button onclick="go('b6')">&larr; Prethodni</button><button class="prim" onclick="go(1)">Sljedeći modul &rarr;</button></div>
  </div>
 
  <!-- M2 WHY IT MATTERS -->
@@ -834,13 +963,16 @@ body.locked > *:not(.gate-overlay){display:none}
 <script>
 let cur=0;
 function go(i){
- document.querySelectorAll('.ms').forEach(s=>s.classList.remove('active'));
+ const all=[...document.querySelectorAll('.ms')];
+ const el=document.getElementById(typeof i==='number'?'m'+i:i);
+ all.forEach(s=>s.classList.remove('active'));
  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('active'));
- document.getElementById('m'+i).classList.add('active');
- document.querySelectorAll('.mb')[i].classList.add('active');
+ el.classList.add('active');
+ const key=typeof i==='number'?'go('+i+')':"go('"+i+"')";
+ document.querySelectorAll('.mb').forEach(b=>{if(b.getAttribute('onclick')===key)b.classList.add('active')});
  cur=i;
  document.getElementById('mc').scrollIntoView({behavior:'smooth',block:'start'});
- document.getElementById('pb').style.width=((i+1)/20*100)+'%';
+ document.getElementById('pb').style.width=((all.indexOf(el)+1)/all.length*100)+'%';
 }
 function tgl(el){
  const a=el.nextElementSibling,o=el.classList.contains('open');
@@ -887,6 +1019,17 @@ document.getElementById('gateError').classList.add('show');
 document.getElementById('gateInput').addEventListener('keypress', function(e){
 if(e.key === 'Enter'){ checkGateCode(); }
 });
+</script>
+<script>
+function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.onclick=null;}
+(function(){
+  var w=document.querySelector('.vwrap'); if(!w) return;
+  var v=w.querySelector('video'), box=w.querySelector('.vsub');
+  function bind(){var t=v.textTracks&&v.textTracks[0]; if(!t) return; t.mode='hidden';
+    t.oncuechange=function(){var c=t.activeCues&&t.activeCues[0]; box.textContent=c?c.text:''; box.style.opacity=c?'1':'0';};}
+  if(v.textTracks&&v.textTracks.length) bind();
+  v.addEventListener('loadeddata',bind);
+})();
 </script>
 </body>
 </html>

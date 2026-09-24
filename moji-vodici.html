@@ -100,17 +100,6 @@ footer a{color:inherit}
   <h1>My Whole-Body Wellness Program</h1>
   <p class="sub">Program zdravlja iznutra i izvana. Tvoje unutarnje okruženje, tvoje vanjsko okruženje i život u skladu s tvojim ciklusom, na jednom mjestu.</p>
   <div class="quote">Ne treba ti više discipline. Treba ti povratak svom prirodnom ritmu.</div>
-  <div class="vwrap" onclick="startVid(this)">
-    <div class="vinner">
-      <video preload="metadata" playsinline crossorigin="anonymous" onplaying="this.closest('.vwrap').querySelector('.vposter').classList.add('hidden')">
-        <source src="course-intro.mp4?v=1" type="video/mp4">
-        <track kind="subtitles" src="course-intro-hr.vtt?v=3" srclang="hr" label="Hrvatski" default>
-      </video>
-      <div class="vsub" aria-hidden="true"></div>
-      <img class="vposter" src="course-intro-poster.jpg?v=1" alt="">
-      <button type="button" class="vplay" aria-label="Pokreni video"><svg viewBox="0 0 24 24" width="26" height="26" fill="#3A2E28"><path d="M8 5v14l11-7z"/></svg></button>
-    </div>
-  </div>
 </div>
 
 <div class="sec-head">
@@ -123,7 +112,7 @@ footer a{color:inherit}
 <div class="buy">
   <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
   <div class="price">&euro;97</div>
-  <div class="pnote">Plaćaš jednom i ostaje tvoje. Ovo nije još jedan popis recepata i vježbi, nego osnove zdravlja koje ti nitko nije objasnio: jasan plan, recepti i zašto sve to radiš.</div>
+  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Ovo nije još jedan popis recepata i vježbi, nego osnove zdravlja koje ti nitko nije objasnio: jasan plan, recepti i zašto sve to radiš.</div>
   <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
@@ -172,15 +161,6 @@ footer a{color:inherit}
 </footer>
 
 <script>
-function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.onclick=null;}
-(function(){
-  var w=document.querySelector('.vwrap'); if(!w) return;
-  var v=w.querySelector('video'), box=w.querySelector('.vsub');
-  function bind(){var t=v.textTracks&&v.textTracks[0]; if(!t) return; t.mode='hidden';
-    t.oncuechange=function(){var c=t.activeCues&&t.activeCues[0]; box.textContent=c?c.text:''; box.style.opacity=c?'1':'0';};}
-  if(v.textTracks&&v.textTracks.length) bind();
-  v.addEventListener('loadeddata',bind);
-})();
 </script>
 </body>
 </html>
