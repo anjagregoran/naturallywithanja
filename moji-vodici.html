@@ -10,138 +10,169 @@
 <style>
 :root{--deep:#4A3D5C;--mid:#7A6D8C;--accent:#9B89B4;--gold:#B8901F;--tc:#B6A8D9}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;background:#F4F0E8}
+body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;background:#F5F2F9}
 .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(105px);will-change:transform}
-.blob.b1{width:64vw;height:64vw;left:-16vw;top:-18vw;background:radial-gradient(circle,rgba(201,188,224,.72),rgba(201,188,224,0) 64%);animation:float1 14s ease-in-out infinite}
-.blob.b2{width:56vw;height:56vw;right:-16vw;top:-2vw;background:radial-gradient(circle,rgba(188,208,180,.64),rgba(188,208,180,0) 64%);animation:float2 17s ease-in-out infinite}
-.blob.b3{width:62vw;height:62vw;left:4vw;bottom:-26vw;background:radial-gradient(circle,rgba(236,221,184,.62),rgba(236,221,184,0) 64%);animation:float3 19s ease-in-out infinite}
-.blob.b4{width:50vw;height:50vw;right:0;bottom:-12vw;background:radial-gradient(circle,rgba(185,205,218,.62),rgba(185,205,218,0) 65%);animation:float4 15s ease-in-out infinite}
-.blob.b5{width:46vw;height:46vw;left:26vw;top:22vh;background:radial-gradient(circle,rgba(227,198,210,.6),rgba(227,198,210,0) 65%);animation:float5 18s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(26vw,20vh) scale(1.32)}}
-@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-24vw,24vh) scale(1.24)}}
-@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(22vw,-22vh) scale(1.36)}}
-@keyframes float4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-26vw,-20vh) scale(1.26)}}
-@keyframes float5{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20vw,18vh) scale(1.2)}}
-.bot{position:absolute;z-index:0;pointer-events:none;opacity:.34;will-change:transform}
-@keyframes botA{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(3vw,-5vh) rotate(26deg)}}
-@keyframes botB{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-4vw,4vh) rotate(-22deg)}}
-@keyframes botC{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(2.5vw,5vh) rotate(18deg)}}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);will-change:transform}
+.blob.b1{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,rgba(201,188,224,.55),transparent 66%);animation:d1 34s ease-in-out infinite}
+.blob.b2{width:48vw;height:48vw;right:-12vw;bottom:-14vw;background:radial-gradient(circle,rgba(188,208,180,.5),transparent 66%);animation:d2 42s ease-in-out infinite}
+.blob.b3{width:44vw;height:44vw;left:34vw;top:30vh;background:radial-gradient(circle,rgba(236,221,184,.42),transparent 68%);animation:d3 48s ease-in-out infinite}
+@keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(10vw,8vh)}}
+@keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(-9vw,-7vh)}}
+@keyframes d3{0%,100%{transform:translate(0,0)}50%{transform:translate(-8vw,6vh)}}
+.bot{position:absolute;z-index:0;pointer-events:none;opacity:.3;will-change:transform}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(16deg)}}
 @media(prefers-reduced-motion:reduce){.blob,.bot{animation:none}}
-.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 24px 200px}
+.bg-photo{position:fixed;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.14;pointer-events:none}
+
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:24px 24px 90px}
 .back{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .back:hover{color:var(--accent)}
-.head{text-align:center;max-width:640px;margin:34px auto 8px}
+.hero{text-align:center;max-width:760px;margin:30px auto 0}
 .kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--tc);margin-bottom:14px}
-h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(38px,6vw,60px);color:#3A2E28;line-height:1.08;margin-bottom:16px}
-.sub{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;max-width:560px;margin:0 auto}
-.hand-underline{display:block;margin:16px auto 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:38px;max-width:1120px;margin:64px auto 0;align-items:stretch}
-.guide{position:relative;display:flex;flex-direction:column;text-align:center;background:#FFFFFF;border:1px solid rgba(120,110,90,.12);border-radius:24px;padding:44px 34px 34px;text-decoration:none;color:inherit;
-  box-shadow:0 42px 70px -34px rgba(74,82,40,.5),0 14px 26px -16px rgba(74,61,92,.22);transition:transform .35s cubic-bezier(.22,.8,.32,1),box-shadow .35s}
-.guide:hover{transform:translateY(-10px);box-shadow:0 60px 90px -34px rgba(74,82,40,.55),0 18px 32px -16px rgba(74,61,92,.26)}
-.g-badge{position:absolute;top:18px;right:18px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:50px}
-.g-icon{height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.g-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;color:#3A2E28;line-height:1.22;margin-bottom:14px;min-height:64px;display:flex;align-items:center;justify-content:center}
-.g-desc{font-size:14px;color:var(--mid);font-weight:300;line-height:1.75;margin-bottom:26px;flex:1}
-.g-cta{display:inline-block;align-self:center;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:#3A2E28;padding:14px 30px;border:1px solid #3A2E28;border-radius:50px;transition:all .3s}
-.guide:hover .g-cta{background:#3A2E28;color:#F5EDD8}
-.g-cta.soon{color:#9A8E6E;border-color:rgba(154,142,110,.45)}
-.guide:hover .g-cta.soon{background:transparent;color:#9A8E6E}
-.sig{text-align:center;margin-top:70px}
-.script-note{font-family:'Petit Formal Script',cursive;color:var(--gold)}
-footer{position:relative;z-index:1;text-align:center;font-size:12px;color:var(--mid);padding:8px 20px 40px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(34px,5.5vw,56px);color:#3A2E28;line-height:1.06;margin-bottom:12px}
+.sub{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;max-width:560px;margin:0 auto 18px}
+.quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.4vw,23px);color:#3A2E28;line-height:1.4;max-width:560px;margin:18px auto 8px}
+.vwrap{position:relative;cursor:pointer;line-height:0;border-radius:14px;overflow:hidden;max-width:720px;margin:26px auto 0;background:#FCF9F1;padding:10px;box-shadow:0 40px 90px -40px rgba(74,61,92,.45)}
+.vinner{position:relative;border-radius:8px;overflow:hidden}
+.vwrap video{width:100%;height:auto;display:block;background:#000;border-radius:8px}
+.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;border:none;background:rgba(252,249,241,.94);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 30px rgba(58,46,40,.35);padding-left:5px;transition:transform .2s}
+.vwrap:hover .vplay{transform:translate(-50%,-50%) scale(1.07)}
+.vplay.hidden{opacity:0;pointer-events:none}
+.vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.vposter.hidden{opacity:0}
+.vsub{position:absolute;left:50%;bottom:11%;transform:translateX(-50%);width:88%;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(12px,1.8vw,18px);font-weight:500;letter-spacing:.5px;color:#fff;line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,.8),0 0 3px rgba(0,0,0,.7);opacity:0;transition:opacity .18s;pointer-events:none}
+
+.sec-head{text-align:center;margin:70px auto 6px}
+.sec-head .k{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--tc);margin-bottom:10px}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(26px,4vw,40px);color:#3A2E28}
+.sec-head p{font-size:15px;color:var(--mid);font-weight:300;max-width:560px;margin:10px auto 0}
+
+.parts{display:flex;flex-direction:column;gap:22px;max-width:880px;margin:36px auto 0}
+.part{background:#FFFFFF;border:1px solid rgba(120,110,90,.12);border-radius:22px;padding:34px 34px;box-shadow:0 26px 56px -40px rgba(120,110,90,.4);display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.part-num{flex:0 0 auto;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff}
+.p1 .part-num{background:linear-gradient(160deg,#B7C9A8,#8FA96A)}
+.p2 .part-num{background:linear-gradient(160deg,#8FD0C4,#12A594)}
+.p3 .part-num{background:linear-gradient(160deg,#C7B4DE,#9B89B4)}
+.part-body{flex:1 1 300px;min-width:260px}
+.part-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px}
+.part-title{font-family:'Cormorant Garamond',serif;font-size:25px;color:#3A2E28;margin-bottom:10px;line-height:1.2}
+.part-title span{font-style:italic;font-size:17px;color:var(--mid)}
+.part-desc{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.8}
+.part-meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:14px}
+.part-meta span{font-size:11px;color:#8A6D1F;background:#FBF4DC;border:1px solid rgba(201,162,39,.35);border-radius:50px;padding:4px 11px}
+
+.buy{max-width:560px;margin:64px auto 0;text-align:center;background:#FFFFFF;border:1px solid rgba(201,162,39,.25);border-radius:22px;padding:44px 34px;box-shadow:0 36px 80px -44px rgba(120,110,90,.5)}
+.buy .in{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#A89870;margin-bottom:6px}
+.buy .price{font-family:'Cormorant Garamond',serif;font-size:52px;color:#3A2E28;font-weight:300;letter-spacing:-1px;margin-bottom:4px}
+.buy .pnote{font-size:12px;color:var(--mid);margin-bottom:22px}
+.btn{display:block;text-align:center;padding:18px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;background:#3A2E28;color:#F5EDD8;border:1px solid #3A2E28;transition:all .3s}
+.btn:hover{background:#2b221d;transform:translateY(-2px)}
+.buy .trust{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#B4A88E;margin-top:14px}
+.buy .have{display:block;margin-top:16px;font-size:12px;color:#A89870;text-decoration:none;letter-spacing:1px}
+.sig{text-align:center;margin-top:60px}
+.script-note{font-family:'Petit Formal Script',cursive;color:var(--gold);font-size:26px}
+footer{position:relative;z-index:1;text-align:center;font-size:12px;color:var(--mid);padding:10px 20px 40px}
 footer a{color:inherit}
-@media(max-width:600px){.wrap{padding-bottom:150px}.meadow{height:230px}.g-title{min-height:0}}
+@media(max-width:600px){.part{padding:26px 24px}}
 </style>
 </head>
 <body>
 
-<!-- modern animated gradient background -->
 <div class="bg">
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-  <div class="blob b3"></div>
-  <div class="blob b4"></div>
-  <div class="blob b5"></div>
-
-  <!-- abstract floating botanicals -->
-  <svg class="bot" style="top:6%;left:4%;width:150px;animation:botA 11s ease-in-out infinite" viewBox="0 0 100 100" fill="none"><g stroke="#A9C29B" stroke-width="1.8" fill="none"><ellipse cx="50" cy="30" rx="8.5" ry="19"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(300 50 50)"/><circle cx="50" cy="50" r="5.5"/></g></svg>
-
-  <svg class="bot" style="top:11%;right:5%;width:120px;animation:botB 12s ease-in-out infinite;animation-delay:-3s" viewBox="0 0 100 100" fill="none"><g stroke="#C3B7DE" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M50 94 C50 64 50 42 50 8"/><path d="M50 66 C40 60 34 50 32 38"/><path d="M50 58 C60 52 66 42 68 30"/><path d="M50 48 C40 43 35 34 33 23"/><path d="M50 40 C60 36 65 28 67 18"/><path d="M50 32 C43 29 39 23 38 15"/></g></svg>
-
-  <svg class="bot" style="bottom:7%;left:7%;width:172px;animation:botC 13s ease-in-out infinite;animation-delay:-6s" viewBox="0 0 100 100" fill="none"><g stroke="#D9C58C" stroke-width="1.8" fill="none"><ellipse cx="50" cy="30" rx="8.5" ry="19"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(300 50 50)"/><circle cx="50" cy="50" r="5.5"/></g></svg>
-
-  <svg class="bot" style="bottom:11%;right:6%;width:132px;animation:botA 11s ease-in-out infinite;animation-delay:-8s" viewBox="0 0 100 100" fill="none"><g stroke="#D3B4C6" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M50 94 C50 64 50 42 50 8"/><path d="M50 66 C40 60 34 50 32 38"/><path d="M50 58 C60 52 66 42 68 30"/><path d="M50 48 C40 43 35 34 33 23"/><path d="M50 40 C60 36 65 28 67 18"/></g></svg>
-
-  <svg class="bot" style="top:46%;left:47%;width:104px;animation:botB 13s ease-in-out infinite;animation-delay:-11s" viewBox="0 0 100 100" fill="none"><g stroke="#A9C29B" stroke-width="1.8" fill="none"><ellipse cx="50" cy="34" rx="7" ry="15"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(72 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(144 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(216 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="4.5"/></g></svg>
-  <svg class="bot" style="top:21%;left:19%;width:96px;animation:botC 10s ease-in-out infinite;animation-delay:-2s" viewBox="0 0 100 100" fill="none"><g stroke="#D9C58C" stroke-width="1.8" fill="none"><ellipse cx="50" cy="34" rx="7" ry="15"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(72 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(144 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(216 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="4.5"/></g></svg>
-  <svg class="bot" style="top:30%;right:15%;width:112px;animation:botA 12s ease-in-out infinite;animation-delay:-5s" viewBox="0 0 100 100" fill="none"><g stroke="#C3B7DE" stroke-width="1.8" fill="none"><ellipse cx="50" cy="30" rx="8.5" ry="19"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(300 50 50)"/><circle cx="50" cy="50" r="5.5"/></g></svg>
-  <svg class="bot" style="bottom:24%;left:20%;width:100px;animation:botB 11s ease-in-out infinite;animation-delay:-7s" viewBox="0 0 100 100" fill="none"><g stroke="#A9C29B" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M50 94 C50 64 50 42 50 8"/><path d="M50 66 C40 60 34 50 32 38"/><path d="M50 58 C60 52 66 42 68 30"/><path d="M50 48 C40 43 35 34 33 23"/><path d="M50 40 C60 36 65 28 67 18"/></g></svg>
-  <svg class="bot" style="bottom:19%;right:22%;width:120px;animation:botC 10s ease-in-out infinite;animation-delay:-9s" viewBox="0 0 100 100" fill="none"><g stroke="#D3B4C6" stroke-width="1.8" fill="none"><ellipse cx="50" cy="30" rx="8.5" ry="19"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="8.5" ry="19" transform="rotate(300 50 50)"/><circle cx="50" cy="50" r="5.5"/></g></svg>
-  <svg class="bot" style="top:60%;left:6%;width:92px;animation:botA 13s ease-in-out infinite;animation-delay:-4s" viewBox="0 0 100 100" fill="none"><g stroke="#D9C58C" stroke-width="1.8" fill="none"><ellipse cx="50" cy="34" rx="7" ry="15"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(72 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(144 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(216 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="4.5"/></g></svg>
-  <svg class="bot" style="top:56%;right:8%;width:108px;animation:botB 12s ease-in-out infinite;animation-delay:-1s" viewBox="0 0 100 100" fill="none"><g stroke="#C3B7DE" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M50 94 C50 64 50 42 50 8"/><path d="M50 66 C40 60 34 50 32 38"/><path d="M50 58 C60 52 66 42 68 30"/><path d="M50 48 C40 43 35 34 33 23"/><path d="M50 40 C60 36 65 28 67 18"/></g></svg>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <svg class="bot" style="top:8%;left:4%;width:120px;animation:sway 12s ease-in-out infinite" viewBox="0 0 100 100" fill="none"><g stroke="#A9C29B" stroke-width="1.6" fill="none"><ellipse cx="50" cy="30" rx="8" ry="18"/><ellipse cx="50" cy="30" rx="8" ry="18" transform="rotate(60 50 50)"/><ellipse cx="50" cy="30" rx="8" ry="18" transform="rotate(120 50 50)"/><ellipse cx="50" cy="30" rx="8" ry="18" transform="rotate(180 50 50)"/><ellipse cx="50" cy="30" rx="8" ry="18" transform="rotate(240 50 50)"/><ellipse cx="50" cy="30" rx="8" ry="18" transform="rotate(300 50 50)"/><circle cx="50" cy="50" r="5"/></g></svg>
+  <svg class="bot" style="bottom:9%;right:5%;width:130px;animation:sway 15s ease-in-out infinite reverse" viewBox="0 0 100 100" fill="none"><g stroke="#C3B7DE" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M50 94 C50 64 50 42 50 8"/><path d="M50 66 C40 60 34 50 32 38"/><path d="M50 58 C60 52 66 42 68 30"/><path d="M50 48 C40 43 35 34 33 23"/><path d="M50 40 C60 36 65 28 67 18"/></g></svg>
+  <svg class="bot" style="top:52%;left:6%;width:100px;animation:sway 17s ease-in-out infinite" viewBox="0 0 100 100" fill="none"><g stroke="#D9C58C" stroke-width="1.6" fill="none"><ellipse cx="50" cy="34" rx="7" ry="15"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(72 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(144 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(216 50 50)"/><ellipse cx="50" cy="34" rx="7" ry="15" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="4.5"/></g></svg>
 </div>
 
 <div class="wrap">
 <a href="index.html" class="back">&larr; Natrag na početnu</a>
 
-<div class="head">
-<div class="kicker">Odaberi svoj put</div>
-<h1>My Whole-Body Wellness Program</h1>
-<p class="sub">Tri vodiča koji vraćaju tvoje tijelo u ravnotežu i čine te zdravom, snažnom i fit. Odaberi onaj koji ti sada najviše treba.</p>
-<svg class="hand-underline" width="200" height="13" viewBox="0 0 200 13" fill="none"><path d="M4 8c30-6 70-6 96-4 26 2 66 3 96-3" stroke="#A9C083" stroke-width="2" stroke-linecap="round"/></svg>
+<div class="hero">
+  <div class="kicker">Cjeloviti program za žene</div>
+  <h1>My Whole-Body Wellness Program</h1>
+  <p class="sub">Program zdravlja iznutra i izvana. Tvoje unutarnje okruženje, tvoje vanjsko okruženje i život u skladu s tvojim ciklusom, na jednom mjestu.</p>
+  <div class="quote">"Ne treba ti više discipline. Treba ti povratak svom prirodnom ritmu."</div>
+  <div class="vwrap" onclick="startVid(this)">
+    <div class="vinner">
+      <video preload="metadata" playsinline crossorigin="anonymous" onplaying="this.closest('.vwrap').querySelector('.vposter').classList.add('hidden')">
+        <source src="course-intro.mp4?v=1" type="video/mp4">
+        <track kind="subtitles" src="course-intro-hr.vtt?v=3" srclang="hr" label="Hrvatski" default>
+      </video>
+      <div class="vsub" aria-hidden="true"></div>
+      <img class="vposter" src="course-intro-poster.jpg?v=1" alt="">
+      <button type="button" class="vplay" aria-label="Pokreni video"><svg viewBox="0 0 24 24" width="26" height="26" fill="#3A2E28"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+  </div>
 </div>
 
-<div class="grid">
+<div class="sec-head">
+  <div class="k">Tri dijela, jedan put</div>
+  <h2>Što program obuhvaća</h2>
+  <p>Zdravlje se gradi na tri razine. Prolazimo ih redom, korak po korak.</p>
+</div>
 
-  <!-- FLOW & FLOURISH -->
-  <a class="guide" href="flow-and-flourish.html">
-    <span class="g-badge" style="color:#8A6EAA;background:#F1ECFA">Dostupno</span>
-    <div class="g-icon"><svg width="44" height="44" viewBox="0 0 40 40" fill="none"><defs><linearGradient id="sp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C878"/><stop offset="1" stop-color="#B6A8D9"/></linearGradient></defs><path d="M 20 20 L 20.2 20 L 20.4 20.1 L 20.5 20.3 L 20.55 20.5 L 20.5 20.9 L 20.3 21.2 L 20 21.5 L 19.5 21.7 L 19 21.8 L 18.4 21.7 L 17.8 21.4 L 17.3 21 L 17 20.4 L 16.8 19.7 L 16.8 18.9 L 17 18.1 L 17.4 17.3 L 18 16.6 L 18.8 16 L 19.7 15.6 L 20.7 15.4 L 21.8 15.4 L 22.9 15.7 L 23.9 16.2 L 24.8 17 L 25.5 18 L 26 19.1 L 26.2 20.3 L 26.2 21.6 L 25.9 22.9 L 25.3 24.1 L 24.4 25.2 L 23.2 26.1 L 21.8 26.7 L 20.3 27 L 18.7 26.9 L 17.1 26.4 L 15.6 25.5 L 14.3 24.2 L 13.3 22.6 L 12.7 20.8 L 12.5 18.8 L 12.8 16.8 L 13.5 14.9 L 14.7 13.2 L 16.2 11.8 L 18 10.8 L 20 10.2 L 22.2 10.1 L 24.4 10.5 L 26.5 11.4 L 28.4 12.8 L 30 14.6 L 31.2 16.7 L 31.9 19.1 L 32.1 21.6" stroke="url(#sp1)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="g-title">Flow &amp; Flourish:<br>The Female Cycle Blueprint</div>
-    <div class="g-desc">Razumij svoj ciklus i hormone: četiri faze i kako jesti, kretati se i odmarati u svakoj od njih. Uravnoteži hormone prirodno i osjećaj se dobro cijeli mjesec.</div>
-    <span class="g-cta">Otvori vodič</span>
-  </a>
+<div class="parts">
 
-  <!-- EVERLASTING HEALTH FOUNDATIONS -->
-  <div class="guide" style="cursor:default">
-    <span class="g-badge" style="color:#8A6EAA;background:#F1ECFA">Uskoro</span>
-    <div class="g-icon"><svg width="44" height="44" viewBox="0 0 32 32" fill="none"><path d="M27 4.5C13.5 4.5 6 12 6 23.5c0 1.6.15 3.2.5 4.8C8 19 14 12 24.5 8.8 16.5 12.7 11 19 9.3 28.3c11.4 1 20.7-6 20.7-18.3 0-2 0-4-3-5.5z" fill="#6E8B5A"/><path d="M8.5 27.5C10.5 18.5 15.5 12.5 24.5 9" stroke="#3F5A32" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></div>
-    <div class="g-title">Step into Everlasting<br>Health Foundations</div>
-    <div class="g-desc">Bezvremenski temelji zdravlja: prava hrana, čista voda, sunce, san, kretanje i nježno čišćenje tijela. Tvoj cjeloživotni nacrt za zdravlje od korijena.</div>
-    <span class="g-cta soon">Uskoro dostupno</span>
+  <div class="part p1">
+    <div class="part-num">1</div>
+    <div class="part-body">
+      <div class="part-label">Prvi dio · Obnovi</div>
+      <div class="part-title">Unutarnje zdravlje <span>(internal environment)</span></div>
+      <div class="part-desc">Sve što unosiš u svoje tijelo i kako se brineš o njemu iznutra. Prava, živa hrana i zdravi recepti, ravnoteža šećera u krvi, zdravlje crijeva i jetre, živa hidratacija i pravilno pijenje vode te kretanje koje hrani, a ne iscrpljuje. Gradimo zdravlje od korijena, ondje gdje sve počinje.</div>
+      <div class="part-meta"><span>Prava, živa hrana i recepti</span><span>Crijeva i jetra</span><span>Živa hidratacija</span><span>Kretanje koje hrani</span></div>
+    </div>
   </div>
 
-  <!-- CLEAN HOME -->
-  <div class="guide" style="cursor:default">
-    <span class="g-badge" style="color:#8A6EAA;background:#F1ECFA">Uskoro</span>
-    <div class="g-icon"><svg width="46" height="46" viewBox="0 0 48 48" fill="none">
-      <defs>
-        <linearGradient id="hwall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5ECDE"/><stop offset="1" stop-color="#EADCC8"/></linearGradient>
-        <linearGradient id="hroof" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDCAB0"/><stop offset="1" stop-color="#DFAE92"/></linearGradient>
-      </defs>
-      <rect x="31" y="12" width="3.6" height="8" rx="1" fill="#DFAE92"/>
-      <path d="M6 22.5 L24 8 L42 22.5 Z" fill="url(#hroof)" stroke="#CFA687" stroke-width="1.2" stroke-linejoin="round"/>
-      <rect x="10.5" y="21.5" width="27" height="19" rx="2.8" fill="url(#hwall)" stroke="#DFCDB4" stroke-width="1"/>
-      <rect x="14" y="26" width="7" height="7" rx="1.2" fill="#FCF7ED" stroke="#DAC7AB" stroke-width="1"/>
-      <path d="M17.5 26 V33 M14 29.5 H21" stroke="#DAC7AB" stroke-width="1"/>
-      <path d="M25 40.5 V32.6 a3.4 3.4 0 0 1 6.8 0 V40.5 Z" fill="#B6CBAB" stroke="#9BB58E" stroke-width="1"/>
-      <circle cx="30" cy="36.6" r=".8" fill="#7A9469"/>
-      <path d="M40 41 C40 36 41.4 32.6 44 30.2" stroke="#8FC77A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-      <path d="M42.6 34.6 c2-.7 3-2.4 3-4.4 -2 0-3 1.7-3 4.4z" fill="#A6D48C"/>
-    </svg></div>
-    <div class="g-title">Unlock Cleaner and Healthier<br>Home: Room by Room</div>
-    <div class="g-desc">Jesi li znala da na tvoje zdravlje prostor u kojem živiš i spavaš utječe možda i više od prehrane i kretanja? Detoksiciraj svoj dom, prostoriju po prostoriju, i zamijeni skrivene toksine iz posuđa, kozmetike i sredstava za čišćenje jednostavnim, čišćim rješenjima.</div>
-    <span class="g-cta soon">Uskoro dostupno</span>
+  <div class="part p2">
+    <div class="part-num">2</div>
+    <div class="part-body">
+      <div class="part-label">Drugi dio · Pročisti</div>
+      <div class="part-title">Vanjsko zdravlje <span>(external environment)</span></div>
+      <div class="part-desc">Sve što te okružuje i tiho oblikuje tvoje zdravlje. Detoksiciramo tvoj dom prostoriju po prostoriju: kuhinju, kupaonicu, spavaću sobu, sredstva za čišćenje, kozmetiku, njegu kose i parfeme. Uklanjamo skrivene toksine i hormonske ometače koji utječu na tvoju kožu, energiju i hormone, uz jednostavan plan zamjena bez preplavljenosti.</div>
+      <div class="part-meta"><span>Prostoriju po prostoriju</span><span>Kozmetika i njega</span><span>Sredstva za čišćenje</span><span>Manje hormonskih ometača</span></div>
+    </div>
+  </div>
+
+  <div class="part p3">
+    <div class="part-num">3</div>
+    <div class="part-body">
+      <div class="part-label">Treći dio · Uskladi</div>
+      <div class="part-title">Zdravlje ciklusa <span>(Flow &amp; Flourish)</span></div>
+      <div class="part-desc">Povrati svoj ciklus. Toliko se žena osjeća "loše", ne zato što nešto s njima nije u redu, već zato što jedu, kreću se i očekuju istu energiju cijeli mjesec, i jer su naučene živjeti kao muškarci. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti. Kad shvatiš što tvoji hormoni rade u svakoj fazi, prestaješ kriviti sebe i daješ tijelu točno ono što mu treba. Od četiri faze preko prehrane, kretanja, sna i toksina, do potpunog 30-dnevnog akcijskog plana.</div>
+      <div class="part-meta"><span>Odbaci mitove o ženskom tijelu</span><span>Ostavi ibuprofen</span><span>Nauči razumjeti svoj ciklus</span><span>30-dnevni akcijski plan</span></div>
+    </div>
   </div>
 
 </div>
 
+<div class="buy">
+  <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
+  <div class="price">&euro;97</div>
+  <div class="pnote">Sva tri dijela · Trenutni pristup · Zauvijek tvoje</div>
+  <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
+  <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Osiguraj svoje mjesto</a>
+  <div class="trust">Program se uskoro otvara · prijavi se da saznaš prva</div>
+  <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
+</div>
+
+<div class="sig"><span class="script-note">Zdravo i prirodno, Anja</span></div>
 </div>
 
 <footer>
 &copy; Prirodno s Anjom &middot; Olea Vita Sana &middot; <a href="index.html">Početna</a>
 </footer>
+
+<script>
+function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.onclick=null;}
+(function(){
+  var w=document.querySelector('.vwrap'); if(!w) return;
+  var v=w.querySelector('video'), box=w.querySelector('.vsub');
+  function bind(){var t=v.textTracks&&v.textTracks[0]; if(!t) return; t.mode='hidden';
+    t.oncuechange=function(){var c=t.activeCues&&t.activeCues[0]; box.textContent=c?c.text:''; box.style.opacity=c?'1':'0';};}
+  if(v.textTracks&&v.textTracks.length) bind();
+  v.addEventListener('loadeddata',bind);
+})();
+</script>
 </body>
 </html>
