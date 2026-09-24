@@ -31,6 +31,15 @@ p{font-size:16px;color:rgba(74,61,92,.9);font-weight:300;margin:0 0 18px}
 .draft{background:#FBF4DC;border:1px solid rgba(184,144,31,.3);border-radius:10px;padding:14px 18px;font-size:13px;color:#7a5f1a;margin-bottom:36px;text-align:center}
 footer{text-align:center;font-size:12px;color:var(--mid);padding:32px 20px;border-top:1px solid var(--bdr)}
 footer a{color:inherit}
+.journey{position:relative;left:50%;transform:translateX(-50%);width:min(1060px,92vw);display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:22px 0 10px}
+.journey::before{content:"";position:absolute;top:56px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,#DAC7A6 0 7px,transparent 7px 15px);z-index:0}
+.jstep{position:relative;z-index:1;text-align:center;background:#FDFAF4;border:1px solid rgba(201,162,39,.18);border-radius:18px;padding:26px 20px 24px;box-shadow:0 24px 50px -34px rgba(120,110,90,.4)}
+.jbadge{width:60px;height:60px;border-radius:50%;background:linear-gradient(160deg,#F7F0E0,#EFE7D2);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 12px;box-shadow:0 8px 18px -8px rgba(120,110,90,.4)}
+.jlabel{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B8901F;font-weight:600;margin-bottom:8px}
+.jtitle{font-family:'Cormorant Garamond',serif;font-size:20px;color:#3A2E28;margin-bottom:10px;line-height:1.2}
+.jtext{font-size:13px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.7}
+@media(max-width:860px){.journey{grid-template-columns:1fr 1fr}.journey::before{display:none}}
+@media(max-width:560px){.journey{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -84,29 +93,42 @@ footer a{color:inherit}
   </div>
 </div>
 
-<h2>Gdje je sve počelo</h2>
-<p>Odrasla sam uz Jadran, gdje život teče sporije, hrana dolazi ravno iz zemlje i mora, a boravak na suncu jednostavno je način života. Prava, živa prehrana, sezonsko jelo i prirodno kretanje meni nikad nisu bili wellness trend. Bili su samo normalan, svakodnevni život.</p>
-<p>Tek kad sam otišla od kuće, shvatila sam koliko je to odrastanje bilo posebno. Vidjela sam koliko drugačije živi moderni svijet, u žurbi, pod stresom, odvojen od prirode i vlastitog tijela, i koliko to košta ljudsko zdravlje, energiju i mir.</p>
-
-<h2>Moja prekretnica</h2>
-<p>Moja se promjena nije dogodila preko noći. Došla je polako, kroz male, svjesne odluke. Počela sam slušati svoje tijelo umjesto da se borim protiv njega. Birala sam pravu, živu hranu, usporila, izlazila na sunce i učila živjeti u skladu sa svojim ciklusom. Kako sam vraćala tijelo u ravnotežu, vraćali su se i moja energija, mir, koža i samopouzdanje. Tada sam shvatila nešto što mi je promijenilo život: zdravlje nikad nije trebalo biti borba.</p>
-
-<h2>Nježno izlaženje iz matrixa</h2>
-<p>Za mene je jedan od najljepših pomaka bio tihi izlazak iz matrixa. Kako sam počela brinuti o svom zdravlju, nešto se dublje smirilo. Um mi je postao bistriji, misli smirenije. Osjećala sam se usredotočenije, mirnije i nježnije povezano, s prirodom, sa sobom i s nečim daleko većim od mene.</p>
-<p>Liječenje mog tijela zapravo nikad nije bilo samo o tijelu. Promijenilo je način na koji razmišljam, kako se osjećam i kako se krećem kroz svijet. I to je ono što želim za tebe, ne samo zdravije tijelo, već nježniji, bistriji i povezaniji način života.</p>
+<h2 style="text-align:center">Moj put</h2>
+<div class="journey">
+  <div class="jstep">
+    <div class="jbadge">🌊</div>
+    <div class="jlabel">Korak 01</div>
+    <div class="jtitle">Odrasla uz more</div>
+    <div class="jtext">Rođena sam i odrasla uz Jadran. Moj djed je bio strastven oko zdravlja i od njega sam naučila jako puno. Odrastala sam s tim navikama: na suncu, bosih nogu u travi, uz more i uz pravu, živu hranu. To mi nikad nije bio trend, nego običan, svakodnevni život.</div>
+  </div>
+  <div class="jstep">
+    <div class="jbadge">✈️</div>
+    <div class="jlabel">Korak 02</div>
+    <div class="jtitle">Godina u SAD-u</div>
+    <div class="jtext">Onda sam godinu dana živjela u Sjedinjenim Američkim Državama. Tamo sam prvi put jasno vidjela koje sitnice zapravo čine zdravlje. Svijet mi se otvorio šire, koliko okolina i navike mijenjaju kako se osjećaš i kako izgledaš.</div>
+  </div>
+  <div class="jstep">
+    <div class="jbadge">📚</div>
+    <div class="jlabel">Korak 03</div>
+    <div class="jtitle">Institut i učenje</div>
+    <div class="jtext">Preko dečka kojeg sam ondje upoznala otkrila sam Global Healing Institute. Danas se ondje educiram za certificiranu coachicu prirodnog zdravlja i planiram ići još dublje. Čitam puno knjiga, prolazim tečajeve i stalno učim, posebno od ljudi koji uistinu žive zdravo.</div>
+  </div>
+  <div class="jstep">
+    <div class="jbadge">💛</div>
+    <div class="jlabel">Korak 04</div>
+    <div class="jtitle">Moja misija</div>
+    <div class="jtext">Želim to znanje, iz instituta poput ovog i od ljudi koje pratim, donijeti nama, u Hrvatsku i na Balkan. Jer zdravlje nije samo što jedeš i kako vježbaš, nije kalorijski deficit ni brojanje kalorija. Tu smo jako zaostali, i to želim promijeniti.</div>
+  </div>
+</div>
 
 <div class="pull">"Ne vjerujem da zdravlje mora biti teško. Vjerujem da je oduvijek trebalo biti prirodno."</div>
 
-<h2>U što vjerujem</h2>
-<p>Tvoje tijelo nije problem koji treba popraviti. Mudro je i uvijek radi zajedno s tobom. Kad naučiš živjeti u skladu sa svojim ciklusom, hraniti se pravom hranom, nježno se kretati, upijati sunce i usporiti, sve se počinje mijenjati.</p>
-<p>To je ono što ovdje dijelim, sve što bih voljela da sam znala ranije. Ne još jedan skup pravila koja treba savršeno pratiti, već nježniji, prirodniji način života koji zapravo radi zajedno s tvojim tijelom, a ne protiv njega.</p>
+<h2 style="text-align:center">Unutarnje i vanjsko zdravlje</h2>
+<p style="text-align:center;max-width:660px;margin:0 auto 18px">Zdravlje se gradi na dvije razine. Iznutra: koliko je zdravo naše tijelo, krećemo li se i jedemo li čistu, pravu hranu. I izvana: naš dom, materijali u kojima spavamo, parfemi i sredstva za čišćenje koja koristimo. Mnogi zaboravljaju da i to duboko oblikuje naše zdravlje. Upravo to, unutarnje i vanjsko zdravlje, želim vratiti kroz male životne navike i podijeliti s tobom.</p>
 
-<h2>Zašto ovo radim</h2>
-<p>Radim ovo za svaku ženu koja se osjeća umorno, pomalo izgubljeno u vlastitom tijelu ili kojoj je rečeno da je sve to jednostavno "normalno". Želim ti pokazati da postoji nježniji, prirodniji način i pomoći ti da se vratiš sebi. Ako makar jednoj ženi olakšam put do zdravlja, energije i blistavosti, sve ovo ima smisla.</p>
+<p style="text-align:center;max-width:640px;margin:0 auto">Ako si tražila nježniji, prirodniji način da se ponovno osjećaš kao svoja, na pravom si mjestu. Tako mi je drago što si ovdje.</p>
 
-<p>Ako si tražila nježniji, prirodniji način da se ponovno osjećaš kao svoja, na pravom si mjestu. Tako mi je drago što si ovdje.</p>
-
-<div class="sig">Sa zdravljem i ljubavlju, Anja</div>
+<div class="sig" style="text-align:center">Sa zdravljem i ljubavlju, Anja</div>
 
 </div>
 <footer>
