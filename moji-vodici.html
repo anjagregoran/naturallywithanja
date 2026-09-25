@@ -105,12 +105,15 @@ h1{font-size:clamp(40px,6.4vw,70px)}
 .pnav button{background:none;border:0;font-family:inherit;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:6px 0}
 .pnav button:hover{color:#3A2E28}
 .pnav button:disabled{opacity:0;pointer-events:none}
-.extras{margin-top:26px}
-.ex-h{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);font-weight:500;margin-bottom:12px;text-align:center}
-.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ex{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.6);border:1px solid rgba(184,144,31,.18);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#4A3D5C;transition:transform .3s,background .3s}
-.ex:hover{transform:translateY(-3px);background:#fff}
-.ex span{color:#C9A227;font-size:11px;margin-top:3px}
+.extras{margin-top:34px;padding-top:28px;border-top:1px solid rgba(184,144,31,.18)}
+.ex-h{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:#3A2E28;text-align:center;margin-bottom:18px}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ex{display:flex;gap:14px;align-items:center;background:linear-gradient(160deg,rgba(255,255,255,.85),rgba(251,246,230,.7));border:1px solid rgba(184,144,31,.16);border-radius:18px;padding:16px 18px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.ex:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(120,110,90,.55)}
+.ex-ic{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#EEF3EB,#DCE7D6);box-shadow:inset 0 0 0 1px rgba(122,154,110,.2)}
+.ex-ic svg{width:22px;height:22px;stroke:#6E8C62;stroke-width:1.5}
+.ex-t b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:#3A2E28;line-height:1.2}
+.ex-t small{display:block;font-size:12.5px;color:var(--mid);line-height:1.45;margin-top:2px}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -162,7 +165,7 @@ footer a{color:inherit}
   </div>
 </div>
 
-<div class="results reveal"><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4-3 8-8 11z"/></svg><div>Zdravlje</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>Energija</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg><div>Hormonalna ravnoteža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 5 9 5 17v3M5 17c6 0 11-3 13-9M9 13h5"/></svg><div>Prirodna težina bez dijeta</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><div>Snažno &amp; FIT tijelo</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg><div>Regeneracija i blistava koža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><div>Samopouzdanje</div></div></div>
+<div class="results reveal"><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4-3 8-8 11z"/></svg><div>Zdravlje</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>Energija</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg><div>Hormonalna ravnoteža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 5 9 5 17v3M5 17c6 0 11-3 13-9M9 13h5"/></svg><div>Zdrav gubitak kilograma bez dijeta</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><div>Snažno &amp; FIT tijelo</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg><div>Regeneracija i blistava koža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><div>Samopouzdanje</div></div></div>
 
 <div class="sec-head reveal" id="program">
   <div class="k">Tri dijela, jedan put</div>
@@ -196,12 +199,7 @@ footer a{color:inherit}
     </div>
   <div class="extras">
     <div class="ex-h">Uz program dobivaš i</div>
-    <div class="ex-grid">
-      <div class="ex"><span>✦</span>Zdrave recepte</div>
-      <div class="ex"><span>✦</span>Moje omiljene brendove</div>
-      <div class="ex"><span>✦</span>Knjige koje preporučujem</div>
-      <div class="ex"><span>✦</span>Objašnjenje zašto uz svaki korak, jer je najvažnije da razumiješ svoje tijelo</div>
-    </div>
+    <div class="ex-grid"><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M12 7c0-2 1.5-3.5 3.5-4M9 8c-.5-1.5 0-3 1.5-4"/></svg></span><span class="ex-t"><b>Zdrave recepte</b><small>Jednostavna, prava hrana</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v3.5L7.5 10A5 5 0 0 0 7 12.3V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6.7a5 5 0 0 0-.5-2.3L14 6.5V3"/><path d="M7 14h10"/></svg></span><span class="ex-t"><b>Moje omiljene brendove</b><small>Provjereni, čisti proizvodi</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/></svg></span><span class="ex-t"><b>Knjige koje preporučujem</b><small>Za dublje razumijevanje</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7M12 14c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></span><span class="ex-t"><b>Objašnjenje zašto uz svaki korak</b><small>Jer je najvažnije da razumiješ svoje tijelo</small></span></div></div>
   </div>
 </div>
 
