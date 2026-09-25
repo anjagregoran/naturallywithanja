@@ -10,6 +10,7 @@
 <style>
 :root{--deep:#4A3D5C;--mid:#7A6D8C;--accent:#9B89B4;--gold:#B8901F;--tc:#B6A8D9}
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--deep);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden;background:#F5F2F9}
 .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
 .blob{position:absolute;border-radius:50%;filter:blur(60px);will-change:transform}
@@ -47,27 +48,68 @@ h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font
 .sec-head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(26px,4vw,40px);color:#3A2E28}
 .sec-head p{font-size:15px;color:var(--mid);font-weight:300;max-width:560px;margin:10px auto 0}
 
-.parts{display:flex;flex-direction:column;gap:0;margin:0}
-.part{position:relative;display:flex;gap:28px;align-items:flex-start;padding:6px 0 46px;background:none;border:0;box-shadow:none}
-.part:last-child{padding-bottom:0}
-.part:not(:last-child)::before{content:"";position:absolute;left:27px;top:66px;bottom:8px;border-left:1.5px dashed rgba(184,144,31,.45)}
-.part-num{flex:0 0 auto;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:#6B531A;position:relative;z-index:1;box-shadow:0 10px 24px -12px rgba(160,125,30,.55);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.p1 .part-num{background:linear-gradient(160deg,#F5EBB6,#EBD98D)}
-.p2 .part-num{background:linear-gradient(160deg,#EBD07A,#DCBB54)}
-.p3 .part-num{background:linear-gradient(160deg,#D6B347,#C39C22)}
-.part-body{flex:1 1 auto;min-width:0;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.part:hover .part-num{transform:scale(1.1)}
-.part:hover .part-body{transform:translateX(6px)}
-.part-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin:4px 0 6px}
-.part-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#3A2E28;margin-bottom:10px;line-height:1.2}
-.part-title span{font-style:italic;font-size:17px;color:var(--mid)}
-.part-desc{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.85}
-.part-meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:14px}
-.part-meta span{font-size:11px;color:#8A6D1F;background:rgba(251,244,220,.6);border:1px solid rgba(201,162,39,.3);border-radius:50px;padding:4px 11px}
-.prog-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:64px;align-items:center;margin-top:44px}
-.prog-grid .buy{order:2;margin:0;max-width:none;padding:46px 36px}
-@media(max-width:900px){.prog-grid{grid-template-columns:1fr;gap:48px}.part{gap:18px}.part-num{width:46px;height:46px;font-size:20px}.part:not(:last-child)::before{left:22px;top:56px}}
-@media(prefers-reduced-motion:reduce){.part-num,.part-body{transition:none}}
+/* hero */
+.hero{margin-top:44px}
+h1{font-size:clamp(40px,6.4vw,70px)}
+.quote{position:relative;padding:0 10px;margin:20px auto 0}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.cta{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:50px;text-decoration:none;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:transform .3s,box-shadow .3s,background .3s}
+.cta.dark{background:#3A2E28;color:#F5EDD8;box-shadow:0 18px 36px -18px rgba(58,46,40,.7)}
+.cta.dark:hover{transform:translateY(-3px);box-shadow:0 24px 44px -18px rgba(58,46,40,.75)}
+.cta.light{background:rgba(255,255,255,.7);color:#3A2E28;border:1px solid rgba(184,144,31,.35)}
+.cta.light:hover{background:#fff;transform:translateY(-3px)}
+.stats{display:flex;justify-content:center;gap:clamp(22px,5vw,64px);margin:52px auto 0;flex-wrap:wrap}
+.stat{text-align:center}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,4.4vw,46px);color:#3A2E28;line-height:1}
+.stat span{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid)}
+/* results */
+.results{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:900px;margin:70px auto 0}
+.res{background:rgba(255,255,255,.55);border:1px solid rgba(155,137,180,.16);border-radius:18px;padding:22px 10px 18px;text-align:center;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s,box-shadow .35s}
+.res:hover{transform:translateY(-6px);background:#fff;box-shadow:0 26px 50px -30px rgba(120,110,90,.5)}
+.res svg{width:30px;height:30px;stroke:#B8901F;fill:none;stroke-width:1.4;margin-bottom:10px;transition:transform .5s}
+.res:hover svg{transform:scale(1.15) rotate(-6deg)}
+.res div{font-family:'Cormorant Garamond',serif;font-size:18px;color:#3A2E28;line-height:1.2}
+@media(max-width:760px){.results{grid-template-columns:repeat(2,1fr)}.res:last-child{grid-column:1/-1}}
+/* journey */
+.prog-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:56px;align-items:start;margin-top:40px}
+.prog-grid .buy{order:2;margin:0;max-width:none;padding:42px 34px;position:sticky;top:24px}
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+.steps::before{content:"";position:absolute;left:16.6%;right:16.6%;top:31px;border-top:1.5px dashed rgba(184,144,31,.45)}
+.steps .fill{position:absolute;left:16.6%;top:30px;height:3px;border-radius:3px;background:linear-gradient(90deg,#EBD98D,#C39C22);width:0;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.step{position:relative;z-index:1;background:none;border:0;cursor:pointer;text-align:center;font-family:inherit;padding:0 4px;color:inherit}
+.step .n{width:62px;height:62px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:26px;color:#8A6D1F;background:#FBF6E6;border:1.5px solid rgba(201,162,39,.35);transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.step .l{display:block;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.step .t{display:block;font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--mid);line-height:1.2;margin-top:4px;transition:color .3s}
+.step:hover .n{transform:translateY(-4px)}
+.step.on .n{color:#fff;border-color:transparent;transform:scale(1.12);box-shadow:0 16px 30px -12px rgba(160,125,30,.7)}
+.step[data-i="0"].on .n{background:linear-gradient(160deg,#EBD98D,#D8BF5E)}
+.step[data-i="1"].on .n{background:linear-gradient(160deg,#DCBB54,#C9A233)}
+.step[data-i="2"].on .n{background:linear-gradient(160deg,#C9A233,#A9861A)}
+.step.on .t{color:#3A2E28}
+.panel{display:none;background:rgba(255,255,255,.72);border:1px solid rgba(184,144,31,.18);border-radius:24px;padding:36px 36px 30px;box-shadow:0 34px 70px -44px rgba(120,110,90,.55)}
+.panel.on{display:block;animation:pin .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes pin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel .pl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.panel h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,34px);font-weight:400;color:#3A2E28;line-height:1.15;margin:6px 0 12px}
+.panel h3 span{font-style:italic;font-size:.55em;color:var(--mid)}
+.panel .pd{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.85}
+.panel .mods-h{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px;padding-top:18px;border-top:1px solid rgba(184,144,31,.18)}
+.panel .mods-h b{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);font-weight:500}
+.panel .mods-h span{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold)}
+.mods{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 22px;counter-reset:m}
+.mods li{counter-increment:m;position:relative;padding:8px 0 8px 32px;font-size:13.5px;color:#4A3D5C;border-bottom:1px dashed rgba(184,144,31,.18);opacity:0;transform:translateX(-6px)}
+.panel.on .mods li{animation:li .45s forwards}
+@keyframes li{to{opacity:1;transform:none}}
+.mods li::before{content:counter(m,decimal-leading-zero);position:absolute;left:0;top:8px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold)}
+.pnav{display:flex;justify-content:space-between;margin-top:22px}
+.pnav button{background:none;border:0;font-family:inherit;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:6px 0}
+.pnav button:hover{color:#3A2E28}
+.pnav button:disabled{opacity:0;pointer-events:none}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.prog-grid{grid-template-columns:1fr;gap:44px}.prog-grid .buy{position:static}}
+@media(max-width:560px){.panel{padding:26px 20px}.mods{grid-template-columns:1fr}.step .n{width:50px;height:50px;font-size:21px}.steps::before,.steps .fill{top:25px}.step .t{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.panel.on,.panel.on .mods li{animation:none;opacity:1;transform:none}}
 .buy{max-width:560px;margin:64px auto 0;text-align:center;background:#FFFFFF;border:1px solid rgba(201,162,39,.25);border-radius:22px;padding:44px 34px;box-shadow:0 36px 80px -44px rgba(120,110,90,.5)}
 .buy .in{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#A89870;margin-bottom:6px}
 .buy .price{font-family:'Cormorant Garamond',serif;font-size:52px;color:#3A2E28;font-weight:300;letter-spacing:-1px;margin-bottom:4px}
@@ -84,7 +126,6 @@ h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font
 .script-note{font-family:'Petit Formal Script',cursive;color:var(--gold);font-size:26px}
 footer{position:relative;z-index:1;text-align:center;font-size:12px;color:var(--mid);padding:10px 20px 40px}
 footer a{color:inherit}
-@media(max-width:600px){.part{padding:26px 24px}}
 </style>
 </head>
 <body>
@@ -102,68 +143,69 @@ footer a{color:inherit}
 <div class="hero">
   <div class="kicker">Cjeloviti program za žene</div>
   <h1>Moj whole-body wellness program</h1>
-  <p class="sub">Program zdravlja iznutra i izvana. Tvoje unutarnje okruženje, tvoje vanjsko okruženje i život u skladu s tvojim ciklusom, na jednom mjestu.</p>
   <div class="quote">Ne treba ti više discipline. Treba ti povratak prirodnom ritmu.</div>
+  <div class="hero-ctas">
+    <a href="#program" class="cta light">Pogledaj program</a>
+    <a href="#kupi" class="cta dark">Kupi program · &euro;97</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b data-count="3">3</b><span>Dijela</span></div>
+    <div class="stat"><b data-count="32">32</b><span>Modula</span></div>
+    <div class="stat"><b data-count="30">30</b><span>Dnevni plan</span></div>
+    <div class="stat"><b>&#8734;</b><span>Zauvijek tvoje</span></div>
+  </div>
 </div>
 
-<div class="sec-head">
+<div class="results reveal"><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>Energija</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/></svg><div>Jasnoća</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4-3 8-8 11z"/></svg><div>Fit tijelo</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><div>Samopouzdanje</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><div>Sjaj iznutra</div></div></div>
+
+<div class="sec-head reveal" id="program">
   <div class="k">Tri dijela, jedan put</div>
   <h2>Što program obuhvaća</h2>
-  <p>Zdravlje se gradi na tri razine. Prolazimo ih redom, korak po korak.</p>
+  <p>Zdravlje se gradi na tri razine. Klikni na svaki dio i pogledaj što te čeka.</p>
 </div>
 
 <div class="prog-grid">
-<div class="buy">
+<div class="journey reveal">
+  <div class="steps" role="tablist"><div class="fill"></div><button class="step on" data-i="0" role="tab" aria-selected="true"><span class="n">1</span><span class="l">Obnovi</span><span class="t">Zdravlje počinje iznutra</span></button><button class="step" data-i="1" role="tab" aria-selected="false"><span class="n">2</span><span class="l">Resetiraj</span><span class="t">Zdraviji prostor, zdraviji život</span></button><button class="step" data-i="2" role="tab" aria-selected="false"><span class="n">3</span><span class="l">Uskladi</span><span class="t">Cycle syncing</span></button></div>
+  <div class="panel on" data-i="0" role="tabpanel">
+      <div class="pl">Prvi dio · Obnovi</div>
+      <h3>Zdravlje počinje iznutra <span>(internal environment)</span></h3>
+      <div class="pd">Sve što unosiš u svoje tijelo i kako se brineš o njemu iznutra. Prava, živa hrana i zdravi recepti, ravnoteža šećera u krvi, zdravlje crijeva i jetre, živa hidratacija i pravilno pijenje vode te kretanje koje hrani, a ne iscrpljuje. Gradimo zdravlje od korijena, ondje gdje sve počinje.</div>
+      <div class="mods-h"><b>U ovom dijelu</b><span>12 modula</span></div>
+      <ul class="mods"><li style="animation-delay:0.00s">Dobrodošla</li><li style="animation-delay:0.04s">Zašto se zapravo razbolijevamo (root cause health)</li><li style="animation-delay:0.08s">Hrana je lijek</li><li style="animation-delay:0.12s">Jetra i prirodno čišćenje</li><li style="animation-delay:0.16s">Crijeva i probava</li><li style="animation-delay:0.20s">Šećer u krvi i hormoni</li><li style="animation-delay:0.24s">Hidratacija i minerali</li><li style="animation-delay:0.28s">Kretanje u skladu sa ženskim tijelom</li><li style="animation-delay:0.32s">Stres i živčani sustav</li><li style="animation-delay:0.36s">San i oporavak</li><li style="animation-delay:0.40s">Sunce, ritam i jednostavan život</li><li style="animation-delay:0.44s">Knjige koje preporučujem</li></ul>
+      <div class="pnav"><button disabled onclick="showStep(-1)">&larr; </button><button  onclick="showStep(1)">Zdraviji prostor, zdraviji život &rarr;</button></div>
+    </div>
+<div class="panel" data-i="1" role="tabpanel">
+      <div class="pl">Drugi dio · Resetiraj</div>
+      <h3>Zdraviji prostor, zdraviji život <span>(external environment)</span></h3>
+      <div class="pd">Sve što te okružuje i tiho oblikuje tvoje zdravlje. Detoksiciramo tvoj dom prostoriju po prostoriju: kuhinju, kupaonicu, spavaću sobu, sredstva za čišćenje, kozmetiku, njegu kose i parfeme. Uklanjamo skrivene toksine i hormonske ometače koji utječu na tvoju kožu, energiju i hormone, uz jednostavan plan zamjena bez preplavljenosti.</div>
+      <div class="mods-h"><b>U ovom dijelu</b><span>8 modula</span></div>
+      <ul class="mods"><li style="animation-delay:0.00s">Zašto tvoj dom oblikuje tvoje zdravlje</li><li style="animation-delay:0.04s">Toksini iz okoline</li><li style="animation-delay:0.08s">Kuhinja</li><li style="animation-delay:0.12s">Kupaonica i njega lica i tijela</li><li style="animation-delay:0.16s">Sredstva za čišćenje</li><li style="animation-delay:0.20s">Spavaća soba, zrak i san</li><li style="animation-delay:0.24s">Pranje rublja i tekstil</li><li style="animation-delay:0.28s">Tvoj plan zamjena</li></ul>
+      <div class="pnav"><button  onclick="showStep(0)">&larr; Zdravlje počinje iznutra</button><button  onclick="showStep(2)">Cycle syncing &rarr;</button></div>
+    </div>
+<div class="panel" data-i="2" role="tabpanel">
+      <div class="pl">Treći dio · Uskladi</div>
+      <h3>Cycle syncing <span>(Flow &amp; Flourish)</span></h3>
+      <div class="pd">Povrati svoj ciklus. Toliko se žena osjeća "loše", ne zato što nešto s njima nije u redu, već zato što jedu, kreću se i očekuju istu energiju cijeli mjesec, i jer su naučene živjeti kao muškarci. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti. Kad shvatiš što tvoji hormoni rade u svakoj fazi, prestaješ kriviti sebe i daješ tijelu točno ono što mu treba. Od četiri faze preko prehrane, kretanja, sna i toksina, do potpunog 30-dnevnog akcijskog plana.</div>
+      <div class="mods-h"><b>U ovom dijelu</b><span>12 modula</span></div>
+      <ul class="mods"><li style="animation-delay:0.00s">Zašto zdravlje ciklusa mijenja sve</li><li style="animation-delay:0.04s">Hormoni i četiri faze</li><li style="animation-delay:0.08s">Menstrualna faza</li><li style="animation-delay:0.12s">Folikularna faza</li><li style="animation-delay:0.16s">Ovulacijska faza</li><li style="animation-delay:0.20s">Lutealna faza</li><li style="animation-delay:0.24s">Kako pratiti svoj ciklus</li><li style="animation-delay:0.28s">Znakovi zdravog ciklusa i korijenski uzroci</li><li style="animation-delay:0.32s">Svjesnost o plodnosti</li><li style="animation-delay:0.36s">30-dnevni akcijski plan</li><li style="animation-delay:0.40s">Pitanja i brzi podsjetnici</li><li style="animation-delay:0.44s">Završne riječi i preporuke</li></ul>
+      <div class="pnav"><button  onclick="showStep(1)">&larr; Zdraviji prostor, zdraviji život</button><button disabled onclick="showStep(3)"> &rarr;</button></div>
+    </div>
+</div>
+
+<div class="buy reveal" id="kupi">
   <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
   <div class="price">&euro;97</div>
-  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Dobivaš trajan pristup cijelom programu:</div>
+  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Dobivaš trajan pristup cijelom programu, a uz to:</div>
   <ul class="incl">
-    <li>32 modula u tri dijela, korak po korak</li>
-    <li>Zdravlje iznutra: prehrana, crijeva, jetra, šećer u krvi, voda, kretanje, stres i san</li>
-    <li>Zdraviji dom: kuhinja, kupaonica, kozmetika, sredstva za čišćenje, spavaća soba i plan zamjena</li>
-    <li>Život u skladu s ciklusom: hormoni, četiri faze, praćenje ciklusa i plodnost</li>
-    <li>Što jesti, kako se kretati i kako živjeti u svakoj fazi</li>
-    <li>30-dnevni akcijski plan i brzi podsjetnici</li>
-    <li>Recepti, moji omiljeni brendovi i knjige koje preporučujem</li>
-    <li>Uvijek i objašnjenje zašto, da napokon razumiješ svoje tijelo</li>
+    <li>Recepti</li>
+    <li>Moji omiljeni brendovi</li>
+    <li>Knjige koje preporučujem</li>
+    <li>Uz svaki korak objašnjenje zašto, jer je najvažnije da razumiješ svoje tijelo</li>
   </ul>
   <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
-</div>
-
-<div class="parts">
-
-  <div class="part p1">
-    <div class="part-num">1</div>
-    <div class="part-body">
-      <div class="part-label">Prvi dio · Obnovi</div>
-      <div class="part-title">Zdravlje počinje iznutra <span>(internal environment)</span></div>
-      <div class="part-desc">Sve što unosiš u svoje tijelo i kako se brineš o njemu iznutra. Prava, živa hrana i zdravi recepti, ravnoteža šećera u krvi, zdravlje crijeva i jetre, živa hidratacija i pravilno pijenje vode te kretanje koje hrani, a ne iscrpljuje. Gradimo zdravlje od korijena, ondje gdje sve počinje.</div>
-      <div class="part-meta"><span>Prava, živa hrana i recepti</span><span>Crijeva i jetra</span><span>Živa hidratacija</span><span>Kretanje koje hrani</span></div>
-    </div>
-  </div>
-
-  <div class="part p2">
-    <div class="part-num">2</div>
-    <div class="part-body">
-      <div class="part-label">Drugi dio · Resetiraj</div>
-      <div class="part-title">Zdraviji prostor, zdraviji život <span>(external environment)</span></div>
-      <div class="part-desc">Sve što te okružuje i tiho oblikuje tvoje zdravlje. Detoksiciramo tvoj dom prostoriju po prostoriju: kuhinju, kupaonicu, spavaću sobu, sredstva za čišćenje, kozmetiku, njegu kose i parfeme. Uklanjamo skrivene toksine i hormonske ometače koji utječu na tvoju kožu, energiju i hormone, uz jednostavan plan zamjena bez preplavljenosti.</div>
-      <div class="part-meta"><span>Zdrav dom</span><span>Kozmetika i njega</span><span>Čišćenje bez toksina</span><span>Čist zrak i voda</span><span>Zdrav san</span><span>Hormonska ravnoteža</span><span>Jednostavne zamjene</span></div>
-    </div>
-  </div>
-
-  <div class="part p3">
-    <div class="part-num">3</div>
-    <div class="part-body">
-      <div class="part-label">Treći dio · Uskladi</div>
-      <div class="part-title">Cycle syncing <span>(Flow &amp; Flourish)</span></div>
-      <div class="part-desc">Povrati svoj ciklus. Toliko se žena osjeća "loše", ne zato što nešto s njima nije u redu, već zato što jedu, kreću se i očekuju istu energiju cijeli mjesec, i jer su naučene živjeti kao muškarci. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti. Kad shvatiš što tvoji hormoni rade u svakoj fazi, prestaješ kriviti sebe i daješ tijelu točno ono što mu treba. Od četiri faze preko prehrane, kretanja, sna i toksina, do potpunog 30-dnevnog akcijskog plana.</div>
-      <div class="part-meta"><span>Odbaci mitove o ženskom tijelu</span><span>Ostavi ibuprofen</span><span>Nauči razumjeti svoj ciklus</span><span>30-dnevni akcijski plan</span></div>
-    </div>
-  </div>
-
 </div>
 </div>
 
@@ -175,6 +217,23 @@ footer a{color:inherit}
 </footer>
 
 <script>
+function showStep(i){
+  document.querySelectorAll('.step').forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i)});
+  document.querySelectorAll('.panel').forEach(function(p,k){p.classList.toggle('on',k===i)});
+  document.querySelector('.steps .fill').style.width=(i*33.4)+'%';
+}
+document.querySelectorAll('.step').forEach(function(b){b.addEventListener('click',function(){showStep(+b.dataset.i)})});
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+  var nums=document.querySelectorAll('[data-count]');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  nums.forEach(function(n){var to=+n.dataset.count,t0=null;n.textContent='0';
+    function f(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1400,1);n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}
+    setTimeout(function(){requestAnimationFrame(f)},300)});
+})();
 </script>
 </body>
 </html>
