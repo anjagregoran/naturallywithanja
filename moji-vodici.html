@@ -105,6 +105,13 @@ h1{font-size:clamp(40px,6.4vw,70px)}
 .pnav button{background:none;border:0;font-family:inherit;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:6px 0}
 .pnav button:hover{color:#3A2E28}
 .pnav button:disabled{opacity:0;pointer-events:none}
+.extras{margin-top:26px}
+.ex-h{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);font-weight:500;margin-bottom:12px;text-align:center}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ex{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.6);border:1px solid rgba(184,144,31,.18);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#4A3D5C;transition:transform .3s,background .3s}
+.ex:hover{transform:translateY(-3px);background:#fff}
+.ex span{color:#C9A227;font-size:11px;margin-top:3px}
+@media(max-width:560px){.ex-grid{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:900px){.prog-grid{grid-template-columns:1fr;gap:44px}.prog-grid .buy{position:static}}
@@ -187,18 +194,21 @@ footer a{color:inherit}
       <ul class="mods"><li style="animation-delay:0.00s">Zašto zdravlje ciklusa mijenja sve</li><li style="animation-delay:0.04s">Hormoni i četiri faze</li><li style="animation-delay:0.08s">Menstrualna faza</li><li style="animation-delay:0.12s">Folikularna faza</li><li style="animation-delay:0.16s">Ovulacijska faza</li><li style="animation-delay:0.20s">Lutealna faza</li><li style="animation-delay:0.24s">Kako pratiti svoj ciklus</li><li style="animation-delay:0.28s">Znakovi zdravog ciklusa i korijenski uzroci</li><li style="animation-delay:0.32s">Svjesnost o plodnosti</li><li style="animation-delay:0.36s">30-dnevni akcijski plan</li><li style="animation-delay:0.40s">Pitanja i brzi podsjetnici</li><li style="animation-delay:0.44s">Završne riječi i preporuke</li></ul>
       <div class="pnav"><button  onclick="showStep(1)">&larr; Zdraviji prostor, zdraviji život</button><button disabled onclick="showStep(3)"> &rarr;</button></div>
     </div>
+  <div class="extras">
+    <div class="ex-h">Uz program dobivaš i</div>
+    <div class="ex-grid">
+      <div class="ex"><span>✦</span>Recepti</div>
+      <div class="ex"><span>✦</span>Moji omiljeni brendovi</div>
+      <div class="ex"><span>✦</span>Knjige koje preporučujem</div>
+      <div class="ex"><span>✦</span>Uz svaki korak objašnjenje zašto, jer je najvažnije da razumiješ svoje tijelo</div>
+    </div>
+  </div>
 </div>
 
 <div class="buy reveal" id="kupi">
   <div class="in">Cjeloviti program · Jednokratno plaćanje</div>
   <div class="price">&euro;97</div>
-  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Dobivaš trajan pristup cijelom programu, a uz to:</div>
-  <ul class="incl">
-    <li>Recepti</li>
-    <li>Moji omiljeni brendovi</li>
-    <li>Knjige koje preporučujem</li>
-    <li>Uz svaki korak objašnjenje zašto, jer je najvažnije da razumiješ svoje tijelo</li>
-  </ul>
+  <div class="pnote">Bolje zdravlje, više samopouzdanja i sjaj koji dolazi iznutra. Dobivaš trajan pristup cijelom programu.</div>
   <!-- TODO: zamijeni ovaj href svojim Stripe payment linkom za €97, i vrati tekst "Kupi program" -->
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
