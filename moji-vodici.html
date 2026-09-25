@@ -115,6 +115,21 @@ h1{font-size:clamp(40px,6.4vw,70px)}
 .ex-t b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:#3A2E28;line-height:1.2}
 .ex-t small{display:block;font-size:12.5px;color:var(--mid);line-height:1.45;margin-top:2px}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr}}
+.extras-wrap{max-width:900px;margin:56px auto 0}
+.extras-wrap .extras{margin-top:0}
+.results .res,.ex-grid .ex{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s}
+.results.in .res,.reveal.in .ex{opacity:1;transform:none}
+.results.in .res:nth-child(2),.reveal.in .ex:nth-child(2){transition-delay:.08s}
+.results.in .res:nth-child(3),.reveal.in .ex:nth-child(3){transition-delay:.16s}
+.results.in .res:nth-child(4),.reveal.in .ex:nth-child(4){transition-delay:.24s}
+.results.in .res:nth-child(5){transition-delay:.32s}
+.results.in .res:nth-child(6){transition-delay:.4s}
+.results.in .res:nth-child(7){transition-delay:.48s}
+@media(hover:hover){.results.in .res:hover{transform:translateY(-6px);transition-delay:0s}.reveal.in .ex:hover{transform:translateY(-4px);transition-delay:0s}}
+.res:active,.ex:active{transform:scale(.96)!important;transition-delay:0s!important}
+.step:active .n{transform:scale(.92)}
+.res,.ex,.step{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){.results .res,.ex-grid .ex{opacity:1;transform:none;transition:none}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:900px){.prog-grid{grid-template-columns:1fr;gap:44px}.prog-grid .buy{position:static}}
@@ -197,10 +212,6 @@ footer a{color:inherit}
       <div class="mods-h"><b>U ovom dijelu</b><span>8 modula + bonus</span></div>
       <ul class="mods"><li style="animation-delay:0.00s">Zašto je zdrav ciklus važan</li><li style="animation-delay:0.04s">Hormoni i četiri faze</li><li style="animation-delay:0.08s">Menstrualna faza</li><li style="animation-delay:0.12s">Folikularna faza</li><li style="animation-delay:0.16s">Ovulacijska faza</li><li style="animation-delay:0.20s">Lutealna faza</li><li style="animation-delay:0.24s">Znakovi zdravog ciklusa i korijenski uzroci</li><li style="animation-delay:0.28s">Praćenje ciklusa i 30-dnevni plan</li><li style="animation-delay:0.32s">Bonus: Svjesnost o plodnosti</li></ul>
     </div>
-  <div class="extras">
-    <div class="ex-h">Uz program dobivaš i</div>
-    <div class="ex-grid"><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M12 7c0-2 1.5-3.5 3.5-4M9 8c-.5-1.5 0-3 1.5-4"/></svg></span><span class="ex-t"><b>Zdrave recepte</b><small>Jednostavna, prava hrana</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v3.5L7.5 10A5 5 0 0 0 7 12.3V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6.7a5 5 0 0 0-.5-2.3L14 6.5V3"/><path d="M7 14h10"/></svg></span><span class="ex-t"><b>Moje omiljene brendove</b><small>Provjereni, čisti proizvodi</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/></svg></span><span class="ex-t"><b>Knjige koje preporučujem</b><small>Za dublje razumijevanje</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7M12 14c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></span><span class="ex-t"><b>Objašnjenje zašto uz svaki korak</b><small>Jer je najvažnije da razumiješ svoje tijelo</small></span></div></div>
-  </div>
 </div>
 
 <div class="buy reveal" id="kupi">
@@ -211,6 +222,13 @@ footer a{color:inherit}
   <a href="https://8cf00a9d.sibforms.com/serve/MUIFAKXVrHuB4xdfah9eW5ZWxK5YQj2N-LBmEmJTCL60w--zs4Tchb8lWQysKKPTXb6fioLfMj8vO1vXyoz4rNzSS83bDMWo6LBq2miWgXby5iC_cbkLJJ5sjN218rKAJr0ymZecVsVrZKboq2KwcRRVQ8eaAJ3KjoGKPQaVvuQPRfLTwZUbnmg7a-3SANFMl6r-G3pAZiv45NdzTQ==" target="_blank" class="btn">Kupi program</a>
   <a href="cycle-course.html" class="have">Već kupljeno? Otvori program</a>
 </div>
+</div>
+
+<div class="extras-wrap reveal">
+  <div class="extras">
+    <div class="ex-h">Uz program dobivaš i</div>
+    <div class="ex-grid"><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M12 7c0-2 1.5-3.5 3.5-4M9 8c-.5-1.5 0-3 1.5-4"/></svg></span><span class="ex-t"><b>Zdrave recepte</b><small>Jednostavna, prava hrana</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v3.5L7.5 10A5 5 0 0 0 7 12.3V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6.7a5 5 0 0 0-.5-2.3L14 6.5V3"/><path d="M7 14h10"/></svg></span><span class="ex-t"><b>Moje omiljene brendove</b><small>Provjereni, čisti proizvodi</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/></svg></span><span class="ex-t"><b>Knjige koje preporučujem</b><small>Za dublje razumijevanje</small></span></div><div class="ex"><span class="ex-ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7M12 14c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></span><span class="ex-t"><b>Objašnjenje zašto uz svaki korak</b><small>Jer je najvažnije da razumiješ svoje tijelo</small></span></div></div>
+  </div>
 </div>
 
 <div class="sig"><span class="script-note">Zdravo i prirodno, Anja</span></div>
