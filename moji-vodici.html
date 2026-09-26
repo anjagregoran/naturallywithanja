@@ -279,6 +279,17 @@ html,body{overflow-x:clip}
 .pcol-r .mods{grid-template-columns:1fr}
 .pd{grid-template-columns:1fr!important}
 }
+
+/* oval wide panel */
+@media(min-width:1000px){
+.prog-grid{grid-template-columns:1fr!important;gap:56px!important}
+.prog-grid .buy{max-width:520px!important;margin:0 auto!important;width:100%}
+.panel{border-radius:50% / 22%!important;padding:64px 96px 58px!important}
+.panel.on{grid-template-columns:1.25fr .75fr!important;gap:0 44px!important}
+.pd{grid-template-columns:1fr 1fr!important}
+.pcol-r .mods{grid-template-columns:1fr!important}
+}
+@media(min-width:761px) and (max-width:999px){.panel{border-radius:48px!important}}
 </style>
 </head>
 <body>
