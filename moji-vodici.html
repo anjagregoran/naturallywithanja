@@ -199,11 +199,13 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opac
 .buy .trust span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9B89B4}
 .buy .trust span::before{content:"✓ ";color:#C9A227}
 /* final CTA */
-.final{margin:80px auto 0;max-width:900px;border-radius:28px;background:radial-gradient(circle at 20% 0%,rgba(226,200,120,.25),transparent 55%),linear-gradient(135deg,#F1ECF7,#F7F2E7 60%,#EDF3EA);border:1px solid rgba(201,162,39,.2);padding:56px 28px;text-align:center}
+.final{margin:90px auto 0;max-width:900px;padding:40px 20px 10px;text-align:center;position:relative;background:none;border:0}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:620px;height:320px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(226,200,120,.22),rgba(201,188,224,.18) 45%,transparent 70%);filter:blur(10px);z-index:-1;pointer-events:none}
 .final .kicker{display:flex;justify-content:center;align-items:center;gap:12px;color:#B8901F}
-.final h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,4.4vw,48px);color:#3A2E28;line-height:1.1;margin:10px auto 28px;max-width:620px}
-.final h2 em{font-style:italic;color:#B8901F}
-.final .btn{display:inline-block;padding:18px 44px;border-radius:50px}
+.final h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,5vw,58px);color:#3A2E28;line-height:1.08;margin:14px auto 30px;max-width:760px;letter-spacing:-.5px}
+.final h2 em{font-style:italic;background:linear-gradient(120deg,#B8901F,#E2C878 50%,#9B7A1C);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:4px}
+.final .btn{display:inline-block;padding:19px 48px;border-radius:50px}
+.final-note{margin-top:16px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#9B89B4}
 /* sticky mobile bar */
 .sticky-buy{display:none}
 @media(max-width:760px){
@@ -266,7 +268,7 @@ footer{padding-bottom:90px}
   </div>
 </div>
 
-<div class="results reveal"><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4-3 8-8 11z"/></svg><div>Zdravlje</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>Energija</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg><div>Hormonalna ravnoteža i miran ciklus</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 5 9 5 17v3M5 17c6 0 11-3 13-9M9 13h5"/></svg><div>Zdrav gubitak kilograma bez dijeta</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><div>Snažno &amp; FIT tijelo</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg><div>Regeneracija i blistava koža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><div>Samopouzdanje</div></div></div>
+<div class="results reveal"><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4-3 8-8 11z"/></svg><div>Zdravlje</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>Energija</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></svg><div>Hormonalna ravnoteža i lakši ciklus</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 5 9 5 17v3M5 17c6 0 11-3 13-9M9 13h5"/></svg><div>Zdrav gubitak kilograma bez dijeta</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><div>Snažno &amp; FIT tijelo</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg><div>Regeneracija i blistava koža</div></div><div class="res"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><div>Samopouzdanje</div></div></div>
 
 <div class="vid-band reveal">
   <video autoplay muted loop playsinline preload="metadata" poster="intro-poster.jpg"><source src="intro-video.mp4" type="video/mp4"></video>
@@ -329,6 +331,7 @@ footer{padding-bottom:90px}
     <div class="kicker"><i></i>Tvoj povratak sebi<i></i></div>
     <h2>Spremna osjećati se i izgledati onako kako <em>zaslužuješ</em>?</h2>
     <a href="#kupi" class="btn gold">Kupi program · &euro;97</a>
+    <div class="final-note">Lifetime access · Svojim tempom</div>
   </div>
 </div>
 
