@@ -93,11 +93,10 @@ h1{font-size:clamp(40px,6.4vw,70px)}
 .panel h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,34px);font-weight:400;color:#3A2E28;line-height:1.15;margin:6px 0 12px}
 .panel h3 span{display:block;font-style:italic;font-size:.55em;color:var(--mid);margin-top:4px}
 .panel .pd{font-size:14.5px;color:rgba(74,61,92,.9);font-weight:300;line-height:1.85}
-.pd-intro{margin-bottom:14px}
-.pd-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0 0 4px}
-.pd-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:#4A3D5C}
-.pd-list li span{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:14px;color:#8A6D1F;background:linear-gradient(160deg,#FBF4DC,#F1E3B0);margin-top:-1px}
-.pd-end{margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#3A2E28}
+.pd-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#3A2E28;line-height:1.35;margin-bottom:12px}
+.pd-p{margin-bottom:10px;padding-left:14px;border-left:2px solid rgba(201,162,39,.35)}
+.pd-p strong{font-weight:500;color:#3A2E28}
+.pd-end{margin-top:14px;font-size:14px;color:#8A6D1F;font-weight:400}
 .panel .mods-h{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px;padding-top:18px;border-top:1px solid rgba(184,144,31,.18)}
 .panel .mods-h b{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);font-weight:500}
 .panel .mods-h span{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold)}
@@ -195,25 +194,25 @@ footer a{color:inherit}
 
 <div class="prog-grid">
 <div class="journey reveal">
-  <div class="steps" role="tablist"><div class="fill"></div><button class="step on" data-i="0" role="tab" aria-selected="true"><span class="n">1</span><span class="l">Obnovi</span><span class="t">Zdravlje počinje iznutra</span></button><button class="step" data-i="1" role="tab" aria-selected="false"><span class="n">2</span><span class="l">Resetiraj</span><span class="t">Zdraviji prostor, zdraviji život</span></button><button class="step" data-i="2" role="tab" aria-selected="false"><span class="n">3</span><span class="l">Uskladi</span><span class="t">Cycle syncing</span></button></div>
+  <div class="steps" role="tablist"><div class="fill"></div><button class="step on" data-i="0" role="tab" aria-selected="true"><span class="n">1</span><span class="l">Obnovi</span><span class="t">Zdravlje počinje iznutra</span></button><button class="step" data-i="1" role="tab" aria-selected="false"><span class="n">2</span><span class="l">Resetiraj</span><span class="t">Čišći prostor, zdraviji život</span></button><button class="step" data-i="2" role="tab" aria-selected="false"><span class="n">3</span><span class="l">Uskladi</span><span class="t">Cycle syncing</span></button></div>
   <div class="panel on" data-i="0" role="tabpanel">
       <div class="pl">Prvi dio · Obnovi</div>
       <h3>Zdravlje počinje iznutra <span>(internal environment)</span></h3>
-      <div class="pd"><p class="pd-intro">Sve što unosiš u svoje tijelo i kako se brineš o njemu iznutra.</p><ul class="pd-list"><li><span>1</span>Prava, živa hrana i zdravi recepti</li><li><span>2</span>Crijeva, jetra i prirodno čišćenje</li><li><span>3</span>Ravnoteža šećera u krvi</li><li><span>4</span>Živa hidratacija i minerali</li><li><span>5</span>Kretanje i fitness koje hrani, a ne iscrpljuje</li><li><span>6</span>Stres, živčani sustav i dubok san</li></ul><p class="pd-end">Gradimo zdravlje od korijena, ondje gdje sve počinje.</p></div>
+      <div class="pd"><p class="pd-intro">Sve što unosiš u svoje tijelo i kako se brineš o njemu iznutra.</p><p class="pd-p"><strong>Prava, živa hrana</strong> i zdravi recepti, <strong>ravnoteža šećera u krvi</strong>, zdravlje <strong>crijeva i jetre</strong>, <strong>živa hidratacija</strong> i pravilno pijenje vode te <strong>kretanje koje hrani</strong>, a ne iscrpljuje.</p><p class="pd-end">Gradimo zdravlje od korijena, ondje gdje sve počinje.</p></div>
       <div class="mods-h"><b>U ovom dijelu</b><span>11 modula</span></div>
       <ul class="mods"><li style="animation-delay:0.00s">Najbolja investicija u sebe</li><li style="animation-delay:0.04s">Zašto se zapravo razbolijevamo (root cause health)</li><li style="animation-delay:0.08s">Hrana je lijek</li><li style="animation-delay:0.12s">Jetra i prirodno čišćenje</li><li style="animation-delay:0.16s">Crijeva i probava</li><li style="animation-delay:0.20s">Šećer u krvi i hormoni</li><li style="animation-delay:0.24s">Hidratacija i minerali</li><li style="animation-delay:0.28s">Kretanje i fitness</li><li style="animation-delay:0.32s">Stres i živčani sustav</li><li style="animation-delay:0.36s">San i oporavak</li><li style="animation-delay:0.40s">Sunce, ritam i jednostavan život</li></ul>
     </div>
 <div class="panel" data-i="1" role="tabpanel">
       <div class="pl">Drugi dio · Resetiraj</div>
-      <h3>Zdraviji prostor, zdraviji život <span>(external environment)</span></h3>
-      <div class="pd"><p class="pd-intro">Sve što te okružuje i tiho oblikuje tvoje zdravlje.</p><ul class="pd-list"><li><span>1</span>Detoks doma prostoriju po prostoriju: kuhinja, kupaonica, spavaća soba</li><li><span>2</span>Kozmetika, njega kose i parfemi bez toksina</li><li><span>3</span>Prirodna sredstva za čišćenje</li><li><span>4</span>Čist zrak u domu</li><li><span>5</span>Manje hormonskih ometača za kožu, energiju i hormone</li><li><span>6</span>Jednostavan plan zamjena, bez preplavljenosti</li></ul></div>
+      <h3>Čišći prostor, zdraviji život <span>(external environment)</span></h3>
+      <div class="pd"><p class="pd-intro">Sve što te okružuje i tiho oblikuje tvoje zdravlje.</p><p class="pd-p">Detoksiciramo tvoj dom <strong>prostoriju po prostoriju</strong>: kuhinju, kupaonicu, spavaću sobu, sredstva za čišćenje, kozmetiku, njegu kose i parfeme.</p><p class="pd-p">Uklanjamo <strong>skrivene toksine i hormonske ometače</strong> koji utječu na tvoju kožu, energiju i hormone.</p><p class="pd-end">Uz jednostavan plan zamjena, bez preplavljenosti.</p></div>
       <div class="mods-h"><b>U ovom dijelu</b><span>9 modula</span></div>
       <ul class="mods"><li style="animation-delay:0.00s">Zašto tvoj dom oblikuje tvoje zdravlje</li><li style="animation-delay:0.04s">Toksini iz okoline</li><li style="animation-delay:0.08s">Kuhinja</li><li style="animation-delay:0.12s">Kupaonica i njega lica i tijela</li><li style="animation-delay:0.16s">Sredstva za čišćenje</li><li style="animation-delay:0.20s">Zrak u domu: ventilacija, prašina, plijesan, radon i CO</li><li style="animation-delay:0.20s">Spavaća soba i san</li><li style="animation-delay:0.24s">Pranje rublja i tekstil</li><li style="animation-delay:0.28s">Tvoj non-toxic dom: kompletni plan zamjena i proizvoda</li></ul>
     </div>
 <div class="panel" data-i="2" role="tabpanel">
       <div class="pl">Treći dio · Uskladi</div>
       <h3>Cycle syncing <span>(Flow &amp; Flourish)</span></h3>
-      <div class="pd"><p class="pd-intro">Povrati svoj ciklus. Toliko se žena osjeća "loše" ne zato što nešto s njima nije u redu, nego zato što su naučene živjeti kao muškarci, s istom energijom cijeli mjesec. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti.</p><ul class="pd-list"><li><span>1</span>Tvoji hormoni i četiri faze, jednostavno objašnjeni</li><li><span>2</span>Što jesti, kako se kretati i kako živjeti u svakoj fazi</li><li><span>3</span>Uzroci PMS-a i kako ih riješiti</li><li><span>4</span>Kako pratiti svoj ciklus</li><li><span>5</span>Potpuni 30-dnevni akcijski plan</li></ul><p class="pd-end">Prestaješ kriviti sebe i daješ tijelu točno ono što mu treba.</p></div>
+      <div class="pd"><p class="pd-intro">Povrati svoj ciklus.</p><p class="pd-p">Toliko se žena osjeća "loše", ne zato što nešto s njima nije u redu, već zato što jedu, kreću se i očekuju <strong>istu energiju cijeli mjesec</strong>, i jer su naučene živjeti kao muškarci. Tvoje tijelo nikad nije bilo stvoreno da radi na ravnoj crti.</p><p class="pd-p">Kad shvatiš što tvoji hormoni rade u svakoj fazi, <strong>prestaješ kriviti sebe</strong> i daješ tijelu točno ono što mu treba.</p><p class="pd-end">Od četiri faze preko prehrane, kretanja, sna i toksina, do potpunog 30-dnevnog akcijskog plana.</p></div>
       <div class="mods-h"><b>U ovom dijelu</b><span>8 modula + bonus</span></div>
       <ul class="mods"><li style="animation-delay:0.00s">Zašto je zdrav ciklus važan</li><li style="animation-delay:0.04s">Hormoni, četiri faze i znakovi zdravog ciklusa</li><li style="animation-delay:0.08s">Menstrualna faza</li><li style="animation-delay:0.12s">Folikularna faza</li><li style="animation-delay:0.16s">Ovulacijska faza</li><li style="animation-delay:0.20s">Lutealna faza</li><li style="animation-delay:0.24s">Uzroci PMS-a i kako ih riješiti</li><li style="animation-delay:0.28s">Praćenje ciklusa i 30-dnevni plan</li><li style="animation-delay:0.32s">Bonus: Svjesnost o plodnosti</li></ul>
     </div>
