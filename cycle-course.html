@@ -194,6 +194,10 @@ body.locked > *:not(.gate-overlay){display:none}
 .mb{padding:13px 14px}
 .nb button{padding:14px 18px}
 }
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.lang-sw.fixed{position:fixed;top:14px;right:14px;z-index:10000;background:#fff}
 </style>
 </head>
 <body class="locked">
@@ -1031,5 +1035,8 @@ function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=t
   v.addEventListener('loadeddata',bind);
 })();
 </script>
+<div class="lang-sw fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
+<script src="i18n/cycle-course.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
