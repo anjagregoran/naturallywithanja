@@ -93,9 +93,14 @@
   @media (max-width: 640px){ .hero-photo { max-width: 320px; } }
 
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.lang-fixed{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,255,255,.85)}
 </style>
 </head>
 <body>
+<div class="lang-sw lang-fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 <div class="course">
 
   <div class="hero">
@@ -513,8 +518,12 @@ function updateProgress() {
   const total = document.querySelectorAll('.mod-body').length;
   const opened = document.querySelectorAll('.mod-body.open').length;
   document.getElementById('progress-fill').style.width = Math.round((opened/total)*100) + '%';
-  document.getElementById('progress-label').textContent = opened + ' od ' + total + ' modula otvoreno';
+  document.getElementById('progress-label').textContent = (window.siteLang&&siteLang()==='en' ? opened + ' of ' + total + ' modules opened' : opened + ' od ' + total + ' modula otvoreno');
 }
+document.addEventListener('sitelang', function(){ if(document.getElementById('progress-label')) updateProgress();
+});
 </script>
+<script src="i18n/water-course.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

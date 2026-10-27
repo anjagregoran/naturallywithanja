@@ -5,7 +5,7 @@ function n(s){return s.replace(/\s+/g,' ').trim()}
 function tr(root){
   var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),x;
   while(x=w.nextNode()){var p=x.parentNode;if(!p||/SCRIPT|STYLE/.test(p.nodeName))continue;
-    if(!orig.has(x)||(L==='hr'&&x.nodeValue!==orig.get(x)&&x.nodeValue!==T[n(orig.get(x))]))orig.set(x,x.nodeValue);
+    if(!orig.has(x)||(L==='hr'&&x.nodeValue!==orig.get(x)&&n(x.nodeValue)!==T[n(orig.get(x))]))orig.set(x,x.nodeValue);
     var o=orig.get(x),k=n(o);
     if(L==='en'&&T[k]){var lead=o.match(/^\s*/)[0],tail=o.match(/\s*$/)[0];x.nodeValue=lead+T[k]+tail}else x.nodeValue=o}
   if(root.querySelectorAll)root.querySelectorAll('[alt],[title],[placeholder],[aria-label],input[type=button],input[type=submit]').forEach(function(e){

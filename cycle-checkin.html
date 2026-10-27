@@ -121,9 +121,14 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 @media(max-width:520px){.q{padding:18px 16px 20px}.sec-sub{margin-left:0}}
 
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.lang-fixed{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,255,255,.85)}
 </style>
 </head>
 <body>
+<div class="lang-sw lang-fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 <div class="wrap">
 
 <header>
@@ -399,7 +404,7 @@ function renderFocus(s){
 /* doctor box */
 const dBox=document.getElementById('doctorBox');
 if(flags.length){
-document.getElementById('doctorText').textContent = flags.join(' ');
+const dT=document.getElementById('doctorText'); dT.innerHTML=''; flags.forEach(f=>{ const sp=document.createElement('span'); sp.textContent=f; dT.appendChild(sp); dT.appendChild(document.createTextNode(' ')); });
 dBox.classList.add('show');
 } else dBox.classList.remove('show');
 
@@ -477,5 +482,7 @@ window.open("https://mail.google.com/mail/?view=cm&fs=1&to=agj.holisticliving@gm
 });
 document.getElementById('restartBtn').addEventListener('click', ()=>{ location.reload(); });
 </script>
+<script src="i18n/cycle-checkin.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
