@@ -21,9 +21,13 @@ footer a{color:inherit}
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
 html,body{overflow-x:clip}
 @media(max-width:600px){div[style*="repeat(5,1fr)"]{grid-template-columns:repeat(3,1fr)!important}}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
 </style>
 </head>
 <body>
+<div class="lang-sw" style="position:fixed;top:14px;right:14px;z-index:50;background:#fff"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 <a href="index.html" class="topback">&larr; Natrag na početnu</a>
 <div style="max-width:600px;margin:0 auto;padding:48px 28px 10px;text-align:center">
   <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2vw,21px);font-style:italic;font-weight:300;color:#3A2E28;line-height:1.5;letter-spacing:.2px">Nikad ne možeš biti savršena, ali uvijek možeš biti <span style="color:#B8901F">bolja</span> nego što si bila jučer. I to je samo po sebi pobjeda, u životu i u zdravlju.</div>
@@ -149,5 +153,7 @@ html,body{overflow-x:clip}
 &copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
 <a href="index.html">Početna</a> &middot; <a href="privacy.html">Pravila privatnosti</a> &middot; <a href="terms.html">Uvjeti i povrati</a>
 </footer>
+<script src="i18n/womens-library.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

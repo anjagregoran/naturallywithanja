@@ -35,9 +35,14 @@ footer{text-align:center;font-size:12px;color:var(--mid);padding:32px 20px;borde
 footer a{color:inherit}
 
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.lang-fixed{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,253,247,.92)}
 </style>
 </head>
 <body>
+<div class="lang-sw lang-fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 <div class="wrap">
 <a href="index.html" class="back">&larr; Natrag na početnu</a>
 <div class="kicker">Ne moraš ovisiti ni o kome</div>
@@ -111,5 +116,7 @@ footer a{color:inherit}
 &copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
 <a href="index.html">Početna</a> &middot; <a href="privacy.html">Pravila privatnosti</a> &middot; <a href="terms.html">Uvjeti i povrati</a>
 </footer>
+<script src="i18n/community.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

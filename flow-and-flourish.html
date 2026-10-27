@@ -51,9 +51,14 @@ footer a{color:inherit}
 
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
 @media(max-width:600px){.cc-meta{font-size:13.5px}}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.lang-fixed{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,253,247,.92)}
 </style>
 </head>
 <body>
+<div class="lang-sw lang-fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 <a href="moji-vodici.html" class="back">&larr; Natrag na program</a>
 <div style="max-width:720px;margin:6px auto 0;padding:12px 24px 0">
   <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--tc);text-align:center;margin-bottom:16px;line-height:2">Ne treba ti više discipline.<br>Treba ti povratak prirodnom ritmu.</div>
@@ -135,5 +140,7 @@ function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=t
   });
 })();
 </script>
+<script src="i18n/flow-and-flourish.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

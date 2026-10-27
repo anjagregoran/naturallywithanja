@@ -20,3 +20,4 @@ try{L=localStorage.getItem(K)||'hr'}catch(e){}
 new MutationObserver(function(ms){if(L!=='en')return;ms.forEach(function(m){m.addedNodes.forEach(function(d){if(d.nodeType===1)tr(d);else if(d.nodeType===3&&d.parentNode)tr(d.parentNode)})})}).observe(document.body,{childList:true,subtree:true});
 setSiteLang(L);
 })();
+(function(){var s=document.createElement('style');s.textContent=".lang-sw{border-radius:0!important;border:1px solid #C9A85A!important;box-shadow:none!important;background:rgba(255,255,255,.85)}.lang-sw button{font-family:'Cormorant Garamond',serif!important;font-weight:600;letter-spacing:2px!important;color:#3A2E20!important;padding:8px 13px!important;border-radius:0!important}.lang-sw button.on{background:#3A2E20!important;color:#F6E7BE!important}";document.head.appendChild(s)})();
