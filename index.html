@@ -303,6 +303,20 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 }
 
 @media(max-width:600px){footer a{display:inline-block;padding:8px 6px}a.back{padding:10px 0}a.have{padding:10px 0}}
+
+.topnav-btn{background:#F1ECFA!important;border:1px solid transparent!important;color:#5B4D78!important}
+.topnav-btn:hover{background:#5B4D78!important;color:#fff!important;border-color:#5B4D78!important}
+.mobile-menu-btn{border-color:#C2B7DC!important;color:#5B4D78!important}
+
+/* premium nav buttons + language switch */
+.topnav-btn{background:rgba(255,255,255,.55)!important;border:1px solid rgba(212,178,92,.55)!important;color:#4A3D2C!important;box-shadow:0 0 0 4px rgba(250,232,178,.28),0 6px 18px -10px rgba(190,150,60,.45)!important;letter-spacing:.4px;font-weight:500;backdrop-filter:blur(4px)}
+.topnav-btn:hover{background:#FBF1D3!important;border-color:#D4B25C!important;color:#3A2E20!important;box-shadow:0 0 0 5px rgba(250,232,178,.45),0 10px 22px -10px rgba(190,150,60,.55)!important}
+.mobile-menu-btn{background:rgba(255,255,255,.55)!important;border:1px solid rgba(212,178,92,.55)!important;color:#4A3D2C!important;box-shadow:0 0 0 4px rgba(250,232,178,.28)!important}
+.lang-sw{display:inline-flex;border:1px solid rgba(212,178,92,.55);border-radius:50px;overflow:hidden;box-shadow:0 0 0 4px rgba(250,232,178,.28);flex:none}
+.lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
+.lang-sw button.on{background:#FBF1D3}
+.topnav-btn{white-space:nowrap;display:inline-block;padding:9px 17px!important;font-size:12.5px}
+.topnav-right{gap:10px!important}
 </style>
 </head>
 <body>
@@ -324,6 +338,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
   <a href="womens-library.html" onclick="closeMobileNav()">The Women's Library</a>
   <a href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank">Newsletter</a>
   <a href="about.html" onclick="closeMobileNav()">O meni</a>
+  <div style="text-align:center;margin-top:18px"><div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div></div>
 </div>
 
 <div class="topnav-wrap">
@@ -348,6 +363,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 <div class="topnav-tooltip-wrap"><a href="womens-library.html" class="topnav-btn">The Women's Library</a><div class="topnav-tooltip">Članci o zdravlju, ciklusu i prirodnom i zdravom životu &middot; resursi</div></div>
 <a href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank" class="topnav-btn">Newsletter</a>
 <a href="about.html" class="topnav-btn">O meni</a>
+<div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 </div>
 </div>
 </div>
@@ -625,5 +641,7 @@ function toggleMobileGroup(btn){
  }
 })();
 </script>
+<script src="i18n/index.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
