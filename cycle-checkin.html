@@ -125,6 +125,16 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 .lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
 .lang-sw button.on{background:#FBF1D3}
 .lang-fixed{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,255,255,.85)}
+/* next step after results: course offer and free guide */
+.next-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-deep);font-weight:700;margin-bottom:8px}
+.next-box{margin-top:34px;text-align:center}
+.gift-box{text-align:center}
+.gift-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.gift-form input{flex:1 1 220px;max-width:340px;padding:15px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+.gift-form .btn{padding:15px 28px;font-size:15px}
+#giftDone a{color:var(--sage-deep);font-weight:700}
+.consent{font-size:12px;color:var(--ink-faint);line-height:1.6;margin-top:12px}
+.consent a{color:var(--ink-faint)}
 </style>
 </head>
 <body>
@@ -165,6 +175,25 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 <button class="btn ghost" id="restartBtn">Počni ispočetka</button>
 </div>
 <p id="copied">Kopirano, i tvoja bi se e-mail aplikacija trebala otvarati. Samo pritisni pošalji!</p>
+
+<div class="focus-box next-box">
+<div class="next-label">Tvoj sljedeći korak</div>
+<h3>Flow &amp; Flourish: The Female Cycle Blueprint</h3>
+<p class="start" id="offerText"></p>
+<div style="margin-top:20px"><a class="btn" href="flow-and-flourish.html" style="display:inline-block;text-decoration:none">Pogledaj tečaj</a></div>
+</div>
+
+<div class="focus-box gift-box">
+<div class="next-label">Besplatni vodič</div>
+<h3>7-dnevni hormonalni reset</h3>
+<p class="start">Upiši svoj e-mail i odmah preuzmi moj vodič: sedam dana, svaki s jednim jednostavnim fokusom. Uz to ćeš primati moje savjete o ciklusu i zdravlju. Vodič je na engleskom.</p>
+<form id="giftForm" class="gift-form" action="https://app.kit.com/forms/9949217/subscriptions" method="post" target="_blank">
+<input type="email" name="email_address" placeholder="Tvoj e-mail" aria-label="Tvoj e-mail" required>
+<button type="submit" class="btn">Pošalji mi vodič</button>
+</form>
+<p id="giftDone" class="start" style="display:none">Hvala ti! Tvoj vodič je spreman: <a href="7-Day-Hormone-Reset.pdf" target="_blank" download>Preuzmi 7-dnevni hormonalni reset (PDF)</a></p>
+<p class="consent">Prijavom pristaješ na primanje e-mailova od mene i na moja <a href="privacy.html" target="_blank">Pravila privatnosti</a>. Možeš se odjaviti u bilo kojem trenutku.</p>
+</div>
 </div>
 
 <footer>
@@ -463,10 +492,28 @@ if(a.dream) L.push("Njezinim riječima: \""+a.dream+"\"");
 return L.join("\n");
 }
 
+/* course offer matched to what needs the most support */
+const OFFER={
+foundations:"Tvoji temelji trebaju malo pažnje, a upravo s njima počinje moj tečaj Flow & Flourish: prehrana, kretanje, san i 30-dnevni akcijski plan, korak po korak.",
+period:"Tvoja menstruacija trenutno uzima previše od tebe. U mom tečaju Flow & Flourish korak po korak učiš kako je smiriti kroz prehranu, kretanje i san, uz 30-dnevni akcijski plan.",
+luteal:"Dani prije menstruacije trenutno su ti najteži. U mom tečaju Flow & Flourish učiš što tvoji hormoni rade u svakoj fazi i kako podržati tijelo baš kad mu je najpotrebnije, uz 30-dnevni akcijski plan.",
+vitality:"Tvoja energija i samopouzdanje trebaju podršku. U mom tečaju Flow & Flourish učiš kako jesti, kretati se i odmarati u skladu sa svojim ciklusom, da se osjećaš živo kroz cijeli mjesec.",
+calm:"Tvoj ciklus je na dobrom mjestu. Ako ga želiš razumjeti do kraja i živjeti u skladu sa sve četiri faze, moj tečaj Flow & Flourish vodi te kroz to korak po korak."
+};
+function renderOffer(s){
+let key;
+if(new Set(foundationFlags).size) key='foundations';
+else {
+const top=[['period',s.painScore],['luteal',s.lutScore],['vitality',s.vitScore]].sort((a,b)=>b[1]-a[1])[0];
+key = top[1]<33 ? 'calm' : top[0];
+}
+document.getElementById('offerText').textContent=OFFER[key];
+}
+
 let lastSummary="";
 document.getElementById('seeBtn').addEventListener('click', ()=>{
 const s=compute();
-renderMeters(s); renderFocus(s);
+renderMeters(s); renderFocus(s); renderOffer(s);
 lastSummary=buildSummary(s);
 document.getElementById('results').classList.add('show');
 document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
@@ -479,6 +526,10 @@ setTimeout(()=>document.getElementById('copied').classList.remove('show'),3500);
 const subject = encodeURIComponent("Rezultati moje provjere ciklusa");
 const body = encodeURIComponent(lastSummary);
 window.open("https://mail.google.com/mail/?view=cm&fs=1&to=agj.holisticliving@gmail.com&su="+subject+"&body="+body, "_blank");
+});
+document.getElementById('giftForm').addEventListener('submit', e=>{
+/* let the form reach Kit in a new tab, then show the download here */
+setTimeout(()=>{ e.target.style.display='none'; document.getElementById('giftDone').style.display='block'; }, 50);
 });
 document.getElementById('restartBtn').addEventListener('click', ()=>{ location.reload(); });
 </script>

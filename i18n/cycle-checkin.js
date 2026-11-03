@@ -188,5 +188,22 @@ window.T_EN={
 "Iskreno? Tvoji temelji izgledaju čvrsto, a ciklus ti je na dobrom mjestu. Naš rad je fino podešavanje i čuvanje onoga što već funkcionira.": "Honestly? Your foundations look solid and your cycle is in a good place. Our work is fine-tuning and protecting what's already working.",
 "Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo pažnju usmjerile ravno na smirivanje same tvoje menstruacije.": "Your everyday foundations look pretty solid, so we'd turn our attention straight to calming your period itself.",
 "Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo se usredotočile na stabiliziranje lutealne faze, dana prije menstruacije.": "Your everyday foundations look pretty solid, so we'd focus on steadying your luteal phase, the days before your period.",
-"Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo radile na podizanju tvoje energije i samopouzdanja kroz cijeli mjesec.": "Your everyday foundations look pretty solid, so we'd work on lifting your energy and confidence across the whole month."
+"Tvoji svakodnevni temelji izgledaju prilično čvrsto, pa bismo radile na podizanju tvoje energije i samopouzdanja kroz cijeli mjesec.": "Your everyday foundations look pretty solid, so we'd work on lifting your energy and confidence across the whole month.",
+"Tvoj sljedeći korak": "Your next step",
+"Pogledaj tečaj": "See the course",
+"Besplatni vodič": "Free guide",
+"7-dnevni hormonalni reset": "The 7-Day Hormone Reset",
+"Upiši svoj e-mail i odmah preuzmi moj vodič: sedam dana, svaki s jednim jednostavnim fokusom. Uz to ćeš primati moje savjete o ciklusu i zdravlju. Vodič je na engleskom.": "Enter your email and download my guide right away: seven days, each with one simple focus. You will also get my tips on your cycle and health.",
+"Tvoj e-mail": "Your email",
+"Pošalji mi vodič": "Send me the guide",
+"Hvala ti! Tvoj vodič je spreman:": "Thank you! Your guide is ready:",
+"Preuzmi 7-dnevni hormonalni reset (PDF)": "Download the 7-Day Hormone Reset (PDF)",
+"Prijavom pristaješ na primanje e-mailova od mene i na moja": "By signing up you agree to receive emails from me and to my",
+"Pravila privatnosti": "Privacy Policy",
+". Možeš se odjaviti u bilo kojem trenutku.": ". You can unsubscribe at any time.",
+"Tvoji temelji trebaju malo pažnje, a upravo s njima počinje moj tečaj Flow & Flourish: prehrana, kretanje, san i 30-dnevni akcijski plan, korak po korak.": "Your foundations need a little attention, and that is exactly where my Flow & Flourish course begins: food, movement, sleep and a 30-day action plan, step by step.",
+"Tvoja menstruacija trenutno uzima previše od tebe. U mom tečaju Flow & Flourish korak po korak učiš kako je smiriti kroz prehranu, kretanje i san, uz 30-dnevni akcijski plan.": "Your period is taking too much from you right now. In my Flow & Flourish course you learn, step by step, how to calm it through food, movement and sleep, with a 30-day action plan.",
+"Dani prije menstruacije trenutno su ti najteži. U mom tečaju Flow & Flourish učiš što tvoji hormoni rade u svakoj fazi i kako podržati tijelo baš kad mu je najpotrebnije, uz 30-dnevni akcijski plan.": "The days before your period are the hardest for you right now. In my Flow & Flourish course you learn what your hormones do in each phase and how to support your body exactly when it needs it most, with a 30-day action plan.",
+"Tvoja energija i samopouzdanje trebaju podršku. U mom tečaju Flow & Flourish učiš kako jesti, kretati se i odmarati u skladu sa svojim ciklusom, da se osjećaš živo kroz cijeli mjesec.": "Your energy and confidence need support. In my Flow & Flourish course you learn how to eat, move and rest in tune with your cycle, so you feel alive all month long.",
+"Tvoj ciklus je na dobrom mjestu. Ako ga želiš razumjeti do kraja i živjeti u skladu sa sve četiri faze, moj tečaj Flow & Flourish vodi te kroz to korak po korak.": "Your cycle is in a good place. If you want to understand it fully and live in tune with all four phases, my Flow & Flourish course guides you through it step by step."
 };

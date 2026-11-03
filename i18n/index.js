@@ -78,5 +78,15 @@ window.T_EN={
 "Prijavom pristaješ na primanje e-mailova od mene i na moja": "By signing up, you agree to receive emails from me and to my",
 ". Možeš se odjaviti u bilo kojem trenutku.": ". You can unsubscribe at any time.",
 "Prvih 12 osnivačkih članica pridružuje se za 19 $/mjesec, zauvijek.": "The first 12 founding members join for $19/month, forever.",
-"Pridruži se zajednici": "Join the community"
+"Pridruži se zajednici": "Join the community",
+"Riješi besplatni upitnik o ciklusu": "Take the free cycle quiz",
+"Gdje krenuti": "Where to start",
+"Tvoj put, korak po korak": "Your path, step by step",
+"Upoznaj svoj ciklus": "Get to know your cycle",
+"Riješi besplatni upitnik od 2 minute i saznaj gdje je sve mirno, a gdje tvoje tijelo traži podršku.": "Take the free 2-minute quiz and find out where things are calm and where your body is asking for support.",
+"Riješi upitnik": "Take the quiz",
+"Moj tečaj od 20 modula o četiri faze ciklusa, prehrani, kretanju i snu, s 30-dnevnim akcijskim planom. Jednokratno plaćanje od 39 $, zauvijek tvoje.": "My 20-module course on the four phases of your cycle, food, movement and sleep, with a 30-day action plan. A one-time payment of $39, yours forever.",
+"Pogledaj tečaj": "See the course",
+"Moja besplatna aplikacija s rutinama, domaćim maskama i brendovima koje koristim, za sjaj iznutra i izvana.": "My free app with routines, homemade masks and the brands I use, for a glow from the inside and out.",
+"Otvori aplikaciju": "Open the app"
 };
