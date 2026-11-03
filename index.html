@@ -340,6 +340,38 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 .step-link{font-family:'Cormorant Garamond',serif;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#2E2418;text-decoration:none;border:1px solid #B8924A;padding:11px 20px;background:#F4EAD2;transition:background .3s,color .3s}
 .step-link:hover{background:#2E2418;color:#F4EAD2;border-color:#2E2418}
 @media(max-width:820px){.steps-grid{grid-template-columns:1fr;gap:14px}.step-card{padding:28px 22px}}
+/* premium redesign: deep plum header, dark sea hero, pastel strip */
+.announce{display:block;text-align:center;padding:9px 16px;background:linear-gradient(90deg,#F3DCCB,#E9E1F5);color:#3B2E4F;font-family:'DM Sans',sans-serif;font-size:11.5px;letter-spacing:3px;text-transform:uppercase;text-decoration:none}
+.announce:hover{color:#6B5090}
+.topnav-wrap{background:#3B2E4F!important}
+.topnav{padding:10px 36px!important}
+.topnav-logo{height:96px!important;width:96px!important;box-shadow:0 0 0 1px rgba(226,201,142,.6)}
+.topnav-right{gap:2px!important}
+.topnav-btn,.topnav-right>.topnav-tooltip-wrap:first-child .topnav-btn{background:transparent!important;border:0!important;box-shadow:none!important;color:#F5EFE6!important;font-family:'Cormorant Garamond',serif!important;font-size:12.5px!important;font-weight:700!important;letter-spacing:2px!important;text-transform:uppercase;padding:10px 12px!important;border-radius:0!important;position:relative}
+.topnav-btn::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:#E2C98E;transform:scaleX(0);transition:transform .3s}
+.topnav-btn:hover,.topnav-right>.topnav-tooltip-wrap:first-child .topnav-btn:hover{background:transparent!important;color:#E2C98E!important;box-shadow:none!important}
+.topnav-btn:hover::after{transform:scaleX(1)}
+.mobile-menu-btn{background:transparent!important;border:1px solid rgba(245,239,230,.6)!important;color:#F5EFE6!important;box-shadow:none!important}
+.topnav-tooltip{top:44px}
+.hero{background:#3B2E4F!important;min-height:82vh}
+.hero-bg-img{opacity:1!important;filter:saturate(.75)}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(59,46,79,.62) 0%,rgba(59,46,79,.5) 45%,rgba(59,46,79,.78) 100%)}
+.hero-kicker{color:#E2C98E!important;margin-top:18px}
+.hero-kicker::before,.hero-kicker::after{background:#E2C98E!important}
+.hero h1{color:#FBF8F3!important;font-size:clamp(44px,5.4vw,76px)!important;font-weight:300!important;line-height:1.02!important;white-space:normal!important;margin-bottom:26px!important}
+.hero h1 em{color:#D9CCF2!important}
+.hero-taglines span{color:rgba(251,248,243,.86)!important}
+.hero-illus img{-webkit-mask-image:none!important;mask-image:none!important;border:1px solid rgba(226,201,142,.55);padding:8px;background:#FBF8F3;box-shadow:0 30px 60px -24px rgba(15,8,25,.75)}
+.hero-text{max-width:640px!important;flex-basis:640px!important}
+.hero-main-cta{background:#E9E1F5!important;color:#3B2E4F!important;border-color:#E9E1F5!important;box-shadow:0 14px 30px -14px rgba(20,12,30,.7)!important}
+.hero-main-cta:hover{background:#E2C98E!important;border-color:#E2C98E!important;color:#3B2E4F!important}
+.hero .path-link{background:rgba(251,248,243,.1);border-color:rgba(251,248,243,.35);color:#FBF8F3}
+.hero .path-link:hover{background:rgba(251,248,243,.22);color:#FBF8F3}
+.hero .socials-menu .path-link{background:#FBF8F3;color:#3B2E4F}
+.pillar-scroll.strip{background:linear-gradient(90deg,#F3DCCB,#E9E1F5 50%,#CFC2EA);padding:15px 0;margin:0}
+.pillar-scroll.strip .pillar-track span{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:3.5px;text-transform:uppercase;color:#3B2E4F}
+.pillar-scroll.strip .pillar-track span::before{content:'·';font-size:16px;color:#6B5090;margin-right:22px}
+@media(max-width:768px){.hero-kicker{font-size:10px!important;letter-spacing:2.5px!important;line-height:1.7;padding:0 6px}.hero-kicker::before,.hero-kicker::after{display:none!important}.announce{font-size:10px;letter-spacing:2px}.topnav{padding:8px 16px!important}.topnav-logo{height:72px!important;width:72px!important}.hero h1{font-size:clamp(38px,11vw,52px)!important}}
 </style>
 </head>
 <body>
@@ -365,6 +397,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
   <div style="text-align:center;margin-top:18px"><div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div></div>
 </div>
 
+<a href="cycle-checkin.html" class="announce">Besplatni upitnik o ciklusu od 2 minute</a>
 <div class="topnav-wrap">
 <div class="topnav">
 <img src="logo.png" alt="Olea Vita Sana" class="topnav-logo">
@@ -396,24 +429,7 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 <div class="hero-bg-img"></div>
 <div class="hero-inner">
 <div class="hero-kicker">Look and feel better, more confident and radiant, glowing from the inside out</div>
-<div class="pillar-scroll">
-<div class="pillar-track">
-<span>Više energije. Blistava koža. Mirniji ciklus.</span>
-<span>Izađi iz matrixa i preuzmi kontrolu nad svojim zdravljem</span>
-<span>Prestani nagađati. Dovedi zdravlje u red.</span>
-<span>Vrati svoj sjaj, samopouzdanje i pravu vitalnost</span>
-<span>Dovedi tijelo i zdravlje u ravnotežu</span>
-<span>Uspori, poslušaj svoje tijelo, procvjetaj</span>
-<span>Ponovno se poveži sa svojim tijelom</span>
-<span>Više energije. Blistava koža. Mirniji ciklus.</span>
-<span>Izađi iz matrixa i preuzmi kontrolu nad svojim zdravljem</span>
-<span>Prestani nagađati. Dovedi zdravlje u red.</span>
-<span>Vrati svoj sjaj, samopouzdanje i pravu vitalnost</span>
-<span>Dovedi tijelo i zdravlje u ravnotežu</span>
-<span>Uspori, poslušaj svoje tijelo, procvjetaj</span>
-<span>Ponovno se poveži sa svojim tijelom</span>
-</div>
-</div>
+
 </div>
 <div class="hero-grid">
 <div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa"></div>
@@ -441,6 +457,24 @@ footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--light)}
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="pillar-scroll strip">
+<div class="pillar-track">
+<span>Više energije. Blistava koža. Mirniji ciklus.</span>
+<span>Izađi iz matrixa i preuzmi kontrolu nad svojim zdravljem</span>
+<span>Prestani nagađati. Dovedi zdravlje u red.</span>
+<span>Vrati svoj sjaj, samopouzdanje i pravu vitalnost</span>
+<span>Dovedi tijelo i zdravlje u ravnotežu</span>
+<span>Uspori, poslušaj svoje tijelo, procvjetaj</span>
+<span>Ponovno se poveži sa svojim tijelom</span>
+<span>Više energije. Blistava koža. Mirniji ciklus.</span>
+<span>Izađi iz matrixa i preuzmi kontrolu nad svojim zdravljem</span>
+<span>Prestani nagađati. Dovedi zdravlje u red.</span>
+<span>Vrati svoj sjaj, samopouzdanje i pravu vitalnost</span>
+<span>Dovedi tijelo i zdravlje u ravnotežu</span>
+<span>Uspori, poslušaj svoje tijelo, procvjetaj</span>
+<span>Ponovno se poveži sa svojim tijelom</span>
 </div>
 </div>
 

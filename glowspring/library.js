@@ -380,6 +380,12 @@ const SPRINGS = [
         ]
       },
       {
+        title: 'Face Testing', kind: 'list',
+        items: [
+          { t: 'Face IQ', note: 'Lighting, camera angle and lens change the score a lot, so treat it as a snapshot to learn from rather than a verdict on how you look.' }
+        ]
+      },
+      {
         title: 'Finishing Touches', kind: 'list',
         items: [
           { t: 'Optimize hairstyle' },
@@ -399,6 +405,7 @@ const SHELF_GROUPS = [
   { id: 'scent', label: 'Scent' },
   { id: 'wellness', label: 'Supplements' },
   { id: 'home', label: 'Home' },
+  { id: 'tools', label: 'Tools' },
   { id: 'wear', label: 'Wear' }
 ];
 
@@ -426,6 +433,7 @@ const SHELF = [
   { group: 'home', brand: 'Weddell', href: 'https://weddellwater.com/', note: 'Shower filters.', goals: ['skin', 'hair'] },
   { group: 'home', brand: 'Hatch', href: 'https://www.hatch.co/', note: 'Sunrise alarm clocks.', goals: ['sleep'] },
   { group: 'home', brand: 'Rowe Casa', href: 'https://www.rowecasaorganics.com/', note: 'Castor oil packs.', goals: ['gut'], avoid: ['pregnancy'] },
+  { group: 'tools', brand: 'FaceIQ Labs', href: 'https://www.faceiqlabs.com/', note: 'Face analysis and rating.', goals: ['body'] },
   { group: 'wear', brand: 'SOPHi', href: 'https://sophinailpolish.com/', note: 'Water-based nail polish.' },
   { group: 'wear', brand: 'MATE The Label', href: 'https://matethelabel.com/' },
   { group: 'wear', brand: 'Pact', href: 'https://wearpact.com/' },

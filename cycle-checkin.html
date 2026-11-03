@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
---cream:#F8F2E4; --paper:#FFFDF8; --paper2:#FBF4DC;
+--cream:#F7F4F9; --paper:#FFFFFF; --paper2:#F4F0F8;
 --ink:#3A3145; --ink-soft:#736A82; --ink-faint:#A89CB8;
---clay:#D9B54A; --clay-deep:#9A7A1E; --clay-soft:#F3E2A0;
+--clay:#B8924A; --clay-deep:#8E6F2E; --clay-soft:#EFE6D6;
 --sage:#A89CCB; --sage-deep:#7E70A8; --sage-soft:#E2DAF0;
 --rose:#C3A8D6; --plum:#6E5A8C;
---line:rgba(120,100,40,0.16); --line-soft:rgba(120,100,40,0.08);
---warn-bg:#F3E2A0; --warn-ink:#9A7A1E;
+--line:rgba(59,46,79,0.13); --line-soft:rgba(59,46,79,0.07);
+--warn-bg:#F1EAF6; --warn-ink:#5B4378;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -135,6 +135,28 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 #giftDone a{color:var(--sage-deep);font-weight:700}
 .consent{font-size:12px;color:var(--ink-faint);line-height:1.6;margin-top:12px}
 .consent a{color:var(--ink-faint)}
+/* premium look: plum header band, crisp white cards, quiet plum buttons */
+header{background:#3B2E4F;margin:0 calc(50% - 50vw) 10px;padding:70px 24px 58px}
+header .kicker{color:#E2C98E}
+header h1{color:#FBF8F3;font-weight:400}
+header h1 em{color:#D9CCF2}
+header .lede{color:rgba(251,248,243,.82)}
+header .enemy{color:#D9CCF2}
+.home-link{display:inline-block;margin-bottom:28px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(251,248,243,.75);text-decoration:none;border-bottom:1px solid rgba(226,201,142,.6);padding-bottom:3px}
+.home-link:hover{color:#E2C98E}
+.q{border-radius:6px;border-color:rgba(59,46,79,.1);box-shadow:0 18px 36px -28px rgba(59,46,79,.45)}
+.q:hover{transform:none;border-color:rgba(59,46,79,.22)}
+.choice{border-radius:4px;background:var(--paper2);border-color:transparent;color:var(--ink)}
+.choice:hover{border-color:#8C77B8}
+.choice.on,.choice.multi.on{background:#3B2E4F;border-color:#3B2E4F;color:#FBF8F3}
+input[type=number],textarea{border-radius:4px;background:var(--paper2);border-color:transparent}
+.sec-num{color:#B8924A}
+.btn{border-radius:2px;background:#3B2E4F;text-transform:uppercase;letter-spacing:.16em;font-size:13.5px;box-shadow:0 18px 36px -18px rgba(59,46,79,.7)}
+.btn:hover{background:#4D3D66}
+.btn.ghost{border-radius:2px;color:#3B2E4F;border-color:#3B2E4F;background:transparent}
+.btn.ghost:hover{background:#F1EAF6}
+.focus-box,.next-box,.gift-box{border-radius:6px}
+.gift-form input{border-radius:2px}
 </style>
 </head>
 <body>
@@ -142,6 +164,7 @@ footer{margin-top:54px;text-align:center;font-size:12.5px;color:var(--ink-faint)
 <div class="wrap">
 
 <header>
+<a href="index.html" class="home-link">Prirodno s Anjom</a>
 <div class="kicker">Provjera ciklusa</div>
 <h1>Pogledajmo gdje je zapravo tvoj <em>ciklus</em></h1>
 <p class="enemy">Govorili su ti da su bolne menstruacije jednostavno dio toga da si žena. Nisu.</p>

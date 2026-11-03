@@ -88,5 +88,6 @@ window.T_EN={
 "Moj tečaj od 20 modula o četiri faze ciklusa, prehrani, kretanju i snu, s 30-dnevnim akcijskim planom. Jednokratno plaćanje od 39 $, zauvijek tvoje.": "My 20-module course on the four phases of your cycle, food, movement and sleep, with a 30-day action plan. A one-time payment of $39, yours forever.",
 "Pogledaj tečaj": "See the course",
 "Moja besplatna aplikacija s rutinama, domaćim maskama i brendovima koje koristim, za sjaj iznutra i izvana.": "My free app with routines, homemade masks and the brands I use, for a glow from the inside and out.",
-"Otvori aplikaciju": "Open the app"
+"Otvori aplikaciju": "Open the app",
+"Besplatni upitnik o ciklusu od 2 minute": "Free 2-minute cycle quiz"
 };
