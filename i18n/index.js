@@ -6,6 +6,7 @@ window.T_EN={
 "Kako coaching izgleda i što dobivaš": "What coaching looks like and what you get",
 "✉ Kontaktiraj me": "✉ Contact me",
 "O meni": "About me",
+"Moja aplikacija": "My app",
 "Izbornik": "Menu",
 "Dobij personalizirane rezultate i sljedeće korake": "Get personalized results and next steps",
 "Cjeloviti program za zdravije tijelo, hormone i životne navike": "A complete program for a healthier body, hormones and daily habits",

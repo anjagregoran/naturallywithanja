@@ -1,0 +1,12 @@
+{
+  "name": "Glowspring",
+  "short_name": "Glowspring",
+  "description": "A library of natural beauty and health research, with an honest ingredient checker and a daily ritual.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5EBDA",
+  "theme_color": "#F5EBDA",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
