@@ -16,7 +16,10 @@ window.setSiteLang=function(l){L=l;try{localStorage.setItem(K,l)}catch(e){}docum
   if(document.__t0==null)document.__t0=document.title;document.title=l==='en'&&T[n(document.__t0)]?T[n(document.__t0)]:document.__t0;
   tr(document.body);document.querySelectorAll('.lang-sw button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
   document.dispatchEvent(new CustomEvent('sitelang',{detail:l}))};
-try{L=localStorage.getItem(K)||'hr'}catch(e){}
+/* English only for now: set ONLY_EN to false to bring back the HR/EN switch */
+var ONLY_EN=true;
+if(ONLY_EN){L='en';var h=document.createElement('style');h.textContent='.lang-sw{display:none!important}';document.head.appendChild(h)}
+else{try{L=localStorage.getItem(K)||'hr'}catch(e){}}
 new MutationObserver(function(ms){if(L!=='en')return;ms.forEach(function(m){m.addedNodes.forEach(function(d){if(d.nodeType===1)tr(d);else if(d.nodeType===3&&d.parentNode)tr(d.parentNode)})})}).observe(document.body,{childList:true,subtree:true});
 setSiteLang(L);
 })();

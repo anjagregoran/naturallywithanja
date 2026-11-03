@@ -89,5 +89,21 @@ window.T_EN={
 "Pogledaj tečaj": "See the course",
 "Moja besplatna aplikacija s rutinama, domaćim maskama i brendovima koje koristim, za sjaj iznutra i izvana.": "My free app with routines, homemade masks and the brands I use, for a glow from the inside and out.",
 "Otvori aplikaciju": "Open the app",
-"Besplatni upitnik o ciklusu od 2 minute": "Free 2-minute cycle quiz"
+"Besplatni upitnik o ciklusu od 2 minute": "Free 2-minute cycle quiz",
+"Tvoje tijelo ti nešto govori": "Your body is telling you something",
+"Što te": "What is",
+"muči": "troubling you",
+"Odaberi temu i saznaj što stoji iza toga i gdje krenuti.": "Pick a topic to learn what is behind it and where to start.",
+"Bolne i obilne menstruacije": "Painful and heavy periods",
+"Grčevi, obilno krvarenje i dani koji te zaustave.": "Cramps, heavy bleeding and days that stop you in your tracks.",
+"PMS i promjene raspoloženja": "PMS and mood swings",
+"Tjeskoba, žudnje i razdražljivost prije menstruacije.": "Anxiety, cravings and irritability before your period.",
+"Neredovit ciklus": "Irregular cycle",
+"Ciklus koji kasni, preskače ili se stalno mijenja.": "A cycle that comes late, skips or keeps changing.",
+"Akne i koža": "Acne and skin",
+"Prištići uz ciklus, upaljena i nemirna koža.": "Cycle breakouts and inflamed, restless skin.",
+"Napuhnutost i probava": "Bloating and digestion",
+"Napuhnut trbuh, nemirna probava i težina nakon jela.": "A bloated belly, restless digestion and heaviness after meals.",
+"Umor i niska energija": "Fatigue and low energy",
+"Padovi energije, loš san i manjak samopouzdanja.": "Energy crashes, poor sleep and low confidence."
 };

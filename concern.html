@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prirodno s Anjom | Olea Vita Sana</title>
+<meta name="description" content="Bolne menstruacije, PMS, neredovit ciklus, koža, probava i energija: što stoji iza toga i gdje krenuti, prirodno.">
+<link rel="icon" type="image/png" href="favicon-grape.png?v=4">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="premium.css">
+</head>
+<body class="page-concern">
+
+<a href="cycle-checkin.html" class="announce">Besplatni upitnik o ciklusu od 2 minute</a>
+<header class="bar">
+  <a href="index.html" class="bar-home">Prirodno s Anjom</a>
+  <div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
+</header>
+
+<main id="concern"></main>
+
+<script src="concerns-data.js"></script>
+<script>
+(function () {
+  var main = document.getElementById('concern');
+  var id = new URLSearchParams(location.search).get('c');
+  var c = window.CONCERNS.find(function (x) { return x.id === id; }) || window.CONCERNS[0];
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (ch) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); };
+  var list = function (items) { return items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join(''); };
+  var others = window.CONCERNS.filter(function (x) { return x.id !== c.id; });
+
+  document.title = c.title + ' | Prirodno s Anjom';
+  main.innerHTML =
+    '<section class="c-hero tone-' + c.tone + '">' +
+      '<div class="c-hero-text">' +
+        '<a href="index.html#teme" class="c-back">Natrag na početnu</a>' +
+        '<p class="eyebrow">Tvoje tijelo ti nešto govori</p>' +
+        '<h1>' + esc(c.title) + '</h1>' +
+        '<p class="c-intro">' + esc(c.intro) + '</p>' +
+      '</div>' +
+      '<div class="c-hero-photo"><img src="' + c.photo + '" alt=""></div>' +
+    '</section>' +
+    '<section class="c-body">' +
+      '<div class="c-col"><h2>Što stoji iza toga</h2><ul class="c-causes">' + list(c.causes) + '</ul></div>' +
+      '<div class="c-col"><h2>Gdje krenuti</h2><ol class="c-steps">' + list(c.steps) + '</ol>' +
+        (c.doctor ? '<p class="c-doctor">' + esc(c.doctor) + '</p>' : '') + '</div>' +
+    '</section>' +
+    '<section class="c-next">' +
+      '<p class="eyebrow">Tvoj sljedeći korak</p>' +
+      '<p class="c-next-text">Riješi besplatni upitnik od 2 minute i saznaj gdje tvoje tijelo traži podršku, a u mom tečaju Flow & Flourish idemo dublje, korak po korak.</p>' +
+      '<div class="c-actions">' +
+        '<a href="cycle-checkin.html" class="btn btn-solid">Riješi besplatni upitnik</a>' +
+        '<a href="flow-and-flourish.html" class="btn btn-line">Pogledaj tečaj</a>' +
+        (c.app ? '<a href="glowspring/#check" class="btn btn-line">Otvori Glowspring</a>' : '') +
+      '</div>' +
+    '</section>' +
+    '<section class="c-more">' +
+      '<h2>Druge teme</h2>' +
+      '<div class="concern-grid small">' + others.map(function (o) {
+        return '<a class="concern-card tone-' + o.tone + '" href="concern.html?c=' + o.id + '">' +
+          '<span class="ct-text"><span class="ct-title">' + esc(o.title) + '</span><span class="ct-arrow" aria-hidden="true">&rarr;</span></span></a>';
+      }).join('') + '</div>' +
+    '</section>' +
+    '<p class="c-note">Ovo je edukacija, a ne medicinski savjet. Ako ti se nešto čini ozbiljno ili zabrinjavajuće, razgovaraj s liječnikom.</p>';
+})();
+</script>
+<footer class="foot">© Prirodno s Anjom · Olea Vita Sana · <a href="privacy.html">Pravila privatnosti</a></footer>
+<script src="i18n/concerns.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>

@@ -173,6 +173,7 @@ const SPRINGS = [
         title: 'Supplements', kind: 'list',
         items: [
           { t: 'Collagen + creatine supplement' },
+          { t: "Dr. Morse's herbs", note: 'Herbs can interact with medication and are not all safe in pregnancy, so check with your doctor before starting.' },
           { t: 'Liver supplement: Paul or Ancient Nutrition' },
           { t: 'Cod liver oil supplement', note: 'Liver and cod liver oil are both high in preformed vitamin A. The NIH upper limit for adults is 3,000 mcg a day from all sources, and too much in pregnancy can cause birth defects, so add them up before taking both.', src: SOURCES.vitaminA }
         ]
@@ -428,6 +429,7 @@ const SHELF = [
   { group: 'wellness', brand: 'Heart And Soil', href: 'https://shop.heartandsoil.co/', note: 'Some of their supplements are made with liver, which is high in vitamin A.', goals: ['energy', 'skin', 'hair'], avoid: ['pregnancy'] },
   { group: 'wellness', brand: 'Ancient Nutrition', href: 'https://ancientnutrition.com/', goals: ['energy'], avoid: ['pregnancy'] },
   { group: 'wellness', brand: 'Global Healing', href: 'https://globalhealing.com/', goals: ['energy', 'skin', 'hair', 'gut'] },
+  { group: 'wellness', brand: "Dr. Morse's", href: 'https://drmorses.com/', note: 'Herbal formulas. Check with your doctor first if you are pregnant, nursing or take medication.', goals: ['gut', 'energy'], avoid: ['pregnancy'] },
   { group: 'wellness', brand: 'NutraMedix', href: 'https://www.nutramedix.com/', note: 'The label on their chlorella and cilantro drops says they are not for pregnancy or nursing.', goals: ['gut'], avoid: ['pregnancy'] },
   { group: 'scent', brand: 'Sonia Washburn', href: 'https://www.soniawashburn.com/', note: 'Natural perfume.', avoid: ['fragrance'] },
   { group: 'home', brand: 'Weddell', href: 'https://weddellwater.com/', note: 'Shower filters.', goals: ['skin', 'hair'] },
