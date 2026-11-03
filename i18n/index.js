@@ -105,5 +105,7 @@ window.T_EN={
 "Napuhnutost i probava": "Bloating and digestion",
 "Napuhnut trbuh, nemirna probava i težina nakon jela.": "A bloated belly, restless digestion and heaviness after meals.",
 "Umor i niska energija": "Fatigue and low energy",
-"Padovi energije, loš san i manjak samopouzdanja.": "Energy crashes, poor sleep and low confidence."
+"Padovi energije, loš san i manjak samopouzdanja.": "Energy crashes, poor sleep and low confidence.",
+"Obrazujem se u": "I am studying at",
+"Certifikaciju završavam do kraja 2026.": "Completing my certification by the end of 2026"
 };
