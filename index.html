@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="premium.css?v=20261103">
+<link rel="stylesheet" href="premium.css?v=20261103b">
 <style>
 :root{--redp:#FDEAEA;--redtext:#C07070;--cream:#FAF7EE;--warm:#FFFDF6;--tc:#B6A8D9;--tcl:#CFC2EA;--tcp:#F1ECFA;--sage:#A8B89A;--sagep:#EEF3EB;--gold:#C9A227;--goldp:#FBF4DC;--rose:#C9A8C0;--rosep:#F8F0F5;--deep:#5B4D78;--mid:#8A7BA6;--light:#C2B7DC;--bdr:rgba(180,160,220,.18);--shd:rgba(120,100,160,.07)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -441,6 +441,44 @@ body{font-family:'Jost','DM Sans',sans-serif!important;color:#3B2E4F}
 @media(max-width:640px){.cert{padding:44px 16px 8px}.cert-card{padding:40px 22px 32px}.cert-facts{flex-direction:column;gap:6px}.cert-facts li+li::before{display:none}}
 /* the four seasons and the quiz box keep their original look */
 .cycle-seasons,.quiz-band{--mid:#8A7BA6;--light:#C2B7DC;--tc:#B6A8D9;font-family:'DM Sans',sans-serif!important;color:var(--deep)}
+/* minimal: the Women's Library palette, cream everywhere, floating cards */
+body{background:#FAF6EE!important;background-image:none!important}
+.announce{background:#FAF6EE!important;color:#3A2E28!important;border-bottom:1px solid rgba(201,162,39,.25)}
+.topnav-wrap{background:#FAF6EE!important;border-bottom:1px solid rgba(201,162,39,.25)!important}
+.topnav-btn,.topnav-right>.topnav-tooltip-wrap:first-child .topnav-btn{color:#3A2E28!important}
+.topnav-btn:hover,.topnav-right>.topnav-tooltip-wrap:first-child .topnav-btn:hover{color:#8E6F2E!important}
+.topnav-btn::after{background:#C9A860!important}
+.mobile-menu-btn{border-color:rgba(58,46,40,.3)!important;color:#3A2E28!important}
+.hero{background:#FAF6EE!important}
+.hero-bg-img{opacity:.16!important;filter:grayscale(.5)!important}
+.hero::after{background:linear-gradient(180deg,rgba(250,246,238,.2),rgba(250,246,238,.9))!important}
+.hero h1{color:#3A2E28!important}
+.hero h1 em{color:#8A7BA6!important}
+.hero-taglines span{color:#4A3D5C!important}
+.hero-kicker{color:#8E6F2E!important}
+.hero-kicker::before,.hero-kicker::after{background:#C9A860!important}
+.hero-illus img{background:#FDFAF4!important;border-color:rgba(201,162,39,.3)!important;box-shadow:0 34px 60px -40px rgba(58,46,40,.45)!important}
+.hero-main-cta{background:#3A2E28!important;color:#FAF6EE!important;border-color:#3A2E28!important;border-radius:2px!important;font-family:'Cormorant Garamond',serif!important;font-size:13px!important;font-weight:600!important;letter-spacing:.18em!important;text-transform:uppercase!important;padding:16px 40px!important;box-shadow:none!important}
+.hero-main-cta:hover{background:#5A4A40!important;border-color:#5A4A40!important}
+.hero .path-link,.hero a.path-link[href="glowspring/"]{background:transparent!important;color:#3A2E28!important;border:1px solid rgba(58,46,40,.25)!important;font-weight:400!important}
+.hero .path-link:hover{background:#FDFAF4!important}
+.hero a.path-link[href="glowspring/"] span{background:#C9A860!important}
+.pillar-scroll.strip{background:#FAF6EE!important;border-top:1px solid rgba(201,162,39,.25);border-bottom:1px solid rgba(201,162,39,.25)}
+.pillar-scroll.strip .pillar-track span{color:#4A3D5C!important}
+.pillar-scroll.strip .pillar-track span::before{color:#C9A860!important}
+.concerns-sec h2{color:#3A2E28!important}
+.concerns-sub{color:#6E6286!important}
+.step-card{background:#FDFAF4!important;border:1px solid rgba(201,162,39,.25)!important;border-radius:6px!important;box-shadow:0 24px 44px -36px rgba(58,46,40,.4);transition:transform .3s,box-shadow .3s}
+.step-card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -36px rgba(58,46,40,.45)}
+.step-card h3,.path-steps h2{color:#3A2E28!important}
+.step-num{color:#C9A860!important}
+.step-link{background:transparent!important;color:#3A2E28!important;border:1px solid rgba(58,46,40,.3)!important;border-radius:2px!important;font-family:'Cormorant Garamond',serif!important;font-size:12.5px!important;font-weight:600!important;letter-spacing:.18em!important;text-transform:uppercase!important}
+.step-link:hover{background:#3A2E28!important;color:#FAF6EE!important}
+.path-kicker{color:#8E6F2E!important}
+.cert-card{background:#FDFAF4;border-color:rgba(201,162,39,.35)}
+.cert-status{background:transparent;border:1px solid rgba(58,46,40,.2);color:#3A2E28}
+.cert-school{color:#3A2E28}
+.quote-band{background:#FDFAF4!important;border-color:rgba(201,162,39,.25)!important}
 </style>
 </head>
 <body>

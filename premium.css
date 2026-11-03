@@ -1,9 +1,9 @@
 /* Shared premium look: ivory and lavender grounds, one plum ink, gold only on plum.
    Fonts: Fraunces (headings), Jost (text), DM Mono (small labels). */
 :root{
-  --ivory:#FBF7EF; --mist:#EEE7F5; --plum:#3B2E4F; --plum-2:#4D3D66;
-  --ink:#3B2E4F; --ink-2:#5A4D6B; --gold:#E2C98E; --gold-ink:#7A5C16;
-  --line:rgba(59,46,79,.14);
+  --ivory:#FAF6EE; --card:#FDFAF4; --mist:#F4EEE2; --plum:#3A2E28; --plum-2:#5A4A40;
+  --ink:#3A2E28; --ink-2:#6E6286; --gold:#C9A860; --gold-ink:#8E6F2E;
+  --line:rgba(201,162,39,.25);
   --serif:'Fraunces',Georgia,serif; --sans:'Jost','DM Sans',sans-serif; --mono:'DM Mono',ui-monospace,monospace;
 }
 
@@ -91,3 +91,29 @@ a:focus-visible,.btn:focus-visible,.concern-card:focus-visible{outline:2px solid
   .c-next{padding:44px 22px}
   .bar{padding:14px 18px}
 }
+
+/* minimal: one cream palette like the Women's Library, floating cards, outline buttons */
+.announce{background:var(--ivory);color:var(--ink);border-bottom:1px solid var(--line)}
+.bar{background:var(--ivory);border-bottom:1px solid var(--line)}
+.bar-home{color:var(--ink)}
+.bar-home:hover{color:var(--gold-ink)}
+.btn{border-radius:2px;font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.btn-solid{background:var(--ink);color:var(--ivory)}
+.btn-solid:hover{background:var(--plum-2)}
+.btn-line{border:1px solid rgba(58,46,40,.3)}
+.btn-line:hover{background:var(--card)}
+.tone-rose,.tone-lilac,.tone-sage,.tone-peach,.tone-butter,.tone-sky{background:var(--card)}
+.concern-card{border:1px solid var(--line);border-radius:6px;box-shadow:0 24px 44px -36px rgba(58,46,40,.4)}
+.concern-card:hover{transform:translateY(-6px);box-shadow:0 34px 60px -36px rgba(58,46,40,.45)}
+.ct-arrow{background:transparent;border:1px solid rgba(58,46,40,.3);color:var(--ink)}
+.c-hero{border:1px solid var(--line);border-radius:8px}
+.c-next{background:var(--card);border:1px solid var(--line);border-radius:8px}
+.c-next .eyebrow{color:var(--gold-ink)}
+.c-next-text{color:var(--ink)}
+.c-next .btn-solid{background:var(--ink);color:var(--ivory)}
+.c-next .btn-solid:hover{background:var(--plum-2)}
+.c-next .btn-line{border-color:rgba(58,46,40,.3);color:var(--ink)}
+.c-next .btn-line:hover{background:var(--ivory)}
+.c-doctor{background:var(--mist)}
+.foot{background:var(--ivory);color:var(--ink);border-top:1px solid var(--line)}
+.foot a{color:var(--gold-ink)}
