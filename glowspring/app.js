@@ -105,7 +105,6 @@ function renderLibrary() {
       <div class="hero-text">
         <span class="label">Glow From Nature</span>
         <h1>Glowspring</h1>
-        <p class="script hero-script">healthy is the new pretty</p>
       </div>
     </section>
     <section class="statement">
@@ -123,6 +122,7 @@ function renderLibrary() {
     <input class="search" id="search" type="search" aria-label="Search the library" placeholder="Search rosehip, henna, debloat..." autocomplete="off">
     <div id="found"></div>
     <div id="home" class="column">
+      <h2 class="pretty">healthy is the <span class="script">new</span> pretty</h2>
       <section class="section">
         <h2>Use It</h2>
         <a class="link-row" href="#check"><h3>Check A Product</h3><p>Paste any ingredient list and see each ingredient judged.</p></a>
