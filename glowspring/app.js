@@ -105,6 +105,7 @@ function renderLibrary() {
       <div class="hero-text">
         <span class="label">Glow From Nature</span>
         <h1>Glowspring</h1>
+        <p class="script hero-script">healthy is the new pretty</p>
       </div>
     </section>
     <section class="statement">
@@ -115,6 +116,10 @@ function renderLibrary() {
     <div class="doors">
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
     </div>
+    <section class="glow">
+      <p class="script glow-quote">your health is your glow</p>
+      <p class="glow-line">Become incredibly attractive through health.</p>
+    </section>
     <input class="search" id="search" type="search" aria-label="Search the library" placeholder="Search rosehip, henna, debloat..." autocomplete="off">
     <div id="found"></div>
     <div id="home" class="column">

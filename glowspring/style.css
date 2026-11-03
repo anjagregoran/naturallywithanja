@@ -10,6 +10,7 @@
   --blush: #EDC8C6;
   --sky: #C7D6DC;
   --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --script: 'Pinyon Script', 'Snell Roundhand', cursive;
   --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -109,6 +110,12 @@ h1 em, h2 em { font-style: italic; font-weight: 300; }
 .hero-text { position: absolute; inset: 0 20px auto; padding-top: clamp(44px, 9vh, 84px); text-align: center; }
 .hero-text h1 { font-size: clamp(56px, 16.5vw, 136px); font-weight: 300; line-height: .95; margin-top: 12px; letter-spacing: -.03em; }
 .hero-text .label { color: var(--ink); }
+
+.script { font-family: var(--script); font-weight: 400; letter-spacing: 0; }
+.hero-script { font-size: clamp(30px, 7.6vw, 56px); line-height: 1.1; margin-top: 6px; text-shadow: 0 0 8px var(--peach), 0 0 16px var(--peach), 0 0 26px var(--peach); }
+.glow { max-width: 760px; margin: 72px auto 0; text-align: center; }
+.glow-quote { font-size: clamp(44px, 11.5vw, 84px); line-height: 1.05; }
+.glow-line { margin-top: 12px; font-family: var(--serif); font-variation-settings: 'SOFT' 100; font-size: clamp(20px, 5vw, 26px); font-weight: 300; color: var(--ink-soft); }
 
 .statement { max-width: 760px; margin: 64px auto 0; text-align: center; }
 .statement .lede { max-width: 560px; margin: 16px auto 0; }
