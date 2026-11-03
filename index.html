@@ -492,6 +492,13 @@ body{background:#FAF6EE!important;background-image:none!important}
 .quote-band::before{content:"";position:absolute;inset:0;background:rgba(253,250,244,.55)}
 .quote-band-inner{position:relative}
 .hero-bg-img{background-size:auto 100%!important;background-repeat:repeat-x!important;background-position:center center!important}
+.hero-bg-img{background-size:contain!important;background-repeat:no-repeat!important;background-position:center center!important}
+.hero-bg-img::after{background:rgba(250,246,238,.42)!important}
+.hero-bg-img{background:url('sea-bg.jpg') center/cover no-repeat!important;filter:none!important}
+.hero-bg-img::after{background:rgba(253,250,244,.55)!important}
+.quote-band{background:#FDFAF4!important}.quote-band::before{display:none!important}
+.qb-illus{width:min(340px,100%);height:auto;display:block;border:1px solid rgba(201,162,39,.3);padding:8px;background:#FDFAF4;box-shadow:0 30px 50px -36px rgba(58,46,40,.5);flex:none}
+@media(max-width:768px){.qb-illus{margin:0 auto;width:78%}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
 </head>
@@ -724,6 +731,7 @@ document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function 
 
 <div class="quote-band">
 <div class="quote-band-inner">
+  <img class="qb-illus" src="hero-mediterranean.jpg?v=1" alt="Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa">
   <div class="quote-text">
     <blockquote>"Ponovno se poveži sa svojim tijelom i onom verzijom sebe koja se osjeća puna života, energije i blistavosti. To je umjetnost življenja."</blockquote>
     <cite>Povratak svom pravom ja</cite>
