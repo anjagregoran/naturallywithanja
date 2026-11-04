@@ -257,5 +257,5 @@ const ART = {
 };
 
 function heroArt() {
-  return `<img class="photo-art" src="https://images.pexels.com/photos/40557462/pexels-photo-40557462.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="An amber dropper bottle of natural oil on marble with an olive branch" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;display:block">`;
+  return `<img class="photo-art" src="https://images.pexels.com/photos/7796161/pexels-photo-7796161.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Natural skincare on a wooden tray with amber bottles, a dry brush and dried pampas grass" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block">`;
 }

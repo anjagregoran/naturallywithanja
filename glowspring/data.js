@@ -2,17 +2,18 @@
    Ingredient tiers: pure, fine, caution, skip. Flags: fragrance, nut, pregnancy. */
 
 const TIERS = {
-  pure:    { label: 'Pure',    note: 'From nature and gentle' },
-  fine:    { label: 'Fine',    note: 'Lab-made or processed, and well tolerated' },
-  caution: { label: 'Caution', note: 'Worth a second look, especially on sensitive skin' },
-  skip:    { label: 'Skip',    note: 'We would leave this one out' },
-  unknown: { label: 'Unknown', note: 'Not in our list yet' }
+  pure:    { label: 'Glow',   note: 'From nature and gentle, what I reach for' },
+  fine:    { label: 'Okay',   note: 'Lab-made or processed, and well tolerated' },
+  caution: { label: 'Rarely', note: 'I only buy this about 2% of the time' },
+  skip:    { label: 'Never',  note: 'I would never put this on my body' },
+  unknown: { label: 'Not Rated Yet', note: 'Not in my list yet' }
 };
 
 const INGREDIENTS = [
   // Base
   { n: 'Water', a: ['water', 'aqua', 'eau'], t: 'pure', w: 'The base of most formulas, and usually the reason a product needs a preservative.' },
   { n: 'Flower Water', a: ['flower water', 'rose water', 'hydrosol', 'leaf water'], t: 'pure', w: 'A gentle water distilled from a plant, carrying a light natural scent.' },
+  { n: 'Beef Tallow', a: ['beef tallow', 'grass-fed tallow', 'grass fed tallow', 'tallow'], t: 'pure', w: 'Rendered beef fat that is very close to the oils in our own skin. I choose grass-fed tallow from regenerative farms.' },
   { n: 'Aloe Vera', a: ['aloe barbadensis', 'aloe vera'], t: 'pure', w: 'Hydrating and soothing, and a common natural replacement for water.' },
   { n: 'Glycerin', a: ['glycerin', 'glycerine'], t: 'fine', w: 'A humectant that pulls water into skin. It can be plant-based or synthetic, and labels rarely say which.' },
   { n: 'Propanediol', a: ['propanediol'], t: 'fine', w: 'A lightweight humectant that is often fermented from corn.' },

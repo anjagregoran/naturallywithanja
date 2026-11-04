@@ -16,10 +16,9 @@ const BLOCKS = [
 ];
 
 const MAX_PER_BLOCK = 5;
-const QUIZ_PAGES = 3;
 
 const blankState = () => ({ profile: null, done: {}, saved: [] });
-const blankQuiz = () => ({ page: 1, goals: [], skin: null, sensitivities: [] });
+const blankQuiz = () => ({ step: 0, a: {} });
 
 let state = load();
 let quiz = null;
@@ -282,6 +281,27 @@ function renderCheck() {
     <span class="label">Ingredient Checker</span>
     <h1>Every ingredient, judged honestly.</h1>
     <p class="lede">Copy the full list from the back of a product or from its store page, and we will go through it one ingredient at a time.</p>
+    <details class="howi" open>
+      <summary>How I judge every ingredient</summary>
+      <div class="lights">
+        <div class="light g"><i></i><h3>Green: Glow &amp; Okay</h3><p>What I would buy 98% of the time. Organic, plant-based and from nature, or gentle and well tolerated.</p></div>
+        <div class="light y"><i></i><h3>Yellow: Rarely</h3><p>Only about 2% of the time, when there is no better option. Worth a second look, especially on sensitive skin.</p></div>
+        <div class="light r"><i></i><h3>Red: Never</h3><p>I would never buy it. These are the ingredients I always leave out.</p></div>
+      </div>
+      <ul class="crit">
+        <li>Organic and plant-based ingredients come first, like in the brands I use and trust.</li>
+        <li>Animal ingredients are welcome when they are clean and regenerative, like grass-fed beef tallow from regenerative farms (Primally Pure uses it).</li>
+        <li>A short list of real ingredients beats a long list of fillers.</li>
+        <li>No synthetic fragrance, parabens, phthalates or harsh sulfates.</li>
+        <li>I follow EU safety standards, which are stricter than the USA's.</li>
+      </ul>
+    </details>
+    <div class="psearch">
+      <label for="pq">Type a product name</label>
+      <div class="psearch-row"><input id="pq" type="search" placeholder="For example: Weleda Skin Food" autocomplete="off"><button class="pill" data-find>Find It</button></div>
+      <div id="pres"></div>
+      <p class="hint">Big brands are easiest to find. If yours is not there, paste the ingredient list below.</p>
+    </div>
     <textarea id="list" aria-label="Ingredient list" placeholder="Water, Aloe Barbadensis Leaf Juice, Glycerin...">${esc(checkText)}</textarea>
     <div class="actions">
       <button class="pill" data-run>Check Ingredients</button>
@@ -333,6 +353,25 @@ function resultHtml(result) {
     </section>`;
 }
 
+/* Product search uses Open Beauty Facts, a free public database. Only products with an ingredient list are shown. */
+let productHits = [];
+async function findProduct() {
+  const q = document.getElementById('pq').value.trim();
+  const box = document.getElementById('pres');
+  if (!q) return;
+  box.innerHTML = '<p class="hint">Looking it up…</p>';
+  try {
+    const url = 'https://world.openbeautyfacts.org/cgi/search.pl?search_simple=1&json=1&page_size=12&fields=product_name,brands,ingredients_text&search_terms=' + encodeURIComponent(q);
+    const data = await (await fetch(url)).json();
+    productHits = (data.products || []).filter(p => p.ingredients_text && p.product_name).slice(0, 6);
+    box.innerHTML = productHits.length
+      ? productHits.map((p, i) => `<button class="phit" data-pick="${i}"><b>${esc(p.brands || '')}</b> ${esc(p.product_name)}</button>`).join('')
+      : '<p class="hint">I could not find that one yet. Paste its ingredient list below and I will check it.</p>';
+  } catch (e) {
+    box.innerHTML = '<p class="hint">The search is not answering right now. Paste the ingredient list below instead.</p>';
+  }
+}
+
 function runCheck() {
   checkText = document.getElementById('list').value;
   checkResult = analyze(checkText, sensitivities());
@@ -375,56 +414,127 @@ function streak() {
   return count;
 }
 
-function renderQuiz() {
-  const { page } = quiz;
-  const label = `Step ${page} Of ${QUIZ_PAGES}`;
-  const foot = (disabled, next = 'Continue') => `
-    <div class="onboard-foot">
-      <button class="pill quiet" data-back>Back</button>
-      <button class="pill" data-next ${disabled ? 'disabled' : ''}>${next}</button>
-    </div>`;
+/* The quiz: three sections, one question per screen, in the style of a beauty consultation. */
+const QSECTIONS = [
+  { title: 'Your Skin And Hair', img: 'https://images.pexels.com/photos/7795769/pexels-photo-7795769.jpeg?auto=compress&cs=tinysrgb&w=1000', find: ['Your skin type', 'What you would love to change', 'How your hair feels'] },
+  { title: 'Your Glow Goals', img: 'https://images.pexels.com/photos/7797450/pexels-photo-7797450.jpeg?auto=compress&cs=tinysrgb&w=1000', find: ['What you want to feel and look like', 'How much time you have', 'Your makeup routine'] },
+  { title: 'Your Body And Days', img: 'https://images.pexels.com/photos/7795817/pexels-photo-7795817.jpeg?auto=compress&cs=tinysrgb&w=1000', find: ['Your energy and sleep', 'Your digestion', 'Anything to avoid'] }
+];
+const QQ = [
+  { id: 'skin', sec: 0, q: 'How does your skin usually feel?', why: 'So I can pick the right oil or cream for your evenings.', opts: [
+    { v: 'dry', t: 'Dry', d: 'Tight after washing, sometimes flaky' },
+    { v: 'oily', t: 'Oily', d: 'Shiny by midday, bigger pores' },
+    { v: 'combination', t: 'Combination', d: 'Oily T-zone, drier cheeks' },
+    { v: 'sensitive', t: 'Sensitive', d: 'Gets red or itchy easily' }] },
+  { id: 'concerns', sec: 0, multi: true, q: 'What would you love to change about your skin?', why: 'Your answers decide which skin steps go into your ritual.', opts: [
+    { v: 'breakouts', t: 'Breakouts', d: 'Spots and clogged pores' },
+    { v: 'dull', t: 'Dullness', d: 'I want my glow back' },
+    { v: 'redness', t: 'Redness', d: 'Flushing or irritation' },
+    { v: 'spots', t: 'Dark spots', d: 'Marks that stay after spots or sun' },
+    { v: 'lines', t: 'Fine lines', d: 'Softer, smoother skin' },
+    { v: 'none', t: 'Nothing really', d: 'I am happy with my skin', solo: true }] },
+  { id: 'hairq', sec: 0, multi: true, q: 'And your hair?', why: 'Hair grows from the inside too, so this shapes your food and scalp care.', opts: [
+    { v: 'breakage', t: 'Breakage or thinning', d: 'More hair in the brush than I like' },
+    { v: 'dryends', t: 'Dry ends', d: 'Rough, frizzy or split' },
+    { v: 'oilyscalp', t: 'Oily scalp', d: 'I need to wash it often' },
+    { v: 'growth', t: 'Slow growth', d: 'I want it longer and fuller' },
+    { v: 'happy', t: 'I love my hair', d: 'Nothing to change', solo: true }] },
+  { id: 'goals', sec: 1, multi: true, q: 'What would you love to feel and look like?', why: 'Your ritual is built around these, so pick everything that speaks to you.', opts: GOALS.map(g => ({ v: g.id, t: g.label, d: g.note })) },
+  { id: 'time', sec: 1, q: 'How much time do you have for yourself each day?', why: 'A ritual only works if it fits your real life.', opts: [
+    { v: 'short', t: 'About 5 minutes', d: 'Keep it quick and simple' },
+    { v: 'mid', t: 'About 15 minutes', d: 'A little moment for me' },
+    { v: 'long', t: '30 minutes or more', d: 'I love a slow ritual' }] },
+  { id: 'makeupq', sec: 1, q: 'How do you wear makeup?', why: 'If you wear it, I will show you my clean swaps.', opts: [
+    { v: 'none', t: 'I do not wear makeup', d: 'Bare skin is my look' },
+    { v: 'little', t: 'A little every day', d: 'Mascara, blush, a tinted balm' },
+    { v: 'full', t: 'Full glam sometimes', d: 'For going out and special days' }] },
+  { id: 'energy', sec: 2, q: 'How is your energy most days?', why: 'Energy is the first sign of how your body is doing on the inside.', opts: [
+    { v: 'steady', t: 'Steady all day', d: 'I feel good' },
+    { v: 'dips', t: 'Afternoon dips', d: 'I need a coffee or a snack' },
+    { v: 'low', t: 'Tired most of the day', d: 'I wake up already tired' }] },
+  { id: 'sleepq', sec: 2, q: 'And your sleep?', why: 'Deep sleep is when your skin and body repair.', opts: [
+    { v: 'good', t: 'I sleep well', d: 'I wake up rested' },
+    { v: 'fall', t: 'It takes long to fall asleep', d: 'My mind keeps going' },
+    { v: 'wake', t: 'I wake up tired', d: 'Even after a full night' }] },
+  { id: 'gutq', sec: 2, q: 'How does your tummy feel after meals?', why: 'A happy gut shows on your skin.', opts: [
+    { v: 'happy', t: 'Light and happy', d: 'No complaints' },
+    { v: 'some', t: 'Bloated sometimes', d: 'After certain foods' },
+    { v: 'often', t: 'Bloated often', d: 'Most days' }] },
+  { id: 'sens', sec: 2, multi: true, q: 'Anything I should look out for?', why: 'The ingredient checker will flag these for you.', opts: [
+    ...SENSITIVITIES.map(s => ({ v: s.id, t: s.label, d: '' })),
+    { v: 'nothing', t: 'Nothing', d: 'I can use anything', solo: true }] }
+];
 
-  if (page === 1) {
-    app.innerHTML = `
-      <span class="label">${label}</span>
-      <h1>What would you love to work on?</h1>
-      <p class="lede">Choose as many as you like, and your ritual will be built around them.</p>
-      <div class="choices">
-        ${GOALS.map(goal => `
-          <button class="choice" data-goal="${goal.id}" aria-pressed="${quiz.goals.includes(goal.id)}">
-            ${goal.label}<small>${goal.note}</small>
-          </button>`).join('')}
-      </div>
-      ${foot(!quiz.goals.length)}`;
-  } else if (page === 2) {
-    app.innerHTML = `
-      <span class="label">${label}</span>
-      <h1>How does your skin usually feel?</h1>
-      <p class="lede">This helps us choose the right oil or cream for your evenings.</p>
-      <div class="choices">
-        ${SKIN_TYPES.map(type => `
-          <button class="choice" data-skin="${type.id}" aria-pressed="${quiz.skin === type.id}">${type.label}</button>`).join('')}
-      </div>
-      ${foot(!quiz.skin)}`;
-  } else {
-    app.innerHTML = `
-      <span class="label">${label}</span>
-      <h1>Anything we should look out for?</h1>
-      <p class="lede">The ingredient checker will flag these for you. You can leave them all blank.</p>
-      <div class="choices">
-        ${SENSITIVITIES.map(item => `
-          <button class="choice" data-sensitivity="${item.id}" aria-pressed="${quiz.sensitivities.includes(item.id)}">${item.label}</button>`).join('')}
-      </div>
-      ${foot(false, 'See My Ritual')}`;
+function quizFlow() {
+  const flow = [];
+  QSECTIONS.forEach((sec, i) => {
+    flow.push({ sec: i, intro: true });
+    QQ.filter(q => q.sec === i).forEach(q => flow.push({ sec: i, q }));
+  });
+  return flow;
+}
+
+function renderQuiz() {
+  const flow = quizFlow();
+  const screen = flow[quiz.step];
+  const segs = `<div class="qsegs">${QSECTIONS.map((sec, i) => {
+    const items = flow.filter(f => f.sec === i);
+    const done = flow.slice(0, quiz.step + 1).filter(f => f.sec === i).length;
+    const pct = i < screen.sec ? 100 : i > screen.sec ? 0 : Math.round(done / items.length * 100);
+    return `<div class="qseg"><span>${sec.title}</span><i><b style="width:${pct}%"></b></i></div>`;
+  }).join('')}</div>`;
+  const back = `<button class="qback" data-qback aria-label="Back">←</button>`;
+  if (screen.intro) {
+    const sec = QSECTIONS[screen.sec];
+    app.innerHTML = `${segs}<section class="qintro">
+      <div class="qintro-ph" style="background-image:url('${sec.img}')"></div>
+      <div><span class="label">Part ${screen.sec + 1} Of 3</span><h1>${sec.title}</h1>
+      <p>In this part I will find out:</p><ul>${sec.find.map(f => `<li>${f}</li>`).join('')}</ul>
+      <button class="pill" data-qnext>Let's Go</button></div></section>${back}`;
+    return;
   }
+  const q = screen.q;
+  const val = quiz.a[q.id] || (q.multi ? [] : null);
+  const on = v => q.multi ? val.includes(v) : val === v;
+  app.innerHTML = `${segs}<section class="qq">
+    <h1>${q.q}</h1>
+    ${q.multi ? '<p class="qsub">Choose all that fit.</p>' : ''}
+    <details class="qwhy"><summary>Why I ask</summary><p>${q.why}</p></details>
+    <div class="qcards">${q.opts.map(o => `<button class="qcard" data-qopt="${o.v}" aria-pressed="${on(o.v)}"><b>${o.t}</b>${o.d ? `<small>${o.d}</small>` : ''}</button>`).join('')}</div>
+    ${q.multi ? `<div class="qfoot"><button class="pill" data-qnext ${val.length ? '' : 'disabled'}>Next</button></div>` : ''}
+  </section>${back}`;
+}
+
+function quizPick(v) {
+  const q = quizFlow()[quiz.step].q;
+  if (q.multi) {
+    const opt = q.opts.find(o => o.v === v);
+    let cur = quiz.a[q.id] || [];
+    if (opt.solo) cur = cur.includes(v) ? [] : [v];
+    else cur = toggle(cur.filter(x => !q.opts.find(o => o.v === x).solo), v);
+    quiz.a[q.id] = cur;
+    renderQuiz();
+  } else {
+    quiz.a[q.id] = v;
+    renderQuiz();
+    setTimeout(quizNext, 280);
+  }
+}
+
+function quizNext() {
+  if (quiz.step < quizFlow().length - 1) { quiz.step++; render(); }
+  else finishQuiz();
 }
 
 function renderRitualIntro() {
   app.innerHTML = `
-    <span class="label">The Quiz</span>
-    <h1>Made for you.</h1>
-    <p class="lede">Answer three quick questions about your goals and your skin. We will build a simple morning, daytime and evening ritual you can tick off each day, and pick the sections and brands that fit you.</p>
-    <div class="actions"><button class="pill" data-start>Start The Quiz</button></div>`;
+    <section class="qstart">
+      <span class="label">Your Glow Consultation</span>
+      <h1>Made for <em>you.</em></h1>
+      <p class="lede">Three short parts about your skin and hair, your glow goals and your days. Then I build your own morning, daytime and evening ritual.</p>
+      <div class="actions"><button class="pill" data-start>Begin</button></div>
+      <p class="hint">About 2 minutes · Saved only on your phone</p>
+    </section>`;
 }
 
 /* Goals take turns choosing brands, each preferring brands made mainly for it, so no single goal crowds out the rest.
@@ -595,7 +705,14 @@ function render() {
 }
 
 function finishQuiz() {
-  state.profile = { goals: quiz.goals, skin: quiz.skin, sensitivities: quiz.sensitivities };
+  const A = quiz.a, goals = new Set(A.goals || []);
+  if ((A.concerns || []).some(c => c !== 'none')) goals.add('skin');
+  if ((A.hairq || []).some(h => h !== 'happy')) goals.add('hair');
+  if (A.makeupq && A.makeupq !== 'none') goals.add('makeup');
+  if (A.energy && A.energy !== 'steady') goals.add('energy');
+  if (A.sleepq && A.sleepq !== 'good') goals.add('sleep');
+  if (A.gutq && A.gutq !== 'happy') goals.add('gut');
+  state.profile = { goals: [...goals], skin: A.skin, sensitivities: (A.sens || []).filter(s => s !== 'nothing'), answers: A };
   quiz = null;
   save();
   render();
@@ -611,29 +728,24 @@ app.addEventListener('click', event => {
 
   if ('jump' in data) {
     app.querySelectorAll('.section')[Number(data.jump)].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if ('find' in data) {
+    findProduct();
+  } else if ('pick' in data) {
+    const hit = productHits[Number(data.pick)];
+    document.getElementById('list').value = hit.ingredients_text;
+    document.getElementById('pres').innerHTML = `<p class="hint">Checking <b>${esc(hit.brands || '')} ${esc(hit.product_name || '')}</b>.</p>`;
+    runCheck();
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else if ('start' in data) {
     quiz = blankQuiz();
     render();
-  } else if ('next' in data) {
-    if (quiz.page < QUIZ_PAGES) {
-      quiz.page++;
-      render();
-    } else {
-      finishQuiz();
-    }
-  } else if ('back' in data) {
-    quiz.page--;
-    if (!quiz.page) quiz = null;
+  } else if ('qnext' in data) {
+    quizNext();
+  } else if ('qback' in data) {
+    if (quiz.step > 0) quiz.step--; else quiz = null;
     render();
-  } else if (data.goal) {
-    quiz.goals = toggle(quiz.goals, data.goal);
-    renderQuiz();
-  } else if (data.skin) {
-    quiz.skin = data.skin;
-    renderQuiz();
-  } else if (data.sensitivity) {
-    quiz.sensitivities = toggle(quiz.sensitivities, data.sensitivity);
-    renderQuiz();
+  } else if (data.qopt) {
+    quizPick(data.qopt);
   } else if (data.step) {
     toggleStep(data.step);
   } else if ('run' in data) {
@@ -685,3 +797,7 @@ app.addEventListener('submit', event => {
 
 window.addEventListener('hashchange', render);
 render();
+
+app.addEventListener('keydown', event => {
+  if (event.target.id === 'pq' && event.key === 'Enter') findProduct();
+});

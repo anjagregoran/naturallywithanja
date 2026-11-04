@@ -414,7 +414,9 @@ const SHELF_GROUPS = [
    `goals` match the quiz goals, `avoid` hides a brand for a sensitivity, `skinTypes` narrows it to some skin types. */
 const SHELF = [
   { group: 'makeup', brand: 'Araza Beauty', href: 'https://arazabeauty.com/', goals: ['makeup'] },
-  { group: 'makeup', brand: 'Toups And Co Organics', href: 'https://toupsandco.com/', goals: ['makeup'] },
+  { group: 'makeup', brand: 'Toups And Co Organics', href: 'https://toupsandco.com/', also: ['skin'], goals: ['makeup'] },
+  { group: 'makeup', brand: '100% Pure', href: 'https://www.100percentpure.com/', note: 'Makeup colored with fruit and plant pigments.', also: ['skin'], goals: ['makeup', 'skin'] },
+  { group: 'makeup', brand: 'True Glue', note: 'An all-natural lash adhesive.', goals: ['makeup'] },
   { group: 'makeup', brand: 'Uoga Uoga', href: 'https://uogauoga.com/', note: 'A natural makeup and skincare brand from Lithuania, in Europe. In the USA you can find it through Ecco Verde.', also: ['skin'], goals: ['makeup', 'skin'] },
   { group: 'makeup', brand: 'Well People', href: 'https://www.wellpeople.com/', goals: ['makeup'] },
   { group: 'skin', brand: 'Primally Pure', href: 'https://primallypure.com/', goals: ['skin'] },
@@ -444,7 +446,8 @@ const SHELF = [
   { group: 'wear', brand: 'Indigo Luna', href: 'https://indigoluna.store/' },
   { group: 'wear', brand: 'Moo Moda', href: 'https://moomoda.com/' },
   { group: 'wear', brand: 'Abysse' },
-  { group: 'wear', brand: "Jana's All Natural", href: 'https://www.janasallnatural.com/' }
+  { group: 'wear', brand: 'Kla by Clara', href: 'https://klabyclara.com/', note: 'Handmade headbands.' },
+  { group: 'wear', brand: "Jana's All Natural", href: 'https://www.janasallnatural.com/', also: ['makeup', 'scent'] }
 ];
 
 /* Which library sections the quiz suggests for each goal. */
