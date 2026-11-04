@@ -206,5 +206,4 @@ window.T_EN={
 "Dani prije menstruacije trenutno su ti najteži. U mom tečaju Flow & Flourish učiš što tvoji hormoni rade u svakoj fazi i kako podržati tijelo baš kad mu je najpotrebnije, uz 30-dnevni akcijski plan.": "The days before your period are the hardest for you right now. In my Flow & Flourish course you learn what your hormones do in each phase and how to support your body exactly when it needs it most, with a 30-day action plan.",
 "Tvoja energija i samopouzdanje trebaju podršku. U mom tečaju Flow & Flourish učiš kako jesti, kretati se i odmarati u skladu sa svojim ciklusom, da se osjećaš živo kroz cijeli mjesec.": "Your energy and confidence need support. In my Flow & Flourish course you learn how to eat, move and rest in tune with your cycle, so you feel alive all month long.",
 "Tvoj ciklus je na dobrom mjestu. Ako ga želiš razumjeti do kraja i živjeti u skladu sa sve četiri faze, moj tečaj Flow & Flourish vodi te kroz to korak po korak.": "Your cycle is in a good place. If you want to understand it fully and live in tune with all four phases, my Flow & Flourish course guides you through it step by step.",
-"Prirodno s Anjom": "Naturally with Anja"
-};
+"Prirodno s Anjom": "Naturally with Anja","Tvoj ciklus je tvoj vodič do sjaja": "Your cycle is your glow guide"};

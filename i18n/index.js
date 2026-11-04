@@ -107,4 +107,4 @@ window.T_EN={
 "Umor i niska energija": "Fatigue and low energy",
 "Padovi energije, loš san i manjak samopouzdanja.": "Energy crashes, poor sleep and low confidence.",
 "Obrazujem se u": "I am studying at",
-"Certifikaciju završavam do kraja 2026.": "Completing my certification by the end of 2026","Prirodno": "Naturally", "s": "with"};
+"Certifikaciju završavam do kraja 2026.": "Completing my certification by the end of 2026","Prirodno": "Naturally", "s": "with","Anjom.": "Anja."};
