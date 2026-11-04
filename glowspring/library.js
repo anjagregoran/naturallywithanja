@@ -415,8 +415,8 @@ const SHELF_GROUPS = [
 const SHELF = [
   { group: 'makeup', brand: 'Araza Beauty', href: 'https://arazabeauty.com/', goals: ['makeup'] },
   { group: 'makeup', brand: 'Toups And Co Organics', href: 'https://toupsandco.com/', goals: ['makeup'] },
+  { group: 'makeup', brand: 'Uoga Uoga', href: 'https://uogauoga.com/', note: 'A natural makeup and skincare brand from Lithuania, in Europe. In the USA you can find it through Ecco Verde.', goals: ['makeup', 'skin'] },
   { group: 'makeup', brand: 'Well People', href: 'https://www.wellpeople.com/', goals: ['makeup'] },
-  { group: 'skin', brand: 'Uoga Uoga', href: 'https://www.ecco-verde.com/', note: 'Sold in the USA through Ecco Verde.', goals: ['skin', 'makeup'] },
   { group: 'skin', brand: 'Primally Pure', href: 'https://primallypure.com/', goals: ['skin'] },
   { group: 'skin', brand: 'De La Cruz', note: 'Sulfur acne care. Follow the label and keep it off broken skin.', goals: ['skin'], skinTypes: ['oily', 'combination'] },
   { group: 'skin', brand: 'Plume Science', href: 'https://www.plumescience.com/', note: 'Lash and brow serums. Check the full ingredient list on the box.', goals: ['makeup', 'hair'] },

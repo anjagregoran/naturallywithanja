@@ -25,6 +25,21 @@ html,body{overflow-x:clip}
 .lang-sw button{background:transparent;border:0;padding:8px 12px;font:600 11px 'DM Sans',sans-serif;letter-spacing:1.2px;color:#4A3D2C;cursor:pointer}
 .lang-sw button.on{background:#FBF1D3}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+.ltc{position:relative;aspect-ratio:16/8;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:20px}
+.ltc-t{font-family:'Permanent Marker',cursive;color:#1F1D1A;font-size:clamp(40px,8vw,72px);line-height:.95;letter-spacing:4px;text-transform:uppercase;transform:rotate(-4deg);display:flex;flex-direction:column;align-items:flex-start}
+.ltc-t .l2{margin-left:1.3em}
+.ltc-s{font-family:'Permanent Marker',cursive;color:#1F1D1A;font-size:clamp(13px,1.8vw,17px);letter-spacing:3px;text-transform:uppercase;margin-top:18px;transform:rotate(-2deg)}
+.ltc .dd{position:absolute;height:auto}
+.ltc .d1{width:13%;left:4%;top:12%;transform:rotate(-12deg)}
+.ltc .d2{width:11%;right:18%;top:10%}
+.ltc .d3{width:13%;left:12%;bottom:12%}
+.ltc .d4{width:11%;right:6%;bottom:16%;transform:rotate(14deg)}
+.ltc:hover .dd{animation:wig 1.2s ease-in-out infinite alternate}
+@keyframes wig{to{transform:rotate(6deg) translateY(-3px)}}
+@media(max-width:600px){.ltc{aspect-ratio:4/3}}
+</style>
 </head>
 <body>
 <div class="lang-sw" style="position:fixed;top:14px;right:14px;z-index:50;background:#fff"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
@@ -36,6 +51,7 @@ html,body{overflow-x:clip}
 <div class="sec-title" style="color:#3A2E28;margin-bottom:14px;padding:0 40px">The Women's Library</div>
 <div style="max-width:600px;margin:0 auto 40px;font-size:14.5px;color:var(--mid);font-weight:300;line-height:1.7;padding:0 40px">Tvoj prostor za učenje: članci i savjeti o ženskom zdravlju, ciklusu i prirodnom i zdravom životu, uz pomno odabrane resurse kojima vjerujem.</div>
 <div style="max-width:720px;margin:0 auto;text-align:left;border:1px solid rgba(201,162,39,.25);border-radius:4px;overflow:hidden;background:#FDFAF4;width:calc(100% - 80px)">
+<div class="ltc" style="background:#CFE2C9"><svg class="dd d1" viewBox="0 0 60 60"><g fill="#F2A3A0"><ellipse cx="30" cy="16" rx="10" ry="13"/><ellipse cx="44" cy="28" rx="13" ry="10"/><ellipse cx="38" cy="45" rx="10" ry="12" transform="rotate(30 38 45)"/><ellipse cx="20" cy="45" rx="10" ry="12" transform="rotate(-30 20 45)"/><ellipse cx="15" cy="28" rx="13" ry="10"/></g><circle cx="30" cy="31" r="5" fill="#E8C35A"/></svg><svg class="dd d2" viewBox="0 0 60 60"><path d="M22 58V30M40 58V34" stroke="#7FA36B" stroke-width="2.5"/><path d="M22 44c-6-2-9-7-9-7 6 0 9 4 9 7zM40 46c6-2 9-7 9-7-6 0-9 4-9 7z" fill="#8DB57A"/><path d="M14 18c0 9 4 14 8 14s8-5 8-14l-4 4-4-6-4 6z" fill="#F4D77A"/><path d="M32 22c0 9 4 14 8 14s8-5 8-14l-4 4-4-6-4 6z" fill="#F3B8A6"/></svg><svg class="dd d3" viewBox="0 0 60 60"><path d="M24 22c0-8 4-14 3-18M30 22c2-8 6-12 9-16M34 22c4-6 10-8 12-12" stroke="#5F8F4E" stroke-width="3" stroke-linecap="round"/><circle cx="36" cy="22" r="5" fill="#E46A4E"/><path d="M12 24h36l-3 32H15z" fill="#F1E3CC" stroke="#CDB894"/><path d="M22 24c0 10 16 10 16 0" fill="none" stroke="#CDB894" stroke-width="2"/></svg><svg class="dd d4" viewBox="0 0 70 40"><g fill="none" stroke="#2D2A26" stroke-width="2.4" stroke-linecap="round"><path d="M18 20h34"/><rect x="8" y="9" width="7" height="22" rx="2"/><rect x="55" y="9" width="7" height="22" rx="2"/><path d="M4 15v10M66 15v10"/></g></svg><div class="ltc-t"><span>Moji</span><span class="l2">favoriti</span></div></div>
   <div style="padding:36px 40px 30px">
     <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A860;margin-bottom:16px">Pomno odabrano · Moje preporuke</div>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#3A2E28;margin-bottom:14px;line-height:1.2">Moji provjereni favoriti</h3>
@@ -44,6 +60,7 @@ html,body{overflow-x:clip}
   </div>
 </div>
 <div style="max-width:720px;margin:24px auto 0;text-align:left;border:1px solid rgba(201,162,39,.25);border-radius:4px;overflow:hidden;background:#FDFAF4;width:calc(100% - 80px)">
+<div class="ltc" style="background:#CFE3E8"><svg class="dd d1" viewBox="0 0 60 60"><g fill="#F2A3A0"><ellipse cx="30" cy="16" rx="10" ry="13"/><ellipse cx="44" cy="28" rx="13" ry="10"/><ellipse cx="38" cy="45" rx="10" ry="12" transform="rotate(30 38 45)"/><ellipse cx="20" cy="45" rx="10" ry="12" transform="rotate(-30 20 45)"/><ellipse cx="15" cy="28" rx="13" ry="10"/></g><circle cx="30" cy="31" r="5" fill="#E8C35A"/></svg><svg class="dd d2" viewBox="0 0 60 60"><path d="M22 58V30M40 58V34" stroke="#7FA36B" stroke-width="2.5"/><path d="M22 44c-6-2-9-7-9-7 6 0 9 4 9 7zM40 46c6-2 9-7 9-7-6 0-9 4-9 7z" fill="#8DB57A"/><path d="M14 18c0 9 4 14 8 14s8-5 8-14l-4 4-4-6-4 6z" fill="#F4D77A"/><path d="M32 22c0 9 4 14 8 14s8-5 8-14l-4 4-4-6-4 6z" fill="#F3B8A6"/></svg><svg class="dd d3" viewBox="0 0 60 60"><path d="M24 22c0-8 4-14 3-18M30 22c2-8 6-12 9-16M34 22c4-6 10-8 12-12" stroke="#5F8F4E" stroke-width="3" stroke-linecap="round"/><circle cx="36" cy="22" r="5" fill="#E46A4E"/><path d="M12 24h36l-3 32H15z" fill="#F1E3CC" stroke="#CDB894"/><path d="M22 24c0 10 16 10 16 0" fill="none" stroke="#CDB894" stroke-width="2"/></svg><svg class="dd d4" viewBox="0 0 70 40"><g fill="none" stroke="#2D2A26" stroke-width="2.4" stroke-linecap="round"><path d="M18 20h34"/><rect x="8" y="9" width="7" height="22" rx="2"/><rect x="55" y="9" width="7" height="22" rx="2"/><path d="M4 15v10M66 15v10"/></g></svg><div class="ltc-t"><span>Živa</span><span class="l2">voda</span></div><div class="ltc-s">zaboravljeni izvor zdravlja</div></div>
   <div style="padding:36px 40px 28px">
     <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A860;margin-bottom:16px">Besplatni vodič · 8 modula</div>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#3A2E28;margin-bottom:14px;line-height:1.2">Live Hydration: zaboravljeni izvor zdravlja</h3>
@@ -153,7 +170,7 @@ html,body{overflow-x:clip}
 &copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
 <a href="index.html">Početna</a> &middot; <a href="privacy.html">Pravila privatnosti</a> &middot; <a href="terms.html">Uvjeti i povrati</a>
 </footer>
-<script src="i18n/womens-library.js?v=20261103"></script>
+<script src="i18n/womens-library.js?v=20261103d"></script>
 <script src="i18n.js?v=20261103"></script>
 </body>
 </html>

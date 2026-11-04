@@ -6,7 +6,7 @@ window.T_EN={
 "Kako coaching izgleda i što dobivaš": "What coaching looks like and what you get",
 "✉ Kontaktiraj me": "✉ Contact me",
 "O meni": "About me",
-"Moja aplikacija": "My app",
+"Anja's Clean Beauty List": "Anja's Clean Beauty List",
 "Izbornik": "Menu",
 "Dobij personalizirane rezultate i sljedeće korake": "Get personalized results and next steps",
 "Cjeloviti program za zdravije tijelo, hormone i životne navike": "A complete program for a healthier body, hormones and daily habits",
@@ -107,5 +107,4 @@ window.T_EN={
 "Umor i niska energija": "Fatigue and low energy",
 "Padovi energije, loš san i manjak samopouzdanja.": "Energy crashes, poor sleep and low confidence.",
 "Obrazujem se u": "I am studying at",
-"Certifikaciju završavam do kraja 2026.": "Completing my certification by the end of 2026"
-};
+"Certifikaciju završavam do kraja 2026.": "Completing my certification by the end of 2026","Prirodno": "Naturally", "s": "with"};

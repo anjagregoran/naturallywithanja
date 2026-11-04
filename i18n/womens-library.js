@@ -50,5 +50,4 @@ window.T_EN={
 "© Prirodno s Anjom · Olea Vita Sana": "© Naturally with Anja · Olea Vita Sana",
 "Početna": "Home",
 "Pravila privatnosti": "Privacy Policy",
-"Uvjeti i povrati": "Terms & Refunds"
-};
+"Uvjeti i povrati": "Terms & Refunds","Moji": "My", "favoriti": "favorites", "koje stvarno volim": "I truly love", "Živa": "Live", "voda": "hydration", "zaboravljeni izvor zdravlja": "the forgotten source of health"};

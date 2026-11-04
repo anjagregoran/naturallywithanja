@@ -81,19 +81,7 @@ function card(bg, label, shapes) {
 }
 
 const ART = {
-  source: () => wideCard(P.peach, 'A spring rising through layers of earth into a pool', `
-    <circle cx="474" cy="62" r="34" fill="${P.mustard}"/>
-    <path d="M0 118C150 108 300 128 450 116S600 112 600 118V300H0Z" fill="${P.sand}"/>
-    <path d="M0 176C120 170 260 186 380 174S560 180 600 172V300H0Z" fill="${P.terra}"/>
-    <path d="M0 234C140 226 300 244 460 230S600 236 600 232V300H0Z" fill="${P.rust}"/>
-    ${stipple(`<path d="M0 262C160 252 340 270 600 258V300H0Z" fill="${P.ink}"/>`)}
-    ${[[60, 150, 10], [214, 146, 7], [520, 150, 9], [86, 206, 8], [470, 204, 11], [380, 264, 9], [40, 270, 7], [560, 268, 8]].map(([x, y, r]) => `<ellipse cx="${x}" cy="${y}" rx="${r * 1.5}" ry="${r}" fill="${P.cream}" opacity=".7"/>`).join('')}
-    <path d="M118 306C134 268 204 270 200 238C196 206 252 206 264 178C276 152 296 142 300 124" stroke="${P.mist}" stroke-width="18" stroke-linecap="round" fill="none"/>
-    <ellipse cx="300" cy="120" rx="74" ry="11" fill="${P.mist}"/>
-    <circle cx="300" cy="96" r="7" fill="${P.mist}"/><circle cx="288" cy="80" r="5" fill="${P.mist}"/><circle cx="312" cy="70" r="4" fill="${P.mist}"/>
-    ${sprig(146, 118, 86, -8, 3, 28, P.moss, P.moss, 'none', 0.3)}${sprig(176, 118, 56, 14, 2, 22, P.olive, P.moss, 'none', 0.3)}
-    ${sprig(432, 118, 96, 6, 3, 30, P.moss, P.moss, 'none', 0.3)}${sprig(404, 118, 50, -18, 2, 20, P.olive, P.moss, 'none', 0.3)}
-  `),
+  source: () => `<img class="photo-art" src="https://images.pexels.com/photos/11485121/pexels-photo-11485121.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="An amber dropper bottle on a marble tray with yellow wildflowers" style="width:100%;height:100%;object-fit:cover;display:block">`,
 
   routine: () => card(P.mustard, 'Folded washcloths with a gua sha stone', `
     <ellipse cx="150" cy="320" rx="104" ry="10" fill="${P.rust}" opacity=".6"/>
@@ -269,20 +257,5 @@ const ART = {
 };
 
 function heroArt() {
-  return `<svg viewBox="0 0 1200 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A spring of water running through hills toward a low sun">
-    <rect width="1200" height="760" fill="${P.peach}"/>
-    <g filter="url(#riso)">
-      ${rays(600, 412, 176, 262, 30, P.mustard)}
-      <circle cx="600" cy="412" r="164" fill="${P.coral}"/>
-      <path d="M0 470C180 400 340 452 520 470S860 400 1200 462V760H0Z" fill="${P.sage}"/>
-      <path d="M0 560C220 486 420 548 640 548S1000 500 1200 556V760H0Z" fill="${P.olive}"/>
-      <path d="M0 650C260 588 520 650 700 640S1040 600 1200 650V760H0Z" fill="${P.moss}"/>
-      ${stipple(`<path d="M0 650C260 588 520 650 700 640S1040 600 1200 650V760H0Z" fill="${P.deep}"/>`)}
-      <path d="M590 468C650 486 640 510 570 530C470 556 470 590 590 610C720 632 710 680 560 770H760C900 690 880 620 730 590C640 572 650 556 700 534C740 514 700 478 610 464Z" fill="${P.mist}"/>
-      ${stipple(`<path d="M640 610C720 632 710 680 560 770H660C800 690 800 630 640 610Z" fill="${P.blue}"/>`)}
-      ${leaf(214, 590, 170, 0, P.deep, 'none', 0.14)}${leaf(262, 574, 120, 0, P.deep, 'none', 0.15)}${leaf(960, 584, 150, 0, P.deep, 'none', 0.14)}${leaf(1006, 566, 104, 0, P.deep, 'none', 0.15)}
-      ${leaf(452, 566, 132, 0, P.deep, 'none', 0.14)}${leaf(492, 552, 92, 0, P.deep, 'none', 0.15)}${leaf(812, 548, 112, 0, P.deep, 'none', 0.14)}
-      ${sprig(56, 790, 290, 12, 5, 96, P.deep, P.deep, P.moss, 0.3)}${sprig(1140, 800, 310, -10, 5, 100, P.deep, P.deep, P.moss, 0.3)}
-    </g>
-  </svg>`;
+  return `<img class="photo-art" src="https://images.pexels.com/photos/40557462/pexels-photo-40557462.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="An amber dropper bottle of natural oil on marble with an olive branch" style="width:100%;height:100%;object-fit:cover;object-position:center 65%;display:block">`;
 }
