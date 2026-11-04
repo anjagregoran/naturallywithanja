@@ -410,12 +410,12 @@ const SHELF_GROUPS = [
   { id: 'wear', label: 'Wear' }
 ];
 
-/* Brands only, no product names, shades or prices. Only brands whose site answered are linked.
+/* Brands only, no product names, shades or prices. `also` lists extra groups a brand shows in. Only brands whose site answered are linked.
    `goals` match the quiz goals, `avoid` hides a brand for a sensitivity, `skinTypes` narrows it to some skin types. */
 const SHELF = [
   { group: 'makeup', brand: 'Araza Beauty', href: 'https://arazabeauty.com/', goals: ['makeup'] },
   { group: 'makeup', brand: 'Toups And Co Organics', href: 'https://toupsandco.com/', goals: ['makeup'] },
-  { group: 'makeup', brand: 'Uoga Uoga', href: 'https://uogauoga.com/', note: 'A natural makeup and skincare brand from Lithuania, in Europe. In the USA you can find it through Ecco Verde.', goals: ['makeup', 'skin'] },
+  { group: 'makeup', brand: 'Uoga Uoga', href: 'https://uogauoga.com/', note: 'A natural makeup and skincare brand from Lithuania, in Europe. In the USA you can find it through Ecco Verde.', also: ['skin'], goals: ['makeup', 'skin'] },
   { group: 'makeup', brand: 'Well People', href: 'https://www.wellpeople.com/', goals: ['makeup'] },
   { group: 'skin', brand: 'Primally Pure', href: 'https://primallypure.com/', goals: ['skin'] },
   { group: 'skin', brand: 'De La Cruz', note: 'Sulfur acne care. Follow the label and keep it off broken skin.', goals: ['skin'], skinTypes: ['oily', 'combination'] },
@@ -439,6 +439,7 @@ const SHELF = [
   { group: 'wear', brand: 'SOPHi', href: 'https://sophinailpolish.com/', note: 'Water-based nail polish.' },
   { group: 'wear', brand: 'MATE The Label', href: 'https://matethelabel.com/' },
   { group: 'wear', brand: 'Pact', href: 'https://wearpact.com/' },
+  { group: 'wear', brand: 'Brandy Melville', href: 'https://us.brandymelville.com/' },
   { group: 'wear', brand: 'Colorful Standard', href: 'https://colorfulstandard.com/' },
   { group: 'wear', brand: 'Indigo Luna', href: 'https://indigoluna.store/' },
   { group: 'wear', brand: 'Moo Moda', href: 'https://moomoda.com/' },

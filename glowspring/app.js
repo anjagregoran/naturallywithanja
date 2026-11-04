@@ -263,7 +263,7 @@ function brandHtml(entry, why = '') {
 }
 
 function renderShelf() {
-  const entries = SHELF.filter(entry => entry.group === shelfFilter);
+  const entries = SHELF.filter(entry => entry.group === shelfFilter || (entry.also || []).includes(shelfFilter));
 
   app.innerHTML = `
     <span class="label">The Shelf</span>
