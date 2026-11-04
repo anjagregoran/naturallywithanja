@@ -459,8 +459,10 @@ textarea::placeholder, input::placeholder { color: var(--ink-soft); opacity: .85
 .phit:hover { background: #DCEED2; }
 .psearch .hint { font-size: 14px; opacity: .8; margin: 8px 0 0; }
 .hero-art { background: #E6D3B8; }
-.hero-art::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 45% at center, rgba(236,222,200,.82) 0%, rgba(236,222,200,.45) 60%, rgba(236,222,200,.15) 100%); pointer-events: none; }
-.hero-text { inset: 0 20px !important; padding-top: 0 !important; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
+.hero-art { background: #FBCFB7 !important; }
+.hero-art .photo-art { position: absolute; left: 0; right: 0; bottom: 0; height: 100% !important; }
+.hero-art::after { content: ""; position: absolute; left: 0; right: 0; top: 34%; height: 16%; display: none; }
+.hero-text { inset: 0 20px !important; padding-top: 0 !important; padding-bottom: 30vh !important; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
 
 /* Consultation quiz */
 .qstart { text-align: center; max-width: 720px; margin: 0 auto; padding-top: 6vh; }

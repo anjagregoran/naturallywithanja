@@ -81,7 +81,7 @@ function card(bg, label, shapes) {
 }
 
 const ART = {
-  source: () => `<img class="photo-art" src="https://images.pexels.com/photos/11485121/pexels-photo-11485121.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="An amber dropper bottle on a marble tray with yellow wildflowers" style="width:100%;height:100%;object-fit:cover;display:block">`,
+  source: () => `<img class="photo-art" src="hero.webp" alt="Oils, cream, soap, a dry brush and fresh fruit on linen against a soft peach wall" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block">`,
 
   routine: () => card(P.mustard, 'Folded washcloths with a gua sha stone', `
     <ellipse cx="150" cy="320" rx="104" ry="10" fill="${P.rust}" opacity=".6"/>
@@ -257,5 +257,5 @@ const ART = {
 };
 
 function heroArt() {
-  return `<img class="photo-art" src="https://images.pexels.com/photos/7796161/pexels-photo-7796161.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Natural skincare on a wooden tray with amber bottles, a dry brush and dried pampas grass" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block">`;
+  return `<img class="photo-art" src="hero.webp" alt="Oils, cream, soap, a dry brush and fresh fruit on linen against a soft peach wall" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block">`;
 }

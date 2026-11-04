@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Hero options</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF6EE;--ink:#3A2E28;--gold:#B8924A}
+*{box-sizing:border-box}body{margin:0;background:#e9e3d8;font-family:'DM Sans',sans-serif;color:var(--ink)}
+.lbl{font:600 13px 'DM Sans';letter-spacing:3px;text-transform:uppercase;padding:34px 24px 12px;text-align:center}
+.hero{position:relative;min-height:92vh;overflow:hidden;margin:0 auto 10px;max-width:1440px}
+.nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 36px;z-index:3}
+.nav img{width:64px;height:64px;border-radius:50%}
+.nav .links{display:flex;gap:28px;font:500 12px 'DM Sans';letter-spacing:2.2px;text-transform:uppercase}
+.k{font:600 11.5px 'DM Sans';letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:.98;letter-spacing:-.5px;margin:18px 0}
+h1 em{font-style:italic}
+.sub{font-size:17px;line-height:1.6;max-width:440px}
+.b{display:inline-block;padding:16px 30px;font:600 12px 'DM Sans';letter-spacing:2.6px;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink)}
+.b.f{background:var(--ink);color:var(--cream)}.b.o{color:var(--ink)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+/* A */
+.A{background:var(--cream);display:grid;grid-template-columns:1.05fr 1fr;align-items:center}
+.A .txt{padding:120px 40px 60px 8vw}.A h1{font-size:clamp(52px,6.4vw,96px)}
+.A .ph{height:92vh;padding:110px 8vw 50px 0}.A .ph div{height:100%;border-radius:999px 999px 0 0;background:url(anja-vineyard.jpg) center 30%/cover}
+/* B */
+.B{background:url(anja-vineyard.jpg) center 35%/cover;color:#fff;display:flex;align-items:flex-end}
+.B::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,24,20,.15),rgba(30,24,20,.55))}
+.B .nav{color:#fff}.B .txt{position:relative;padding:0 6vw 9vh;max-width:900px}.B h1{font-size:clamp(56px,8vw,128px)}.B .k{color:#F3DFAF}
+.B .b.f{background:#fff;color:var(--ink);border-color:#fff}.B .b.o{color:#fff;border-color:#fff}
+/* C */
+.C{background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
+.C h1{font-size:clamp(58px,8.5vw,136px);max-width:1100px}.C .sub{margin:0 auto}.C .row{justify-content:center}
+.C .strip{display:flex;gap:14px;margin-top:56px}.C .strip div{width:150px;height:200px;border-radius:2px;background-size:cover;background-position:center}
+@media(max-width:800px){.A{grid-template-columns:1fr}.A .txt{padding:110px 22px 20px}.A .ph{height:60vh;padding:0 22px 30px}.nav .links{display:none}.C .strip div{width:28vw;height:38vw}}
+</style></head><body>
+
+<p class="lbl">Option A · Editorial, your photo in an arch</p>
+<section class="hero A"><div class="nav"><img src="logo.png" alt=""><div class="links"><span>Cycle quiz</span><span>Program</span><span>Library</span><span>About</span></div></div>
+<div class="txt"><span class="k">Naturally with Anja</span><h1>Glow from the <em>inside out.</em></h1><p class="sub">Women's health made simple and holistic. More energy, glowing skin and a calmer cycle, the natural way.</p><div class="row"><a class="b f">Take the free cycle quiz</a><a class="b o">My program</a></div></div>
+<div class="ph"><div></div></div></section>
+
+<p class="lbl">Option B · Full photo, big and confident</p>
+<section class="hero B"><div class="nav"><img src="logo.png" alt=""><div class="links"><span>Cycle quiz</span><span>Program</span><span>Library</span><span>About</span></div></div>
+<div class="txt"><span class="k">Naturally with Anja</span><h1>Feel at home <em>in your body.</em></h1><p class="sub">Women's health made simple and holistic. More energy, glowing skin and a calmer cycle.</p><div class="row"><a class="b f">Take the free cycle quiz</a><a class="b o">My program</a></div></div></section>
+
+<p class="lbl">Option C · Minimal, just words and a photo strip</p>
+<section class="hero C"><div class="nav"><img src="logo.png" alt=""><div class="links"><span>Cycle quiz</span><span>Program</span><span>Library</span><span>About</span></div></div>
+<span class="k">Naturally with Anja</span><h1>Slow down, listen to your body, <em>bloom.</em></h1><p class="sub">Women's health made simple and holistic, the Mediterranean way.</p><div class="row"><a class="b f">Take the free cycle quiz</a><a class="b o">My program</a></div>
+<div class="strip"><div style="background-image:url(photo-water.jpg)"></div><div style="background-image:url(anja-vineyard.jpg)"></div><div style="background-image:url(hero-mediterranean.jpg)"></div></div></section>
+</body></html>
