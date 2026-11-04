@@ -522,6 +522,13 @@ body{background:#FAF6EE!important;background-image:none!important}
 .hero h1{font-size:clamp(38px,6.6vw,100px)!important;line-height:1!important}
 .hero-kicker{font-family:'DM Mono',monospace!important;font-weight:400!important;letter-spacing:.2em!important;font-size:15px!important}
 .hero h1{max-width:none!important;width:max-content;margin-left:50%!important;transform:translateX(-50%)}
+.wordmark.wm-b{flex-direction:row!important;gap:10px;align-items:center;font-family:'Newsreader',Georgia,serif!important;font-weight:300!important;font-size:26px;letter-spacing:.01em!important;line-height:1;text-transform:none}
+.wordmark.wm-b i{font-style:italic}
+.wm-olive{width:14px;height:28px;flex:none}
+@media(max-width:768px){.wordmark.wm-b{font-size:20px}.wm-olive{width:11px;height:22px}}
+.foot-mark{text-align:center;line-height:.9;color:#2E2420;margin:10px 0 26px}
+.foot-mark .fm1{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(54px,9vw,110px);letter-spacing:-.01em}
+.foot-mark .fm2{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.4em;margin-top:8px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300,100,0;1,9..144,300,100,1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -565,7 +572,7 @@ body{background:#FAF6EE!important;background-image:none!important}
 </div>
 </div>
 </div>
-<a class="wordmark" href="index.html" aria-label="Naturally with Anja"><span class="w1">Naturally</span><span class="w2"><i>with</i> Anja</span></a>
+<a class="wordmark wm-b" href="index.html" aria-label="Naturally with Anja"><svg class="wm-olive" viewBox="30 6 42 84" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg><span><i>naturally</i> with anja</span></a>
 <button class="mobile-menu-btn" onclick="openMobileNav()">Izbornik</button>
 <div class="topnav-right">
 <div class="topnav-tooltip-wrap"><a href="womens-library.html" class="topnav-btn">The Women's Library</a><div class="topnav-tooltip">Članci o zdravlju, ciklusu i prirodnom i zdravom životu &middot; resursi</div></div>
@@ -599,7 +606,7 @@ body{background:#FAF6EE!important;background-image:none!important}
 </details>
 <a href="#" onclick="event.preventDefault();document.getElementById('communityModal').style.display='flex'" class="path-link">꩜ Moj Skool community</a>
 <a href="womens-library.html" class="path-link">The Women's Library</a>
-<a href="glowspring/" class="path-link" style="background:#2E3118;color:#F5EBDA;border-color:#2E3118;font-weight:500"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#E68A3C;margin-right:8px;vertical-align:middle"></span>Anja's Clean Beauty List</a>
+<a href="glowspring/" class="path-link" style="background:#2E3118;color:#F5EBDA;border-color:#2E3118;font-weight:500"><svg width="10" height="20" viewBox="30 6 42 84" fill="none" stroke="#B8924A" stroke-width="2.4" stroke-linecap="round" style="margin-right:8px;vertical-align:-4px" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg>Anja's Clean Beauty List</a>
 </div>
 </div>
 </div>
@@ -804,6 +811,7 @@ document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function 
 </div>
 
 <footer>
+<div class="foot-mark" aria-hidden="true"><div class="fm1">Naturally</div><div class="fm2">WITH ANJA</div></div>
 &copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
 <a href="privacy.html" style="color:inherit">Pravila privatnosti</a> &middot; <a href="terms.html" style="color:inherit">Uvjeti i povrati</a>
 </footer>
