@@ -326,6 +326,28 @@ html,body{overflow-x:clip}
 .vcc{position:absolute;right:12px;top:12px;z-index:3;line-height:1;padding:8px 12px;border:1px solid rgba(255,255,255,.8);background:rgba(20,20,20,.35);color:#fff;font:600 11px "DM Sans",sans-serif;letter-spacing:.12em;border-radius:3px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
 .vwrap.playing .vcc{opacity:1;pointer-events:auto}
 .vcc.on{background:#fff;color:#2E2420}
+.ba,.fit,.val{max-width:1000px;margin:90px auto;padding:0 22px;text-align:center}
+.ba-k{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5E8E94;margin-bottom:12px}
+.ba h2,.fit h2,.val h2{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(30px,4.2vw,50px);line-height:1.08;color:#2E2420;margin:0 0 34px}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:14px;align-items:end}
+.ba-f{margin:0;position:relative}.ba-f img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:6px}
+.ba-after img{aspect-ratio:3/4.4;box-shadow:0 24px 50px -24px rgba(46,36,32,.5)}
+.ba-f figcaption{position:absolute;left:12px;top:12px;background:rgba(251,247,239,.92);color:#2E2420;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:6px 10px}
+.ba-after figcaption{background:#2E2420;color:#FBF7EF}
+.ba-text{max-width:640px;margin:34px auto 0;font-size:17px;line-height:1.8;color:#3A2E28}
+.ba-note{font-size:13px;opacity:.6}
+.fit-list{list-style:none;padding:0;margin:0 auto;max-width:620px;text-align:left}
+.fit-list li{padding:16px 0 16px 34px;border-top:1px solid rgba(46,36,32,.14);position:relative;font-size:17px;color:#3A2E28}
+.fit-list li::before{content:"✓";position:absolute;left:4px;color:#76804C;font-weight:600}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.val-c{padding:26px 20px;background:#FBF7F0;border:1px solid rgba(46,36,32,.12);text-align:left}
+.val-c b{display:block;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:21px;color:#2E2420;text-decoration:line-through;text-decoration-color:rgba(160,80,60,.5)}
+.val-c span{display:block;margin-top:8px;font-size:14px;color:#6B5A4E}
+.val-me{margin-top:18px;padding:30px 24px;background:#2E2420;color:#FBF7EF;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:14px}
+.val-me span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.val-me b{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:44px}
+.val-me em{font-family:'Newsreader',Georgia,serif;font-size:19px}
+@media(max-width:700px){.ba-grid{grid-template-columns:1fr 1fr}.ba-after{grid-column:1/-1}.val-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -382,6 +404,32 @@ html,body{overflow-x:clip}
   </div>
 </div>
 
+<section class="ba reveal">
+  <div class="ba-k">Moja priča</div>
+  <h2>Nisam uvijek ovako izgledala.</h2>
+  <div class="ba-grid">
+    <figure class="ba-f"><img src="ba-before-1.jpg" alt="" loading="lazy"><figcaption>Prije</figcaption></figure>
+    <figure class="ba-f"><img src="ba-before-2.jpg" alt="" loading="lazy"><figcaption>Prije</figcaption></figure>
+    <figure class="ba-f ba-after"><img src="ba-after.jpg" alt="" loading="lazy"><figcaption>Danas</figcaption></figure>
+  </div>
+  <div class="ba-text">
+    <p>Godinama sam imala upaljenu, crvenu kožu i akne koje nijedna krema nije mogla riješiti. Probala sam sve, a ništa nije išlo do korijena.</p>
+    <p>Tek kad sam promijenila ono što jedem, kako se krećem, čime se okružujem i kako živim sa svojim ciklusom, moje tijelo se smirilo. Taj put sam pretvorila u ovaj program, da ti ne trebaju godine kao meni.</p>
+    <p class="ba-note">Moje iskustvo, ne obećanje. Svako tijelo je drugačije.</p>
+  </div>
+</section>
+
+<section class="fit reveal">
+  <div class="ba-k">Je li ovo za tebe?</div>
+  <h2>Ovaj program je za tebe ako...</h2>
+  <ul class="fit-list">
+    <li>si umorna od toga da probaš proizvod za proizvodom, a ništa se ne mijenja</li>
+    <li>tvoja koža, energija ili raspoloženje ovise o danu u mjesecu</li>
+    <li>želiš razumjeti svoje tijelo, a ne samo gasiti simptome</li>
+    <li>želiš prirodan put koji možeš živjeti cijeli život</li>
+  </ul>
+</section>
+
 <div class="sec-head reveal" id="program">
   <div class="k">Tri dijela, jedan put</div>
   <h2>Što program obuhvaća</h2>
@@ -419,6 +467,17 @@ html,body{overflow-x:clip}
       <ul class="mods"><li style="animation-delay:0.00s">Zašto je zdrav ciklus važan</li><li style="animation-delay:0.04s">Hormoni, četiri faze i znakovi zdravog ciklusa</li><li style="animation-delay:0.08s">Menstrualna faza</li><li style="animation-delay:0.12s">Folikularna faza</li><li style="animation-delay:0.16s">Ovulacijska faza</li><li style="animation-delay:0.20s">Lutealna faza</li><li style="animation-delay:0.24s">Uzroci PMS-a i kako ih riješiti</li><li style="animation-delay:0.28s">Praćenje ciklusa i 30-dnevni plan</li><li style="animation-delay:0.32s">Bonus: Svjesnost o plodnosti</li></ul></div>
     </div>
 </div>
+
+<section class="val reveal">
+  <div class="ba-k">Investicija za cijeli život</div>
+  <h2>Koliko te zapravo košta da ništa ne promijeniš?</h2>
+  <div class="val-grid">
+    <div class="val-c"><b>Kreme koje ne rade</b><span>30 do 60 € mjesečno, godinama</span></div>
+    <div class="val-c"><b>Pregledi i tretmani</b><span>stotine eura za privremeno rješenje</span></div>
+    <div class="val-c"><b>Vrijeme i samopouzdanje</b><span>to se ne može kupiti natrag</span></div>
+  </div>
+  <div class="val-me"><span>The Glow Program</span><b>€97</b><em>jednom, zauvijek tvoje. Manje od dvije kreme.</em></div>
+</section>
 
 <div class="buy reveal" id="kupi">
   <div class="buy-badge">Lifetime access</div>
@@ -478,7 +537,7 @@ document.querySelectorAll('.step').forEach(function(b){b.addEventListener('click
 function u(){var hb=h.getBoundingClientRect().bottom,kr=k.getBoundingClientRect();var inBuy=kr.top<innerHeight&&kr.bottom>0;b.classList.toggle('show',hb<0&&!inBuy)}
 addEventListener('scroll',u,{passive:true});u();})();
 </script>
-<script src="i18n/moji-vodici.js?v=20261103"></script>
+<script src="i18n/moji-vodici.js?v=20261105a"></script>
 <script src="i18n.js?v=20261103"></script>
 <script>
 function startVid(w){var v=w.querySelector('video');if(!v.controls){v.controls=true;}v.play();w.querySelector('.vplay').classList.add('hidden');w.classList.add('playing');w.onclick=null;}
