@@ -662,26 +662,10 @@ footer.fx .fx-brand .fx-wm{justify-content:center!important}
 footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 .hero h1{font-size:clamp(28px,4vw,54px)!important}
 @media(max-width:768px){.hero h1{font-size:clamp(20px,6vw,30px)!important}}
-/* seasons, prettier */
-.cycle-seasons{max-width:none!important;background:linear-gradient(180deg,#FAF6EE 0%,#F3ECE2 100%)!important;padding:110px clamp(20px,5vw,70px) 90px!important}
-.cycle-seasons .cs-kicker{font-family:'DM Mono',monospace!important;color:#5E8E94!important;letter-spacing:.3em!important}
-.cycle-seasons h2{font-family:'Newsreader',Georgia,serif!important;font-weight:300!important;font-style:normal!important;font-size:clamp(36px,4.6vw,60px)!important;color:#2E2420!important;letter-spacing:-.01em}
-.cycle-seasons .cs-sub{color:#6B5A4E!important;font-size:16px!important}
-.phase-grid{max-width:1200px;margin:56px auto 0!important;gap:24px!important}
-.phase-card{height:360px!important}
-.phase-face{border:0!important;border-radius:200px 200px 18px 18px!important;box-shadow:0 18px 40px -24px rgba(46,36,32,.35)!important;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 22px!important}
-.phase-card:nth-child(1) .phase-front{background:linear-gradient(180deg,#E4E3EE,#D5D2E4)!important}
-.phase-card:nth-child(2) .phase-front{background:linear-gradient(180deg,#E8EFE2,#D4E2CB)!important}
-.phase-card:nth-child(3) .phase-front{background:linear-gradient(180deg,#FBEBD8,#F4D7B6)!important}
-.phase-card:nth-child(4) .phase-front{background:linear-gradient(180deg,#F1E1D3,#E2C6AE)!important}
-.phase-back{background:#FFFBF6!important}
-.phase-name{font-family:'Newsreader',Georgia,serif!important;font-weight:300!important;font-size:28px!important;color:#2E2420!important}
-.phase-days{font-family:'DM Mono',monospace!important;color:#6B5A4E!important;letter-spacing:.2em!important}
-.phase-season,.pb-title{font-family:'Newsreader',Georgia,serif!important;font-style:italic!important;font-size:19px!important;color:#7A5A44!important}
-.phase-latin{font-family:'DM Mono',monospace!important;color:rgba(46,36,32,.45)!important}
-.pb-tip{color:#3A2E28!important;line-height:1.7!important}
-.phase-moon{width:60px!important;height:60px!important;margin-bottom:22px!important;filter:drop-shadow(0 4px 10px rgba(46,36,32,.15))}
-@media(max-width:820px){.phase-card{height:320px!important}.phase-face{border-radius:140px 140px 14px 14px!important;padding:26px 14px!important}.phase-name{font-size:22px!important}}
+.topnav-tooltip{left:0!important;right:auto!important;transform:none!important;white-space:normal!important;width:260px;text-align:left;background:#FBF7EF!important;color:#2E2420!important;border:1px solid rgba(46,36,32,.15);box-shadow:0 12px 30px -12px rgba(46,36,32,.3);border-radius:4px!important;font-size:12.5px!important;line-height:1.5;padding:12px 16px!important;z-index:60}
+.topnav-tooltip::before{left:24px!important;transform:none!important;border-bottom-color:#FBF7EF!important}
+.topnav-right .topnav-tooltip{left:auto!important;right:0!important}
+.topnav-right .topnav-tooltip::before{left:auto!important;right:24px!important}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300,100,0;1,9..144,300,100,1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -705,7 +689,6 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
   </div>
   <a href="glowspring/" onclick="closeMobileNav()">Anja's Clean Beauty List</a>
   <a href="womens-library.html" onclick="closeMobileNav()">The Women's Library</a>
-  <a href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank">Newsletter</a>
   <a href="about.html" onclick="closeMobileNav()">O meni</a>
   <div style="text-align:center;margin-top:18px"><div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div></div>
 </div>
@@ -729,7 +712,6 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 <button class="mobile-menu-btn" onclick="openMobileNav()">Izbornik</button>
 <div class="topnav-right">
 <div class="topnav-tooltip-wrap"><a href="womens-library.html" class="topnav-btn">The Women's Library</a><div class="topnav-tooltip">Članci o zdravlju, ciklusu i prirodnom i zdravom životu &middot; resursi</div></div>
-<a href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank" class="topnav-btn">Newsletter</a>
 <a href="about.html" class="topnav-btn">O meni</a>
 <div class="lang-sw"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 </div>

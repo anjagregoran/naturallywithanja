@@ -540,3 +540,7 @@ textarea::placeholder, input::placeholder { color: var(--ink-soft); opacity: .85
 @media (max-width: 600px) { .fav-links { grid-template-columns: 1fr; } }
 .fav-group summary, .fav-group summary span { text-decoration: none !important; }
 .member-plans.one { grid-template-columns: 1fr; max-width: 300px; }
+.member-free { margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(46,36,32,.15); }
+.member-free p { margin: 0 0 14px; }
+.member-email { display: inline-block; padding: 12px 22px; border: 1px solid #2E2420; color: #2E2420; text-decoration: none; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+.member-email:hover { background: #2E2420; color: #FBF7EF; }

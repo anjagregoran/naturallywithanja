@@ -123,6 +123,7 @@ function renderLibrary() {
         <a class="plan plan-best" href="${MEMBER_LINKS.lifetime || '#member'}" ${MEMBER_LINKS.lifetime ? 'target="_blank" rel="noopener"' : ''}><span class="plan-tag">Founding price</span><span class="plan-name">Lifetime access</span><span class="plan-price">$9<small> one time</small></span><span class="plan-cta">${MEMBER_LINKS.lifetime ? 'Get access' : 'Opening soon'}</span></a>
       </div>
       <p class="member-note">One payment. No subscription. Every future update included.</p>
+      <div class="member-free"><p>Not ready yet? Get my newest clean finds by email, free.</p><a class="member-email" href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank" rel="noopener">Get new finds by email</a></div>
     </section>
     <div class="doors">
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
