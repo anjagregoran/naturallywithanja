@@ -22,7 +22,7 @@ const blankQuiz = () => ({ step: 0, a: {} });
 
 let state = load();
 let quiz = null;
-let shelfFilter = 'makeup';
+let shelfFilter = 'basics';
 let checkText = '';
 let checkResult = null;
 
@@ -97,6 +97,9 @@ function postcard(href, art, title, caption, extra = '') {
     </a>`;
 }
 
+// Paste the Stripe payment links here once they exist.
+const MEMBER_LINKS = { lifetime: '' };
+
 function renderLibrary() {
   app.innerHTML = `
     <section class="hero">
@@ -110,6 +113,16 @@ function renderLibrary() {
       <span class="label">Where It All Comes From</span>
       <h2>Looks and health come from two places, <em>inside</em> and <em>outside</em>.</h2>
       <p class="lede">Each one has its roots, the daily habits everything grows from, and its remedies, the products and homemade things you use.</p>
+    </section>
+    <section class="member" id="member">
+      <span class="label">The Glow List</span>
+      <h2>Every find, <em>forever.</em></h2>
+      <p class="lede">Pay once and get my full researched list, plus every update for life: the new clean products I test, the brands I would swap to, and what I would never buy again.</p>
+      <ul class="member-perks"><li>My full list of researched products, with updates for life</li><li>My brand swaps, from drugstore to clean</li><li>Early access to new remedies and routines</li></ul>
+      <div class="member-plans one">
+        <a class="plan plan-best" href="${MEMBER_LINKS.lifetime || '#member'}" ${MEMBER_LINKS.lifetime ? 'target="_blank" rel="noopener"' : ''}><span class="plan-tag">Founding price</span><span class="plan-name">Lifetime access</span><span class="plan-price">$9<small> one time</small></span><span class="plan-cta">${MEMBER_LINKS.lifetime ? 'Get access' : 'Opening soon'}</span></a>
+      </div>
+      <p class="member-note">One payment. No subscription. Every future update included.</p>
     </section>
     <div class="doors">
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
@@ -126,7 +139,7 @@ function renderLibrary() {
         <h2>Use It</h2>
         <a class="link-row" href="#check"><h3>Check A Product</h3><p>Paste any ingredient list and see each ingredient judged.</p></a>
         <a class="link-row" href="#ritual"><h3>Take The Quiz</h3><p>Answer three questions and get a daily routine, plus the sections and brands that fit you.</p></a>
-        <a class="link-row" href="#shelf"><h3>Browse The Shelf</h3><p>Every brand I have researched or wished for.</p></a>
+        <a class="link-row" href="#shelf"><h3>My Favorites</h3><p>Everything I use and love, sorted from basics to face, hair, clothes and bedsheets.</p></a>
       </section>
       <section class="section origin">
         <div class="origin-art">${ART.source()}</div>
@@ -266,8 +279,8 @@ function renderShelf() {
 
   app.innerHTML = `
     <span class="label">The Shelf</span>
-    <h1>What I would reach for.</h1>
-    <p class="lede">The brands from my notes and my own wishlist. Please read each ingredient list yourself, or paste it into Check.</p>
+    <h1>My tried-and-true favorites.</h1>
+    <p class="lede">Everything I truly use and love, from the basics like food and sleep to face, hair, clothes and bedsheets. Some links are affiliate links, so I may earn a small commission at no extra cost to you.</p>
     <div class="filters">
       ${SHELF_GROUPS.map(group => `<button class="filter" data-shelf="${group.id}" aria-pressed="${shelfFilter === group.id}">${group.label}</button>`).join('')}
     </div>
