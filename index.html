@@ -554,6 +554,31 @@ body{background:#FAF6EE!important;background-image:none!important}
 @media(max-width:768px){.hero h1{font-size:clamp(17px,5.2vw,24px)!important;letter-spacing:.14em!important}}
 .hero-bg-img::after{background:rgba(253,250,244,.22)!important}
 .hero::after{background:linear-gradient(180deg,rgba(250,246,238,.05),rgba(250,246,238,.45))!important}
+.gx{display:grid;grid-template-columns:1fr 1fr;min-height:620px;background:#F4ECE0;margin-top:60px}
+.gx-photo{background-size:cover;background-position:center 30%;position:relative;min-height:420px}
+.gx-tag{position:absolute;left:28px;bottom:26px;font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:26px;color:#FBF7EF;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.gx-body{padding:clamp(40px,7vw,100px);display:flex;flex-direction:column;justify-content:center;text-align:left}
+.gx-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#76804C;margin:0 0 14px}
+.gx-school{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(36px,4.4vw,60px);line-height:1.02;color:#2E2420;margin:0 0 14px}
+.gx-school em{font-style:italic;color:#76804C}
+.gx-place{font-size:14px;color:#6B5A4E;margin:0 0 26px;letter-spacing:.02em}
+.gx-text{font-size:16px;line-height:1.8;color:#3A2E28;max-width:520px;margin:0 0 34px}
+.gx-stats{display:flex;gap:0;border-top:1px solid rgba(46,36,32,.18);padding-top:22px;max-width:520px}
+.gx-stats div{flex:1;padding-right:14px}.gx-stats div+div{border-left:1px solid rgba(46,36,32,.18);padding-left:18px}
+.gx-stats b{display:block;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:28px;color:#2E2420}
+.gx-stats span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#6B5A4E}
+footer.fx{background:#2E2420;color:#EDE3D3;text-align:left;padding:70px clamp(24px,6vw,90px) 26px;margin:0}
+.fx-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto}
+.fx .fx-wm{color:#F6EFE3!important;justify-content:flex-start;font-size:18px!important}
+.fx-brand p{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:22px;color:#CFC2AE;margin:18px 0 0;max-width:320px;line-height:1.35}
+.fx-h{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#B8BF8E;margin:0 0 16px}
+.fx-col a{display:block;color:#EDE3D3;text-decoration:none;font-size:14px;margin:0 0 10px}
+.fx-col a:hover{color:#fff;text-decoration:underline}
+.fx-bottom{max-width:1200px;margin:56px auto 0;padding-top:20px;border-top:1px solid rgba(237,227,211,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#A99B88}
+.fx-bottom a{color:inherit}
+@media(max-width:768px){.gx{grid-template-columns:1fr}.gx-photo{min-height:440px}.fx-grid{grid-template-columns:1fr 1fr}.fx-brand{grid-column:1/-1}}
+footer.fx .fx-col a{color:#EDE3D3!important;opacity:1!important}
+footer.fx .fx-bottom,footer.fx .fx-bottom a{color:#B5A893!important}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300,100,0;1,9..144,300,100,1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -611,13 +636,13 @@ body{background:#FAF6EE!important;background-image:none!important}
 <div class="hero">
 <div class="hero-bg-img"></div>
 <div class="hero-inner">
-<div class="hero-kicker">Your cycle is your glow guide</div>
+<div class="hero-kicker" style="display:none"></div>
 
 </div>
 <div class="hero-grid">
 <div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa"></div>
 <div class="hero-text">
-<h1><svg class="h1-olive" viewBox="30 6 42 84" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg><em class="h1-it">Prirodno</em> s <span style="white-space:nowrap"><span class="h1-anja">Anjom.</span> <span class="olive-trigger" id="oliveBtn" title="klikni me ✨" style="display:inline-block;vertical-align:middle;margin-left:4px;cursor:pointer"><svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 2 Q20 4 22 7 Q24 5 24 2Z" fill="#5A4070"/><path d="M24 2 Q28 4 26 7 Q24 5 24 2Z" fill="#6B5080"/><path d="M24 7 Q30 8 34 12" stroke="#7A6090" stroke-width="1.4" stroke-linecap="round" fill="none"/><ellipse cx="36" cy="12" rx="6" ry="2.5" fill="#7A6890" transform="rotate(-20 36 12)"/><ellipse cx="30" cy="16" rx="5" ry="2" fill="#8A7A9E" transform="rotate(-15 30 16)"/><circle cx="18" cy="18" r="7" fill="#7A5E9A"/><circle cx="30" cy="22" r="6.5" fill="#6B5090"/><circle cx="12" cy="27" r="6.5" fill="#8A6EAA"/><circle cx="24" cy="30" r="6.5" fill="#7A5E9A"/><circle cx="36" cy="28" r="6" fill="#6B5090"/><circle cx="18" cy="38" r="6" fill="#8A6EAA"/><circle cx="30" cy="38" r="6" fill="#7A5E9A"/><circle cx="16" cy="19" r="2.2" fill="#C4AEDD" opacity="0.35"/></svg></span></span></h1>
+<h1><svg class="h1-olive" viewBox="30 6 42 84" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg><span>tvoj ciklus je tvoj <em class="h1-it">vodič do sjaja</em></span></h1>
 <div class="hero-ctas"><a href="moji-vodici.html" class="hero-main-cta">Moj whole-body wellness program</a><a href="glowspring/" class="hero-main-cta hero-alt"><svg width="10" height="20" viewBox="30 6 42 84" fill="none" stroke="#B8924A" stroke-width="2.4" stroke-linecap="round" style="margin-right:8px;vertical-align:-4px" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg>Anja's Clean Beauty List</a></div>
 <div style="margin-top:6px">
 <div class="path-links" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
@@ -801,48 +826,31 @@ document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function 
 </div>
 </div>
 
-<section class="cert">
-  <div class="cert-card">
-    <p class="cert-eyebrow">Obrazovanje i certifikacija</p>
-    <div class="cert-seal"><svg width="42" height="42" viewBox="0 0 64 64" fill="none">
-            <defs>
-              <linearGradient id="wleaf" x1="0.2" y1="0.1" x2="0.8" y2="0.95"><stop offset="0" stop-color="#DCE7CE"/><stop offset="0.45" stop-color="#B3CBB0"/><stop offset="0.8" stop-color="#AEC4D2"/><stop offset="1" stop-color="#C6BEDA"/></linearGradient>
-              <radialGradient id="wleaf2" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#E6EFD9" stop-opacity="0.9"/><stop offset="1" stop-color="#B9CDBE" stop-opacity="0"/></radialGradient>
-              <filter id="wsoft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="0.9"/></filter>
-            </defs>
-            <g filter="url(#wsoft)">
-              <path d="M50 12C29 12 17 25 17 43c0 4 .4 7.5 1.4 10.6C21 37 31 24 47 17 34 24 25 36 23 52c19 2 34-10 34-28 0-5-1-9-7-12z" fill="url(#wleaf)"/>
-              <ellipse cx="35" cy="30" rx="17" ry="10" transform="rotate(-38 35 30)" fill="url(#wleaf2)"/>
-              <ellipse cx="30" cy="40" rx="9" ry="14" transform="rotate(-32 30 40)" fill="#AFCAC0" opacity="0.35"/>
-              <ellipse cx="44" cy="24" rx="8" ry="12" transform="rotate(-40 44 24)" fill="#CFE0D2" opacity="0.4"/>
-            </g>
-            <path d="M20 51C24 38 32 27 47 18" stroke="#C9A860" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.55"/>
-          </svg></div>
-    <p class="cert-label">Obrazujem se u</p>
-    <h3 class="cert-school">Global Healing Institute</h3>
-    <p class="cert-place">Sjedinjene Američke Države</p>
-    <p class="cert-status">Certifikaciju završavam do kraja 2026.</p>
-    <p class="cert-text">Global Healing Institute američka je obrazovna ustanova za prirodno zdravlje koju je osnovao dr. Edward Group, utemeljena na više od 30 godina istraživanja korijenskih uzroka bolesti. Podučava cjelovit pristup zdravlju i istinskoj vitalnosti: zdrave svakodnevne navike, pravu hranu i prehranu, energiju i vitalnost, kretanje, detoksikaciju i dublja čišćenja, zdravlje jetre i crijeva, uklanjanje štetnih organizama te emocionalno zdravlje.</p>
-    <ul class="cert-facts"><li>Osnovao dr. Edward Group, DC</li><li>30+ godina istraživanja</li><li>Root cause health</li></ul>
+<section class="gx">
+  <div class="gx-photo" style="background-image:url('anja-vineyard.jpg')"><span class="gx-tag">Zdravo i prirodno, Anja</span></div>
+  <div class="gx-body">
+    <p class="gx-eyebrow">Obrazujem se u</p>
+    <h3 class="gx-school">Global Healing <em>Institute</em></h3>
+    <p class="gx-place">Sjedinjene Američke Države &middot; Certifikaciju završavam do kraja 2026.</p>
+    <p class="gx-text">Global Healing Institute američka je obrazovna ustanova za prirodno zdravlje koju je osnovao dr. Edward Group, utemeljena na više od 30 godina istraživanja korijenskih uzroka bolesti. Podučava cjelovit pristup zdravlju i istinskoj vitalnosti: zdrave svakodnevne navike, pravu hranu i prehranu, energiju i vitalnost, kretanje, detoksikaciju i dublja čišćenja, zdravlje jetre i crijeva, uklanjanje štetnih organizama te emocionalno zdravlje.</p>
+    <div class="gx-stats"><div><b>30+</b><span>godina istraživanja</span></div><div><b>Root cause</b><span>health</span></div><div><b>2026</b><span>certifikacija</span></div></div>
   </div>
 </section>
 
-<div style="text-align:center;padding:34px 24px 6px">
-  <svg width="54" height="18" viewBox="0 0 54 18" fill="none" style="opacity:.8"><path d="M4 9c14-4 32-4 46 0" stroke="#C9A860" stroke-width="1.2" stroke-linecap="round"/><path d="M31 9c-2-4-6-5-9-4 1 4 5 6 9 4z" fill="#A8B89A" opacity=".7"/></svg>
-  <div class="script-note" style="font-size:28px;margin-top:6px">Zdravo i prirodno, Anja</div>
-</div>
-
-<footer>
-<div class="foot-mark" aria-hidden="true"><div class="fm1">Naturally</div><div class="fm2">WITH ANJA</div></div>
-&copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
-<a href="privacy.html" style="color:inherit">Pravila privatnosti</a> &middot; <a href="terms.html" style="color:inherit">Uvjeti i povrati</a>
+<footer class="fx">
+  <div class="fx-grid">
+    <div class="fx-brand"><a class="wordmark wm-b fx-wm" href="index.html"><svg class="wm-olive" viewBox="30 6 42 84" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg><span><i>naturally</i> with anja</span></a><p>Prirodno zdravlje, ciklus i sjaj iznutra.</p></div>
+    <div class="fx-col"><p class="fx-h">Istraži</p><a href="moji-vodici.html">Moj whole-body wellness program</a><a href="glowspring/">Anja's Clean Beauty List</a><a href="cycle-checkin.html">Cycle check-in</a><a href="womens-library.html">Women's Library</a><a href="about.html">O meni</a></div>
+    <div class="fx-col"><p class="fx-h">Prati me</p><a href="https://www.instagram.com/anjagregoran?igsh=N3RqdWIxM21oMHM0&utm_source=qr" target="_blank">Instagram</a><a href="https://www.tiktok.com/@mediterranean.anja?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a><a href="https://youtube.com/@naturallywithanja?si=MTREWRX-ADaDW9fE" target="_blank">YouTube</a><a href="https://www.skool.com/coffee" target="_blank">Skool</a></div>
+  </div>
+  <div class="fx-bottom"><span>&copy; Prirodno s Anjom &middot; Olea Vita Sana</span><span><a href="privacy.html">Pravila privatnosti</a> &middot; <a href="terms.html">Uvjeti i povrati</a></span></div>
 </footer>
 
 <script>
 window.scrollTo(0,0);
 if(window.location.hash){ history.replaceState(null,'',window.location.pathname); }
 window.addEventListener('load', function(){ window.scrollTo(0,0); });
-document.getElementById('oliveBtn').addEventListener('click', function(){
+(document.getElementById('oliveBtn')||document.createElement('i')).addEventListener('click', function(){
   const overlay = document.createElement('div');
   overlay.className = 'shimmer-overlay';
   document.body.appendChild(overlay);
@@ -907,7 +915,7 @@ function toggleMobileGroup(btn){
  }
 })();
 </script>
-<script src="i18n/index.js?v=20261103h"></script>
+<script src="i18n/index.js?v=20261105b"></script>
 <script src="i18n.js?v=20261103"></script>
 </body>
 </html>
