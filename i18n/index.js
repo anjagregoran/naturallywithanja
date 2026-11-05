@@ -1,4 +1,6 @@
 window.T_EN={
+"Zajednica": "Community",
+"Moja zajednica": "My community",
 "Certificirana sam u": "Certified at",
 "Sjedinjene Američke Države · Certificirana coachica za prirodno zdravlje": "United States · Certified natural health coach",
 "Glow program": "The Glow Program",
