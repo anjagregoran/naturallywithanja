@@ -40,6 +40,44 @@ html,body{overflow-x:clip}
 @keyframes wig{to{transform:rotate(6deg) translateY(-3px)}}
 @media(max-width:600px){.ltc{aspect-ratio:4/3}}
 </style>
+<style>
+:root{
+  --ivory:#FAF6EE; --card:#FDFAF4; --mist:#F4EEE2; --plum:#3A2E28; --plum-2:#5A4A40;
+  --ink:#3A2E28; --ink-2:#6E6286; --gold:#C9A860; --gold-ink:#8E6F2E;
+  --line:rgba(201,162,39,.25);
+  --serif:'Fraunces',Georgia,serif; --sans:'Jost','DM Sans',sans-serif; --mono:'DM Mono',ui-monospace,monospace;
+}
+/* concern tiles */
+.concern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.concern-card{position:relative;display:flex;min-height:230px;border-radius:20px;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .3s,box-shadow .3s}
+.concern-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(59,46,79,.14)}
+.ct-text{position:relative;z-index:1;flex:1 1 58%;display:flex;flex-direction:column;padding:28px}
+.ct-title{font-family:var(--serif);font-size:24px;line-height:1.15;font-weight:500;color:var(--ink)}
+.ct-line{margin-top:10px;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.ct-arrow{margin-top:auto;display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--plum);color:#FBF8F3;font-size:19px;transition:transform .3s}
+.concern-card:hover .ct-arrow{transform:translateX(5px)}
+.ct-photo{flex:0 0 40%;position:relative}
+.ct-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.concern-grid.small .concern-card{min-height:0}
+.concern-grid.small .ct-text{flex-direction:row;align-items:center;justify-content:space-between;gap:14px;padding:22px 24px}
+.concern-grid.small .ct-title{font-size:20px}
+.concern-grid.small .ct-arrow{margin:0;flex:none}
+.tone-rose{background:linear-gradient(135deg,#F6E4E6,#EBCFD6)}
+.tone-lilac{background:linear-gradient(135deg,#EEE7F5,#DCCFEA)}
+.tone-sage{background:linear-gradient(135deg,#E6EDE3,#D3DFCF)}
+.tone-peach{background:linear-gradient(135deg,#FBE7DA,#F3D2BE)}
+.tone-butter{background:linear-gradient(135deg,#F7EED8,#EEDDB4)}
+.tone-sky{background:linear-gradient(135deg,#E5EDF3,#CFDCE7)}
+@media(max-width:980px){.concern-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.concern-grid{grid-template-columns:1fr;gap:16px}.concern-card{min-height:200px}.ct-text{padding:24px}.ct-title{font-size:22px}}
+.wl-concerns{max-width:1180px;margin:0 auto;padding:70px 24px 30px;text-align:center}
+.wl-concerns .wl-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#C9A860;margin-bottom:12px}
+.wl-concerns h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);line-height:1.05;color:#3A2E28;margin:0 0 12px}
+.wl-concerns h2 em{font-style:italic}
+.wl-concerns .wl-sub{font-size:15px;color:#6E6286;margin:0 auto 36px;max-width:34em}
+.wl-concerns .concern-grid{text-align:left}
+
+</style>
 </head>
 <body>
 <div class="lang-sw" style="position:fixed;top:14px;right:14px;z-index:50;background:#fff"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
@@ -165,12 +203,28 @@ html,body{overflow-x:clip}
 </div>
 <p style="font-size:12px;color:#C9A860;letter-spacing:2px;text-transform:uppercase;margin-top:40px">Uskoro još</p>
 </div>
+<section class="wl-concerns" id="teme">
+<p class="wl-eyebrow">Tvoje tijelo ti nešto govori</p>
+<h2>Što te <em>muči</em>?</h2>
+<p class="wl-sub">Odaberi temu i saznaj što stoji iza toga i gdje krenuti.</p>
+<div class="concern-grid" id="concernGrid"></div>
+</section>
+<script src="concerns-data.js?v=20261103"></script>
+<script>
+document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function (c) {
+  return '<a class="concern-card tone-' + c.tone + '" href="concern.html?c=' + c.id + '">' +
+    '<span class="ct-text"><span class="ct-title">' + c.title + '</span><span class="ct-line">' + c.line + '</span><span class="ct-arrow" aria-hidden="true">&rarr;</span></span>' +
+    '<span class="ct-photo"><img src="' + c.photo + '" alt="" loading="lazy"></span></a>';
+}).join('');
+</script>
+
 
 <footer>
 &copy; Prirodno s Anjom &middot; Olea Vita Sana<br>
 <a href="index.html">Početna</a> &middot; <a href="privacy.html">Pravila privatnosti</a> &middot; <a href="terms.html">Uvjeti i povrati</a>
 </footer>
-<script src="i18n/womens-library.js?v=20261103d"></script>
+<script src="i18n/concerns.js?v=20261105a"></script>
+<script src="i18n/womens-library.js?v=20261105b"></script>
 <script src="i18n.js?v=20261103"></script>
 </body>
 </html>

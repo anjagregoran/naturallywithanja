@@ -1,4 +1,5 @@
 window.T_EN={
+"Natrag u Women's Library": "Back to the Women's Library",
 "Prirodno s Anjom": "Naturally with Anja",
 "Prirodno s Anjom | Olea Vita Sana": "Naturally with Anja | Olea Vita Sana",
 "Natrag na početnu": "Back to home",

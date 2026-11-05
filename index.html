@@ -609,8 +609,27 @@ footer.fx .fx-bottom,footer.fx .fx-bottom a{color:#B5A893!important}
 .step-link{color:#6E5240!important;border-bottom-color:var(--brown)!important}
 footer.fx{background:#5B4536!important}
 .fx-h{color:var(--sea-soft)!important}
-.topnav-btn{background:var(--brown)!important;color:#FFF9F2!important;border-color:var(--brown)!important}
-.hero h1 em.h1-it{color:#7A5A44!important}
+.hero-ctas .hero-main-cta{background:#2E2420!important;border-color:#2E2420!important;color:#FBF7EF!important}
+.hero-ctas .hero-main-cta.hero-alt{background:rgba(251,247,239,.88)!important;color:#2E2420!important;border-color:#2E2420!important}
+.hero h1 em.h1-it{color:#2E2420!important}
+.hero h1,.hero h1 em,.hero h1 em.h1-it,.hero h1 span{color:#FFFFFF!important;text-shadow:0 2px 6px rgba(20,40,45,.45),0 1px 2px rgba(20,40,45,.35)!important}
+.hero-ctas .hero-main-cta,.hero-ctas .hero-main-cta.hero-alt{background:rgba(255,255,255,.08)!important;color:#FFFFFF!important;border:1px solid rgba(255,255,255,.9)!important;text-shadow:0 1px 4px rgba(20,40,45,.4);box-shadow:none!important}
+.hero-ctas .hero-main-cta:hover{background:rgba(255,255,255,.2)!important}
+.hero-ctas .hero-main-cta svg{stroke:#FFFFFF!important}
+.hero-bg-img::after{background:rgba(20,50,55,.12)!important}
+.hero::after{background:linear-gradient(180deg,rgba(20,50,55,0),rgba(20,50,55,.12))!important}
+.hero h1,.hero h1 em,.hero h1 em.h1-it,.hero h1 span{text-shadow:0 2px 10px rgba(10,30,35,.55),0 1px 3px rgba(10,30,35,.5)!important}
+.hero-ctas .hero-main-cta,.hero-ctas .hero-main-cta.hero-alt{background:rgba(15,40,45,.14)!important;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);text-shadow:0 1px 4px rgba(10,30,35,.6)!important}
+.gx-photo{background-position:center 78%!important}
+.gx{min-height:720px!important}
+footer.fx{background:#F4ECE0!important;color:#2E2420!important;border-top:1px solid rgba(46,36,32,.12)}
+footer.fx .fx-wm{color:#2E2420!important}
+footer.fx .fx-brand p{color:#6B5A4E!important}
+footer.fx .fx-h{color:#5E8E94!important}
+footer.fx .fx-col a{color:#2E2420!important}
+footer.fx .fx-bottom,footer.fx .fx-bottom a{color:#8A7A6C!important}
+footer.fx .fx-bottom{border-top-color:rgba(46,36,32,.15)!important}
+.gx{background:#FBF7F0!important}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300,100,0;1,9..144,300,100,1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -710,20 +729,7 @@ footer.fx{background:#5B4536!important}
 <span>Ponovno se poveži sa svojim tijelom</span>
 </div>
 </div>
-<section class="concerns-sec" id="teme">
-<p class="eyebrow">Tvoje tijelo ti nešto govori</p>
-<h2>Što te <em>muči</em>?</h2>
-<p class="concerns-sub">Odaberi temu i saznaj što stoji iza toga i gdje krenuti.</p>
-<div class="concern-grid" id="concernGrid"></div>
-</section>
-<script src="concerns-data.js?v=20261103"></script>
-<script>
-document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function (c) {
-  return '<a class="concern-card tone-' + c.tone + '" href="concern.html?c=' + c.id + '">' +
-    '<span class="ct-text"><span class="ct-title">' + c.title + '</span><span class="ct-line">' + c.line + '</span><span class="ct-arrow" aria-hidden="true">&rarr;</span></span>' +
-    '<span class="ct-photo"><img src="' + c.photo + '" alt="" loading="lazy"></span></a>';
-}).join('');
-</script>
+
 
 
 <div class="cycle-seasons">
@@ -858,11 +864,11 @@ document.getElementById('concernGrid').innerHTML = window.CONCERNS.map(function 
 <section class="gx">
   <div class="gx-photo" style="background-image:url('anja-vineyard.jpg')"><span class="gx-tag">Zdravo i prirodno, Anja</span></div>
   <div class="gx-body">
-    <p class="gx-eyebrow">Obrazujem se u</p>
+    <p class="gx-eyebrow">Certificirana sam u</p>
     <h3 class="gx-school">Global Healing <em>Institute</em></h3>
-    <p class="gx-place">Sjedinjene Američke Države &middot; Certifikaciju završavam do kraja 2026.</p>
+    <p class="gx-place">Sjedinjene Američke Države &middot; Certificirana coachica za prirodno zdravlje</p>
     <p class="gx-text">Global Healing Institute američka je obrazovna ustanova za prirodno zdravlje koju je osnovao dr. Edward Group, utemeljena na više od 30 godina istraživanja korijenskih uzroka bolesti. Podučava cjelovit pristup zdravlju i istinskoj vitalnosti: zdrave svakodnevne navike, pravu hranu i prehranu, energiju i vitalnost, kretanje, detoksikaciju i dublja čišćenja, zdravlje jetre i crijeva, uklanjanje štetnih organizama te emocionalno zdravlje.</p>
-    <div class="gx-stats"><div><b>30+</b><span>godina istraživanja</span></div><div><b>Root cause</b><span>health</span></div><div><b>2026</b><span>certifikacija</span></div></div>
+    <div class="gx-stats"><div><b>30+</b><span>godina istraživanja</span></div><div><b>Root cause</b><span>health</span></div><div><b>Certified</b><span>natural health coach</span></div></div>
   </div>
 </section>
 
@@ -944,7 +950,7 @@ function toggleMobileGroup(btn){
  }
 })();
 </script>
-<script src="i18n/index.js?v=20261105d"></script>
+<script src="i18n/index.js?v=20261105e"></script>
 <script src="i18n.js?v=20261103"></script>
 </body>
 </html>

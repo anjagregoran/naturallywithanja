@@ -1,4 +1,7 @@
-window.T_EN={
+window.T_EN=Object.assign(window.T_EN||{},{
+"Što te": "What is",
+"muči": "troubling you",
+"Odaberi temu i saznaj što stoji iza toga i gdje krenuti.": "Pick a topic to learn what is behind it and where to start.",
 "The Women's Library | Prirodno s Anjom": "The Women's Library | Naturally with Anja",
 "← Natrag na početnu": "← Back to home",
 "Nikad ne možeš biti savršena, ali uvijek možeš biti": "You can never be perfect, but you can always be",
@@ -50,4 +53,4 @@ window.T_EN={
 "© Prirodno s Anjom · Olea Vita Sana": "© Naturally with Anja · Olea Vita Sana",
 "Početna": "Home",
 "Pravila privatnosti": "Privacy Policy",
-"Uvjeti i povrati": "Terms & Refunds","Moji": "My", "favoriti": "favorites", "koje stvarno volim": "I truly love", "Živa": "Live", "voda": "hydration", "zaboravljeni izvor zdravlja": "the forgotten source of health"};
+"Uvjeti i povrati": "Terms & Refunds","Moji": "My", "favoriti": "favorites", "koje stvarno volim": "I truly love", "Živa": "Live", "voda": "hydration", "zaboravljeni izvor zdravlja": "the forgotten source of health"});
