@@ -117,8 +117,8 @@ function renderLibrary() {
     <section class="member" id="member">
       <span class="label">The Glow List</span>
       <h2>Every find, <em>forever.</em></h2>
-      <p class="lede">Pay once and get my full researched list, plus every update for life: the new clean products I test, the brands I would swap to, and what I would never buy again.</p>
-      <ul class="member-perks"><li>My full list of researched products, with updates for life</li><li>My brand swaps, from drugstore to clean</li><li>Early access to new remedies and routines</li></ul>
+      <p class="lede">Pay once and get everything, plus every update for life: my homemade masks and DIY recipes, the oils and remedies I use, the new clean products I test, the brands I would swap to, and what I would never buy again.</p>
+      <ul class="member-perks"><li>My homemade face masks and DIY recipes</li><li>The oils and natural remedies I use, and how</li><li>My full list of researched products, with updates for life</li><li>My brand swaps, from drugstore to clean</li><li>Early access to new remedies and routines</li></ul>
       <div class="member-plans one">
         <a class="plan plan-best" href="${MEMBER_LINKS.lifetime || '#member'}" ${MEMBER_LINKS.lifetime ? 'target="_blank" rel="noopener"' : ''}><span class="plan-tag">Founding price</span><span class="plan-name">Lifetime access</span><span class="plan-price">$9<small> one time</small></span><span class="plan-cta">${MEMBER_LINKS.lifetime ? 'Get access' : 'Opening soon'}</span></a>
       </div>
