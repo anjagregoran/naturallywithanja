@@ -1,4 +1,5 @@
 window.T_EN={
+"Glow program": "The Glow Program",
 "tvoj ciklus je tvoj": "your cycle is your",
 "vodič do sjaja": "glow guide",
 "Zdravo i prirodno, Anja": "Healthy and natural, Anja",
