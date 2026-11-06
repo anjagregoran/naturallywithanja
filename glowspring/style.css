@@ -544,3 +544,4 @@ textarea::placeholder, input::placeholder { color: var(--ink-soft); opacity: .85
 .member-free p { margin: 0 0 14px; }
 .member-email { display: inline-block; padding: 12px 22px; border: 1px solid #2E2420; color: #2E2420; text-decoration: none; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
 .member-email:hover { background: #2E2420; color: #FBF7EF; }
+.glow-radiant { font-family: 'Italiana', serif; font-size: clamp(40px, 8vw, 84px); letter-spacing: .08em; line-height: 1; margin: 0 0 14px; }

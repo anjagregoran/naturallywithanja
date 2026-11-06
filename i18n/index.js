@@ -1,4 +1,7 @@
 window.T_EN={
+"Prava hrana · Tvoj ciklus · Clean beauty": "Real food · Your cycle · Clean beauty",
+"Mirno more u sumrak ispod rascvjetalog drveta": "A calm sea at dusk under a blossoming tree",
+"Svježe naranče i cijeđeni sok": "Fresh oranges and pressed juice",
 "Zajednica i društvene mreže": "Community & Socials",
 "Zajednica": "Community",
 "Moja zajednica": "My community",

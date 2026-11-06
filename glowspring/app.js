@@ -129,6 +129,7 @@ function renderLibrary() {
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
     </div>
     <section class="glow">
+      <p class="glow-radiant">NATURALLY RADIANT</p>
       <p class="script glow-quote">your health is your glow</p>
       <p class="glow-line">Become incredibly attractive through health.</p>
     </section>

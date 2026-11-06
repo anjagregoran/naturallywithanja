@@ -667,12 +667,25 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 .topnav-right .topnav-tooltip{left:auto!important;right:0!important}
 .topnav-right .topnav-tooltip::before{left:auto!important;right:24px!important}
 .hero h1 em.h1-it{font-family:'Pinyon Script',cursive!important;font-style:normal!important;text-transform:none!important;letter-spacing:0!important;font-size:1.7em!important;line-height:.8!important;margin-left:.15em}
+.gx{grid-template-columns:1fr 1fr!important;align-items:stretch!important;max-width:1280px;margin:60px auto 0!important;background:#FBF7F0!important;gap:0}
+.gx-photo{aspect-ratio:auto!important;background:none!important;position:relative;line-height:0}
+.gx-photo img{width:100%;height:auto;display:block}
+.gx-body{padding:clamp(32px,5vw,72px)!important;justify-content:center}
+@media(max-width:768px){.gx{grid-template-columns:1fr!important}}
+.gx-photo img{height:100%;object-fit:cover}
+.hero-box{display:inline-block;background:rgba(251,247,239,.9);padding:34px clamp(26px,4vw,56px) 30px;margin:0 auto 22px;box-shadow:0 30px 60px -30px rgba(10,30,35,.45)}
+.hb-k{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5E8E94;margin:0 0 14px}
+.hero .hero-box h1,.hero .hero-box h1 span,.hero .hero-box h1 em.h1-it{color:#2E2420!important;text-shadow:none!important;text-transform:none!important}
+.hero .hero-box h1{font-family:'Newsreader',Georgia,serif!important;font-weight:300!important;letter-spacing:-.005em!important;font-size:clamp(28px,3.8vw,50px)!important;margin:0!important;display:block!important;white-space:normal!important;line-height:1.1!important}
+.hero .hero-box h1 em.h1-it{font-family:'Newsreader',Georgia,serif!important;font-style:italic!important;font-size:1em!important;margin:0!important;line-height:inherit!important;letter-spacing:inherit!important}
+@media(max-width:768px){.hero-box{padding:24px 20px}.hb-k{font-size:9px;letter-spacing:.18em}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300,100,0;1,9..144,300,100,1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;1,6..72,200;1,6..72,300&family=DM+Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -729,7 +742,7 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 <div class="hero-grid">
 <div class="hero-illus"><img src="hero-mediterranean.jpg?v=1" alt="Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa"></div>
 <div class="hero-text">
-<h1><span>tvoj ciklus je tvoj <em class="h1-it">vodič do sjaja</em></span></h1>
+<div class="hero-box"><p class="hb-k">Prava hrana · Tvoj ciklus · Clean beauty</p><h1><span>tvoj ciklus je tvoj <em class="h1-it">vodič do sjaja</em></span></h1></div>
 <div class="hero-ctas"><a href="moji-vodici.html" class="hero-main-cta">Glow program</a><a href="glowspring/" class="hero-main-cta hero-alt"><svg width="10" height="20" viewBox="30 6 42 84" fill="none" stroke="#B8924A" stroke-width="2.4" stroke-linecap="round" style="margin-right:8px;vertical-align:-4px" aria-hidden="true"><path d="M50 88 C50 60 52 36 66 12"/><path d="M51 70c-10-3-16-10-17-19 9 1 15 8 17 19z"/><path d="M53 56c9-4 14-11 14-20-9 2-13 9-14 20z"/><path d="M57 40c-8-4-12-11-11-19 8 2 11 9 11 19z"/><path d="M61 26c7-4 10-10 9-17-7 2-9 9-9 17z"/></svg>Anja's Clean Beauty List</a></div>
 </div>
 </div>
@@ -861,7 +874,7 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 
 <div class="quote-band">
 <div class="quote-band-inner">
-  <img class="qb-illus" src="hero-mediterranean.jpg?v=1" alt="Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa">
+  <img class="qb-illus" src="wp-IMG_4056-3.jpg" alt="Mirno more u sumrak ispod rascvjetalog drveta">
   <div class="quote-text">
     <blockquote>"Ponovno se poveži sa svojim tijelom i onom verzijom sebe koja se osjeća puna života, energije i blistavosti. To je umjetnost življenja."</blockquote>
     <cite>Povratak svom pravom ja</cite>
@@ -885,7 +898,7 @@ footer.fx .fx-brand p{margin-left:auto;margin-right:auto;text-align:center}
 </div>
 
 <section class="gx">
-  <div class="gx-photo" style="background-image:url('anja-vineyard.jpg')"><span class="gx-tag">Zdravo i prirodno, Anja</span></div>
+  <div class="gx-photo"><img src="ghi-b12.jpg" alt="Global Healing Vitamin B12 drops"></div>
   <div class="gx-body">
     <p class="gx-eyebrow">Certificirana sam u</p>
     <h3 class="gx-school">Global Healing <em>Institute</em></h3>
@@ -973,7 +986,7 @@ function toggleMobileGroup(btn){
  }
 })();
 </script>
-<script src="i18n/index.js?v=20261105h"></script>
+<script src="i18n/index.js?v=20261106b"></script>
 <script src="i18n.js?v=20261103"></script>
 </body>
 </html>

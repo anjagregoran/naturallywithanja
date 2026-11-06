@@ -1,4 +1,5 @@
 window.T_EN={
+"Ilustracija mediteranskog života, grčka salata, priobalno selo, masline i zasjenjena terasa": "Illustration of Mediterranean life, Greek salad, a seaside village, olives and a shaded terrace",
  "← Natrag na početnu": "← Back to home",
  "© Prirodno s Anjom · Olea Vita Sana": "© Naturally with Anja · Olea Vita Sana",
  "Početna": "Home",

@@ -1,4 +1,6 @@
 window.T_EN={
+ "Osjećaj se ponovno dobro": "Feel good",
+ "u svom tijelu": "in your body again.",
  "Moja priča": "My story",
  "Nisam uvijek ovako izgledala.": "I did not always look like this.",
  "Prije": "Before",
