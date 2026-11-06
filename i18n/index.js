@@ -1,5 +1,5 @@
 window.T_EN={
-"Prava hrana · Tvoj ciklus · Clean beauty": "Real food · Your cycle · Clean beauty",
+"Prava hrana · Tvoj ciklus · Život bez toksina": "Real food · Your cycle · Toxin-free life",
 "Mirno more u sumrak ispod rascvjetalog drveta": "A calm sea at dusk under a blossoming tree",
 "Svježe naranče i cijeđeni sok": "Fresh oranges and pressed juice",
 "Zajednica i društvene mreže": "Community & Socials",
