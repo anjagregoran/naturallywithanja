@@ -100,6 +100,20 @@ function postcard(href, art, title, caption, extra = '') {
 // Paste the Stripe payment links here once they exist.
 const MEMBER_LINKS = { lifetime: '' };
 
+// Paid access: buyers land on ?access=ACCESS_KEY (the Stripe success link), which unlocks this browser.
+const ACCESS_KEY = 'glow-7q4x';
+function hasAccess() {
+  try {
+    const q = new URLSearchParams(location.search);
+    if (q.get('access') === ACCESS_KEY) {
+      localStorage.setItem('gs_access', '1');
+      history.replaceState(null, '', location.pathname + location.hash);
+    }
+    return localStorage.getItem('gs_access') === '1';
+  } catch (e) { return false; }
+}
+const UNLOCKED = hasAccess();
+
 function renderLibrary() {
   app.innerHTML = `
     <section class="hero">
@@ -125,7 +139,8 @@ function renderLibrary() {
       <p class="member-note">One payment. No subscription. Every future update included.</p>
       <div class="member-free"><p>Not ready yet? Join my newsletter for natural health tips, my cycle and everyday life.</p><a class="member-email" href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank" rel="noopener">Join my newsletter</a></div>
     </section>
-    <div class="doors">
+    ${UNLOCKED ? '' : `<section class="locked"><div class="locked-peek" aria-hidden="true">${WORLDS.map(world => `<div class="locked-card">${esc(world.name)}</div>`).join('')}</div><div class="locked-msg"><span class="label">Members only</span><h2>The full list opens after you join.</h2><p>Every brand, mask, recipe and oil is waiting inside.</p><a class="plan-cta" href="#member">See the founding price</a></div></section>`}
+    ${UNLOCKED ? `    <div class="doors">
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
     </div>
     <section class="glow">
@@ -150,7 +165,7 @@ function renderLibrary() {
         <p>Beauty works the same way. It begins with its roots, the water you drink, the food you eat, how you move and how you sleep. Then it grows with its remedies, what you take inside and the products you use on the outside, until it rises to the surface as glowing skin, shiny hair and the way you carry yourself.</p>
         <p>This is mine, everything I have researched on looking and feeling your best, gathered in one place.</p>
       </section>
-    </div>`;
+    </div>` : ''}`;
 }
 
 function renderWorld(world) {
@@ -710,6 +725,13 @@ function render() {
   nav.innerHTML = TABS.map(item => `
     <a href="#${item.id}" ${item.id === tab ? 'aria-current="page"' : ''}>${item.label}</a>`).join('');
 
+  if (!UNLOCKED) {
+    nav.hidden = true;
+    renderLibrary();
+    app.insertAdjacentHTML('beforeend', `<p class="fine-print made-by"><a href="https://naturallywithanja.com/">Made by Anja at naturallywithanja.com</a></p>`);
+    window.scrollTo(0, 0);
+    return;
+  }
   if (page === 'spring') renderSpring(id);
   else if (world) renderWorld(world);
   else ({ library: renderLibrary, shelf: renderShelf, check: renderCheck, ritual: renderRitual })[tab]();
