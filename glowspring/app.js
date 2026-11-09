@@ -134,12 +134,11 @@ function renderLibrary() {
       <p class="lede">Pay once and get everything, plus every update for life: my homemade masks and DIY recipes, the oils and remedies I use, the new clean products I test, the brands I would swap to, and what I would never buy again.</p>
       <ul class="member-perks"><li>My homemade face masks and DIY recipes</li><li>The oils and natural remedies I use, and how</li><li>My full list of researched products, with updates for life</li><li>My brand swaps, from drugstore to clean</li><li>Early access to new remedies and routines</li></ul>
       <div class="member-plans one">
-        <a class="plan plan-best" href="${MEMBER_LINKS.lifetime || '#member'}" ${MEMBER_LINKS.lifetime ? 'target="_blank" rel="noopener"' : ''}><span class="plan-tag">Founding price</span><span class="plan-name">Lifetime access</span><span class="plan-price">$12<small> one time</small></span><span class="plan-cta">${MEMBER_LINKS.lifetime ? 'Get access' : 'Opening soon'}</span></a>
+        <a class="plan plan-best" href="${MEMBER_LINKS.lifetime || '#member'}" ${MEMBER_LINKS.lifetime ? 'target="_blank" rel="noopener"' : ''}><span class="plan-tag">Founding price</span><span class="plan-name">Lifetime access</span><span class="plan-price">$14<small> one time</small></span><span class="plan-cta">${MEMBER_LINKS.lifetime ? 'Get access' : 'Opening soon'}</span></a>
       </div>
       <p class="member-note">One payment. No subscription. Every future update included.</p>
       <div class="member-free"><p>Not ready yet? Join my newsletter for natural health tips, my cycle and everyday life.</p><a class="member-email" href="https://anja-health-exchange.kit.com/34cff0de6f" target="_blank" rel="noopener">Join my newsletter</a></div>
     </section>
-    ${UNLOCKED ? '' : `<section class="locked"><div class="locked-peek" aria-hidden="true">${WORLDS.map(world => `<div class="locked-card">${esc(world.name)}</div>`).join('')}</div><div class="locked-msg"><span class="label">Members only</span><h2>The full list opens after you join.</h2><p>Every brand, mask, recipe and oil is waiting inside.</p><a class="plan-cta" href="#member">See the founding price</a></div></section>`}
     ${UNLOCKED ? `    <div class="doors">
       ${WORLDS.map(world => postcard(`#${world.id}`, ART[world.id](), world.name, `<p>${esc(world.line)}</p>`, 'door')).join('')}
     </div>

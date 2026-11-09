@@ -554,3 +554,8 @@ textarea::placeholder, input::placeholder { color: var(--ink-soft); opacity: .85
 .locked-msg h2 { font-weight: 300; font-size: clamp(26px, 4vw, 40px); margin: 10px 0; }
 .locked-msg p { margin: 0 0 18px; }
 .locked-msg .plan-cta { text-decoration: none; padding: 12px 22px; }
+
+.nwa-back { position: absolute; top: 16px; left: 18px; z-index: 20; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(251,247,239,.88); color: #2E2420; text-decoration: none; font-family: 'Newsreader', Georgia, serif; font-size: 14px; letter-spacing: .14em; border-radius: 999px; }
+.nwa-back i { font-style: italic; }
+.nwa-back .nwa-olive { width: 10px; height: 20px; }
+.nwa-back:hover { background: #FBF7EF; }
