@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Glowspring</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A library of natural beauty and health research, with an honest ingredient checker and a daily ritual.">
+  <meta name="theme-color" content="#F5EBDA">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,0..100;1,9..144,300..500,0..100&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261106a">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body>
+  <svg style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none" aria-hidden="true">
+    <filter id="riso" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.9" result="specks"/>
+      <feComposite in="SourceGraphic" in2="specks" operator="in"/>
+    </filter>
+    <filter id="stipple" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="noise"/>
+      <feColorMatrix in="noise" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -11 5.2" result="specks"/>
+      <feComposite in="SourceGraphic" in2="specks" operator="in"/>
+    </filter>
+  </svg>
+  <main id="app"></main>
+  <nav id="nav" aria-label="Main" hidden></nav>
+  <script src="data.js?v=20261106a"></script>
+  <script src="library.js?v=20261106a"></script>
+  <script src="art.js?v=20261106a"></script>
+  <script src="checker.js?v=20261106a"></script>
+  <script src="app.js?v=20261106a"></script>
+</body>
+</html>
