@@ -368,10 +368,20 @@ html,body{overflow-x:clip}
 .cg-deep li::before{content:"—";position:absolute;left:0;color:#76804C}
 .cg-close{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:22px;text-align:center;margin:28px 0 0;color:#2E2420}
 .hitnp{font-family:'Pinyon Script',cursive;font-size:clamp(44px,7vw,76px);text-align:center;color:#2E2420;margin:70px 0 10px;line-height:1}
+/* soft turquoise light that follows the pointer, like the portfolio site */
+.bot{display:none!important}
+body{background:#F7F4EE!important}
+.glowbg{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(600px circle at var(--mx,50%) var(--my,30%),rgba(94,160,158,.22),rgba(94,160,158,0) 60%),radial-gradient(900px circle at 85% 10%,rgba(143,176,150,.14),transparent 60%),radial-gradient(800px circle at 10% 90%,rgba(94,142,148,.12),transparent 60%);transition:background-position .2s}
+/* cycle section: clear, flowing, thin gold line */
+.cg{background:transparent!important;margin:90px auto!important;padding:0 22px!important}
+.cg-in{max-width:1040px;padding:clamp(40px,6vw,80px) clamp(22px,5vw,64px);border:1px solid rgba(184,146,74,.55);border-radius:220px 220px 28px 28px;background:rgba(255,255,255,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cg-deep{border-top-color:rgba(184,146,74,.35)!important}
+@media(max-width:760px){.cg-in{border-radius:140px 140px 20px 20px}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="glowbg" aria-hidden="true"></div>
 <div class="lang-sw lang-fixed"><button type="button" data-l="hr" onclick="setSiteLang('hr')">HR</button><button type="button" data-l="en" onclick="setSiteLang('en')">EN</button></div>
 
 <div class="bg">
@@ -612,6 +622,9 @@ function toggleSubs(e,b){e.stopPropagation();var w=b.closest('.vwrap');var on=!w
     v.textTracks.addEventListener&&v.textTracks.addEventListener('addtrack',bind);
   });
 })();
+</script>
+<script>
+(function(){if(!matchMedia('(pointer:fine)').matches)return;var g=document.querySelector('.glowbg');if(!g)return;addEventListener('pointermove',function(e){g.style.setProperty('--mx',e.clientX+'px');g.style.setProperty('--my',e.clientY+'px');});})();
 </script>
 </body>
 </html>
